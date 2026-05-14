@@ -1,680 +1,2060 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animesh Mishra | Molecule to Market</title>
-<meta name="description" content="Animesh Mishra — Pharma MBA @ IIHMR · Product Management & Consulting · QC Analyst · Medical Coder · Bridging Lab Science with Commercial Strategy">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg-dark:#050d1a;--bg-card:#0a1628;--bg-glass:rgba(10,22,40,0.85);
---accent-cyan:#00e5ff;--accent-pink:#e91e8c;--accent-gold:#ffd600;
---text-primary:#e8f4fd;--text-secondary:#7eb8d4;--text-muted:#4a7a9b;
---border-glow:rgba(0,229,255,0.25);
---font-head:'Rajdhani',sans-serif;--font-logo:'Orbitron',sans-serif;--font-body:'DM Sans',sans-serif;
-}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:var(--bg-dark);color:var(--text-primary);overflow-x:hidden;cursor:none}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--bg-dark)}
-::-webkit-scrollbar-thumb{background:var(--accent-cyan);border-radius:10px}
-canvas#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
-.cursor-dot{width:8px;height:8px;background:var(--accent-cyan);border-radius:50%;position:fixed;pointer-events:none;z-index:10001;transition:transform .1s;mix-blend-mode:screen}
-.cursor-ring{width:40px;height:40px;border:2px solid var(--accent-cyan);border-radius:50%;position:fixed;pointer-events:none;z-index:10000;transition:width .3s,height .3s,border-color .3s;transform:translate(-50%,-50%);mix-blend-mode:screen}
-.cursor-ring.hover{width:60px;height:60px;border-color:var(--accent-pink);background:rgba(233,30,140,0.08)}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animesh Mishra | Molecule to Market</title>
+    <meta name="description"
+        content="Animesh Mishra — Pharma MBA @ IIHMR · Product Management & Consulting · QC Analyst · Medical Coder · Bridging Lab Science with Commercial Strategy">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
 
-/* NAVBAR */
-.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
-.navbar.scrolled{background:rgba(5,13,26,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-glow);padding:12px 5%}
-.nav-logo{font-family:var(--font-logo);font-size:1.6rem;font-weight:900;color:var(--accent-cyan);text-decoration:none;text-shadow:0 0 20px rgba(0,229,255,0.5)}
-.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
-.nav-links a{color:var(--text-secondary);text-decoration:none;font-family:var(--font-head);font-weight:600;font-size:.95rem;position:relative;transition:color .3s;padding:4px 0}
-.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--accent-cyan);transition:width .3s;box-shadow:0 0 8px var(--accent-cyan)}
-.nav-links a:hover,.nav-links a.active{color:var(--accent-cyan)}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-cv{background:linear-gradient(135deg,var(--accent-pink),#ff4da6);color:#fff;padding:10px 22px;border-radius:30px;font-family:var(--font-head);font-weight:700;text-decoration:none;font-size:.9rem;transition:all .3s;border:none;box-shadow:0 0 15px rgba(233,30,140,0.3)}
-.nav-cv:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(233,30,140,0.6)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001}
-.hamburger span{width:28px;height:2px;background:var(--accent-cyan);transition:all .3s;border-radius:2px}
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.hamburger.active span:nth-child(2){opacity:0}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+        :root {
+            --bg-dark: #050d1a;
+            --bg-card: #0a1628;
+            --bg-glass: rgba(10, 22, 40, 0.85);
+            --accent-cyan: #00e5ff;
+            --accent-pink: #e91e8c;
+            --accent-gold: #ffd600;
+            --text-primary: #e8f4fd;
+            --text-secondary: #7eb8d4;
+            --text-muted: #4a7a9b;
+            --border-glow: rgba(0, 229, 255, 0.25);
+            --font-head: 'Rajdhani', sans-serif;
+            --font-logo: 'Orbitron', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 5% 60px;position:relative;z-index:1}
-.hero-content{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1300px;margin:0 auto;gap:60px}
-.hero-text{flex:1;opacity:0;transform:translateX(-60px);animation:slideInLeft .8s .3s forwards}
-.hero-greeting{font-family:var(--font-head);font-size:1.1rem;color:var(--accent-pink);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
-.hero-name{font-family:var(--font-head);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:16px}
-.hero-name .cyan{color:var(--accent-cyan);text-shadow:0 0 30px rgba(0,229,255,0.4)}
-.hero-typing{font-family:var(--font-head);font-size:clamp(1.2rem,2.5vw,1.8rem);color:var(--accent-cyan);min-height:2.2rem;margin-bottom:14px}
-.hero-typing .cursor-blink{animation:blink .8s infinite;color:var(--accent-pink)}
-.hero-tagline{font-size:1rem;color:var(--text-secondary);line-height:1.7;max-width:520px;margin-bottom:24px}
-.hero-socials{display:flex;gap:16px;margin-bottom:28px}
-.hero-socials a{width:42px;height:42px;border:1px solid var(--border-glow);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-secondary);transition:all .3s;font-size:1rem}
-.hero-socials a:hover{color:var(--accent-cyan);border-color:var(--accent-cyan);box-shadow:0 0 20px rgba(0,229,255,0.3);transform:translateY(-3px)}
-.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
-.btn-primary{background:linear-gradient(135deg,var(--accent-cyan),#00b8d4);color:var(--bg-dark);padding:13px 32px;border-radius:30px;font-family:var(--font-head);font-weight:700;text-decoration:none;font-size:.95rem;transition:all .3s;position:relative;overflow:hidden}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(0,229,255,0.5)}
-.btn-secondary{border:1px solid var(--accent-cyan);color:var(--accent-cyan);padding:13px 32px;border-radius:30px;font-family:var(--font-head);font-weight:700;text-decoration:none;font-size:.95rem;transition:all .3s;background:transparent}
-.btn-secondary:hover{background:rgba(0,229,255,0.1);transform:translateY(-3px);box-shadow:0 0 20px rgba(0,229,255,0.2)}
-.hero-image{position:relative;flex-shrink:0}
-.profile-container{width:320px;height:320px;position:relative;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0.5);animation:scaleIn .8s .5s forwards}
-.profile-ring{position:absolute;width:100%;height:100%;border-radius:50%;background:conic-gradient(var(--accent-cyan),var(--accent-pink),var(--accent-gold),var(--accent-cyan));animation:spinRing 4s linear infinite;padding:4px}
-.profile-ring-inner{width:100%;height:100%;border-radius:50%;background:var(--bg-dark)}
-.profile-img{position:absolute;width:88%;height:88%;border-radius:50%;object-fit:cover;top:6%;left:6%;z-index:2;border:3px solid rgba(0,229,255,0.2)}
-.pulse-ring{position:absolute;width:100%;height:100%;border-radius:50%;border:2px solid var(--accent-cyan);animation:pulseExpand 3s infinite;opacity:0}
-.pulse-ring:nth-child(4){animation-delay:.7s;border-color:var(--accent-pink)}
-.profile-glow{position:absolute;width:120%;height:120%;top:-10%;left:-10%;background:radial-gradient(circle,rgba(0,229,255,0.15) 0%,transparent 70%);animation:breathe 4s ease-in-out infinite;border-radius:50%;z-index:0}
+        html {
+            scroll-behavior: smooth
+        }
 
-/* STATS */
-.stats-bar{display:flex;justify-content:center;gap:0;margin-top:50px;padding:30px;background:var(--bg-glass);backdrop-filter:blur(15px);border-radius:20px;border:1px solid var(--border-glow);max-width:800px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
-.stat-item{flex:1;text-align:center;position:relative}
-.stat-item:not(:last-child)::after{content:'';position:absolute;right:0;top:10%;height:80%;width:1px;background:linear-gradient(to bottom,transparent,var(--accent-cyan),transparent)}
-.stat-number{font-family:var(--font-logo);font-size:2rem;font-weight:900;color:var(--accent-cyan);text-shadow:0 0 15px rgba(0,229,255,0.4)}
-.stat-label{font-family:var(--font-head);font-size:.85rem;color:var(--text-muted);margin-top:4px}
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            cursor: none
+        }
 
-/* SECTIONS */
-section{padding:100px 5%;position:relative;z-index:1}
-.section-header{text-align:center;margin-bottom:60px}
-.section-label{font-family:var(--font-head);font-size:.9rem;color:var(--accent-pink);letter-spacing:4px;text-transform:uppercase;margin-bottom:10px}
-.section-title{font-family:var(--font-head);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700}
-.section-title span{color:var(--accent-cyan);text-shadow:0 0 20px rgba(0,229,255,0.3)}
-.section-line{width:60px;height:3px;background:linear-gradient(90deg,var(--accent-cyan),var(--accent-pink));margin:16px auto 0;border-radius:2px}
+        ::-webkit-scrollbar {
+            width: 5px
+        }
 
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1200px;margin:0 auto;align-items:start}
-.about-card{background:var(--bg-glass);backdrop-filter:blur(15px);border-radius:20px;border:1px solid var(--border-glow);padding:35px;transition:all .4s}
-.about-card:hover{border-color:var(--accent-cyan);box-shadow:0 0 30px rgba(0,229,255,0.1)}
-.about-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
-.about-info-item{display:flex;align-items:center;gap:12px}
-.about-info-item i{color:var(--accent-cyan);font-size:1rem;width:20px}
-.about-info-item span{font-size:.9rem;color:var(--text-secondary)}
-.about-text p{color:var(--text-secondary);line-height:1.8;margin-bottom:16px;font-size:.95rem}
-.about-quote{border-left:3px solid var(--accent-cyan);padding:16px 20px;margin:24px 0;background:rgba(0,229,255,0.03);border-radius:0 10px 10px 0;font-style:italic;color:var(--accent-cyan);font-family:var(--font-head);font-size:1.05rem}
-.about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.about-tags span{padding:6px 16px;border:1px solid var(--border-glow);border-radius:20px;font-size:.8rem;color:var(--text-secondary);font-family:var(--font-head);transition:all .3s}
-.about-tags span:hover{border-color:var(--accent-cyan);color:var(--accent-cyan);box-shadow:0 0 10px rgba(0,229,255,0.15)}
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark)
+        }
 
-/* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;max-width:1200px;margin:0 auto}
-.skill-card{background:var(--bg-glass);backdrop-filter:blur(15px);border-radius:20px;border:1px solid var(--border-glow);padding:35px;transition:all .4s}
-.skill-card:hover{transform:translateY(-8px);border-color:var(--accent-cyan);box-shadow:0 8px 40px rgba(0,229,255,0.12)}
-.skill-card-icon{font-size:2rem;margin-bottom:16px}
-.skill-card h3{font-family:var(--font-head);font-size:1.3rem;margin-bottom:20px;color:var(--accent-cyan)}
-.skill-item{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:.9rem;color:var(--text-secondary)}
-.skill-item i{color:var(--accent-pink);font-size:.7rem}
-.skill-bar-wrap{flex:1;height:4px;background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;margin-left:auto;width:80px}
-.skill-bar{height:100%;background:linear-gradient(90deg,var(--accent-cyan),var(--accent-pink));border-radius:4px;width:0;transition:width 1.5s ease}
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-cyan);
+            border-radius: 10px
+        }
 
-/* TIMELINE */
-.timeline{position:relative;max-width:900px;margin:0 auto;padding-left:40px}
-.timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent-cyan),var(--accent-pink),var(--accent-gold))}
-.timeline-item{position:relative;margin-bottom:40px;padding-left:40px}
-.timeline-dot{position:absolute;left:-33px;top:8px;width:16px;height:16px;border-radius:50%;border:3px solid var(--accent-cyan);background:var(--bg-dark);z-index:2;box-shadow:0 0 15px rgba(0,229,255,0.4)}
-.timeline-dot.pink{border-color:var(--accent-pink);box-shadow:0 0 15px rgba(233,30,140,0.4)}
-.timeline-dot.gold{border-color:var(--accent-gold);box-shadow:0 0 15px rgba(255,214,0,0.4)}
-.timeline-dot.white{border-color:#fff;box-shadow:0 0 15px rgba(255,255,255,0.3)}
-.timeline-card{background:var(--bg-glass);backdrop-filter:blur(15px);border-radius:16px;border:1px solid var(--border-glow);padding:28px;transition:all .4s}
-.timeline-card:hover{border-color:var(--accent-cyan);box-shadow:0 0 25px rgba(0,229,255,0.1);transform:translateX(5px)}
-.timeline-date{display:inline-block;padding:4px 14px;background:rgba(0,229,255,0.1);border-radius:20px;font-size:.8rem;color:var(--accent-cyan);font-family:var(--font-head);margin-bottom:10px}
-.timeline-role{font-family:var(--font-head);font-size:1.2rem;font-weight:700;margin-bottom:4px}
-.timeline-company{color:var(--accent-pink);font-family:var(--font-head);font-size:.95rem;margin-bottom:12px}
-.timeline-bullets{list-style:none;padding:0}
-.timeline-bullets li{color:var(--text-secondary);font-size:.88rem;line-height:1.7;margin-bottom:8px;padding-left:18px;position:relative}
-.timeline-bullets li::before{content:'▹';position:absolute;left:0;color:var(--accent-cyan)}
+        canvas#particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none
+        }
 
-/* EDUCATION */
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:0 auto}
-.edu-card{background:var(--bg-glass);backdrop-filter:blur(15px);border-radius:16px;border:1px solid var(--border-glow);padding:28px;transition:all .4s}
-.edu-card:hover{transform:translateY(-6px);box-shadow:0 8px 30px rgba(0,229,255,0.1)}
-.edu-card.current{border-color:var(--accent-cyan);box-shadow:0 0 20px rgba(0,229,255,0.1)}
-.edu-level{font-family:var(--font-head);font-size:.8rem;color:var(--accent-pink);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-.edu-degree{font-family:var(--font-head);font-size:1.15rem;font-weight:700;margin-bottom:6px;color:var(--text-primary)}
-.edu-inst{color:var(--text-secondary);font-size:.9rem;margin-bottom:4px}
-.edu-year{color:var(--text-muted);font-size:.85rem}
-.edu-result{color:var(--accent-cyan);font-family:var(--font-head);font-weight:700;font-size:.9rem;margin-top:8px}
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10001;
+            transition: transform .1s;
+            mix-blend-mode: screen
+        }
 
-/* PROJECTS */
-.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1200px;margin:0 auto}
-.project-card{background:var(--bg-glass);backdrop-filter:blur(15px);border-radius:16px;border:1px solid var(--border-glow);padding:30px;transition:all .4s;position:relative;overflow:hidden}
-.project-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent-cyan),var(--accent-pink));transform:scaleX(0);transform-origin:left;transition:transform .4s}
-.project-card:hover{transform:translateY(-8px);border-color:var(--accent-cyan);box-shadow:0 8px 35px rgba(0,229,255,0.12)}
-.project-card:hover::before{transform:scaleX(1)}
-.project-icon{font-size:2.2rem;margin-bottom:16px}
-.project-card h3{font-family:var(--font-head);font-size:1.15rem;font-weight:700;margin-bottom:10px;color:var(--text-primary)}
-.project-card p{color:var(--text-secondary);font-size:.88rem;line-height:1.7;margin-bottom:16px}
-.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.project-tags span{padding:4px 12px;background:rgba(0,229,255,0.08);border-radius:12px;font-size:.75rem;color:var(--accent-cyan);font-family:var(--font-head)}
-.project-link{display:flex;align-items:center;gap:8px;color:var(--accent-pink);font-family:var(--font-head);font-weight:600;font-size:.9rem;text-decoration:none;transition:gap .3s}
-.project-link:hover{gap:14px}
+        .cursor-ring {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--accent-cyan);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            transition: width .3s, height .3s, border-color .3s;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: screen
+        }
 
-/* CERTIFICATIONS */
-.cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:0 auto}
-.cert-card{background:var(--bg-glass);backdrop-filter:blur(15px);border-radius:14px;border:1px solid var(--border-glow);padding:24px;text-align:center;transition:all .4s}
-.cert-card:hover{transform:translateY(-5px);border-color:var(--accent-cyan);box-shadow:0 0 25px rgba(0,229,255,0.1)}
-.cert-card.ongoing{animation:pulseBorder 2s infinite}
-.cert-card i{font-size:1.8rem;color:var(--accent-cyan);margin-bottom:12px}
-.cert-card h4{font-family:var(--font-head);font-size:.95rem;margin-bottom:6px;color:var(--text-primary)}
-.cert-card p{font-size:.8rem;color:var(--text-muted)}
+        .cursor-ring.hover {
+            width: 60px;
+            height: 60px;
+            border-color: var(--accent-pink);
+            background: rgba(233, 30, 140, 0.08)
+        }
 
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;margin:0 auto}
-.contact-info{display:flex;flex-direction:column;gap:18px}
-.contact-item{display:flex;align-items:center;gap:16px;padding:18px;background:var(--bg-glass);backdrop-filter:blur(15px);border-radius:14px;border:1px solid var(--border-glow);transition:all .3s}
-.contact-item:hover{transform:translateX(5px);border-color:var(--accent-cyan);box-shadow:0 0 20px rgba(0,229,255,0.1)}
-.contact-item i{font-size:1.3rem;color:var(--accent-cyan);width:24px;text-align:center}
-.contact-item span{color:var(--text-secondary);font-size:.9rem}
-.contact-item a{color:var(--text-secondary);text-decoration:none;transition:color .3s}
-.contact-item a:hover{color:var(--accent-cyan)}
-.contact-form{display:flex;flex-direction:column;gap:16px}
-.contact-form input,.contact-form textarea{background:rgba(10,22,40,0.8);border:1px solid var(--border-glow);border-radius:12px;padding:14px 18px;color:var(--text-primary);font-family:var(--font-body);font-size:.9rem;transition:border-color .3s;outline:none}
-.contact-form input:focus,.contact-form textarea:focus{border-color:var(--accent-cyan);box-shadow:0 0 15px rgba(0,229,255,0.1)}
-.contact-form textarea{min-height:120px;resize:vertical}
-.btn-submit{background:linear-gradient(135deg,var(--accent-cyan),var(--accent-pink));color:var(--bg-dark);padding:14px 36px;border:none;border-radius:30px;font-family:var(--font-head);font-weight:700;font-size:1rem;cursor:pointer;transition:all .3s;align-self:flex-start}
-.btn-submit:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(0,229,255,0.4)}
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 18px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all .4s
+        }
 
-/* FOOTER */
-footer{text-align:center;padding:40px 5%;border-top:1px solid var(--border-glow);position:relative;z-index:1}
-footer p{color:var(--text-muted);font-size:.85rem;margin-bottom:6px;font-family:var(--font-head)}
-footer .glow{color:var(--accent-cyan)}
+        .navbar.scrolled {
+            background: rgba(5, 13, 26, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-glow);
+            padding: 12px 5%
+        }
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(40px);filter:blur(5px);transition:all .7s ease}
-.reveal.visible{opacity:1;transform:translateY(0);filter:blur(0)}
+        .nav-logo {
+            font-family: var(--font-logo);
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.5)
+        }
 
-/* KEYFRAMES */
-@keyframes slideInLeft{to{opacity:1;transform:translateX(0)}}
-@keyframes scaleIn{to{opacity:1;transform:scale(1)}}
-@keyframes spinRing{to{transform:rotate(360deg)}}
-@keyframes pulseExpand{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.5);opacity:0}}
-@keyframes breathe{0%,100%{opacity:.3}50%{opacity:.6}}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-@keyframes pulseBorder{0%,100%{border-color:var(--border-glow)}50%{border-color:var(--accent-pink);box-shadow:0 0 15px rgba(233,30,140,0.2)}}
-@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes gridMove{0%{background-position:0 0}100%{background-position:50px 50px}}
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center
+        }
 
-/* BACKGROUND GRID */
-.bg-grid{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:50px 50px;animation:gridMove 8s linear infinite}
-.bg-orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0}
-.bg-orb-1{width:400px;height:400px;background:rgba(0,229,255,0.06);top:10%;right:10%;animation:float 8s ease-in-out infinite}
-.bg-orb-2{width:350px;height:350px;background:rgba(233,30,140,0.05);bottom:20%;left:5%;animation:float 10s ease-in-out infinite 2s}
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: var(--font-head);
+            font-weight: 600;
+            font-size: .95rem;
+            position: relative;
+            transition: color .3s;
+            padding: 4px 0
+        }
 
-/* RESPONSIVE */
-@media(max-width:1024px){
-.skills-grid,.projects-grid{grid-template-columns:repeat(2,1fr)}
-.cert-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:768px){
-.cursor-dot,.cursor-ring{display:none}
-body{cursor:auto}
-.hamburger{display:flex}
-.nav-links{position:fixed;top:0;right:-100%;width:70%;height:100vh;flex-direction:column;background:rgba(5,13,26,0.97);backdrop-filter:blur(20px);padding:100px 40px 40px;transition:right .4s;gap:20px}
-.nav-links.open{right:0}
-.nav-cv{display:none}
-.hero-content{flex-direction:column-reverse;text-align:center;gap:40px}
-.hero-socials,.hero-buttons{justify-content:center}
-.profile-container{width:240px;height:240px}
-.about-grid,.contact-grid,.edu-grid{grid-template-columns:1fr}
-.skills-grid,.projects-grid,.cert-grid{grid-template-columns:1fr}
-.about-info-grid{grid-template-columns:1fr}
-.stats-bar{flex-wrap:wrap;gap:20px}
-.stat-item:not(:last-child)::after{display:none}
-.hero-tagline{margin-left:auto;margin-right:auto}
-}
-</style>
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-cyan);
+            transition: width .3s;
+            box-shadow: 0 0 8px var(--accent-cyan)
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-cyan)
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%
+        }
+
+        .nav-cv {
+            background: linear-gradient(135deg, var(--accent-pink), #ff4da6);
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-family: var(--font-head);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: .9rem;
+            transition: all .3s;
+            border: none;
+            box-shadow: 0 0 15px rgba(233, 30, 140, 0.3)
+        }
+
+        .nav-cv:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(233, 30, 140, 0.6)
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: var(--accent-cyan);
+            transition: all .3s;
+            border-radius: 2px
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px)
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px)
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 5% 60px;
+            position: relative;
+            z-index: 1
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            gap: 60px
+        }
+
+        .hero-text {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(-60px);
+            animation: slideInLeft .8s .3s forwards
+        }
+
+        .hero-greeting {
+            font-family: var(--font-head);
+            font-size: 1.1rem;
+            color: var(--accent-pink);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px
+        }
+
+        .hero-name {
+            font-family: var(--font-head);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px
+        }
+
+        .hero-name .cyan {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 30px rgba(0, 229, 255, 0.4)
+        }
+
+        .hero-typing {
+            font-family: var(--font-head);
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--accent-cyan);
+            min-height: 2.2rem;
+            margin-bottom: 14px
+        }
+
+        .hero-typing .cursor-blink {
+            animation: blink .8s infinite;
+            color: var(--accent-pink)
+        }
+
+        .hero-tagline {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 520px;
+            margin-bottom: 24px
+        }
+
+        .hero-socials {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 28px
+        }
+
+        .hero-socials a {
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--border-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: all .3s;
+            font-size: 1rem
+        }
+
+        .hero-socials a:hover {
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+            transform: translateY(-3px)
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-cyan), #00b8d4);
+            color: var(--bg-dark);
+            padding: 13px 32px;
+            border-radius: 30px;
+            font-family: var(--font-head);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: .95rem;
+            transition: all .3s;
+            position: relative;
+            overflow: hidden
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.5)
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 13px 32px;
+            border-radius: 30px;
+            font-family: var(--font-head);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: .95rem;
+            transition: all .3s;
+            background: transparent
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 229, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2)
+        }
+
+        .hero-image {
+            position: relative;
+            flex-shrink: 0
+        }
+
+        .profile-container {
+            width: 320px;
+            height: 320px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: scaleIn .8s .5s forwards
+        }
+
+        .profile-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(var(--accent-cyan), var(--accent-pink), var(--accent-gold), var(--accent-cyan));
+            animation: spinRing 4s linear infinite;
+            padding: 4px
+        }
+
+        .profile-ring-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--bg-dark)
+        }
+
+        .profile-img {
+            position: absolute;
+            width: 88%;
+            height: 88%;
+            border-radius: 50%;
+            object-fit: cover;
+            top: 6%;
+            left: 6%;
+            z-index: 2;
+            border: 3px solid rgba(0, 229, 255, 0.2)
+        }
+
+        .pulse-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid var(--accent-cyan);
+            animation: pulseExpand 3s infinite;
+            opacity: 0
+        }
+
+        .pulse-ring:nth-child(4) {
+            animation-delay: .7s;
+            border-color: var(--accent-pink)
+        }
+
+        .profile-glow {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 70%);
+            animation: breathe 4s ease-in-out infinite;
+            border-radius: 50%;
+            z-index: 0
+        }
+
+        /* STATS */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-top: 50px;
+            padding: 30px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid var(--border-glow);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1
+        }
+
+        .stat-item {
+            flex: 1;
+            text-align: center;
+            position: relative
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10%;
+            height: 80%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--accent-cyan), transparent)
+        }
+
+        .stat-number {
+            font-family: var(--font-logo);
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 15px rgba(0, 229, 255, 0.4)
+        }
+
+        .stat-label {
+            font-family: var(--font-head);
+            font-size: .85rem;
+            color: var(--text-muted);
+            margin-top: 4px
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 100px 5%;
+            position: relative;
+            z-index: 1
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px
+        }
+
+        .section-label {
+            font-family: var(--font-head);
+            font-size: .9rem;
+            color: var(--accent-pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px
+        }
+
+        .section-title {
+            font-family: var(--font-head);
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 700
+        }
+
+        .section-title span {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.3)
+        }
+
+        .section-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
+            margin: 16px auto 0;
+            border-radius: 2px
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start
+        }
+
+        .about-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid var(--border-glow);
+            padding: 35px;
+            transition: all .4s
+        }
+
+        .about-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.1)
+        }
+
+        .about-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px
+        }
+
+        .about-info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .about-info-item i {
+            color: var(--accent-cyan);
+            font-size: 1rem;
+            width: 20px
+        }
+
+        .about-info-item span {
+            font-size: .9rem;
+            color: var(--text-secondary)
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-size: .95rem
+        }
+
+        .about-quote {
+            border-left: 3px solid var(--accent-cyan);
+            padding: 16px 20px;
+            margin: 24px 0;
+            background: rgba(0, 229, 255, 0.03);
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            color: var(--accent-cyan);
+            font-family: var(--font-head);
+            font-size: 1.05rem
+        }
+
+        .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px
+        }
+
+        .about-tags span {
+            padding: 6px 16px;
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            font-size: .8rem;
+            color: var(--text-secondary);
+            font-family: var(--font-head);
+            transition: all .3s
+        }
+
+        .about-tags span:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.15)
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .skill-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            border: 1px solid var(--border-glow);
+            padding: 35px;
+            transition: all .4s
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 8px 40px rgba(0, 229, 255, 0.12)
+        }
+
+        .skill-card-icon {
+            font-size: 2rem;
+            margin-bottom: 16px
+        }
+
+        .skill-card h3 {
+            font-family: var(--font-head);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent-cyan)
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: .9rem;
+            color: var(--text-secondary)
+        }
+
+        .skill-item i {
+            color: var(--accent-pink);
+            font-size: .7rem
+        }
+
+        .skill-bar-wrap {
+            flex: 1;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-left: auto;
+            width: 80px
+        }
+
+        .skill-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.5s ease
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-left: 40px
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-pink), var(--accent-gold))
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 40px
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -33px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-cyan);
+            background: var(--bg-dark);
+            z-index: 2;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.4)
+        }
+
+        .timeline-dot.pink {
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 15px rgba(233, 30, 140, 0.4)
+        }
+
+        .timeline-dot.gold {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 15px rgba(255, 214, 0, 0.4)
+        }
+
+        .timeline-dot.white {
+            border-color: #fff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3)
+        }
+
+        .timeline-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            border: 1px solid var(--border-glow);
+            padding: 28px;
+            transition: all .4s
+        }
+
+        .timeline-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
+            transform: translateX(5px)
+        }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 4px 14px;
+            background: rgba(0, 229, 255, 0.1);
+            border-radius: 20px;
+            font-size: .8rem;
+            color: var(--accent-cyan);
+            font-family: var(--font-head);
+            margin-bottom: 10px
+        }
+
+        .timeline-role {
+            font-family: var(--font-head);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 4px
+        }
+
+        .timeline-company {
+            color: var(--accent-pink);
+            font-family: var(--font-head);
+            font-size: .95rem;
+            margin-bottom: 12px
+        }
+
+        .timeline-bullets {
+            list-style: none;
+            padding: 0
+        }
+
+        .timeline-bullets li {
+            color: var(--text-secondary);
+            font-size: .88rem;
+            line-height: 1.7;
+            margin-bottom: 8px;
+            padding-left: 18px;
+            position: relative
+        }
+
+        .timeline-bullets li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan)
+        }
+
+        /* EDUCATION */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto
+        }
+
+        .edu-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            border: 1px solid var(--border-glow);
+            padding: 28px;
+            transition: all .4s
+        }
+
+        .edu-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 30px rgba(0, 229, 255, 0.1)
+        }
+
+        .edu-card.current {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1)
+        }
+
+        .edu-level {
+            font-family: var(--font-head);
+            font-size: .8rem;
+            color: var(--accent-pink);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px
+        }
+
+        .edu-degree {
+            font-family: var(--font-head);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-primary)
+        }
+
+        .edu-inst {
+            color: var(--text-secondary);
+            font-size: .9rem;
+            margin-bottom: 4px
+        }
+
+        .edu-year {
+            color: var(--text-muted);
+            font-size: .85rem
+        }
+
+        .edu-result {
+            color: var(--accent-cyan);
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: .9rem;
+            margin-top: 8px
+        }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .project-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            border: 1px solid var(--border-glow);
+            padding: 30px;
+            transition: all .4s;
+            position: relative;
+            overflow: hidden
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .4s
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 8px 35px rgba(0, 229, 255, 0.12)
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1)
+        }
+
+        .project-icon {
+            font-size: 2.2rem;
+            margin-bottom: 16px
+        }
+
+        .project-card h3 {
+            font-family: var(--font-head);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary)
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: .88rem;
+            line-height: 1.7;
+            margin-bottom: 16px
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px
+        }
+
+        .project-tags span {
+            padding: 4px 12px;
+            background: rgba(0, 229, 255, 0.08);
+            border-radius: 12px;
+            font-size: .75rem;
+            color: var(--accent-cyan);
+            font-family: var(--font-head)
+        }
+
+        .project-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-pink);
+            font-family: var(--font-head);
+            font-weight: 600;
+            font-size: .9rem;
+            text-decoration: none;
+            transition: gap .3s
+        }
+
+        .project-link:hover {
+            gap: 14px
+        }
+
+        /* CERTIFICATIONS */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .cert-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border-radius: 14px;
+            border: 1px solid var(--border-glow);
+            padding: 24px;
+            text-align: center;
+            transition: all .4s
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.1)
+        }
+
+        .cert-card.ongoing {
+            animation: pulseBorder 2s infinite
+        }
+
+        .cert-card i {
+            font-size: 1.8rem;
+            color: var(--accent-cyan);
+            margin-bottom: 12px
+        }
+
+        .cert-card h4 {
+            font-family: var(--font-head);
+            font-size: .95rem;
+            margin-bottom: 6px;
+            color: var(--text-primary)
+        }
+
+        .cert-card p {
+            font-size: .8rem;
+            color: var(--text-muted)
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 18px
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(15px);
+            border-radius: 14px;
+            border: 1px solid var(--border-glow);
+            transition: all .3s
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1)
+        }
+
+        .contact-item i {
+            font-size: 1.3rem;
+            color: var(--accent-cyan);
+            width: 24px;
+            text-align: center
+        }
+
+        .contact-item span {
+            color: var(--text-secondary);
+            font-size: .9rem
+        }
+
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color .3s
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-cyan)
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(10, 22, 40, 0.8);
+            border: 1px solid var(--border-glow);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: .9rem;
+            transition: border-color .3s;
+            outline: none
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.1)
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+            color: var(--bg-dark);
+            padding: 14px 36px;
+            border: none;
+            border-radius: 30px;
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all .3s;
+            align-self: flex-start
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.4)
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 5%;
+            border-top: 1px solid var(--border-glow);
+            position: relative;
+            z-index: 1
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: .85rem;
+            margin-bottom: 6px;
+            font-family: var(--font-head)
+        }
+
+        footer .glow {
+            color: var(--accent-cyan)
+        }
+
+        /* REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            filter: blur(5px);
+            transition: all .7s ease
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0)
+        }
+
+        /* KEYFRAMES */
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0)
+            }
+        }
+
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+        @keyframes spinRing {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes pulseExpand {
+            0% {
+                transform: scale(1);
+                opacity: .6
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0
+            }
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                opacity: .3
+            }
+
+            50% {
+                opacity: .6
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0
+            }
+        }
+
+        @keyframes pulseBorder {
+
+            0%,
+            100% {
+                border-color: var(--border-glow)
+            }
+
+            50% {
+                border-color: var(--accent-pink);
+                box-shadow: 0 0 15px rgba(233, 30, 140, 0.2)
+            }
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        @keyframes gridMove {
+            0% {
+                background-position: 0 0
+            }
+
+            100% {
+                background-position: 50px 50px
+            }
+        }
+
+        /* BACKGROUND GRID */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            background-image: linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 8s linear infinite
+        }
+
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0
+        }
+
+        .bg-orb-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 229, 255, 0.06);
+            top: 10%;
+            right: 10%;
+            animation: float 8s ease-in-out infinite
+        }
+
+        .bg-orb-2 {
+            width: 350px;
+            height: 350px;
+            background: rgba(233, 30, 140, 0.05);
+            bottom: 20%;
+            left: 5%;
+            animation: float 10s ease-in-out infinite 2s
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:1024px) {
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .cert-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media(max-width:768px) {
+
+            .cursor-dot,
+            .cursor-ring {
+                display: none
+            }
+
+            body {
+                cursor: auto
+            }
+
+            .hamburger {
+                display: flex
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                flex-direction: column;
+                background: rgba(5, 13, 26, 0.97);
+                backdrop-filter: blur(20px);
+                padding: 100px 40px 40px;
+                transition: right .4s;
+                gap: 20px
+            }
+
+            .nav-links.open {
+                right: 0
+            }
+
+            .nav-cv {
+                display: none
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 40px
+            }
+
+            .hero-socials,
+            .hero-buttons {
+                justify-content: center
+            }
+
+            .profile-container {
+                width: 240px;
+                height: 240px
+            }
+
+            .about-grid,
+            .contact-grid,
+            .edu-grid {
+                grid-template-columns: 1fr
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .cert-grid {
+                grid-template-columns: 1fr
+            }
+
+            .about-info-grid {
+                grid-template-columns: 1fr
+            }
+
+            .stats-bar {
+                flex-wrap: wrap;
+                gap: 20px
+            }
+
+            .stat-item:not(:last-child)::after {
+                display: none
+            }
+
+            .hero-tagline {
+                margin-left: auto;
+                margin-right: auto
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<canvas id="particles"></canvas>
-<div class="bg-grid"></div>
-<div class="bg-orb bg-orb-1"></div>
-<div class="bg-orb bg-orb-2"></div>
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
+    <canvas id="particles"></canvas>
+    <div class="bg-grid"></div>
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-<a href="#home" class="nav-logo">A·M</a>
-<ul class="nav-links" id="navLinks">
-<li><a href="#home" class="active">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#certifications">Certifications</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf" class="nav-cv"><i class="fas fa-download"></i> Download CV</a>
-<div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-</nav>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="nav-logo">A·M</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf" class="nav-cv"><i class="fas fa-download"></i>
+            Download CV</a>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </nav>
 
-<!-- HERO -->
-<section class="hero" id="home">
-<div class="hero-content">
-<div class="hero-text">
-<p class="hero-greeting">Hello, I'm</p>
-<h1 class="hero-name">Animesh <span class="cyan">Mishra</span></h1>
-<div class="hero-typing"><span id="typingText"></span><span class="cursor-blink">|</span></div>
-<p class="hero-tagline">I've stood at an HPLC machine and coded a patient diagnosis. Most MBA candidates bring one lens. I bring two.</p>
-<div class="hero-socials">
-<a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-<a href="mailto:mishra.animesh1324@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-<a href="tel:+918989468728" aria-label="Phone"><i class="fas fa-phone"></i></a>
-<a href="#contact" aria-label="Contact"><i class="fas fa-paper-plane"></i></a>
-</div>
-<div class="hero-buttons">
-<a href="#contact" class="btn-primary">Hire Me</a>
-<a href="#about" class="btn-secondary">About Me</a>
-</div>
-</div>
-<div class="hero-image">
-<div class="profile-container">
-<div class="profile-glow"></div>
-<div class="profile-ring"><div class="profile-ring-inner"></div></div>
-<img src="PIC.jpg" alt="Animesh Mishra" class="profile-img">
-<div class="pulse-ring"></div>
-<div class="pulse-ring"></div>
-</div>
-</div>
-</div>
-<div class="stats-bar reveal">
-<div class="stat-item"><div class="stat-number" data-target="2">0</div><div class="stat-label">Years Experience</div></div>
-<div class="stat-item"><div class="stat-number" data-target="6">0</div><div class="stat-label">Projects Completed</div></div>
-<div class="stat-item"><div class="stat-number" data-target="500">0</div><div class="stat-label">ICD Codes Mastered</div></div>
-<div class="stat-item"><div class="stat-number" data-target="4">0</div><div class="stat-label">Internships Done</div></div>
-</div>
-</section>
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Animesh <span class="cyan">Mishra</span></h1>
+                <div class="hero-typing"><span id="typingText"></span><span class="cursor-blink">|</span></div>
+                <p class="hero-tagline">I've stood at an HPLC machine and coded a patient diagnosis. Most MBA candidates
+                    bring one lens. I bring two.</p>
+                <div class="hero-socials">
+                    <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:mishra.animesh1324@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+918989468728" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                    <a href="#contact" aria-label="Contact"><i class="fas fa-paper-plane"></i></a>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Hire Me</a>
+                    <a href="#about" class="btn-secondary">About Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <div class="profile-glow"></div>
+                    <div class="profile-ring">
+                        <div class="profile-ring-inner"></div>
+                    </div>
+                    <img src="PIC.jpg" alt="Animesh Mishra" class="profile-img">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring"></div>
+                </div>
+            </div>
+        </div>
+        <div class="stats-bar reveal">
+            <div class="stat-item">
+                <div class="stat-number" data-target="2">0</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="6">0</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-label">ICD Codes Mastered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-label">Internships Done</div>
+            </div>
+        </div>
+    </section>
 
-<!-- ABOUT -->
-<section id="about">
-<div class="section-header reveal"><p class="section-label">Who I Am</p><h2 class="section-title">About <span>Me</span></h2><div class="section-line"></div></div>
-<div class="about-grid">
-<div class="about-card reveal">
-<div class="about-info-grid">
-<div class="about-info-item"><i class="fas fa-user"></i><span>Animesh Mishra</span></div>
-<div class="about-info-item"><i class="fas fa-graduation-cap"></i><span>MBA Pharma Mgmt</span></div>
-<div class="about-info-item"><i class="fas fa-map-marker-alt"></i><span>Rewa, MP / Jaipur, RJ</span></div>
-<div class="about-info-item"><i class="fas fa-university"></i><span>IIHMR University</span></div>
-<div class="about-info-item"><i class="fas fa-envelope"></i><span>mishra.animesh1324@gmail.com</span></div>
-<div class="about-info-item"><i class="fas fa-phone"></i><span>+91 8989468728</span></div>
-</div>
-<div class="about-tags">
-<span>Health Economics</span><span>Market Access</span><span>Product Management</span><span>Medical Coding</span><span>QC Analysis</span><span>GMP Compliance</span><span>Brand Strategy</span><span>AI Tools</span>
-</div>
-</div>
-<div class="about-text reveal">
-<p>I started in the lab at Unidrug Innovative Pharma Technologies, running HPLC, GC, and LC systems on live batches, working with manufacturing teams on GMP compliance, and learning firsthand that a failed QC process is a patient safety issue — not just a paperwork problem.</p>
-<p>Then I pivoted — not away from pharma, but deeper into it. I completed an ICD-10-CM certification backed by IIT Hyderabad, where I learned how clinical data flows through healthcare systems and how accurate documentation shapes revenue cycles, insurance reimbursement, and ultimately the commercial decisions pharma companies make.</p>
-<p>That intersection — lab science, clinical data, and business strategy — is what I'm building a career around. I'm now pursuing my MBA in Pharmaceutical Management at IIHMR University (2025-27), developing frameworks for GTM Strategy, Market Access, KOL Engagement, and Lifecycle Management.</p>
-<div class="about-quote">Molecule to Market — bridging laboratory science with commercial strategy. I understand the molecule and the market. Not as a metaphor. Literally.</div>
-</div>
-</div>
-</section>
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="section-header reveal">
+            <p class="section-label">Who I Am</p>
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-card reveal">
+                <div class="about-info-grid">
+                    <div class="about-info-item"><i class="fas fa-user"></i><span>Animesh Mishra</span></div>
+                    <div class="about-info-item"><i class="fas fa-graduation-cap"></i><span>MBA Pharma Mgmt</span></div>
+                    <div class="about-info-item"><i class="fas fa-map-marker-alt"></i><span>Rewa, MP / Jaipur, RJ</span>
+                    </div>
+                    <div class="about-info-item"><i class="fas fa-university"></i><span>IIHMR University</span></div>
+                    <div class="about-info-item"><i
+                            class="fas fa-envelope"></i><span>mishra.animesh1324@gmail.com</span></div>
+                    <div class="about-info-item"><i class="fas fa-phone"></i><span>+91 8989468728</span></div>
+                </div>
+                <div class="about-tags">
+                    <span>Health Economics</span><span>Market Access</span><span>Product Management</span><span>Medical
+                        Coding</span><span>QC Analysis</span><span>GMP Compliance</span><span>Brand
+                        Strategy</span><span>AI Tools</span>
+                </div>
+            </div>
+            <div class="about-text reveal">
+                <p>I started in the lab at Unidrug Innovative Pharma Technologies, running HPLC, GC, and LC systems on
+                    live batches, working with manufacturing teams on GMP compliance, and learning firsthand that a
+                    failed QC process is a patient safety issue — not just a paperwork problem.</p>
+                <p>Then I pivoted — not away from pharma, but deeper into it. I completed an ICD-10-CM certification
+                    backed by IIT Hyderabad, where I learned how clinical data flows through healthcare systems and how
+                    accurate documentation shapes revenue cycles, insurance reimbursement, and ultimately the commercial
+                    decisions pharma companies make.</p>
+                <p>That intersection — lab science, clinical data, and business strategy — is what I'm building a career
+                    around. I'm now pursuing my MBA in Pharmaceutical Management at IIHMR University (2025-27),
+                    developing frameworks for GTM Strategy, Market Access, KOL Engagement, and Lifecycle Management.</p>
+                <div class="about-quote">Molecule to Market — bridging laboratory science with commercial strategy. I
+                    understand the molecule and the market. Not as a metaphor. Literally.</div>
+            </div>
+        </div>
+    </section>
 
-<!-- SKILLS -->
-<section id="skills">
-<div class="section-header reveal"><p class="section-label">My Expertise</p><h2 class="section-title">Skills & <span>Competencies</span></h2><div class="section-line"></div></div>
-<div class="skills-grid">
-<div class="skill-card reveal">
-<div class="skill-card-icon">🧬</div>
-<h3>Pharma & Clinical</h3>
-<div class="skill-item"><i class="fas fa-circle"></i><span>ICD-10-CM Coding (500+ codes)</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="95%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>GMP & CAPA Compliance</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="90%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>HPLC / GC / LC Operations</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="85%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>RCPA Analysis</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="80%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>Pharmacovigilance</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="75%"></div></div></div>
-</div>
-<div class="skill-card reveal">
-<div class="skill-card-icon">📊</div>
-<h3>Business & Strategy</h3>
-<div class="skill-item"><i class="fas fa-circle"></i><span>Health Economics</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="90%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>Market Access</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="88%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>IQVIA Market Analytics</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="82%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>SWOT / PESTEL Frameworks</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="85%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>Financial Modelling (NPV, WACC)</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="78%"></div></div></div>
-</div>
-<div class="skill-card reveal">
-<div class="skill-card-icon">🤖</div>
-<h3>Tech & Tools</h3>
-<div class="skill-item"><i class="fas fa-circle"></i><span>Microsoft Office Suite</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="92%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>Claude AI (Advanced)</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="88%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>Canva</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="85%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>Power BI (Basics)</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="60%"></div></div></div>
-<div class="skill-item"><i class="fas fa-circle"></i><span>Firebase / Vite / React</span><div class="skill-bar-wrap"><div class="skill-bar" data-width="55%"></div></div></div>
-</div>
-</div>
-</section>
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="section-header reveal">
+            <p class="section-label">My Expertise</p>
+            <h2 class="section-title">Skills & <span>Competencies</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card reveal">
+                <div class="skill-card-icon">🧬</div>
+                <h3>Pharma & Clinical</h3>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>ICD-10-CM Coding (500+ codes)</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>GMP & CAPA Compliance</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>HPLC / GC / LC Operations</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>RCPA Analysis</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>Pharmacovigilance</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="75%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-card-icon">📊</div>
+                <h3>Business & Strategy</h3>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>Health Economics</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>Market Access</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="88%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>IQVIA Market Analytics</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="82%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>SWOT / PESTEL Frameworks</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>Financial Modelling (NPV, WACC)</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="78%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-card-icon">🤖</div>
+                <h3>Tech & Tools</h3>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>Microsoft Office Suite</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="92%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>Claude AI (Advanced)</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="88%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>Canva</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>Power BI (Basics)</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="60%"></div>
+                    </div>
+                </div>
+                <div class="skill-item"><i class="fas fa-circle"></i><span>Firebase / Vite / React</span>
+                    <div class="skill-bar-wrap">
+                        <div class="skill-bar" data-width="55%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-<div class="section-header reveal"><p class="section-label">My Journey</p><h2 class="section-title">Professional <span>Experience</span></h2><div class="section-line"></div></div>
-<div class="timeline">
-<div class="timeline-item reveal">
-<div class="timeline-dot"></div>
-<div class="timeline-card">
-<span class="timeline-date">May 2026 – Present</span>
-<h3 class="timeline-role">Marketing Intern</h3>
-<p class="timeline-company">Micro Labs Limited — Jaipur</p>
-<ul class="timeline-bullets">
-<li>Assisting in pharmaceutical marketing strategies and brand positioning</li>
-<li>Conducting RCPA (Retail Chemist Prescription Audit) to analyze prescription trends</li>
-<li>Supporting field force activities and doctor engagement initiatives</li>
-<li>Performing market research and competitor analysis to identify growth opportunities</li>
-<li>Gaining hands-on exposure to product lifecycle management and sales planning</li>
-</ul>
-</div>
-</div>
-<div class="timeline-item reveal">
-<div class="timeline-dot pink"></div>
-<div class="timeline-card">
-<span class="timeline-date">January 2024 – March 2024</span>
-<h3 class="timeline-role">Medical Coding</h3>
-<p class="timeline-company">ECell IIT Hyderabad — Bhopal</p>
-<ul class="timeline-bullets">
-<li>Achieved operational proficiency across 500+ ICD-10-CM diagnostic codes — translating clinical language into structured data systems directly relevant to pharmacovigilance and medical affairs workflows</li>
-<li>Deepened understanding of international drug nomenclature and therapeutic classifications, enabling fluency in translating clinical language into structured healthcare data systems</li>
-<li>Completed IIT Hyderabad-certified clinical data programme, gaining structured exposure to how coding accuracy shapes hospital revenue cycles and insurance reimbursement</li>
-</ul>
-</div>
-</div>
-<div class="timeline-item reveal">
-<div class="timeline-dot gold"></div>
-<div class="timeline-card">
-<span class="timeline-date">July 2023 – August 2023</span>
-<h3 class="timeline-role">QC Analyst Intern</h3>
-<p class="timeline-company">Unidrug Innovative Pharma Technologies Ltd. — Indore</p>
-<ul class="timeline-bullets">
-<li>Operated HPLC, GC, and LC instruments on live pharmaceutical batches — applying GMP protocols that directly supported regulatory release decisions and compliance sign-off</li>
-<li>Independently processed 20+ batch samples per cycle, contributing to zero-delay batch releases during a peak production period</li>
-<li>Collaborated with manufacturing to redesign desiccation protocols, improving batch consistency and building hands-on exposure to CAPA-driven process improvement frameworks</li>
-</ul>
-</div>
-</div>
-<div class="timeline-item reveal">
-<div class="timeline-dot white"></div>
-<div class="timeline-card">
-<span class="timeline-date">June 2023 – July 2023</span>
-<h3 class="timeline-role">Pharma Industry Trainee</h3>
-<p class="timeline-company">SAGE University / Indian Capsule Ltd. — Bhopal</p>
-<ul class="timeline-bullets">
-<li>Completed intensive pharma industry-academia training at SAGE University, developing applied knowledge of pharmaceutical manufacturing systems, dosage form processing, and production workflows</li>
-<li>Conducted live plant visits to Indian Capsule Ltd. and an Ayurvedic nutraceutical facility — gaining end-to-end visibility of pharma supply chains from raw material intake to finished dosage form dispatch</li>
-<li>Bridged academic pharmacology with operational realities — building foundational understanding of pharmaceutical commercialisation, from production economics to market-entry constraints</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <div class="section-header reveal">
+            <p class="section-label">My Journey</p>
+            <h2 class="section-title">Professional <span>Experience</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <span class="timeline-date">May 2026 – Present</span>
+                    <h3 class="timeline-role">Marketing Intern</h3>
+                    <p class="timeline-company">Micro Labs Limited — Jaipur</p>
+                    <ul class="timeline-bullets">
+                        <li>Assisting in pharmaceutical marketing strategies and brand positioning</li>
+                        <li>Conducting RCPA (Retail Chemist Prescription Audit) to analyze prescription trends</li>
+                        <li>Supporting field force activities and doctor engagement initiatives</li>
+                        <li>Performing market research and competitor analysis to identify growth opportunities</li>
+                        <li>Gaining hands-on exposure to product lifecycle management and sales planning</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot pink"></div>
+                <div class="timeline-card">
+                    <span class="timeline-date">January 2024 – March 2024</span>
+                    <h3 class="timeline-role">Medical Coding</h3>
+                    <p class="timeline-company">ECell IIT Hyderabad — Bhopal</p>
+                    <ul class="timeline-bullets">
+                        <li>Achieved operational proficiency across 500+ ICD-10-CM diagnostic codes — translating
+                            clinical language into structured data systems directly relevant to pharmacovigilance and
+                            medical affairs workflows</li>
+                        <li>Deepened understanding of international drug nomenclature and therapeutic classifications,
+                            enabling fluency in translating clinical language into structured healthcare data systems
+                        </li>
+                        <li>Completed IIT Hyderabad-certified clinical data programme, gaining structured exposure to
+                            how coding accuracy shapes hospital revenue cycles and insurance reimbursement</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot gold"></div>
+                <div class="timeline-card">
+                    <span class="timeline-date">July 2023 – August 2023</span>
+                    <h3 class="timeline-role">QC Analyst Intern</h3>
+                    <p class="timeline-company">Unidrug Innovative Pharma Technologies Ltd. — Indore</p>
+                    <ul class="timeline-bullets">
+                        <li>Operated HPLC, GC, and LC instruments on live pharmaceutical batches — applying GMP
+                            protocols that directly supported regulatory release decisions and compliance sign-off</li>
+                        <li>Independently processed 20+ batch samples per cycle, contributing to zero-delay batch
+                            releases during a peak production period</li>
+                        <li>Collaborated with manufacturing to redesign desiccation protocols, improving batch
+                            consistency and building hands-on exposure to CAPA-driven process improvement frameworks
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-dot white"></div>
+                <div class="timeline-card">
+                    <span class="timeline-date">June 2023 – July 2023</span>
+                    <h3 class="timeline-role">Pharma Industry Trainee</h3>
+                    <p class="timeline-company">SAGE University / Indian Capsule Ltd. — Bhopal</p>
+                    <ul class="timeline-bullets">
+                        <li>Completed intensive pharma industry-academia training at SAGE University, developing applied
+                            knowledge of pharmaceutical manufacturing systems, dosage form processing, and production
+                            workflows</li>
+                        <li>Conducted live plant visits to Indian Capsule Ltd. and an Ayurvedic nutraceutical facility —
+                            gaining end-to-end visibility of pharma supply chains from raw material intake to finished
+                            dosage form dispatch</li>
+                        <li>Bridged academic pharmacology with operational realities — building foundational
+                            understanding of pharmaceutical commercialisation, from production economics to market-entry
+                            constraints</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- EDUCATION -->
-<section id="education">
-<div class="section-header reveal"><p class="section-label">Academic Background</p><h2 class="section-title">My <span>Education</span></h2><div class="section-line"></div></div>
-<div class="edu-grid">
-<div class="edu-card current reveal"><div class="edu-level">Postgraduate</div><h3 class="edu-degree">MBA Pharmaceutical Management</h3><p class="edu-inst">IIHMR University, Jaipur</p><p class="edu-year">Aug 2025 – 2027</p><p class="edu-result">Pursuing</p></div>
-<div class="edu-card reveal"><div class="edu-level">Undergraduate</div><h3 class="edu-degree">B. Pharm (Honours)</h3><p class="edu-inst">RGPV / NRI Institute of Pharmacy, Bhopal</p><p class="edu-year">Jun 2020 – Jul 2024</p><p class="edu-result">78%</p></div>
-<div class="edu-card reveal"><div class="edu-level">Class XII</div><h3 class="edu-degree">CBSE</h3><p class="edu-inst">Sacred Heart Convent School</p><p class="edu-year">2019</p><p class="edu-result">64%</p></div>
-<div class="edu-card reveal"><div class="edu-level">Class X</div><h3 class="edu-degree">CBSE</h3><p class="edu-inst">Sacred Heart Convent School</p><p class="edu-year">2017</p><p class="edu-result">68.4%</p></div>
-</div>
-</section>
+    <!-- EDUCATION -->
+    <section id="education">
+        <div class="section-header reveal">
+            <p class="section-label">Academic Background</p>
+            <h2 class="section-title">My <span>Education</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="edu-grid">
+            <div class="edu-card current reveal">
+                <div class="edu-level">Postgraduate</div>
+                <h3 class="edu-degree">MBA Pharmaceutical Management</h3>
+                <p class="edu-inst">IIHMR University, Jaipur</p>
+                <p class="edu-year">Aug 2025 – 2027</p>
+                <p class="edu-result">Pursuing</p>
+            </div>
+            <div class="edu-card reveal">
+                <div class="edu-level">Undergraduate</div>
+                <h3 class="edu-degree">B. Pharm (Honours)</h3>
+                <p class="edu-inst">RGPV / NRI Institute of Pharmacy, Bhopal</p>
+                <p class="edu-year">Jun 2020 – Jul 2024</p>
+                <p class="edu-result">78%</p>
+            </div>
+            <div class="edu-card reveal">
+                <div class="edu-level">Class XII</div>
+                <h3 class="edu-degree">CBSE</h3>
+                <p class="edu-inst">Sacred Heart Convent School</p>
+                <p class="edu-year">2019</p>
+                <p class="edu-result">64%</p>
+            </div>
+            <div class="edu-card reveal">
+                <div class="edu-level">Class X</div>
+                <h3 class="edu-degree">CBSE</h3>
+                <p class="edu-inst">Sacred Heart Convent School</p>
+                <p class="edu-year">2017</p>
+                <p class="edu-result">68.4%</p>
+            </div>
+        </div>
+    </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-<div class="section-header reveal"><p class="section-label">My Work</p><h2 class="section-title">Featured <span>Projects</span></h2><div class="section-line"></div></div>
-<div class="projects-grid">
-<div class="project-card reveal"><div class="project-icon">💊</div><h3>ZENOBAT Brand Plan</h3><p>Comprehensive brand strategy for Cenobamate (La Renon Healthcare). Market sizing, KOL mapping, positioning, promotional planning for anti-epileptic market.</p><div class="project-tags"><span>Brand Strategy</span><span>Neurology</span><span>IQVIA</span></div><a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a></div>
-<div class="project-card reveal"><div class="project-icon">📈</div><h3>Semaglutide Patent Cliff Analysis</h3><p>Executive-level GLP-1 patent expiry impact analysis using IQVIA Market Reflection data. Presented as academic brief and LinkedIn carousel.</p><div class="project-tags"><span>Patent Strategy</span><span>GLP-1</span><span>IQVIA</span></div><a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a></div>
-<div class="project-card reveal"><div class="project-icon">📱</div><h3>PharmaIntel India App</h3><p>Multilingual Indian pharma intelligence app — 13 regional languages, offline-first, 20-table SQLite schema built on React/Firebase/Vite.</p><div class="project-tags"><span>React</span><span>Firebase</span><span>PWA</span></div><a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a></div>
-<div class="project-card reveal"><div class="project-icon">🧠</div><h3>AMR-Genius Intelligence Hub</h3><p>AI-powered AMR surveillance platform with business model canvas, monetisation plan, and data architecture built for Research Methods assignment.</p><div class="project-tags"><span>AI/ML</span><span>AMR</span><span>SaaS</span></div><a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a></div>
-<div class="project-card reveal"><div class="project-icon">🔬</div><h3>Ethosomal Curcumin Narrative Review</h3><p>Publication-ready narrative review on ethosomal vs. liposomal curcumin drug delivery systems — progressed from peer review through citation auditing.</p><div class="project-tags"><span>Scientific Writing</span><span>Drug Delivery</span><span>Research</span></div><a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a></div>
-<div class="project-card reveal"><div class="project-icon">🤖</div><h3>PharmAdhere-AI</h3><p>Predictive AI framework for pharmaceutical patient adherence modelling, integrating ML with patient behaviour analytics.</p><div class="project-tags"><span>Predictive AI</span><span>Patient Adherence</span><span>ML</span></div><a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a></div>
-</div>
-</section>
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-header reveal">
+            <p class="section-label">My Work</p>
+            <h2 class="section-title">Featured <span>Projects</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card reveal">
+                <div class="project-icon">💊</div>
+                <h3>ZENOBAT Brand Plan</h3>
+                <p>Comprehensive brand strategy for Cenobamate (La Renon Healthcare). Market sizing, KOL mapping,
+                    positioning, promotional planning for anti-epileptic market.</p>
+                <div class="project-tags"><span>Brand Strategy</span><span>Neurology</span><span>IQVIA</span></div><a
+                    href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-icon">📈</div>
+                <h3>Semaglutide Patent Cliff Analysis</h3>
+                <p>Executive-level GLP-1 patent expiry impact analysis using IQVIA Market Reflection data. Presented as
+                    academic brief and LinkedIn carousel.</p>
+                <div class="project-tags"><span>Patent Strategy</span><span>GLP-1</span><span>IQVIA</span></div><a
+                    href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-icon">📱</div>
+                <h3>PharmaIntel India App</h3>
+                <p>Multilingual Indian pharma intelligence app — 13 regional languages, offline-first, 20-table SQLite
+                    schema built on React/Firebase/Vite.</p>
+                <div class="project-tags"><span>React</span><span>Firebase</span><span>PWA</span></div><a href="#"
+                    class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-icon">🧠</div>
+                <h3>AMR-Genius Intelligence Hub</h3>
+                <p>AI-powered AMR surveillance platform with business model canvas, monetisation plan, and data
+                    architecture built for Research Methods assignment.</p>
+                <div class="project-tags"><span>AI/ML</span><span>AMR</span><span>SaaS</span></div><a href="#"
+                    class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-icon">🔬</div>
+                <h3>Ethosomal Curcumin Narrative Review</h3>
+                <p>Publication-ready narrative review on ethosomal vs. liposomal curcumin drug delivery systems —
+                    progressed from peer review through citation auditing.</p>
+                <div class="project-tags"><span>Scientific Writing</span><span>Drug Delivery</span><span>Research</span>
+                </div><a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-icon">🤖</div>
+                <h3>PharmAdhere-AI</h3>
+                <p>Predictive AI framework for pharmaceutical patient adherence modelling, integrating ML with patient
+                    behaviour analytics.</p>
+                <div class="project-tags"><span>Predictive AI</span><span>Patient Adherence</span><span>ML</span></div>
+                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
 
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-<div class="section-header reveal"><p class="section-label">Credentials</p><h2 class="section-title">Certifications & <span>Achievements</span></h2><div class="section-line"></div></div>
-<div class="cert-grid">
-<div class="cert-card reveal"><i class="fas fa-certificate"></i><h4>Product Management: An Introduction</h4><p>LinkedIn / Coursera</p></div>
-<div class="cert-card reveal"><i class="fas fa-code"></i><h4>ICD-10-CM Medical Coding</h4><p>IIT Hyderabad / E-Cell (2024)</p></div>
-<div class="cert-card reveal"><i class="fas fa-flask"></i><h4>GMP Compliance & Pharma QC</h4><p>Unidrug (2023)</p></div>
-<div class="cert-card reveal"><i class="fas fa-industry"></i><h4>Pharma Industry-Academia Training</h4><p>SAGE University, Bhopal (2023)</p></div>
-<div class="cert-card reveal"><i class="fas fa-globe"></i><h4>Pradanya Global Health Mgmt Conference</h4><p>2025 — Participated</p></div>
-<div class="cert-card reveal"><i class="fas fa-table"></i><h4>Advanced Excel Workshop</h4><p>IIHMR University, Jaipur (2026)</p></div>
-<div class="cert-card ongoing reveal"><i class="fab fa-ibm"></i><h4>AI Product Manager</h4><p>IBM — Ongoing</p></div>
-<div class="cert-card ongoing reveal"><i class="fas fa-comments"></i><h4>Business Communication</h4><p>SWAYAM — Ongoing</p></div>
-</div>
-</section>
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+        <div class="section-header reveal">
+            <p class="section-label">Credentials</p>
+            <h2 class="section-title">Certifications & <span>Achievements</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="cert-grid">
+            <div class="cert-card reveal"><i class="fas fa-certificate"></i>
+                <h4>Product Management: An Introduction</h4>
+                <p>LinkedIn / Coursera</p>
+            </div>
+            <div class="cert-card reveal"><i class="fas fa-code"></i>
+                <h4>ICD-10-CM Medical Coding</h4>
+                <p>IIT Hyderabad / E-Cell (2024)</p>
+            </div>
+            <div class="cert-card reveal"><i class="fas fa-flask"></i>
+                <h4>GMP Compliance & Pharma QC</h4>
+                <p>Unidrug (2023)</p>
+            </div>
+            <div class="cert-card reveal"><i class="fas fa-industry"></i>
+                <h4>Pharma Industry-Academia Training</h4>
+                <p>SAGE University, Bhopal (2023)</p>
+            </div>
+            <div class="cert-card reveal"><i class="fas fa-globe"></i>
+                <h4>Pradanya Global Health Mgmt Conference</h4>
+                <p>2025 — Participated</p>
+            </div>
+            <div class="cert-card reveal"><i class="fas fa-table"></i>
+                <h4>Advanced Excel Workshop</h4>
+                <p>IIHMR University, Jaipur (2026)</p>
+            </div>
+            <div class="cert-card ongoing reveal"><i class="fab fa-ibm"></i>
+                <h4>AI Product Manager</h4>
+                <p>IBM — Ongoing</p>
+            </div>
+            <div class="cert-card ongoing reveal"><i class="fas fa-comments"></i>
+                <h4>Business Communication</h4>
+                <p>SWAYAM — Ongoing</p>
+            </div>
+        </div>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact">
-<div class="section-header reveal"><p class="section-label">Get in Touch</p><h2 class="section-title">Contact <span>Me</span></h2><div class="section-line"></div></div>
-<div class="contact-grid">
-<div class="contact-info reveal">
-<h3 style="font-family:var(--font-head);font-size:1.4rem;margin-bottom:10px">Let's Connect</h3>
-<p style="color:var(--text-secondary);margin-bottom:20px;font-size:.95rem">Open to PMT, Consulting, and Medical Affairs opportunities.</p>
-<div class="contact-item"><i class="fab fa-linkedin-in"></i><a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener">LinkedIn Profile</a></div>
-<div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:mishra.animesh1324@gmail.com">mishra.animesh1324@gmail.com</a></div>
-<div class="contact-item"><i class="fas fa-phone"></i><span>+91 8989468728</span></div>
-<div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Rewa, MP / Jaipur, Rajasthan</span></div>
-</div>
-<form class="contact-form reveal" id="contactForm">
-<input type="text" placeholder="Your Name" required id="contactName">
-<input type="email" placeholder="Your Email" required id="contactEmail">
-<input type="text" placeholder="Subject" id="contactSubject">
-<textarea placeholder="Your Message" required id="contactMessage"></textarea>
-<button type="submit" class="btn-submit">Send Message <i class="fas fa-paper-plane"></i></button>
-</form>
-</div>
-</section>
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-header reveal">
+            <p class="section-label">Get in Touch</p>
+            <h2 class="section-title">Contact <span>Me</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <h3 style="font-family:var(--font-head);font-size:1.4rem;margin-bottom:10px">Let's Connect</h3>
+                <p style="color:var(--text-secondary);margin-bottom:20px;font-size:.95rem">Open to PMT, Consulting, and
+                    Medical Affairs opportunities.</p>
+                <div class="contact-item"><i class="fab fa-linkedin-in"></i><a
+                        href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank"
+                        rel="noopener">LinkedIn Profile</a></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><a
+                        href="mailto:mishra.animesh1324@gmail.com">mishra.animesh1324@gmail.com</a></div>
+                <div class="contact-item"><i class="fas fa-phone"></i><span>+91 8989468728</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Rewa, MP / Jaipur, Rajasthan</span>
+                </div>
+            </div>
+            <form class="contact-form reveal" id="contactForm">
+                <input type="text" placeholder="Your Name" required id="contactName">
+                <input type="email" placeholder="Your Email" required id="contactEmail">
+                <input type="text" placeholder="Subject" id="contactSubject">
+                <textarea placeholder="Your Message" required id="contactMessage"></textarea>
+                <button type="submit" class="btn-submit">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-<p>Designed and Built by <span class="glow">Animesh Mishra</span> | Molecule to Market</p>
-<p>MBA Pharmaceutical Management | IIHMR University | 2026</p>
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>Designed and Built by <span class="glow">Animesh Mishra</span> | Molecule to Market</p>
+        <p>MBA Pharmaceutical Management | IIHMR University | 2026</p>
+    </footer>
 
-<script>
-// ===== PARTICLE ENGINE =====
-const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
-let particles = [];
-let mouseX = 0, mouseY = 0;
-function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-class Particle {
-  constructor() { this.reset(); }
-  reset() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 2 + 0.5;
-    this.speedX = (Math.random() - 0.5) * 0.5;
-    this.speedY = (Math.random() - 0.5) * 0.5;
-    this.opacity = Math.random() * 0.5 + 0.2;
-    this.color = Math.random() > 0.3 ? '0,229,255' : '233,30,140';
-    this.depth = Math.random() * 3 + 1;
-  }
-  update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-    const dx = mouseX - this.x, dy = mouseY - this.y;
-    const dist = Math.sqrt(dx*dx + dy*dy);
-    if (dist < 150) { this.x -= dx * 0.01 / this.depth; this.y -= dy * 0.01 / this.depth; }
-    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
-  }
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size / this.depth, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${this.color},${this.opacity / this.depth})`;
-    ctx.shadowBlur = 8; ctx.shadowColor = `rgba(${this.color},0.5)`;
-    ctx.fill();
-  }
-}
-for (let i = 0; i < 160; i++) particles.push(new Particle());
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => { p.update(); p.draw(); });
-  ctx.shadowBlur = 0;
-  // draw connections
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
-      const d = Math.sqrt(dx*dx + dy*dy);
-      if (d < 100) {
-        ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = `rgba(0,229,255,${0.08 * (1 - d/100)})`;
-        ctx.lineWidth = 0.5; ctx.stroke();
-      }
-    }
-  }
-  requestAnimationFrame(animateParticles);
-}
-animateParticles();
+    <script>
+        // ===== PARTICLE ENGINE =====
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = 0, mouseY = 0;
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.color = Math.random() > 0.3 ? '0,229,255' : '233,30,140';
+                this.depth = Math.random() * 3 + 1;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                const dx = mouseX - this.x, dy = mouseY - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) { this.x -= dx * 0.01 / this.depth; this.y -= dy * 0.01 / this.depth; }
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size / this.depth, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${this.color},${this.opacity / this.depth})`;
+                ctx.shadowBlur = 8; ctx.shadowColor = `rgba(${this.color},0.5)`;
+                ctx.fill();
+            }
+        }
+        for (let i = 0; i < 160; i++) particles.push(new Particle());
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            ctx.shadowBlur = 0;
+            // draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+                    const d = Math.sqrt(dx * dx + dy * dy);
+                    if (d < 100) {
+                        ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(0,229,255,${0.08 * (1 - d / 100)})`;
+                        ctx.lineWidth = 0.5; ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
 
-// ===== MAGNETIC CURSOR =====
-const dot = document.getElementById('cursorDot');
-const ring = document.getElementById('cursorRing');
-let ringX = 0, ringY = 0;
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX; mouseY = e.clientY;
-  dot.style.left = e.clientX - 4 + 'px'; dot.style.top = e.clientY - 4 + 'px';
-});
-function animateCursor() {
-  ringX += (mouseX - ringX) * 0.15; ringY += (mouseY - ringY) * 0.15;
-  ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-const hoverEls = document.querySelectorAll('a, button, .project-card, .skill-card, .cert-card, .timeline-card, .edu-card, .contact-item');
-hoverEls.forEach(el => {
-  el.addEventListener('mouseenter', () => ring.classList.add('hover'));
-  el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
-});
+        // ===== MAGNETIC CURSOR =====
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let ringX = 0, ringY = 0;
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            dot.style.left = e.clientX - 4 + 'px'; dot.style.top = e.clientY - 4 + 'px';
+        });
+        function animateCursor() {
+            ringX += (mouseX - ringX) * 0.15; ringY += (mouseY - ringY) * 0.15;
+            ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        const hoverEls = document.querySelectorAll('a, button, .project-card, .skill-card, .cert-card, .timeline-card, .edu-card, .contact-item');
+        hoverEls.forEach(el => {
+            el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+            el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+        });
 
-// ===== TYPING ANIMATION =====
-const roles = ['PMT Aspirant','Brand Strategist','Pharma Analyst','Medical Coder','AI Enthusiast','MBA @ IIHMR'];
-let roleIdx = 0, charIdx = 0, isDeleting = false;
-const typingEl = document.getElementById('typingText');
-function typeEffect() {
-  const current = roles[roleIdx];
-  typingEl.textContent = current.substring(0, charIdx);
-  if (!isDeleting) {
-    charIdx++;
-    if (charIdx > current.length) { isDeleting = true; setTimeout(typeEffect, 1800); return; }
-    setTimeout(typeEffect, 100);
-  } else {
-    charIdx--;
-    if (charIdx < 0) { isDeleting = false; roleIdx = (roleIdx + 1) % roles.length; setTimeout(typeEffect, 300); return; }
-    setTimeout(typeEffect, 60);
-  }
-}
-typeEffect();
+        // ===== TYPING ANIMATION =====
+        const roles = ['PMT Aspirant', 'Brand Strategist', 'Pharma Analyst', 'Medical Coder', 'AI Enthusiast', 'MBA @ IIHMR'];
+        let roleIdx = 0, charIdx = 0, isDeleting = false;
+        const typingEl = document.getElementById('typingText');
+        function typeEffect() {
+            const current = roles[roleIdx];
+            typingEl.textContent = current.substring(0, charIdx);
+            if (!isDeleting) {
+                charIdx++;
+                if (charIdx > current.length) { isDeleting = true; setTimeout(typeEffect, 1800); return; }
+                setTimeout(typeEffect, 100);
+            } else {
+                charIdx--;
+                if (charIdx < 0) { isDeleting = false; roleIdx = (roleIdx + 1) % roles.length; setTimeout(typeEffect, 300); return; }
+                setTimeout(typeEffect, 60);
+            }
+        }
+        typeEffect();
 
-// ===== NAVBAR SCROLL =====
-const navbar = document.getElementById('navbar');
-const navLinksItems = document.querySelectorAll('.nav-links a');
-const sections = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-  let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id'); });
-  navLinksItems.forEach(a => {
-    a.classList.remove('active');
-    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-  });
-});
+        // ===== NAVBAR SCROLL =====
+        const navbar = document.getElementById('navbar');
+        const navLinksItems = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            let current = '';
+            sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id'); });
+            navLinksItems.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+            });
+        });
 
-// ===== HAMBURGER =====
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('open');
-});
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  hamburger.classList.remove('active'); navLinks.classList.remove('open');
-}));
+        // ===== HAMBURGER =====
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            hamburger.classList.remove('active'); navLinks.classList.remove('open');
+        }));
 
-// ===== SCROLL REVEAL =====
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 100);
-      revealObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+        // ===== SCROLL REVEAL =====
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 100);
+                    revealObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-// ===== COUNTER ANIMATION =====
-let counterDone = false;
-const counterObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting && !counterDone) {
-      counterDone = true;
-      document.querySelectorAll('.stat-number').forEach(num => {
-        const target = parseInt(num.dataset.target);
-        const suffix = num.closest('.stat-item').querySelector('.stat-label').textContent.includes('ICD') ? '+' : target < 10 ? '' : '+';
-        let count = 0;
-        const step = target / 60;
-        const timer = setInterval(() => {
-          count += step;
-          if (count >= target) { count = target; clearInterval(timer); }
-          num.textContent = Math.floor(count) + suffix;
-        }, 25);
-      });
-    }
-  });
-}, { threshold: 0.3 });
-const statsBar = document.querySelector('.stats-bar');
-if (statsBar) counterObs.observe(statsBar);
+        // ===== COUNTER ANIMATION =====
+        let counterDone = false;
+        const counterObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting && !counterDone) {
+                    counterDone = true;
+                    document.querySelectorAll('.stat-number').forEach(num => {
+                        const target = parseInt(num.dataset.target);
+                        const suffix = num.closest('.stat-item').querySelector('.stat-label').textContent.includes('ICD') ? '+' : target < 10 ? '' : '+';
+                        let count = 0;
+                        const step = target / 60;
+                        const timer = setInterval(() => {
+                            count += step;
+                            if (count >= target) { count = target; clearInterval(timer); }
+                            num.textContent = Math.floor(count) + suffix;
+                        }, 25);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+        const statsBar = document.querySelector('.stats-bar');
+        if (statsBar) counterObs.observe(statsBar);
 
-// ===== SKILL BAR ANIMATION =====
-const skillObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.skill-bar').forEach(bar => {
-        setTimeout(() => { bar.style.width = bar.dataset.width; }, 300);
-      });
-      skillObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.2 });
-document.querySelectorAll('.skill-card').forEach(c => skillObs.observe(c));
+        // ===== SKILL BAR ANIMATION =====
+        const skillObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.skill-bar').forEach(bar => {
+                        setTimeout(() => { bar.style.width = bar.dataset.width; }, 300);
+                    });
+                    skillObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        document.querySelectorAll('.skill-card').forEach(c => skillObs.observe(c));
 
-// ===== 3D TILT ON CARDS =====
-document.querySelectorAll('.project-card, .skill-card, .edu-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const r = card.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width - 0.5;
-    const y = (e.clientY - r.top) / r.height - 0.5;
-    card.style.transform = `translateY(-8px) perspective(800px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg)`;
-  });
-  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-});
+        // ===== 3D TILT ON CARDS =====
+        document.querySelectorAll('.project-card, .skill-card, .edu-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const r = card.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - 0.5;
+                const y = (e.clientY - r.top) / r.height - 0.5;
+                card.style.transform = `translateY(-8px) perspective(800px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg)`;
+            });
+            card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+        });
 
-// ===== CONTACT FORM =====
-document.getElementById('contactForm').addEventListener('submit', e => {
-  e.preventDefault();
-  alert("Message sent! I'll get back to you soon.");
-  e.target.reset();
-});
+        // ===== CONTACT FORM =====
+        document.getElementById('contactForm').addEventListener('submit', e => {
+            e.preventDefault();
+            alert("Message sent! I'll get back to you soon.");
+            e.target.reset();
+        });
 
-// ===== SMOOTH SCROLL FOR NAV =====
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-</script>
+        // ===== SMOOTH SCROLL FOR NAV =====
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
+
 </html>
