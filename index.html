@@ -70,6 +70,7 @@
   </script>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -201,23 +202,29 @@
       color: inherit
     }
 
-    /* ─── CUSTOM CURSOR ─── */
-    @media (pointer: fine) {
+    /* ─── CUSTOM CURSOR (opt-in via body.custom-cursor) ─── */
+    #cursor-dot, #cursor-ring { display: none; }
 
-      body,
-      a,
-      button,
-      .proj-card,
-      .ins-card,
-      .cert-card,
-      .theme-switch,
-      .hero-social-btn,
-      .pill,
-      .m-close,
-      .m-action,
-      .sk-tag,
-      .pchip {
+    @media (pointer: fine) {
+      body.custom-cursor,
+      body.custom-cursor a,
+      body.custom-cursor button,
+      body.custom-cursor .proj-card,
+      body.custom-cursor .ins-card,
+      body.custom-cursor .cert-card,
+      body.custom-cursor .theme-switch,
+      body.custom-cursor .hero-social-btn,
+      body.custom-cursor .pill,
+      body.custom-cursor .m-close,
+      body.custom-cursor .m-action,
+      body.custom-cursor .sk-tag,
+      body.custom-cursor .pchip {
         cursor: none !important;
+      }
+
+      body.custom-cursor #cursor-dot,
+      body.custom-cursor #cursor-ring {
+        display: block;
       }
 
       #cursor-dot {
@@ -248,17 +255,25 @@
         transition: transform 0.15s ease-out, width 0.3s, height 0.3s, background 0.3s;
       }
 
-      body.hovering #cursor-dot {
+      body.custom-cursor.hovering #cursor-dot {
         width: 0;
         height: 0;
       }
 
-      body.hovering #cursor-ring {
+      body.custom-cursor.hovering #cursor-ring {
         width: 54px;
         height: 54px;
         background: rgba(184, 150, 46, 0.15);
         border-color: rgba(184, 150, 46, 0.5);
       }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body.custom-cursor { /* user preference wins — disable */
+        cursor: auto !important;
+      }
+      body.custom-cursor #cursor-dot,
+      body.custom-cursor #cursor-ring { display: none; }
     }
 
     /* ─── BACKGROUND EFFECTS ─── */
@@ -1704,6 +1719,19 @@
       font-size: .7rem;
       color: var(--c-mid);
       font-weight: 500
+    }
+
+    .pchip.outcome {
+      background: rgba(184, 150, 46, .1);
+      color: var(--c-navy);
+      border: 1px solid rgba(184, 150, 46, .3);
+      font-weight: 700
+    }
+
+    [data-theme="dark"] .pchip.outcome {
+      background: rgba(184, 150, 46, .14);
+      color: var(--c-gold-2, #d4ae45);
+      border-color: rgba(184, 150, 46, .35)
     }
 
     .proj-arrow {
@@ -3648,6 +3676,25 @@
       border-color: var(--c-navy)
     }
 
+    /* iOS Safari + many mobile browsers can't render <iframe src="*.pdf">.
+       On small screens, hide the iframe viewer and promote the fallback
+       link into a prominent button so the user can still open the PDF. */
+    @media (max-width: 768px) {
+      .m-cert-viewer {
+        display: none;
+      }
+      .cert-fallback {
+        display: flex;
+        justify-content: center;
+        margin-top: 18px;
+        padding: 14px 18px;
+        background: var(--c-navy);
+        color: #fff;
+        border-color: var(--c-navy);
+        font-size: .88rem
+      }
+    }
+
     /* ─── INS METRICS ─── */
     .ins-metrics {
       display: flex;
@@ -3943,7 +3990,7 @@
               rel="noopener noreferrer" title="Research Paper" aria-label="Research Paper"><i class="fas fa-file-alt"></i></a>
           </div>
           <div class="hero-actions">
-            <a href="#contact" class="btn-cta"><i class="fas fa-handshake"></i> Open to Opportunities</a>
+            <a href="#contact" class="btn-cta"><i class="fas fa-handshake"></i> Hire Me for PMT</a>
             <a href="Animesh_CV.pdf" class="btn-ghost" onclick="openM('cv'); return false;"><i
               class="fas fa-file"></i> Preview 1-page Resume</a>
             <a href="#projects" class="btn-ghost"><i class="fas fa-briefcase"></i> View My Work</a>
@@ -3984,18 +4031,18 @@
   <!-- SCROLLING MARQUEE -->
   <div class="marquee-wrap">
     <div class="marquee">
-      <span>PHARMA STRATEGY</span><span class="star">✦</span>
-      <span>MARKET ACCESS</span><span class="star">✦</span>
-      <span>HEALTH ECONOMICS</span><span class="star">✦</span>
-      <span>CLINICAL DATA</span><span class="star">✦</span>
-      <span>PRODUCT MANAGEMENT</span><span class="star">✦</span>
-      <span>GENERATIVE AI</span><span class="star">✦</span>
-      <span>PHARMA STRATEGY</span><span class="star">✦</span>
-      <span>MARKET ACCESS</span><span class="star">✦</span>
-      <span>HEALTH ECONOMICS</span><span class="star">✦</span>
-      <span>CLINICAL DATA</span><span class="star">✦</span>
-      <span>PRODUCT MANAGEMENT</span><span class="star">✦</span>
-      <span>GENERATIVE AI</span><span class="star">✦</span>
+      <span>Pharma Strategy</span><span class="star">✦</span>
+      <span>Market Access</span><span class="star">✦</span>
+      <span>Health Economics</span><span class="star">✦</span>
+      <span>Clinical Data</span><span class="star">✦</span>
+      <span>Product Management</span><span class="star">✦</span>
+      <span>Generative AI</span><span class="star">✦</span>
+      <span>Pharma Strategy</span><span class="star">✦</span>
+      <span>Market Access</span><span class="star">✦</span>
+      <span>Health Economics</span><span class="star">✦</span>
+      <span>Clinical Data</span><span class="star">✦</span>
+      <span>Product Management</span><span class="star">✦</span>
+      <span>Generative AI</span><span class="star">✦</span>
     </div>
   </div>
 
@@ -4144,8 +4191,7 @@
           </div>
           <div class="sk-hl">
             <i class="fas fa-star"></i>
-            <span>Currently gaining live PMT exposure at Micro Labs Ltd. — market research, HCP insight analysis, and
-              cross-functional learning across CNS and cardiology therapy areas</span>
+            <span>NPV / WACC / EV-EBITDA modelling — applied to live pharma M&amp;A and patent-cliff scenarios</span>
           </div>
         </div>
 
@@ -4386,29 +4432,27 @@
         </div>
       </div>
       <div class="proj-grid">
-        <div class="proj-card featured sr up" onclick="openM('p1')" style="transition-delay:.04s">
+        <div class="proj-card sr up" onclick="openM('p1')" style="transition-delay:.04s">
           <div class="proj-ico">📈</div>
-          <span class="feature-badge">Featured</span>
           <img class="proj-img"
             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=70"
             alt="Analytics Dashboard" loading="lazy" onerror="this.style.display='none'">
           <h3>Semaglutide Patent Cliff Analysis</h3>
           <p>Executive-level GLP-1 patent expiry impact analysis using IQVIA Market Reflection data. Presented as
             academic brief and LinkedIn carousel.</p>
-          <div class="proj-chips"><span class="pchip">Patent Strategy</span><span class="pchip">GLP-1</span><span
+          <div class="proj-chips"><span class="pchip outcome">$20B+ market</span><span class="pchip">Patent Strategy</span><span class="pchip">GLP-1</span><span
               class="pchip">IQVIA</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card featured sr up" onclick="openM('p2')" style="transition-delay:.1s">
+        <div class="proj-card sr up" onclick="openM('p2')" style="transition-delay:.1s">
           <div class="proj-ico">📱</div>
-          <span class="feature-badge">Featured</span>
           <img class="proj-img"
             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=70"
             alt="App Development" loading="lazy" onerror="this.style.display='none'">
           <h3>PharmaIntel India App</h3>
           <p>Multilingual Indian pharma intelligence platform — 13 regional languages, offline-first, 20-table SQLite
             schema on React/Firebase/Vite.</p>
-          <div class="proj-chips"><span class="pchip">React</span><span class="pchip">Firebase</span><span
+          <div class="proj-chips"><span class="pchip outcome">13 languages</span><span class="pchip outcome">20-table schema</span><span class="pchip">React</span><span class="pchip">Firebase</span><span
               class="pchip">PWA</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
@@ -4420,8 +4464,7 @@
           <h3>AMR-Genius Intelligence Hub</h3>
           <p>AI-powered AMR surveillance platform with business model canvas, monetisation plan, and data architecture —
             Research Methods, IIHMR.</p>
-          <div class="proj-chips"><span class="pchip">AI/ML</span><span class="pchip">AMR</span><span
-              class="pchip">SaaS</span></div>
+          <div class="proj-chips"><span class="pchip outcome">SaaS BMC</span><span class="pchip">AI/ML</span><span class="pchip">AMR</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
         <div class="proj-card sr up" onclick="openM('p4')" style="transition-delay:.22s">
@@ -4432,8 +4475,7 @@
           <h3>Ethosomal Curcumin — Research Paper</h3>
           <p>Peer-reviewed narrative review on ethosomal vs. liposomal curcumin delivery systems. Published with DOI on
             ResearchGate.</p>
-          <div class="proj-chips"><span class="pchip">Scientific Writing</span><span class="pchip">Drug
-              Delivery</span><span class="pchip">DOI: RG.2.2.36647</span></div>
+          <div class="proj-chips"><span class="pchip outcome">DOI · First-author</span><span class="pchip">Scientific Writing</span><span class="pchip">Drug Delivery</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
         <div class="proj-card sr up" onclick="openM('p5')" style="transition-delay:.28s">
@@ -4444,20 +4486,19 @@
           <h3>PharmAdhere-AI</h3>
           <p>Predictive AI framework for pharmaceutical patient adherence modelling, integrating ML with patient
             behaviour analytics.</p>
-          <div class="proj-chips"><span class="pchip">Predictive AI</span><span class="pchip">Adherence</span><span
-              class="pchip">ML</span></div>
+          <div class="proj-chips"><span class="pchip outcome">ML framework</span><span class="pchip">Predictive AI</span><span class="pchip">Adherence</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card sr up" onclick="openM('p6')" style="transition-delay:.34s">
+        <div class="proj-card featured sr up" onclick="openM('p6')" style="transition-delay:.34s">
           <div class="proj-ico">🏢</div>
+          <span class="feature-badge">Featured</span>
           <img class="proj-img"
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=70"
             alt="Corporate Strategy" loading="lazy" onerror="this.style.display='none'">
           <h3>Sun Pharma × Organon — M&amp;A Deep Dive</h3>
           <p>15-section executive-grade analysis of India's largest-ever pharma acquisition: $11.75B deal mechanics,
             financial leverage modelling, 4 strategic pillars, governance crisis, and capital market reactions.</p>
-          <div class="proj-chips"><span class="pchip">M&amp;A Strategy</span><span class="pchip">Pharma
-              Finance</span><span class="pchip">Deal Analysis</span></div>
+          <div class="proj-chips"><span class="pchip outcome">$11.75B deal</span><span class="pchip outcome">15 sections</span><span class="pchip">M&amp;A Strategy</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -5586,10 +5627,13 @@
       tiltEl.style.transition = 'transform 0.18s ease-out';
     }
 
-    // ── Custom Cursor (rAF + transform for zero layout cost)
+    // ── Custom Cursor (opt-out for accessibility — disabled if reduced motion / coarse pointer)
     const cd = document.getElementById('cursor-dot');
     const cr = document.getElementById('cursor-ring');
-    if (window.matchMedia("(pointer: fine)").matches && cd && cr) {
+    const wantsCursor = window.matchMedia("(pointer: fine)").matches
+                     && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (wantsCursor && cd && cr) {
+      document.body.classList.add('custom-cursor');
       let cx = 0, cy = 0, curRaf;
       cd.style.cssText += ';left:0;top:0;transform-origin:center';
       cr.style.cssText += ';left:0;top:0;transform-origin:center';
