@@ -85,7 +85,7 @@ a{text-decoration:none;color:inherit;transition:all 0.3s var(--ease)}
 
 /* ─── CUSTOM CURSOR ─── */
 @media (pointer: fine) {
-  body, a, button, .proj-card, .theme-switch, .hero-social-btn, .pill, .m-close, .m-action, .sk-tag, .pchip { cursor: none !important; }
+  body, a, button, .proj-card, .ins-card, .cert-card, .theme-switch, .hero-social-btn, .pill, .m-close, .m-action, .sk-tag, .pchip { cursor: none !important; }
   #cursor-dot { position: fixed; top: 0; left: 0; width: 6px; height: 6px; background: var(--c-gold); border-radius: 50%; z-index: 9999; pointer-events: none; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s; }
   #cursor-ring { position: fixed; top: 0; left: 0; width: 34px; height: 34px; border: 1px solid var(--c-gold); border-radius: 50%; z-index: 9998; pointer-events: none; transform: translate(-50%, -50%); transition: transform 0.15s ease-out, width 0.3s, height 0.3s, background 0.3s; }
   body.hovering #cursor-dot { width: 0; height: 0; }
@@ -496,6 +496,79 @@ footer em{font-style:normal;color:var(--c-gold)}
   .tl-wrap{padding-left:28px}
 }
 @media(max-width:440px){.photo-wrap{width:200px;height:240px}}
+
+/* ─── MARQUEE ─── */
+.marquee-wrap{overflow:hidden;background:var(--c-navy);padding:18px 0;border-top:1px solid rgba(197,160,89,0.12);border-bottom:1px solid rgba(197,160,89,0.12)}
+.marquee{display:flex;gap:40px;width:max-content;animation:scrollMarquee 22s linear infinite}
+.marquee span{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:3px;text-transform:uppercase;white-space:nowrap}
+.marquee .star{color:var(--c-gold);font-size:.7rem}
+@keyframes scrollMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-wrap:hover .marquee{animation-play-state:paused}
+
+/* ─── NAV BACKDROP ─── */
+#nav-backdrop{position:fixed;inset:0;background:rgba(10,25,47,0.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:998;opacity:0;visibility:hidden;transition:opacity 0.4s var(--ease),visibility 0.4s}
+#nav-backdrop.show{opacity:1;visibility:visible}
+
+/* ─── BG NAVY ─── */
+.bg-navy{background:var(--c-navy)}
+
+/* ─── CARD SHIMMER ─── */
+@keyframes shimmerSweep{from{transform:translateX(-120%) skewX(-20deg)}to{transform:translateX(220%) skewX(-20deg)}}
+.cert-card,.edu-card{position:relative;overflow:hidden}
+.proj-card::after,.cert-card::after,.edu-card::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(197,160,89,0.12) 50%,transparent 65%);transform:translateX(-120%) skewX(-20deg);pointer-events:none;border-radius:inherit;z-index:1}
+.proj-card:hover::after,.cert-card:hover::after,.edu-card:hover::after{animation:shimmerSweep 0.65s var(--ease) forwards}
+
+/* ─── BTT GLOW ─── */
+#btt:hover{transform:translateY(-4px) scale(1.1) !important;background:var(--c-gold) !important;color:var(--c-navy) !important;box-shadow:0 14px 32px -8px rgba(197,160,89,0.5) !important}
+
+/* ─── PROJ / INS CARD IMAGES ─── */
+.proj-img{width:100%;height:120px;object-fit:cover;border-radius:var(--r-sm);margin-bottom:18px;display:block;transition:transform 0.5s var(--ease)}
+.proj-card:hover .proj-img{transform:scale(1.04)}
+.ins-img{width:100%;height:150px;object-fit:cover;border-radius:var(--r-sm);margin-bottom:14px;display:block}
+.ins-card{cursor:pointer}
+
+/* ─── M-LEARNINGS ─── */
+.m-learnings{background:var(--c-off);border-radius:var(--r-sm);padding:20px;margin-top:16px;border:1px solid var(--c-border)}
+.m-learnings h4{font-size:.75rem;font-weight:800;color:var(--c-gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.m-learnings ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.m-learnings li{font-size:.84rem;color:var(--c-mid);padding-left:18px;position:relative;line-height:1.6}
+.m-learnings li::before{content:'→';position:absolute;left:0;color:var(--c-gold)}
+
+/* ─── CERT MODAL VIEWER ─── */
+.m-cert-viewer{width:100%;height:320px;border:1px solid var(--c-border);border-radius:var(--r-sm);margin-top:16px;overflow:hidden;background:var(--c-light);display:flex;align-items:center;justify-content:center}
+.m-cert-viewer iframe{width:100%;height:100%;border:none}
+.m-cert-viewer img{width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none}
+
+/* ─── INS METRICS ─── */
+.ins-metrics{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px}
+.ins-metric{background:rgba(197,160,89,0.08);border:1px solid rgba(197,160,89,0.2);border-radius:100px;padding:6px 14px;font-size:.74rem;font-weight:700;color:var(--c-gold)}
+
+/* ─── CERT CARD CLICKABLE ─── */
+.cert-card{cursor:pointer}
+.cert-card .cert-open{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(--c-light);border-radius:var(--r-sm);color:var(--c-navy);font-size:.77rem;font-weight:600;transition:all .3s;margin-top:16px;border:1px solid var(--c-border);align-self:flex-start}
+.cert-card:hover .cert-open{background:var(--c-navy);color:#fff;border-color:var(--c-navy)}
+
+/* ─── FOOTER SOCIALS ─── */
+footer{background:var(--c-navy-2);padding:44px 5% 32px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:20px}
+.footer-socials{display:flex;gap:12px}
+.footer-link{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:.95rem;transition:all 0.3s var(--ease)}
+.footer-link:hover{background:var(--c-gold);color:var(--c-navy);border-color:var(--c-gold);transform:translateY(-3px);box-shadow:0 8px 20px rgba(197,160,89,0.25)}
+.footer-copy{color:rgba(255,255,255,.35);font-size:.78rem;margin:0}
+.footer-copy em{font-style:normal;color:var(--c-gold)}
+footer p{color:rgba(255,255,255,.38);font-size:.79rem}
+footer em{font-style:normal;color:var(--c-gold)}
+
+/* ─── CONTACT SECTION POLISH ─── */
+.cl-items{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.cl-item{display:flex;align-items:center;gap:14px;padding:14px 18px;background:rgba(255,255,255,0.06);border-radius:14px;border:1px solid rgba(255,255,255,0.09);transition:all .3s}
+.cl-item:hover{background:rgba(255,255,255,0.11);transform:translateX(5px);border-color:rgba(197,160,89,0.35);box-shadow:0 4px 20px rgba(0,0,0,0.2)}
+.cl-item-ico{width:40px;height:40px;border-radius:10px;background:rgba(197,160,89,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cl-item-ico i{color:var(--c-gold-2);font-size:.95rem}
+.cl-item-ico i.fa-whatsapp{color:#25D366}
+
+/* ─── GLOSSARY MODAL ─── */
+.gl-keyword-bar{display:inline-flex;align-items:center;gap:8px;background:rgba(197,160,89,0.08);border:1px solid rgba(197,160,89,0.2);border-radius:100px;padding:5px 14px;font-size:.72rem;font-weight:700;color:var(--c-gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
 </style>
 </head>
 <body>
@@ -534,6 +607,7 @@ footer em{font-style:normal;color:var(--c-gold)}
     <div class="hamburger" id="hb"><span></span><span></span><span></span></div>
   </div>
 </nav>
+<div id="nav-backdrop"></div>
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -946,6 +1020,7 @@ footer em{font-style:normal;color:var(--c-gold)}
     <div class="proj-grid">
       <div class="proj-card sr up" onclick="openM('p1')" style="transition-delay:.04s">
         <div class="proj-ico">📈</div>
+        <img class="proj-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=70" alt="Analytics Dashboard" loading="lazy" onerror="this.style.display='none'">
         <h3>Semaglutide Patent Cliff Analysis</h3>
         <p>Executive-level GLP-1 patent expiry impact analysis using IQVIA Market Reflection data. Presented as academic brief and LinkedIn carousel.</p>
         <div class="proj-chips"><span class="pchip">Patent Strategy</span><span class="pchip">GLP-1</span><span class="pchip">IQVIA</span></div>
@@ -953,6 +1028,7 @@ footer em{font-style:normal;color:var(--c-gold)}
       </div>
       <div class="proj-card sr up" onclick="openM('p2')" style="transition-delay:.1s">
         <div class="proj-ico">📱</div>
+        <img class="proj-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=70" alt="App Development" loading="lazy" onerror="this.style.display='none'">
         <h3>PharmaIntel India App</h3>
         <p>Multilingual Indian pharma intelligence platform — 13 regional languages, offline-first, 20-table SQLite schema on React/Firebase/Vite.</p>
         <div class="proj-chips"><span class="pchip">React</span><span class="pchip">Firebase</span><span class="pchip">PWA</span></div>
@@ -960,6 +1036,7 @@ footer em{font-style:normal;color:var(--c-gold)}
       </div>
       <div class="proj-card sr up" onclick="openM('p3')" style="transition-delay:.16s">
         <div class="proj-ico">🧠</div>
+        <img class="proj-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=70" alt="AI Research" loading="lazy" onerror="this.style.display='none'">
         <h3>AMR-Genius Intelligence Hub</h3>
         <p>AI-powered AMR surveillance platform with business model canvas, monetisation plan, and data architecture — Research Methods, IIHMR.</p>
         <div class="proj-chips"><span class="pchip">AI/ML</span><span class="pchip">AMR</span><span class="pchip">SaaS</span></div>
@@ -967,6 +1044,7 @@ footer em{font-style:normal;color:var(--c-gold)}
       </div>
       <div class="proj-card sr up" onclick="openM('p4')" style="transition-delay:.22s">
         <div class="proj-ico">🔬</div>
+        <img class="proj-img" src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=70" alt="Molecular Research" loading="lazy" onerror="this.style.display='none'">
         <h3>Ethosomal Curcumin — Research Paper</h3>
         <p>Peer-reviewed narrative review on ethosomal vs. liposomal curcumin delivery systems. Published with DOI on ResearchGate.</p>
         <div class="proj-chips"><span class="pchip">Scientific Writing</span><span class="pchip">Drug Delivery</span><span class="pchip">DOI: RG.2.2.36647</span></div>
@@ -974,6 +1052,7 @@ footer em{font-style:normal;color:var(--c-gold)}
       </div>
       <div class="proj-card sr up" onclick="openM('p5')" style="transition-delay:.28s">
         <div class="proj-ico">🤖</div>
+        <img class="proj-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=70" alt="Digital Health Analytics" loading="lazy" onerror="this.style.display='none'">
         <h3>PharmAdhere-AI</h3>
         <p>Predictive AI framework for pharmaceutical patient adherence modelling, integrating ML with patient behaviour analytics.</p>
         <div class="proj-chips"><span class="pchip">Predictive AI</span><span class="pchip">Adherence</span><span class="pchip">ML</span></div>
@@ -981,6 +1060,7 @@ footer em{font-style:normal;color:var(--c-gold)}
       </div>
       <div class="proj-card sr up" onclick="openM('p6')" style="transition-delay:.34s">
         <div class="proj-ico">🏢</div>
+        <img class="proj-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=70" alt="Corporate Strategy" loading="lazy" onerror="this.style.display='none'">
         <h3>Sun Pharma × Organon — M&amp;A Deep Dive</h3>
         <p>15-section executive-grade analysis of India's largest-ever pharma acquisition: $11.75B deal mechanics, financial leverage modelling, 4 strategic pillars, governance crisis, and capital market reactions.</p>
         <div class="proj-chips"><span class="pchip">M&amp;A Strategy</span><span class="pchip">Pharma Finance</span><span class="pchip">Deal Analysis</span></div>
@@ -1114,34 +1194,338 @@ footer em{font-style:normal;color:var(--c-gold)}
   </div>
 </div>
 
+<!-- INSIGHT MODALS -->
+<div class="m-overlay" id="m-ins1" onclick="closeOnBg(event,'ins1')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('ins1')"><i class="fas fa-times"></i></button>
+    <div class="gl-keyword-bar"><i class="fas fa-chart-line"></i> &nbsp;Patent Strategy</div>
+    <h2>GLP-1 Patent Cliff: Semaglutide &amp; the Biosimilar Wave</h2>
+    <div class="m-sub">IQVIA Market Reflection · 2025</div>
+    <div style="margin:16px 0;border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--c-border);height:200px;">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" alt="Market Analytics" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.display='none'">
+    </div>
+    <div class="ins-metrics">
+      <span class="ins-metric">$20B+ Market</span>
+      <span class="ins-metric">2026 Patent Expiry</span>
+      <span class="ins-metric">8+ Biosimilar Entrants</span>
+      <span class="ins-metric">IQVIA Data</span>
+    </div>
+    <p>An executive-level analysis of the GLP-1 patent expiry landscape, examining the commercial implications of Novo Nordisk's Ozempic and Wegovy patents approaching expiration and the anticipated biosimilar wave.</p>
+    <p>The analysis mapped competitive biosimilar entry timelines across manufacturers in India, Europe, and the US — estimating market-share erosion scenarios using IQVIA Market Reflection data. Lifecycle management strategies for Novo Nordisk were proposed alongside adjacent therapeutic expansion opportunities in obesity and NASH.</p>
+    <div class="m-learnings">
+      <h4>Key Insights</h4>
+      <ul>
+        <li>Patent cliff analysis methodology — mapping expiry dates across geographic markets</li>
+        <li>Biosimilar regulatory pathways and their commercial timing implications</li>
+        <li>IQVIA Market Reflection interpretation for real-world brand performance</li>
+        <li>Lifecycle management strategies — new formulations, indications, patient support programmes</li>
+        <li>Market-share erosion modeling with quantified scenario outcomes</li>
+      </ul>
+    </div>
+    <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer" class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
+  </div>
+</div>
+
+<div class="m-overlay" id="m-ins2" onclick="closeOnBg(event,'ins2')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('ins2')"><i class="fas fa-times"></i></button>
+    <div class="gl-keyword-bar"><i class="fas fa-handshake"></i> &nbsp;M&amp;A Strategy</div>
+    <h2>Sun Pharma × Organon: India's $11.75B Deal Decoded</h2>
+    <div class="m-sub">Strategic &amp; Financial Analysis · April 2026</div>
+    <div style="margin:16px 0;border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--c-border);height:200px;">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Corporate M&A" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.display='none'">
+    </div>
+    <div class="ins-metrics">
+      <span class="ins-metric">$11.75B Deal</span>
+      <span class="ins-metric">103% Premium</span>
+      <span class="ins-metric">6.2x EV/EBITDA</span>
+      <span class="ins-metric">15 Sections</span>
+    </div>
+    <p>A forensic 15-section breakdown of India's largest pharma acquisition — including deal mechanics ($14.00/share offer, 103% premium over unaffected share price), EV/EBITDA valuation, and strategic rationale across four pillars: Women's Health leadership, biosimilar scale, cash-generative brand portfolio, and China platform.</p>
+    <p>Analysed the governance crisis at Organon and its impact on deal pricing. Modelled post-close PAT accretion (27%) and deleveraging timeline to 1.0x Net Debt/EBITDA by FY30. Capital market reaction was assessed across NSE listing and global advisor mandates.</p>
+    <div class="m-learnings">
+      <h4>Key Insights</h4>
+      <ul>
+        <li>EV/EBITDA deal valuation mechanics in cross-border pharma M&amp;A</li>
+        <li>Strategic portfolio synergy analysis — Women's Health, biosimilars, China platform</li>
+        <li>PAT accretion and deleveraging modeling post-acquisition</li>
+        <li>Governance crisis impact on deal pricing and premium justification</li>
+        <li>Capital market reactions and NSE performance analysis</li>
+      </ul>
+    </div>
+    <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer" class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
+  </div>
+</div>
+
+<div class="m-overlay" id="m-ins3" onclick="closeOnBg(event,'ins3')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('ins3')"><i class="fas fa-times"></i></button>
+    <div class="gl-keyword-bar"><i class="fas fa-robot"></i> &nbsp;Digital Health</div>
+    <h2>AI in Pharma PMT: Reshaping Brand Planning &amp; HCP Targeting</h2>
+    <div class="m-sub">Opinion · MBA Research · IIHMR 2026</div>
+    <div style="margin:16px 0;border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--c-border);height:200px;">
+      <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" alt="AI in Healthcare" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.display='none'">
+    </div>
+    <div class="ins-metrics">
+      <span class="ins-metric">GenAI Impact</span>
+      <span class="ins-metric">HCP Targeting</span>
+      <span class="ins-metric">Brand Planning</span>
+      <span class="ins-metric">GTM Strategy</span>
+    </div>
+    <p>An analytical piece examining how Generative AI is transforming go-to-market strategy, prescriber segmentation, and market access decisions in Indian pharma — with specific focus on the PMT function.</p>
+    <p>Key themes: AI-driven RCPA analysis replacing manual field data, LLM-powered KVA (key visual aid) personalisation by HCP segment, real-time competitor intelligence dashboards, and predictive HCP targeting models. Also covers ethical and regulatory boundaries of AI in pharma promotion.</p>
+    <div class="m-learnings">
+      <h4>Key Insights</h4>
+      <ul>
+        <li>GenAI applications in brand planning — automated content, personalised detailing</li>
+        <li>AI-enhanced RCPA analysis for real-time competitor prescription tracking</li>
+        <li>Predictive HCP targeting using prescribing behaviour models</li>
+        <li>Ethical and regulatory considerations for AI in pharma promotion</li>
+        <li>Skills PMT professionals need for the AI-augmented pharma environment</li>
+      </ul>
+    </div>
+    <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer" class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
+  </div>
+</div>
+
+<!-- CERT MODALS -->
+<div class="m-overlay" id="m-cert1" onclick="closeOnBg(event,'cert1')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('cert1')"><i class="fas fa-times"></i></button>
+    <div class="m-icon">🎓</div>
+    <h2>Product Management: An Introduction</h2>
+    <div class="m-sub">IBM / Coursera Professional Certificate · May 2026</div>
+    <div class="m-learnings">
+      <h4>What I Learned</h4>
+      <ul>
+        <li>Product lifecycle management from concept to market launch</li>
+        <li>Writing user stories, acceptance criteria, and product roadmaps</li>
+        <li>Agile and Scrum frameworks applied to pharma product development</li>
+        <li>AI integration in product management — automating discovery and prioritisation</li>
+        <li>Market requirements documentation and competitive analysis frameworks</li>
+        <li>Go-to-market strategy design and launch readiness assessment</li>
+      </ul>
+    </div>
+    <div class="m-cert-viewer">
+      <iframe src="https://coursera.org/verify/SQQJ2MC26BZC" title="IBM PM Certificate" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="m-overlay" id="m-cert2" onclick="closeOnBg(event,'cert2')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('cert2')"><i class="fas fa-times"></i></button>
+    <div class="m-icon">🤖</div>
+    <h2>Generative AI Foundations Certificate</h2>
+    <div class="m-sub">Microsoft × upGrad · UID: Br3hxZNKPVECfd81</div>
+    <div class="m-learnings">
+      <h4>What I Learned</h4>
+      <ul>
+        <li>Fundamentals of Large Language Models (LLMs) and transformer architecture</li>
+        <li>Prompt engineering techniques — few-shot, chain-of-thought, role-based prompting</li>
+        <li>Microsoft Copilot and Azure OpenAI service integration workflows</li>
+        <li>Responsible AI principles — bias, hallucination, and ethical boundaries</li>
+        <li>Building AI-augmented workflows for business analytics and content generation</li>
+        <li>Applied GenAI use cases in pharma: medical writing, market research, brand strategy</li>
+      </ul>
+    </div>
+    <div class="m-cert-viewer">
+      <img src="certificates/upgrad-genai-certificate.png" alt="GenAI Foundations Certificate" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<div class="m-overlay" id="m-cert3" onclick="closeOnBg(event,'cert3')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('cert3')"><i class="fas fa-times"></i></button>
+    <div class="m-icon">🏥</div>
+    <h2>Medical Coding Specialist — ICD-10-CM</h2>
+    <div class="m-sub">E-Cell, IIT Hyderabad · Certificate ID: SDCERTI1031</div>
+    <div class="m-learnings">
+      <h4>What I Learned</h4>
+      <ul>
+        <li>200+ ICD-10-CM alphanumeric diagnostic codes across major therapeutic areas</li>
+        <li>Clinical documentation standards and their role in revenue cycle management</li>
+        <li>Translating physician notes to standardised codes for insurance claims processing</li>
+        <li>International drug nomenclature and therapeutic area classification</li>
+        <li>Pharmacovigilance linkages — how coding accuracy affects drug safety reporting</li>
+        <li>Hospital billing systems and their commercial impact on pharma market access</li>
+      </ul>
+    </div>
+    <div class="m-cert-viewer">
+      <iframe src="certificates/medical-coding-certificate.pdf#toolbar=0&navpanes=0" title="Medical Coding Certificate" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="m-overlay" id="m-cert4" onclick="closeOnBg(event,'cert4')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('cert4')"><i class="fas fa-times"></i></button>
+    <div class="m-icon">🌐</div>
+    <h2>Global Health Management Research Award</h2>
+    <div class="m-sub">Pradanya 2026 — IIHMR University · February 2026</div>
+    <div class="m-learnings">
+      <h4>What I Learned</h4>
+      <ul>
+        <li>Structuring research papers for health management conferences and peer review</li>
+        <li>Strategic analysis frameworks applied to real-world global health challenges</li>
+        <li>Presenting complex pharmaceutical data to academic and industry audiences</li>
+        <li>GHMRC methodology — evidence-based health policy recommendations</li>
+        <li>Cross-disciplinary thinking: connecting health economics with operational strategy</li>
+      </ul>
+    </div>
+    <div class="m-cert-viewer">
+      <iframe src="certificates/PRADANYA-GHMRC%202026%20Conference%20E-%20Certificate.pdf#toolbar=0&navpanes=0" title="GHMRC Award Certificate" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="m-overlay" id="m-cert5" onclick="closeOnBg(event,'cert5')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('cert5')"><i class="fas fa-times"></i></button>
+    <div class="m-icon">🧪</div>
+    <h2>Pharma Industry Training Workshop</h2>
+    <div class="m-sub">SIRTSP / CARE, The SAGE Group — Bhopal · June 2023</div>
+    <div class="m-learnings">
+      <h4>What I Learned</h4>
+      <ul>
+        <li>Formulation and evaluation of pharmaceutical products per industry standards</li>
+        <li>Live plant visits to Indian Capsule Ltd. — end-to-end supply chain visibility</li>
+        <li>Ayurvedic nutraceutical manufacturing processes and quality frameworks</li>
+        <li>Pharmaceutical commercialisation and market-entry constraints</li>
+        <li>Bridging academic pharmacology with operational manufacturing realities</li>
+      </ul>
+    </div>
+    <div class="m-cert-viewer">
+      <iframe src="certificates/sage-Certificate.pdf#toolbar=0&navpanes=0" title="SAGE Training Certificate" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="m-overlay" id="m-cert6" onclick="closeOnBg(event,'cert6')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('cert6')"><i class="fas fa-times"></i></button>
+    <div class="m-icon">🏭</div>
+    <h2>QC &amp; Production Department Training</h2>
+    <div class="m-sub">Unidrug Innovative Pharma Technologies Ltd. — Indore · July 2023</div>
+    <div class="m-learnings">
+      <h4>What I Learned</h4>
+      <ul>
+        <li>Hands-on operation of HPLC, GC, and LC instruments on live pharmaceutical batches</li>
+        <li>GMP protocol application — how regulatory compliance shapes every production decision</li>
+        <li>Batch release process — 20+ samples per cycle, zero-delay batch completion</li>
+        <li>CAPA implementation — redesigning desiccation protocols for batch consistency</li>
+        <li>Quality control as patient safety — connecting lab failures to real-world risk</li>
+      </ul>
+    </div>
+    <div class="m-cert-viewer">
+      <iframe src="certificates/unidrug-certificate.pdf#toolbar=0&navpanes=0" title="Unidrug QC Certificate" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="m-overlay" id="m-cert7" onclick="closeOnBg(event,'cert7')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('cert7')"><i class="fas fa-times"></i></button>
+    <div class="m-icon">🏆</div>
+    <h2>AI Product Manager Specialisation</h2>
+    <div class="m-sub">IBM — Coursera · 2026</div>
+    <div class="m-learnings">
+      <h4>What I Learned</h4>
+      <ul>
+        <li>Integrating AI/ML capabilities into product strategy and roadmapping</li>
+        <li>Defining AI-powered feature sets with measurable business outcomes</li>
+        <li>Evaluating AI model performance metrics relevant to product decisions</li>
+        <li>Building cross-functional workflows around AI-driven product development</li>
+        <li>Applied AI ethics — responsible AI frameworks for product managers</li>
+      </ul>
+    </div>
+    <div class="m-cert-viewer">
+      <img src="certificates/ibm-ai%20product%20manager.png" alt="IBM AI Product Manager Certificate" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<div class="m-overlay" id="m-cert8" onclick="closeOnBg(event,'cert8')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('cert8')"><i class="fas fa-times"></i></button>
+    <div class="m-icon">🥇</div>
+    <h2>NIPER JEE — Nationally Qualified</h2>
+    <div class="m-sub">National Institute of Pharmaceutical Education &amp; Research · 2024</div>
+    <p>Cleared the NIPER Joint Entrance Examination — India's most competitive postgraduate entrance for pharmaceutical sciences, administered by the National Institutes of Pharmaceutical Education and Research under the Ministry of Chemicals &amp; Fertilizers.</p>
+    <div class="m-learnings">
+      <h4>Significance</h4>
+      <ul>
+        <li>One of the most competitive pharma science exams in India — tests pharmacology, chemistry, pharmaceutical sciences, and analytical reasoning</li>
+        <li>Demonstrates academic mastery of pharmaceutical sciences at a nationally competitive level</li>
+        <li>Validates deep scientific foundation prior to pursuing MBA Pharmaceutical Management</li>
+        <li>NIPER institutes are India's premier postgraduate pharma research institutions</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="m-overlay" id="m-cert9" onclick="closeOnBg(event,'cert9')">
+  <div class="m-box">
+    <button class="m-close" onclick="closeM('cert9')"><i class="fas fa-times"></i></button>
+    <div class="m-icon">📊</div>
+    <h2>Advanced Excel Workshop</h2>
+    <div class="m-sub">IIHMR Analytica Club, IIHMR University · March 2026</div>
+    <div class="m-learnings">
+      <h4>What I Learned</h4>
+      <ul>
+        <li>Advanced pivot tables and dynamic dashboards for market data analysis</li>
+        <li>Financial modelling — NPV, IRR, WACC calculations applied to pharma investments</li>
+        <li>Data visualisation techniques for presenting market access and HEOR data</li>
+        <li>VLOOKUP, INDEX-MATCH, and array formulas for large pharmaceutical datasets</li>
+        <li>Power Query for cleaning and transforming raw IQVIA / sales data</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- GLOSSARY MODAL -->
+<div class="m-overlay" id="m-glossary" onclick="closeOnBg(event,'glossary')">
+  <div class="m-box" style="max-width:500px">
+    <button class="m-close" onclick="closeM('glossary')"><i class="fas fa-times"></i></button>
+    <div class="m-icon" id="gl-icon">📚</div>
+    <h2 id="gl-title" style="margin-bottom:8px;"></h2>
+    <div class="gl-keyword-bar" style="margin-bottom:20px;"><i class="fas fa-book-open"></i> &nbsp;Pharma Glossary</div>
+    <p id="gl-desc" style="font-size:.93rem;color:var(--c-mid);line-height:1.9;margin:0;"></p>
+  </div>
+</div>
+
 <!-- INSIGHTS -->
 <section id="insights">
   <div class="s-inner">
     <div class="s-head sr up"><span class="s-kicker">Pharma Intelligence</span><h2 class="s-title">Featured <em>Insights</em></h2><div class="s-rule"></div></div>
     <div class="ins-grid">
 
-      <article class="ins-card sr up" style="transition-delay:.04s">
+      <article class="ins-card sr up" style="transition-delay:.04s" onclick="openM('ins1')">
+        <img class="ins-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=70" alt="Pharma Market Analytics" loading="lazy" onerror="this.style.display='none'">
         <span class="ins-cat">Patent Strategy</span>
         <h3>GLP-1 Patent Cliff: Semaglutide &amp; the Biosimilar Wave</h3>
-        <p>Executive analysis of Novo Nordisk's Ozempic/Wegovy patent expiry landscape, biosimilar entry timelines, and lifecycle management strategy in the $20B+ global GLP-1 market — with scenario modelling on market-share erosion.</p>
+        <p>Executive analysis of Novo Nordisk's Ozempic/Wegovy patent expiry landscape, biosimilar entry timelines, and lifecycle management strategy in the $20B+ global GLP-1 market.</p>
         <div class="ins-meta">IQVIA Market Reflection · 2025</div>
-        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener" class="ins-link">Read on LinkedIn <i class="fas fa-arrow-right"></i></a>
+        <span class="ins-link">Read Analysis <i class="fas fa-arrow-right"></i></span>
       </article>
 
-      <article class="ins-card sr up" style="transition-delay:.1s">
+      <article class="ins-card sr up" style="transition-delay:.1s" onclick="openM('ins2')">
+        <img class="ins-img" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=70" alt="Pharma M&A Strategy" loading="lazy" onerror="this.style.display='none'">
         <span class="ins-cat">M&amp;A Strategy</span>
         <h3>Sun Pharma × Organon: India's $11.75B Deal Decoded</h3>
-        <p>Forensic 15-section breakdown of India's largest pharma acquisition — EV/EBITDA mechanics, Women's Health &amp; biosimilar portfolios, governance crisis, and capital market reaction across NSE and global advisors.</p>
+        <p>Forensic 15-section breakdown of India's largest pharma acquisition — EV/EBITDA mechanics, Women's Health &amp; biosimilar portfolios, governance crisis, and capital market reaction.</p>
         <div class="ins-meta">Strategic &amp; Financial Analysis · April 2026</div>
-        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener" class="ins-link">Read on LinkedIn <i class="fas fa-arrow-right"></i></a>
+        <span class="ins-link">Read Analysis <i class="fas fa-arrow-right"></i></span>
       </article>
 
-      <article class="ins-card sr up" style="transition-delay:.16s">
+      <article class="ins-card sr up" style="transition-delay:.16s" onclick="openM('ins3')">
+        <img class="ins-img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=70" alt="AI in Pharma" loading="lazy" onerror="this.style.display='none'">
         <span class="ins-cat">Digital Health</span>
         <h3>AI in Pharma PMT: Reshaping Brand Planning &amp; HCP Targeting</h3>
-        <p>How generative AI is transforming go-to-market strategy, prescriber segmentation, and market access decisions — and what the next generation of PMT professionals in India need to prepare for.</p>
+        <p>How generative AI is transforming go-to-market strategy, prescriber segmentation, and market access decisions in Indian pharma — and what next-gen PMT professionals must prepare for.</p>
         <div class="ins-meta">Opinion · MBA Research · IIHMR 2026</div>
-        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener" class="ins-link">Read on LinkedIn <i class="fas fa-arrow-right"></i></a>
+        <span class="ins-link">Read Analysis <i class="fas fa-arrow-right"></i></span>
       </article>
 
     </div>
@@ -1156,87 +1540,77 @@ footer em{font-style:normal;color:var(--c-gold)}
   <div class="s-inner">
     <div class="s-head sr up"><span class="s-kicker">Elite Credentials</span><h2 class="s-title">The Wall of <em>Expertise</em></h2><div class="s-rule"></div></div>
     <div class="cert-grid">
-      <div class="cert-card sr up" style="transition-delay:.04s">
+      <div class="cert-card sr up" style="transition-delay:.04s" onclick="openM('cert1')">
         <div class="cert-ico">🎓</div>
         <span class="cert-status done">Verified</span>
         <div class="cert-name">Product Management: An Introduction</div>
         <div class="cert-iss">IBM / Coursera · Professional Certificate</div>
         <div class="cert-date">Issued: May 2026</div>
-        <a href="https://coursera.org/verify/SQQJ2MC26BZC" target="_blank" rel="noopener" class="cert-link"><i class="fas fa-external-link-alt"></i> Verify Digital Badge</a>
+        <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
       </div>
-      <div class="cert-card sr up" style="transition-delay:.1s">
+      <div class="cert-card sr up" style="transition-delay:.1s" onclick="openM('cert2')">
         <div class="cert-ico">🤖</div>
         <span class="cert-status done">Verified</span>
         <div class="cert-name">Generative AI Foundations Certificate</div>
         <div class="cert-iss">Microsoft × upGrad</div>
         <div class="cert-date">UID: Br3hxZNKPVECfd81</div>
-        <a href="certificates/upgrad-genai-certificate.png" target="_blank" class="cert-link"><i class="fas fa-certificate"></i> View Credential</a>
+        <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
       </div>
-      <div class="cert-card sr up" style="transition-delay:.16s">
+      <div class="cert-card sr up" style="transition-delay:.16s" onclick="openM('cert3')">
         <div class="cert-ico">🏥</div>
         <span class="cert-status done">Certified</span>
         <div class="cert-name">Medical Coding Specialist (ICD-10-CM)</div>
         <div class="cert-iss">E-Cell, IIT Hyderabad</div>
         <div class="cert-date">ID: SDCERTI1031 · 200+ Codes Mastered</div>
-        <a href="certificates/medical-coding-certificate.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> View Diploma</a>
+        <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
       </div>
-      <div class="cert-card sr up" style="transition-delay:.22s">
+      <div class="cert-card sr up" style="transition-delay:.22s" onclick="openM('cert4')">
         <div class="cert-ico">🌐</div>
         <span class="cert-status done">Awarded</span>
         <div class="cert-name">Global Health Management Research Award</div>
         <div class="cert-iss">Pradanya 2026 · IIHMR University</div>
         <div class="cert-date">February 2026 · Strategic Analysis</div>
-        <a href="certificates/PRADANYA-GHMRC 2026 Conference E- Certificate.pdf" target="_blank" class="cert-link"><i class="fas fa-award"></i> View Honor</a>
+        <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
       </div>
-    </div>
-  </div>
-</section>
-        <div class="cert-date">June 1–22, 2023</div>
-        <a href="certificates/sage-Certificate.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> View Certificate</a>
+      <div class="cert-card sr up" style="transition-delay:.28s" onclick="openM('cert5')">
+        <div class="cert-ico">🧪</div>
+        <span class="cert-status done">Completed</span>
+        <div class="cert-name">Pharma Industry Training Workshop</div>
+        <div class="cert-iss">SIRTSP / CARE, The SAGE Group — Bhopal</div>
+        <div class="cert-date">June 1–22, 2023 · Formulation &amp; Evaluation</div>
+        <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
       </div>
-      <div class="cert-card sr up" style="transition-delay:.34s">
+      <div class="cert-card sr up" style="transition-delay:.34s" onclick="openM('cert6')">
         <div class="cert-ico">🏭</div>
         <span class="cert-status done">Completed</span>
         <div class="cert-name">QC &amp; Production Department Training</div>
         <div class="cert-iss">Unidrug Innovative Pharma Technologies Ltd. — Indore</div>
         <div class="cert-date">July 1–15, 2023</div>
-        <a href="certificates/unidrug-certificate.pdf" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> View Certificate</a>
+        <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
       </div>
-      <div class="cert-card sr up" style="transition-delay:.4s">
+      <div class="cert-card sr up" style="transition-delay:.4s" onclick="openM('cert7')">
         <div class="cert-ico">🏆</div>
-        <span class="cert-status done">Completed</span>
+        <span class="cert-status done">Certified</span>
         <div class="cert-name">AI Product Manager Specialisation</div>
         <div class="cert-iss">IBM — Coursera</div>
-        <div class="cert-date">2026</div>
-        <a href="certificates/ibm-ai product manager.png" target="_blank" class="cert-link"><i class="fas fa-image"></i> View Certificate</a>
+        <div class="cert-date">2026 · AI-Driven Product Strategy</div>
+        <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
       </div>
-      <div class="cert-card sr up" style="transition-delay:.46s">
+      <div class="cert-card sr up" style="transition-delay:.46s" onclick="openM('cert8')">
         <div class="cert-ico">🥇</div>
-        <span class="cert-status done">Achieved</span>
-        <div class="cert-name">NIPER Joint Entrance Examination (NIPER JEE) — Qualified</div>
+        <span class="cert-status done">Qualified</span>
+        <div class="cert-name">NIPER JEE — Nationally Qualified</div>
         <div class="cert-iss">National Institute of Pharmaceutical Education and Research</div>
-        <div class="cert-date">2024 · Nationally competitive entrance exam for India's premier pharma institutes</div>
+        <div class="cert-date">2024 · India's Premier Pharma Entrance</div>
+        <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
       </div>
-      <div class="cert-card sr up" style="transition-delay:.52s">
-        <div class="cert-ico">🎓</div>
-        <span class="cert-status inprog">Pursuing</span>
-        <div class="cert-name">Drug Development &amp; Product Management</div>
-        <div class="cert-iss">UC San Diego — Coursera Extension</div>
-        <div class="cert-date">Currently enrolled · Covers IND filing, clinical trial design, regulatory strategy &amp; lifecycle management</div>
-      </div>
-      <div class="cert-card sr up" style="transition-delay:.58s">
-        <div class="cert-ico">💬</div>
-        <span class="cert-status inprog">Ongoing</span>
-        <div class="cert-name">Business Communication Certification</div>
-        <div class="cert-iss">SWAYAM — NPTEL / Government of India</div>
-        <div class="cert-date">Currently enrolled</div>
-      </div>
-      <div class="cert-card sr up" style="transition-delay:.64s">
+      <div class="cert-card sr up" style="transition-delay:.52s" onclick="openM('cert9')">
         <div class="cert-ico">📊</div>
         <span class="cert-status done">Completed</span>
         <div class="cert-name">Advanced Excel Workshop</div>
-        <div class="cert-iss">IIHMR University, Jaipur</div>
-        <div class="cert-date">2026 · Data analysis, pivot tables, financial modelling &amp; dashboard design</div>
+        <div class="cert-iss">IIHMR Analytica Club, IIHMR University</div>
+        <div class="cert-date">March 2026 · Pivot tables, dashboards &amp; financial modelling</div>
+        <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
       </div>
     </div>
   </div>
@@ -1353,7 +1727,16 @@ footer em{font-style:normal;color:var(--c-gold)}
 
 <!-- FOOTER -->
 <footer>
-  <p>Designed &amp; built by <em>Animesh Mishra</em> &nbsp;·&nbsp; Molecule to Market &nbsp;·&nbsp; MBA Pharmaceutical Management, IIHMR University &nbsp;·&nbsp; 2026</p>
+  <div class="footer-inner">
+    <div class="footer-socials">
+      <a class="footer-link" href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a class="footer-link" href="https://github.com/Animesh1324" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a class="footer-link" href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener noreferrer" title="ResearchGate Publication"><i class="fas fa-flask"></i></a>
+      <a class="footer-link" href="mailto:mishra.animesh1324@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a class="footer-link" href="https://wa.me/918989468728" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p class="footer-copy">Designed &amp; built by <em>Animesh Mishra</em> &nbsp;·&nbsp; Molecule to Market &nbsp;·&nbsp; MBA Pharmaceutical Management, IIHMR University &nbsp;·&nbsp; 2026</p>
+  </div>
 </footer>
 
 <!-- BACK TO TOP -->
@@ -1387,10 +1770,12 @@ window.addEventListener('scroll',()=>{
   links.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
 },{ passive:true });
 
-// ── Hamburger
-const hbEl=document.getElementById('hb'),mnEl=document.getElementById('navMenu');
-hbEl.addEventListener('click',()=>{hbEl.classList.toggle('open');mnEl.classList.toggle('open');});
-mnEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hbEl.classList.remove('open');mnEl.classList.remove('open');}));
+// ── Hamburger + Nav Backdrop
+const hbEl=document.getElementById('hb'),mnEl=document.getElementById('navMenu'),bdEl=document.getElementById('nav-backdrop');
+function closeNav(){hbEl.classList.remove('open');mnEl.classList.remove('open');bdEl.classList.remove('show');hbEl.setAttribute('aria-expanded','false');}
+hbEl.addEventListener('click',()=>{const open=hbEl.classList.toggle('open');mnEl.classList.toggle('open',open);bdEl.classList.toggle('show',open);hbEl.setAttribute('aria-expanded',open);});
+bdEl.addEventListener('click',closeNav);
+mnEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
 
 // ── Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
@@ -1537,7 +1922,24 @@ if(window.matchMedia("(pointer: fine)").matches && cd && cr) {
   if(!canvas) return;
   const ctx = canvas.getContext('2d');
   const NAVY = '27,47,78', GOLD = '184,150,46';
-  let isVisible = true;
+  let W, H, nodes = [], raf, isVisible = true;
+
+  function resize(){
+    W = canvas.width = canvas.parentElement.offsetWidth;
+    H = canvas.height = canvas.parentElement.offsetHeight;
+  }
+  function initNodes(){
+    const count = Math.min(40, Math.floor(W * H / 18000));
+    nodes = [];
+    for(let i=0; i<count; i++){
+      nodes.push({
+        x: Math.random()*W, y: Math.random()*H,
+        vx: (Math.random()-.5)*0.4, vy: (Math.random()-.5)*0.4,
+        r: Math.random()*2+1,
+        col: Math.random()>0.5 ? NAVY : GOLD
+      });
+    }
+  }
   const observer = new IntersectionObserver(entries => {
     isVisible = entries[0].isIntersecting;
     if(isVisible) {
@@ -1590,6 +1992,64 @@ if(window.matchMedia("(pointer: fine)").matches && cd && cr) {
     }
   });
 })();
+
+// ── Glossary System
+const glossary = {
+  'Health Economics': { d: 'The study of how healthcare resources are allocated and the economic impact of interventions. In pharma, it informs pricing, market access, and reimbursement strategies (HEOR = Health Economics & Outcomes Research).', i: '📉' },
+  'Market Access': { d: 'The process of ensuring a pharmaceutical product is available to patients at the right price and reimbursed by payers. Involves regulatory approval, pricing negotiations, and HTA (Health Technology Assessment) submissions.', i: '🚪' },
+  'GLP-1': { d: 'Glucagon-Like Peptide-1 — a hormone that stimulates insulin secretion. GLP-1 receptor agonists (semaglutide/Ozempic, liraglutide) are the fastest-growing drug class globally, used for type 2 diabetes and obesity.', i: '💊' },
+  'Patent Strategy': { d: 'In pharma, the management of intellectual property timelines — extending exclusivity via lifecycle strategies, patent clustering, and managing the "patent cliff" when generic or biosimilar competition begins.', i: '⚖️' },
+  'IQVIA': { d: 'The world\'s largest healthcare data and analytics company. IQVIA Market Reflection is the industry-standard source for tracking prescription volumes, market share, and competitive intelligence in pharma.', i: '📊' },
+  'Biosimilar': { d: 'A biological medicine highly similar to an approved reference biologic. After the originator\'s patent expires, biosimilars enter at lower prices, typically capturing 60–80% of volume share within 2 years.', i: '🧬' },
+  'ICD-10-CM': { d: 'International Classification of Diseases, 10th Revision, Clinical Modification — alphanumeric codes classifying diagnoses, symptoms, and procedures. Used globally for hospital billing, insurance, and pharmacovigilance data.', i: '🏥' },
+  'Medical Coding': { d: 'Translation of clinical diagnoses, procedures, and treatments into standardised codes (ICD-10, CPT). Critical for hospital billing, insurance reimbursement, and healthcare analytics — directly impacting pharma market access data.', i: '🏥' },
+  'GMP': { d: 'Good Manufacturing Practice — regulatory guidelines ensuring pharmaceutical products are consistently produced and controlled per quality standards. Non-compliance can result in FDA 483 observations, warning letters, or product recalls.', i: '🏭' },
+  'HPLC': { d: 'High-Performance Liquid Chromatography — analytical technique for separating, identifying, and quantifying components in pharmaceutical samples. Used for drug potency testing, impurity profiling, and batch release QC.', i: '🔬' },
+  'CAPA': { d: 'Corrective and Preventive Action — a GMP-mandated systematic approach to identify, investigate, and eliminate root causes of quality deviations to prevent recurrence in pharmaceutical manufacturing.', i: '🛠️' },
+  'KOL': { d: 'Key Opinion Leader — a physician or expert who significantly influences peers\' prescribing decisions. KOL identification, mapping, and engagement is central to pharma brand strategy and medical affairs programmes.', i: '👨‍⚕️' },
+  'GTM Strategy': { d: 'Go-To-Market Strategy — the plan a pharma company uses to launch a product: pricing, distribution channel, promotional mix, HCP targeting, key message development, and sales force deployment.', i: '🎯' },
+  'Lifecycle Management': { d: 'Strategies extending a pharmaceutical product\'s commercial value beyond patent expiry — new formulations, indications, combination products, paediatric extensions, or geographic market entry.', i: '♻️' },
+  'AMR': { d: 'Antimicrobial Resistance — microorganisms\' ability to resist drug effects. WHO classifies AMR as a top 10 global health threat; projected to cause 10M deaths annually by 2050. Drives demand for surveillance platforms.', i: '🦠' },
+  'DPCO': { d: 'Drug Price Control Order — India\'s price regulation under which NPPA (National Pharmaceutical Pricing Authority) sets ceiling prices for essential medicines listed in the National List of Essential Medicines (NLEM).', i: '🏛️' },
+  'Rasagiline': { d: 'MAO-B inhibitor for Parkinson\'s disease (brand: Azilect, Agnitor). Selective irreversible inhibitor slowing dopamine breakdown. Key CNS brand in Animesh\'s PMT internship at Micro Labs Ltd.', i: '🧠' },
+  'Apixaban': { d: 'Oral factor Xa inhibitor anticoagulant (brand: Eliquis, BMS/Pfizer). Used for stroke prevention in atrial fibrillation and DVT/PE treatment. Key cardiology brand in Micro Labs PMT internship brand planning.', i: '❤️' },
+  'RCPA': { d: 'Retail Chemist Prescription Audit — field data collected from retail pharmacies tracking which brands doctors are prescribing. Used in pharma brand management to assess market share and field force effectiveness.', i: '📋' },
+  'Ethosomal': { d: 'Ethosomes are lipid vesicular carriers with high ethanol content, enabling enhanced transdermal drug delivery by fluidising skin lipid layers. Subject of Animesh\'s peer-reviewed research — ethosomal vs liposomal curcumin delivery.', i: '🧪' },
+  'Patent Cliff': { d: 'The sharp revenue decline when a blockbuster drug\'s patent expires and low-cost generics/biosimilars enter. Companies typically lose 60–90% of volume share within 12–18 months. Requires proactive lifecycle management.', i: '📉' },
+  'B.Pharm': { d: 'Bachelor of Pharmacy — 4-year undergraduate degree combining pharmaceutical sciences, pharmacology, medicinal chemistry, and clinical pharmacy. India\'s foundation qualification for pharmaceutical careers.', i: '🎓' },
+  'Generative AI': { d: 'AI systems generating new content (text, images, code) from training data. In pharma: applied to drug discovery (AlphaFold), clinical trial design, medical writing, regulatory submissions, and brand strategy.', i: '🤖' },
+  'Product Management': { d: 'In pharma (PMT), the function responsible for brand strategy — market research, brand positioning, promotional planning, sales force coordination, KOL engagement, and lifecycle decisions for prescription drugs.', i: '📱' },
+  'M&A Strategy': { d: 'Mergers & Acquisitions — analysis of deal rationale, valuation (EV/EBITDA), portfolio synergies, and integration planning. In pharma, M&A is often driven by pipeline gaps, patent cliffs, or geographic expansion needs.', i: '🤝' },
+  'Scientific Writing': { d: 'Formal communication of research findings — research papers, narrative reviews, systematic reviews, regulatory submissions, and medical affairs content. Requires structured IMRAD format and citation standards.', i: '✍️' },
+  'Drug Delivery': { d: 'Science of transporting a pharmaceutical compound to its target with optimal bioavailability. Includes nanotechnology approaches: ethosomes, liposomes, nanoparticles, microspheres, and targeted delivery systems.', i: '💉' },
+  'Firebase': { d: 'Google\'s Backend-as-a-Service — real-time database, authentication, cloud storage, and hosting. Used in PharmaIntel India App for real-time data sync, user authentication, and offline-first progressive web app architecture.', i: '🔥' },
+  'React': { d: 'JavaScript library for building interactive UIs (Meta). Component-based architecture enables efficient updates via virtual DOM. Used in PharmaIntel India App frontend with Vite for fast bundling.', i: '⚛️' },
+  'PWA': { d: 'Progressive Web App — delivers native app-like experiences via web: offline functionality, push notifications, home screen installation. Critical for PharmaIntel India\'s Tier 2/3 low-connectivity accessibility goal.', i: '📱' },
+  'SWOT': { d: 'Strategic framework — Strengths, Weaknesses, Opportunities, Threats. Standard tool in pharma brand planning for situational analysis, competitive landscape assessment, and strategic positioning of prescription brands.', i: '🎯' },
+  'Predictive AI': { d: 'ML models analysing historical data to forecast future outcomes. In pharma: patient adherence prediction, adverse event detection, HCP prescribing propensity scoring, and demand forecasting for supply chain.', i: '🔮' },
+  'PESTEL': { d: 'Strategic analysis framework — Political, Economic, Social, Technological, Environmental, Legal factors. Used in pharma brand planning to assess macro-environment and market access landscape for new product launches.', i: '🌐' },
+};
+
+function openGlossary(keyword) {
+  const data = glossary[keyword];
+  if (!data) return;
+  document.getElementById('gl-title').textContent = keyword;
+  document.getElementById('gl-desc').textContent = data.d;
+  document.getElementById('gl-icon').textContent = data.i || '📚';
+  openM('glossary');
+}
+
+document.querySelectorAll('.pill, .sk-tag, .pchip, .tool-pill, .mchip, .ins-cat').forEach(el => {
+  const txt = el.textContent.trim();
+  for (const k in glossary) {
+    if (txt.toLowerCase().includes(k.toLowerCase())) {
+      el.style.cursor = 'help';
+      el.title = 'Click to learn: ' + k;
+      el.addEventListener('click', (e) => { e.stopPropagation(); openGlossary(k); });
+      break;
+    }
+  }
+});
 
 // ── Magnetic CTA Buttons (rAF optimized)
 if(window.matchMedia("(pointer: fine)").matches){

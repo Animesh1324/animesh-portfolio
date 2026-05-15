@@ -1,0 +1,16 @@
+/*
+ * Animesh Mishra Portfolio — Dark Mode Overrides
+ * NOTE: This file mirrors the dark mode block in index.html's inline <style>.
+ * It is NOT currently linked. All active styles live in index.html.
+ * Selector: body[data-theme="dark"] — toggled via JS on document.body.
+ */
+
+body[data-theme="dark"] {
+  --c-white: #06090D;
+  --c-off: #0D1117;
+  --c-light: #161B22;
+  --c-border: rgba(255, 255, 255, 0.08);
+  --c-text: #CDD5DE;
+  --c-mid: #8B949E;
+  --c-muted: #6E7681;
+}
