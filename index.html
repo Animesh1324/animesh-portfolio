@@ -16,6 +16,7 @@
   <meta property="og:image" content="https://animesh1324.github.io/animesh-portfolio/PIC.jpg">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:image" content="https://animesh1324.github.io/animesh-portfolio/PIC.jpg">
+  <link rel="canonical" href="https://animesh1324.github.io/animesh-portfolio/">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -35,6 +36,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
@@ -84,6 +86,46 @@
       background: var(--c-white);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 12px;
+      background: var(--c-navy);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      z-index: 10000;
+      transition: top .2s ease
+    }
+
+    .skip-link:focus {
+      top: 12px
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--c-gold);
+      outline-offset: 3px
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important
+      }
     }
 
     .hero-name,
@@ -457,6 +499,30 @@
       align-items: center;
       gap: 7px;
       white-space: nowrap
+    }
+
+    .nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.12);
+      color: #166534;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      border: 1px solid rgba(34, 197, 94, 0.25)
+    }
+
+    .nav-badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.18)
     }
 
     .nav-cta:hover {
@@ -1728,6 +1794,18 @@
       background: var(--c-navy-2)
     }
 
+    .m-action.secondary {
+      background: var(--c-light);
+      color: var(--c-navy);
+      border: 1px solid var(--c-border)
+    }
+
+    .m-action.secondary:hover {
+      background: var(--c-navy);
+      color: #fff;
+      border-color: var(--c-navy)
+    }
+
     .m-doi {
       display: inline-flex;
       align-items: center;
@@ -2405,6 +2483,12 @@
       color: var(--c-gold);
     }
 
+    [data-theme="dark"] .nav-badge {
+      background: rgba(34, 197, 94, 0.16);
+      color: #86efac;
+      border-color: rgba(34, 197, 94, 0.35)
+    }
+
     [data-theme="dark"] .hamburger span {
       background: #fff;
     }
@@ -2432,6 +2516,17 @@
     [data-theme="dark"] .m-close {
       background: var(--c-light);
       color: var(--c-text);
+    }
+
+    [data-theme="dark"] .m-action.secondary {
+      background: var(--c-light);
+      color: var(--c-text);
+      border-color: var(--c-border)
+    }
+
+    [data-theme="dark"] .m-action.secondary:hover {
+      background: var(--c-gold);
+      color: #000
     }
 
     [data-theme="dark"] .tl-dot {
@@ -3289,6 +3384,8 @@
 
 <body>
 
+  <a class="skip-link" href="#home">Skip to content</a>
+
   <!-- CUSTOM CURSOR -->
   <div id="cursor-dot"></div>
   <div id="cursor-ring"></div>
@@ -3318,10 +3415,13 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <div class="theme-switch" id="themeSwitch" title="Toggle Dark Mode"><i class="fas fa-moon"></i></div>
+      <div class="nav-badge" role="status" aria-label="Available for opportunities">Available</div>
+      <button class="theme-switch" id="themeSwitch" type="button" aria-label="Toggle dark mode" aria-pressed="false"
+        title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
       <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf" class="nav-cta"><i class="fas fa-download"></i> Download
         CV</a>
-      <div class="hamburger" id="hb"><span></span><span></span><span></span></div>
+      <button class="hamburger" id="hb" type="button" aria-label="Open menu" aria-controls="navMenu"
+        aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <div id="nav-backdrop"></div>
@@ -3362,19 +3462,22 @@
             real pharma outcomes.</p>
           <div class="hero-socials">
             <a class="hero-social-btn" href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank"
-              rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a class="hero-social-btn" href="mailto:animesh.pm17@iihmr.in" title="Email"><i
+              rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a class="hero-social-btn" href="mailto:animesh.pm17@iihmr.in" title="Email" aria-label="Email"><i
                 class="fas fa-envelope"></i></a>
-            <a class="hero-social-btn" href="tel:+918989468728" title="Phone"><i class="fas fa-phone"></i></a>
+            <a class="hero-social-btn" href="tel:+918989468728" title="Phone" aria-label="Phone"><i
+                class="fas fa-phone"></i></a>
             <a class="hero-social-btn" href="https://wa.me/918989468728" target="_blank" rel="noopener"
-              title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             <a class="hero-social-btn" href="https://github.com/Animesh1324" target="_blank" rel="noopener"
-              title="GitHub"><i class="fab fa-github"></i></a>
-            <a class="hero-social-btn" href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener"
-              title="Research Paper"><i class="fas fa-file-alt"></i></a>
+              title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a class="hero-social-btn" href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank"
+              rel="noopener" title="Research Paper" aria-label="Research Paper"><i class="fas fa-file-alt"></i></a>
           </div>
           <div class="hero-actions">
             <a href="#contact" class="btn-cta"><i class="fas fa-handshake"></i> Open to Opportunities</a>
+            <a href="Animesh_CV.pdf" download="Animesh_Mishra_1-Page_Resume.pdf" class="btn-ghost"><i
+                class="fas fa-file-download"></i> Download 1-page Resume</a>
             <a href="#projects" class="btn-ghost"><i class="fas fa-briefcase"></i> View My Work</a>
           </div>
         </div>
@@ -3457,8 +3560,8 @@
             <div class="inf"><i class="fas fa-university"></i><span>IIHMR University</span></div>
             <div class="inf"><i class="fas fa-envelope"></i><span>animesh.pm17@iihmr.in</span></div>
             <div class="inf"><i class="fas fa-phone"></i><span>+91 8989468728</span><a href="https://wa.me/918989468728"
-                target="_blank" style="margin-left:8px; color:#25D366; font-size:1.1rem; cursor:pointer;"
-                title="Available on WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
+              target="_blank" style="margin-left:8px; color:#25D366; font-size:1.1rem; cursor:pointer;"
+              title="Available on WhatsApp" aria-label="Available on WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
           </div>
           <div class="pill-wrap">
             <span class="pill">Health Economics</span><span class="pill">Market Access</span><span class="pill">Product
@@ -3927,6 +4030,8 @@
           class="mchip">IQVIA</span><span class="mchip">Lifecycle Management</span><span
           class="mchip">Biosimilars</span></div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="case-studies/semaglutide-patent-cliff.pdf" target="_blank" rel="noopener"
+          class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
@@ -3955,6 +4060,8 @@
       <div class="m-chips"><span class="mchip">React</span><span class="mchip">Firebase</span><span
           class="mchip">PWA</span><span class="mchip">SQLite</span><span class="mchip">Multilingual</span></div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="case-studies/pharmaintel-india-app.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+            class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
@@ -3983,6 +4090,8 @@
           class="mchip">SaaS</span><span class="mchip">Health Economics</span><span class="mchip">Epidemiology</span>
       </div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="case-studies/amr-genius-intelligence-hub.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+            class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
@@ -4012,6 +4121,8 @@
           class="mchip">Nanotechnology</span><span class="mchip">Curcumin</span><span class="mchip">Published</span>
       </div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="case-studies/ethosomal-curcumin-review.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+          class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener" class="m-action"><i
             class="fas fa-external-link-alt"></i> View on ResearchGate (DOI)</a>
       </div>
@@ -4040,6 +4151,8 @@
       <div class="m-chips"><span class="mchip">Predictive AI</span><span class="mchip">Patient Adherence</span><span
           class="mchip">ML</span><span class="mchip">Digital Health</span><span class="mchip">Pharma Tech</span></div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="case-studies/pharmadhere-ai.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+            class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
@@ -4079,6 +4192,8 @@
           class="mchip">EV/EBITDA</span><span class="mchip">Governance</span><span class="mchip">Capital Markets</span>
       </div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="case-studies/sun-pharma-organon-ma.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+            class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
           class="m-action"><i class="fab fa-linkedin"></i> View Full Case Study</a>
       </div>
@@ -5030,15 +5145,16 @@
     <div class="footer-inner">
       <div class="footer-socials">
         <a class="footer-link" href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank"
-          rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a class="footer-link" href="https://github.com/Animesh1324" target="_blank" rel="noopener noreferrer"
-          title="GitHub"><i class="fab fa-github"></i></a>
+          title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a class="footer-link" href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank"
-          rel="noopener noreferrer" title="ResearchGate Publication"><i class="fas fa-flask"></i></a>
-        <a class="footer-link" href="mailto:mishra.animesh1324@gmail.com" title="Email"><i
+          rel="noopener noreferrer" title="ResearchGate Publication" aria-label="ResearchGate Publication"><i
+            class="fas fa-flask"></i></a>
+        <a class="footer-link" href="mailto:mishra.animesh1324@gmail.com" title="Email" aria-label="Email"><i
             class="fas fa-envelope"></i></a>
         <a class="footer-link" href="https://wa.me/918989468728" target="_blank" rel="noopener noreferrer"
-          title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
       <p class="footer-copy">Designed &amp; built by <em>Animesh Mishra</em> &nbsp;·&nbsp; Molecule to Market
         &nbsp;·&nbsp; MBA Pharmaceutical Management, IIHMR University &nbsp;·&nbsp; 2026</p>
@@ -5122,10 +5238,79 @@
     const hs = document.querySelector('.hero-stats'); if (hs) co.observe(hs);
 
     // ── Modal
-    function openM(id) { const o = document.getElementById('m-' + id); if (o) { o.classList.add('show'); document.body.style.overflow = 'hidden'; } }
-    function closeM(id) { const o = document.getElementById('m-' + id); if (o) { o.classList.remove('show'); document.body.style.overflow = ''; } }
+    const modalOverlays = [...document.querySelectorAll('.m-overlay')];
+    const focusableSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+    const modalHandlers = new Map();
+    let lastFocus = null;
+
+    modalOverlays.forEach(o => {
+      o.setAttribute('role', 'dialog');
+      o.setAttribute('aria-modal', 'true');
+      o.setAttribute('aria-hidden', 'true');
+      const box = o.querySelector('.m-box');
+      if (box && !box.hasAttribute('tabindex')) box.setAttribute('tabindex', '-1');
+    });
+
+    function trapFocus(modal, e) {
+      if (e.key !== 'Tab') return;
+      const focusables = [...modal.querySelectorAll(focusableSelector)].filter(el => !el.hasAttribute('disabled'));
+      if (!focusables.length) { e.preventDefault(); return; }
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function focusModal(modal) {
+      const focusTarget = modal.querySelector(focusableSelector) || modal.querySelector('.m-box') || modal;
+      focusTarget.focus();
+    }
+
+    function openM(id) {
+      const o = document.getElementById('m-' + id);
+      if (o) {
+        lastFocus = document.activeElement;
+        o.classList.add('show');
+        o.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        const handler = (e) => trapFocus(o, e);
+        modalHandlers.set(o, handler);
+        o.addEventListener('keydown', handler);
+        setTimeout(() => focusModal(o), 0);
+      }
+    }
+
+    function closeM(id) {
+      const o = document.getElementById('m-' + id);
+      if (o) {
+        o.classList.remove('show');
+        o.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        const handler = modalHandlers.get(o);
+        if (handler) {
+          o.removeEventListener('keydown', handler);
+          modalHandlers.delete(o);
+        }
+        if (lastFocus && typeof lastFocus.focus === 'function') {
+          lastFocus.focus();
+        }
+      }
+    }
+
     function closeOnBg(e, id) { if (e.target.classList.contains('m-overlay')) closeM(id); }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.querySelectorAll('.m-overlay.show').forEach(o => o.classList.remove('show')); document.body.style.overflow = ''; } });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.m-overlay.show').forEach(o => {
+          const id = o.id.replace('m-', '');
+          closeM(id);
+        });
+      }
+    });
 
     // ── Certificates filter/search
     const certSearch = document.getElementById('certSearch');
@@ -5174,17 +5359,39 @@
     const themeSwitch = document.getElementById('themeSwitch');
     const icon = themeSwitch.querySelector('i');
     let isDark = localStorage.getItem('theme') === 'dark';
-    if (isDark) { document.body.setAttribute('data-theme', 'dark'); icon.className = 'fas fa-sun'; }
+    if (isDark) {
+      document.body.setAttribute('data-theme', 'dark');
+      icon.className = 'fas fa-sun';
+      themeSwitch.setAttribute('aria-pressed', 'true');
+    }
     themeSwitch.addEventListener('click', () => {
       isDark = !isDark;
       if (isDark) {
         document.body.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
         icon.className = 'fas fa-sun';
+        themeSwitch.setAttribute('aria-pressed', 'true');
       } else {
         document.body.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
         icon.className = 'fas fa-moon';
+        themeSwitch.setAttribute('aria-pressed', 'false');
+      }
+    });
+
+    // ── Card keyboard access
+    document.querySelectorAll('.proj-card, .ins-card, .cert-card').forEach(card => {
+      const onclick = card.getAttribute('onclick') || '';
+      const match = onclick.match(/openM\('([^']+)'\)/);
+      if (match) {
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openM(match[1]);
+          }
+        });
       }
     });
 
