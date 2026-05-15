@@ -1582,6 +1582,192 @@
       color: var(--c-gold)
     }
 
+    /* ─── HOW I WORK (process strip) ─── */
+    .proc-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px
+    }
+
+    .proc-step {
+      background: #fff;
+      border: 1px solid var(--c-border);
+      border-radius: var(--r);
+      padding: 28px 26px;
+      box-shadow: var(--s1);
+      position: relative;
+      overflow: hidden;
+      transition: all .35s var(--ease)
+    }
+
+    .proc-step::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 0;
+      background: linear-gradient(to bottom, var(--c-navy), var(--c-gold));
+      transition: height .4s var(--ease)
+    }
+
+    .proc-step:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--s2);
+      border-color: rgba(27, 47, 78, .15)
+    }
+
+    .proc-step:hover::before {
+      height: 100%
+    }
+
+    .proc-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--c-gold);
+      letter-spacing: 1px;
+      margin-bottom: 8px
+    }
+
+    .proc-ico {
+      width: 44px;
+      height: 44px;
+      background: rgba(27, 47, 78, .06);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      color: var(--c-navy);
+      margin-bottom: 14px
+    }
+
+    .proc-step h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--c-navy);
+      margin-bottom: 8px
+    }
+
+    .proc-step p {
+      font-size: .82rem;
+      color: var(--c-mid);
+      line-height: 1.7;
+      margin-bottom: 14px
+    }
+
+    .proc-eg {
+      font-size: .72rem;
+      color: var(--c-muted);
+      font-style: italic;
+      padding-top: 10px;
+      border-top: 1px dashed var(--c-border)
+    }
+
+    [data-theme="dark"] .proc-step {
+      background: var(--c-off);
+      border-color: var(--c-border)
+    }
+
+    [data-theme="dark"] .proc-step h3 { color: #fff }
+
+    @media(max-width:1024px) {
+      .proc-grid { grid-template-columns: repeat(2, 1fr) }
+    }
+
+    @media(max-width:560px) {
+      .proc-grid { grid-template-columns: 1fr }
+    }
+
+    /* ─── RECOMMENDATIONS ─── */
+    .rec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px
+    }
+
+    .rec-card {
+      background: #fff;
+      border-radius: var(--r);
+      padding: 36px 32px 28px;
+      border: 1px solid var(--c-border);
+      border-left: 4px solid var(--c-gold);
+      box-shadow: var(--s1);
+      position: relative;
+      transition: all .35s var(--ease);
+      margin: 0
+    }
+
+    .rec-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--s2)
+    }
+
+    .rec-quote-mark {
+      color: var(--c-gold);
+      font-size: 1.6rem;
+      opacity: .35;
+      position: absolute;
+      top: 22px;
+      right: 26px
+    }
+
+    .rec-text {
+      font-style: italic;
+      font-size: .95rem;
+      color: var(--c-text);
+      line-height: 1.85;
+      margin: 0 0 22px;
+      font-family: 'Playfair Display', serif
+    }
+
+    .rec-attrib {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-top: 16px;
+      border-top: 1px solid var(--c-border)
+    }
+
+    .rec-name {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--c-navy)
+    }
+
+    .rec-role {
+      font-size: .76rem;
+      color: var(--c-muted)
+    }
+
+    .rec-note {
+      margin-top: 24px;
+      text-align: center;
+      font-size: .76rem;
+      color: var(--c-muted);
+      font-style: italic
+    }
+
+    .rec-note i {
+      color: var(--c-gold);
+      margin-right: 5px
+    }
+
+    [data-theme="dark"] .rec-card {
+      background: var(--c-off);
+      border-color: var(--c-border);
+      border-left-color: var(--c-gold)
+    }
+
+    [data-theme="dark"] .rec-text { color: var(--c-text) }
+    [data-theme="dark"] .rec-name { color: #fff }
+
+    @media(max-width:768px) {
+      .rec-grid { grid-template-columns: 1fr }
+    }
+
     /* ─── EDUCATION ─── */
     .edu-grid {
       display: grid;
@@ -2485,6 +2671,45 @@
       display: flex;
       flex-direction: column;
       gap: 6px
+    }
+
+    .cf-templates {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1)
+    }
+
+    .cf-templates-lbl {
+      font-size: .7rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .55);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-right: 4px
+    }
+
+    .cf-template-btn {
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 100px;
+      color: rgba(255, 255, 255, .85);
+      font-family: 'Inter', sans-serif;
+      font-size: .76rem;
+      font-weight: 500;
+      padding: 6px 13px;
+      cursor: pointer;
+      transition: all .25s
+    }
+
+    .cf-template-btn:hover {
+      background: var(--c-gold);
+      color: var(--c-navy);
+      border-color: var(--c-gold);
+      transform: translateY(-1px)
     }
 
     .cf-g label {
@@ -4005,6 +4230,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#process">Process</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#insights">Insights</a></li>
@@ -4038,6 +4264,7 @@
     <button class="sec-dot" data-target="about" aria-label="About"></button>
     <button class="sec-dot" data-target="skills" aria-label="Skills"></button>
     <button class="sec-dot" data-target="experience" aria-label="Experience"></button>
+    <button class="sec-dot" data-target="process" aria-label="Process"></button>
     <button class="sec-dot" data-target="education" aria-label="Education"></button>
     <button class="sec-dot" data-target="projects" aria-label="Projects"></button>
     <button class="sec-dot" data-target="insights" aria-label="Insights"></button>
@@ -4453,6 +4680,85 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section id="process">
+    <div class="s-inner">
+      <div class="s-head sr up">
+        <span class="s-kicker">How I Work</span>
+        <h2 class="s-title">From Insight to <em>Execution</em></h2>
+        <div class="s-rule"></div>
+      </div>
+      <div class="proc-grid">
+        <div class="proc-step sr up" style="transition-delay:.04s">
+          <div class="proc-num">01</div>
+          <div class="proc-ico"><i class="fas fa-magnifying-glass-chart"></i></div>
+          <h3>Discovery</h3>
+          <p>Read clinical data, secondary research, IQVIA exports, and HCP voice. The right question shapes the right strategy.</p>
+          <div class="proc-eg">e.g. RCPA + IQVIA scan before the Semaglutide patent-cliff brief</div>
+        </div>
+        <div class="proc-step sr up" style="transition-delay:.12s">
+          <div class="proc-num">02</div>
+          <div class="proc-ico"><i class="fas fa-lightbulb"></i></div>
+          <h3>Insight</h3>
+          <p>Synthesise data into a one-line "so what?" — the insight that survives a brand review and a CFO challenge alike.</p>
+          <div class="proc-eg">e.g. The biosimilar entry curve hides a 12-month premium-defence window</div>
+        </div>
+        <div class="proc-step sr up" style="transition-delay:.2s">
+          <div class="proc-num">03</div>
+          <div class="proc-ico"><i class="fas fa-chess-knight"></i></div>
+          <h3>Strategy</h3>
+          <p>Frame options against SWOT/PESTEL, model NPV/WACC, and pick a defensible play with clear KPIs.</p>
+          <div class="proc-eg">e.g. Lifecycle plays + KOL re-engagement to defend brand share</div>
+        </div>
+        <div class="proc-step sr up" style="transition-delay:.28s">
+          <div class="proc-num">04</div>
+          <div class="proc-ico"><i class="fas fa-rocket"></i></div>
+          <h3>Execution</h3>
+          <p>Translate strategy into briefs, dashboards, and field-force messaging — with measurable feedback loops.</p>
+          <div class="proc-eg">e.g. PMT detailing decks, IQVIA dashboards, AI workflow prototypes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section id="recommendations" class="bg-off">
+    <div class="s-inner">
+      <div class="s-head sr up">
+        <span class="s-kicker">What People Say</span>
+        <h2 class="s-title">Recommendations &amp; <em>Endorsements</em></h2>
+        <div class="s-rule"></div>
+      </div>
+      <div class="rec-grid">
+        <figure class="rec-card sr up" style="transition-delay:.04s">
+          <i class="fas fa-quote-left rec-quote-mark" aria-hidden="true"></i>
+          <blockquote class="rec-text">
+            Animesh combines lab discipline with commercial curiosity in a way that's rare at entry level. He reads
+            an HPLC chromatogram and an IQVIA dashboard with the same focus — and asks the right "so what?"
+          </blockquote>
+          <figcaption class="rec-attrib">
+            <span class="rec-name">[Mentor / Faculty Name]</span>
+            <span class="rec-role">[Role · Organisation]</span>
+          </figcaption>
+        </figure>
+        <figure class="rec-card sr up" style="transition-delay:.12s">
+          <i class="fas fa-quote-left rec-quote-mark" aria-hidden="true"></i>
+          <blockquote class="rec-text">
+            Among the few MBA candidates I've worked with who can actually translate molecule-level science into
+            a brand strategy conversation. Detail-oriented, structured, and reliable.
+          </blockquote>
+          <figcaption class="rec-attrib">
+            <span class="rec-name">[Industry Manager Name]</span>
+            <span class="rec-role">[Role · Organisation]</span>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="rec-note sr up" style="transition-delay:.2s">
+        <i class="fas fa-circle-info"></i> Replace bracketed placeholders with real attributions before publishing.
+      </p>
     </div>
   </section>
 
@@ -5393,6 +5699,12 @@
         <form class="cf sr right" id="cForm" action="mailto:animesh.pm17@iihmr.in" method="POST"
           data-formspree-action="">
           <div id="cFormFields">
+            <div class="cf-templates" aria-label="Quick message templates">
+              <span class="cf-templates-lbl">Quick start:</span>
+              <button type="button" class="cf-template-btn" data-subject="Coffee chat — pharma PM" data-msg="Hi Animesh, I came across your portfolio and would love a 15-min coffee chat about your work in pharma product management. Are you free this week?">☕ Coffee chat</button>
+              <button type="button" class="cf-template-btn" data-subject="PMT role — opportunity to discuss" data-msg="Hi Animesh, I represent [company] and we have a Product Management Trainee opening that may interest you. Could we schedule a call to discuss?">💼 I have a PMT role</button>
+              <button type="button" class="cf-template-btn" data-subject="Question on a case study" data-msg="Hi Animesh, I read your case study on [project name] and have a quick question about the [insight / methodology]. Do you have a minute?">💬 Quick question</button>
+            </div>
             <div class="cf-row">
               <div class="cf-g"><label for="contactName">Name</label><input id="contactName" type="text" name="name"
                   placeholder="Your Name" autocomplete="name" required>
@@ -5632,6 +5944,18 @@
     }
     if (certSearch) certSearch.addEventListener('input', filterCerts);
     if (certFilter) certFilter.addEventListener('change', filterCerts);
+
+    // ── Contact form quick templates: pre-fill subject + message on click
+    document.querySelectorAll('.cf-template-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const subj = btn.dataset.subject || '';
+        const msg = btn.dataset.msg || '';
+        const subjEl = document.getElementById('contactSubject');
+        const msgEl = document.getElementById('contactMessage');
+        if (subjEl) subjEl.value = subj;
+        if (msgEl) { msgEl.value = msg; msgEl.focus(); msgEl.setSelectionRange(0, 0); }
+      });
+    });
 
     // ── Contact form
     // To enable real submissions: set data-formspree-action="https://formspree.io/f/YOUR_ID"

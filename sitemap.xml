@@ -6,4 +6,46 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://animesh1324.github.io/animesh-portfolio/Animesh_CV.pdf</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://animesh1324.github.io/animesh-portfolio/case-studies/sun-pharma-organon-ma.pdf</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://animesh1324.github.io/animesh-portfolio/case-studies/semaglutide-patent-cliff.pdf</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://animesh1324.github.io/animesh-portfolio/case-studies/pharmaintel-india-app.pdf</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://animesh1324.github.io/animesh-portfolio/case-studies/amr-genius-intelligence-hub.pdf</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://animesh1324.github.io/animesh-portfolio/case-studies/ethosomal-curcumin-review.pdf</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://animesh1324.github.io/animesh-portfolio/case-studies/pharmadhere-ai.pdf</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
