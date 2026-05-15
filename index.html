@@ -3561,7 +3561,7 @@
             <div class="inf"><i class="fas fa-university"></i><span>IIHMR University</span></div>
             <div class="inf"><i class="fas fa-envelope"></i><span>animesh.pm17@iihmr.in</span></div>
             <div class="inf"><i class="fas fa-phone"></i><span>+91 8989468728</span><a href="https://wa.me/918989468728"
-              target="_blank" style="margin-left:8px; color:#25D366; font-size:1.1rem; cursor:pointer;"
+              target="_blank" rel="noopener" style="margin-left:8px; color:#25D366; font-size:1.1rem; cursor:pointer;"
               title="Available on WhatsApp" aria-label="Available on WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
           </div>
           <div class="pill-wrap">
@@ -4019,6 +4019,8 @@
         <iframe src="Animesh_CV.pdf#toolbar=0&navpanes=0" title="Animesh Mishra CV" loading="lazy"></iframe>
       </div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="Animesh_CV.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+            class="fas fa-up-right-from-square"></i> Open in new tab</a>
         <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf" class="m-action"><i
             class="fas fa-download"></i> Download CV</a>
       </div>
@@ -5141,12 +5143,13 @@
             <button type="submit" class="cf-submit" id="cSubmitBtn">Send Message <i
                 class="fas fa-paper-plane"></i></button>
           </div>
-          <div id="cFormSuccess" style="display:none;padding:32px 0;text-align:center;">
+          <div id="cFormSuccess" role="status" aria-live="polite"
+            style="display:none;padding:32px 0;text-align:center;">
             <div style="font-size:2.5rem;margin-bottom:12px;">✅</div>
             <div style="color:#fff;font-size:1.1rem;font-weight:700;margin-bottom:8px;">Message sent!</div>
             <div style="color:rgba(255,255,255,.6);font-size:.88rem;">I'll get back to you within 24 hours.</div>
           </div>
-          <div id="cFormError"
+          <div id="cFormError" role="alert" aria-live="assertive"
             style="display:none;padding:16px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);border-radius:10px;margin-top:12px;">
             <div style="color:#fca5a5;font-size:.88rem;">Something went wrong. Please email me directly at <a
                 href="mailto:animesh.pm17@iihmr.in"
