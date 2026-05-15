@@ -443,10 +443,15 @@
       height: 54px;
       width: 54px;
       object-fit: contain;
-      border-radius: 12px;
       transition: transform 0.4s var(--ease);
       image-rendering: -webkit-optimize-contrast;
     }
+
+    .am-logo .logo-light { display: block; }
+    .am-logo .logo-dark  { display: none; }
+
+    [data-theme="dark"] .am-logo .logo-light { display: none; }
+    [data-theme="dark"] .am-logo .logo-dark  { display: block; }
 
     .nav.stuck .am-logo img {
       transform: scale(0.85);
@@ -2978,9 +2983,13 @@
       .mob-hd-brand img {
         width: 40px;
         height: 40px;
-        border-radius: 10px;
         object-fit: contain;
       }
+
+      .mob-hd-brand .logo-light { display: block; }
+      .mob-hd-brand .logo-dark  { display: none; }
+      [data-theme="dark"] .mob-hd-brand .logo-light { display: none; }
+      [data-theme="dark"] .mob-hd-brand .logo-dark  { display: block; }
 
       .mob-hd-text {
         display: flex;
@@ -3807,12 +3816,14 @@
   <!-- NAVBAR -->
   <nav class="nav" id="nav">
     <a href="#home" class="am-logo" title="Animesh Mishra">
-      <img src="logo.png" alt="Animesh Mishra" width="54" height="54" onerror="this.style.visibility='hidden'">
+      <img class="logo-light" src="logo-light.png" alt="Animesh Mishra" width="54" height="54">
+      <img class="logo-dark"  src="logo-dark.png"  alt="Animesh Mishra" width="54" height="54">
     </a>
     <ul class="nav-menu" id="navMenu">
       <li class="mob-nav-hd">
         <a href="#home" class="mob-hd-brand">
-          <img src="logo.png" alt="AM" width="40" height="40" onerror="this.style.display='none'">
+          <img class="logo-light" src="logo-light.png" alt="AM" width="40" height="40">
+          <img class="logo-dark"  src="logo-dark.png"  alt="AM" width="40" height="40">
           <div class="mob-hd-text">
             <strong>Animesh Mishra</strong>
             <span>Pharma MBA · IIHMR</span>

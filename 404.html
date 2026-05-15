@@ -63,10 +63,19 @@
     margin-bottom:32px;
   }
   .logo-link img{
-    height:48px;
-    width:48px;
+    height:56px;
+    width:56px;
     object-fit:contain;
-    border-radius:10px;
+  }
+  .logo-link .logo-dark{display:none}
+  @media(prefers-color-scheme:dark){
+    body{background:#0D1117;color:#CDD5DE}
+    .card{background:#161B22;border-color:rgba(255,255,255,.08);box-shadow:0 4px 6px rgba(0,0,0,.2),0 20px 40px rgba(0,0,0,.4)}
+    h1{color:#fff}
+    .logo-link .logo-light{display:none}
+    .logo-link .logo-dark{display:inline-block}
+    .btn{background:var(--c-gold);color:#0D1117}
+    .btn:hover{background:var(--c-gold-2)}
   }
   .num{
     font-family:'Playfair Display',serif;
@@ -133,7 +142,8 @@
   <div class="bg-orb orb-2"></div>
   <div class="card">
     <a href="index.html" class="logo-link">
-      <img src="logo.png" alt="Animesh Mishra">
+      <img class="logo-light" src="logo-light.png" alt="Animesh Mishra">
+      <img class="logo-dark"  src="logo-dark.png"  alt="Animesh Mishra">
     </a>
     <div class="num">404</div>
     <div class="rule"></div>
