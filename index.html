@@ -776,7 +776,63 @@
       max-width: 490px;
       margin-bottom: 32px;
       opacity: 0;
-      animation: fadeUp .7s .4s var(--ease) forwards
+      animation: fadeUp .7s .4s var(--ease) forwards;
+      transition: opacity .3s
+    }
+
+    .hero-bio.swapping {
+      opacity: 0
+    }
+
+    /* "Fit For Role" segmented switch */
+    .role-switch {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: 4px;
+      margin: 6px 0 18px;
+      background: rgba(27, 47, 78, .05);
+      border: 1px solid var(--c-border);
+      border-radius: 100px;
+      opacity: 0;
+      animation: fadeUp .7s .35s var(--ease) forwards
+    }
+
+    [data-theme="dark"] .role-switch {
+      background: rgba(255, 255, 255, .04);
+      border-color: var(--c-border)
+    }
+
+    .role-btn {
+      background: transparent;
+      border: none;
+      padding: 6px 13px;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: .76rem;
+      font-weight: 600;
+      color: var(--c-mid);
+      cursor: pointer;
+      transition: all .25s var(--ease)
+    }
+
+    .role-btn:hover {
+      color: var(--c-navy)
+    }
+
+    [data-theme="dark"] .role-btn:hover {
+      color: var(--c-gold)
+    }
+
+    .role-btn.active {
+      background: var(--c-navy);
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(27, 47, 78, .2)
+    }
+
+    [data-theme="dark"] .role-btn.active {
+      background: var(--c-gold);
+      color: var(--c-navy)
     }
 
     .hero-socials {
@@ -4391,7 +4447,21 @@
           <div class="hero-label">MBA Pharmaceutical Management · IIHMR University</div>
           <h1 class="hero-name">Animesh<br>Mishra</h1>
           <div class="hero-typing"><span id="typingEl"></span><span class="cur">|</span></div>
-          <p class="hero-bio">I've stood at an HPLC machine and coded a patient diagnosis. Most MBA candidates bring one
+
+          <div class="role-switch" role="tablist" aria-label="Pick a role lens">
+            <button type="button" class="role-btn active" role="tab" data-role="all"
+              aria-selected="true">All-rounder</button>
+            <button type="button" class="role-btn" role="tab" data-role="pmt"
+              aria-selected="false">PMT</button>
+            <button type="button" class="role-btn" role="tab" data-role="brand"
+              aria-selected="false">Brand</button>
+            <button type="button" class="role-btn" role="tab" data-role="consulting"
+              aria-selected="false">Consulting</button>
+            <button type="button" class="role-btn" role="tab" data-role="coding"
+              aria-selected="false">Med Coding</button>
+          </div>
+
+          <p class="hero-bio" id="heroBio" data-bio-all="I've stood at an HPLC machine and coded a patient diagnosis. Most MBA candidates bring one lens. I bring two — combining laboratory science, clinical intelligence, and commercial strategy to drive real pharma outcomes." data-bio-pmt="A PMT-focused MBA fresher with live exposure at Micro Labs Ltd. — running market research on Rasagiline and Apixaban, applying SWOT/PESTEL to therapy-area strategy in CNS and cardiology, and learning brand planning from experienced managers." data-bio-brand="A brand-strategy candidate fluent in IQVIA Market Reflection, RCPA analysis, KOL engagement, and lifecycle management. I read the CMO deck and the field-force daily report with equal focus — and ask what would actually move share." data-bio-consulting="A pharma-consulting candidate with NPV/WACC/EV-EBITDA modelling chops, a $11.75B M&amp;A deep-dive in my portfolio, and a clinically-trained mind. I structure messy problems and ship executive-grade briefs." data-bio-coding="A certified ICD-10-CM medical coder (200+ codes, IIT Hyderabad) who understands how clinical documentation drives revenue cycles, payer reimbursement, and ultimately the pharma commercial decisions downstream.">I've stood at an HPLC machine and coded a patient diagnosis. Most MBA candidates bring one
             lens. I bring two — combining laboratory science, clinical intelligence, and commercial strategy to drive
             real pharma outcomes.</p>
           <div class="hero-socials">
@@ -6044,6 +6114,53 @@
     }
     if (certSearch) certSearch.addEventListener('input', filterCerts);
     if (certFilter) certFilter.addEventListener('change', filterCerts);
+
+    // ── "Fit For Role" hero switch — swap bio prose + emphasise matching projects
+    (function () {
+      const switcher = document.querySelector('.role-switch');
+      const bio = document.getElementById('heroBio');
+      if (!switcher || !bio) return;
+
+      // Which project IDs are most relevant to each role
+      const roleProjects = {
+        all:        ['p6', 'p2', 'p1', 'p3', 'p5', 'p4'],
+        pmt:        ['p1', 'p2', 'p6', 'p3', 'p5', 'p4'],
+        brand:      ['p1', 'p6', 'p2', 'p3', 'p5', 'p4'],
+        consulting: ['p6', 'p1', 'p3', 'p2', 'p5', 'p4'],
+        coding:     ['p4', 'p2', 'p3', 'p5', 'p1', 'p6'],
+      };
+
+      function reorderProjects(role) {
+        const grid = document.querySelector('.proj-grid');
+        if (!grid) return;
+        const order = roleProjects[role] || roleProjects.all;
+        order.forEach((id, idx) => {
+          const card = grid.querySelector(`[data-modal="${id}"]`);
+          if (card) card.style.order = String(idx);
+        });
+        grid.style.display = 'grid'; // ensure order is honoured
+      }
+
+      switcher.addEventListener('click', e => {
+        const btn = e.target.closest('.role-btn');
+        if (!btn) return;
+        const role = btn.dataset.role;
+        switcher.querySelectorAll('.role-btn').forEach(b => {
+          const active = b === btn;
+          b.classList.toggle('active', active);
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        const newBio = bio.dataset['bio' + role.charAt(0).toUpperCase() + role.slice(1)];
+        if (newBio) {
+          bio.classList.add('swapping');
+          setTimeout(() => {
+            bio.textContent = newBio;
+            bio.classList.remove('swapping');
+          }, 180);
+        }
+        reorderProjects(role);
+      });
+    })();
 
     // ── Contact form quick templates: pre-fill subject + message on click
     document.querySelectorAll('.cf-template-btn').forEach(btn => {
