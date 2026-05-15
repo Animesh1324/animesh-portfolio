@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -m ' *)",
+      "Bash(find /Users/animeshmishra -name \"*genai*\" -o -name \"*upgrad*\" -o -name \"*upGrad*\" -o -name \"*generative*\" 2>/dev/null | head -10)",
+      "Read(//Users/animeshmishra/**)",
+      "Bash(cp \"/Users/animeshmishra/animesh-portfolio/certificates/generative ai-microsoft.png\" \"/Users/animeshmishra/digital portfolio/certificates/genai-foundations-certificate.png\")"
+    ],
+    "additionalDirectories": [
+      "/Users/animeshmishra/animesh-portfolio/certificates"
+    ]
+  }
+}
