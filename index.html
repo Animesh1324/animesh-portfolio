@@ -815,22 +815,18 @@
       width: 100%;
       height: 430px;
       position: relative;
+      border-radius: 18px;
       overflow: hidden;
+      border: 1.5px solid rgba(184,150,46,0.4);
+      box-shadow: 0 0 0 4px rgba(184,150,46,0.08), var(--s4);
       z-index: 2;
-      background: #1a2d4a;
+      background: #f0ede8;
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Gold accent bar at top of photo */
-    .photo-img-wrap::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--c-gold) 0%, rgba(184,150,46,0.15) 100%);
-      z-index: 5;
+    [data-theme="dark"] .photo-img-wrap {
+      border-color: rgba(184,150,46,0.25);
+      background: #1a2d4a;
     }
 
     .photo-img {
@@ -839,91 +835,53 @@
       object-fit: cover;
       object-position: center 8%;
       transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-      filter: brightness(1.02) contrast(1.14) saturate(0.9) sepia(0.06);
+      filter: brightness(1.03) contrast(1.08) saturate(1.05);
     }
 
     .photo-wrap:hover .photo-img {
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
     .photo-wrap:hover .photo-img-wrap {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
     }
 
-    /* Cinematic gradient overlay — strong bottom fade to navy */
+    /* Subtle vignette only — no heavy dark overlay */
     .photo-img-wrap::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(175deg,
-        rgba(184,150,46,0.07) 0%,
-        transparent 38%,
-        rgba(27,47,78,0.42) 72%,
-        rgba(27,47,78,0.68) 100%);
+      background: linear-gradient(to bottom, transparent 65%, rgba(27,47,78,0.14) 100%);
       pointer-events: none;
       z-index: 3;
     }
 
-    /* Portrait card — unified photo + info */
-    .photo-card {
-      width: 100%;
+    /* Availability pip — discreet bottom-right corner */
+    .avail-pip {
+      position: absolute;
+      bottom: 13px;
+      right: 13px;
+      background: rgba(10,18,32,0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(34,197,94,0.35);
       border-radius: 20px;
-      overflow: hidden;
-      border: 1.5px solid rgba(184,150,46,0.45);
-      box-shadow: 0 0 0 4px rgba(184,150,46,0.1), var(--s4);
-      background: #1a2d4a;
-    }
-
-    [data-theme="dark"] .photo-card {
-      border-color: rgba(184,150,46,0.3);
-      box-shadow: 0 0 0 4px rgba(184,150,46,0.08), var(--s4);
-    }
-
-    /* Info strip at bottom of portrait card */
-    .photo-info {
-      background: #1a2d4a;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid rgba(184,150,46,0.22);
-    }
-
-    .photo-info-left {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .photo-info-title {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .photo-info-sub {
-      font-size: 0.64rem;
-      font-weight: 600;
-      color: var(--c-gold);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .photo-info-avail {
+      padding: 5px 10px 5px 7px;
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.67rem;
+      font-size: 0.65rem;
       font-weight: 700;
       color: #86efac;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      z-index: 4;
       white-space: nowrap;
     }
 
     .avail-dot {
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       background: #22c55e;
       border-radius: 50%;
       flex-shrink: 0;
@@ -932,7 +890,7 @@
 
     @keyframes availPulse {
       0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
-      55% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+      55% { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
     }
 
     /* Hero stats */
@@ -3583,19 +3541,10 @@
         </div>
         <div class="hero-visual">
           <div class="photo-wrap">
-            <div class="photo-card">
-              <div class="photo-img-wrap">
-                <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra" width="280" height="330" onerror="this.style.opacity='0'">
-              </div>
-              <div class="photo-info">
-                <div class="photo-info-left">
-                  <span class="photo-info-title">B.Pharm + MBA</span>
-                  <span class="photo-info-sub">Molecule to Market</span>
-                </div>
-                <div class="photo-info-avail" title="Open to pharma PM opportunities">
-                  <span class="avail-dot"></span>
-                  <span>Available</span>
-                </div>
+            <div class="photo-img-wrap">
+              <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra" width="280" height="330" onerror="this.style.opacity='0'">
+              <div class="avail-pip" title="Open to pharma PM opportunities">
+                <span class="avail-dot"></span>Available
               </div>
             </div>
           </div>
