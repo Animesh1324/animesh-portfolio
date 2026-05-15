@@ -4054,6 +4054,14 @@
       object-fit: cover
     }
 
+    /* Modal action-button rows (formerly inline-styled in 7 modals) */
+    .m-actions {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
     /* iOS Safari + many mobile browsers can't render <iframe src="*.pdf">.
        On small screens, hide the iframe viewer and promote the fallback
        link into a prominent button so the user can still open the PDF. */
@@ -5090,7 +5098,7 @@
       <div class="m-cert-viewer">
         <iframe src="Animesh_CV.pdf#toolbar=0&navpanes=0" title="Animesh Mishra CV" loading="lazy"></iframe>
       </div>
-      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="Animesh_CV.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
             class="fas fa-up-right-from-square"></i> Open in new tab</a>
         <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf" class="m-action"><i
@@ -5122,7 +5130,7 @@
         <div class="m-ref-item"><strong>AstraZeneca Nexium Case (DocMode, 2015)</strong> — Purple Pill lifecycle management: brand repositioning via premium pricing &amp; patient education to protect revenue post-patent expiry. Validated LCM strategies applied in this analysis.</div>
         <div class="m-ref-item"><strong>Novartis Gilenya Launch (DocMode, 2015)</strong> — Disease-education-led launch at $48,000/year (20× over generic), targeting neurologists with unbranded awareness campaigns. Informs premium biosimilar defence frameworks used in this study.</div>
       </div>
-      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="case-studies/semaglutide-patent-cliff.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
@@ -5153,7 +5161,7 @@
         <div class="m-ref-item"><strong>Smilax Labs Marketing Study (IOSR-JBM, 2013)</strong> — Field force effectiveness and detailing strategies in Indian pharma markets reveal the critical gap in real-time drug intelligence tools accessible to HCPs — the core problem PharmaIntel India solves.</div>
         <div class="m-ref-item"><strong>Novo Nordisk India Diabetes Awareness (DocMode, 2015)</strong> — Digital patient education through vernacular content in 9 languages demonstrated the viability of multilingual health communication in India, directly informing the app's 13-language architecture.</div>
       </div>
-      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="case-studies/pharmaintel-india-app.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
@@ -5184,7 +5192,7 @@
         <div class="m-ref-item"><strong>IIM Ahmedabad — Optimization-Based DSS for Pharma (2016)</strong> — Demonstrates how multi-objective optimisation and scenario modelling can guide strategic decisions in pharmaceutical companies. AMR-Genius applies this DSS framework to antibiogram surveillance and resistance prediction.</div>
         <div class="m-ref-item"><strong>Vertex Pharmaceuticals Incivek Launch (DocMode, 2015)</strong> — Risk-share contracting and outcomes-based pricing in speciality pharma validated the health-economics monetisation model used in AMR-Genius's institutional tier pricing strategy.</div>
       </div>
-      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="case-studies/amr-genius-intelligence-hub.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
@@ -5211,7 +5219,7 @@
       <div class="m-chips"><span class="mchip">Scientific Writing</span><span class="mchip">Drug Delivery</span><span
           class="mchip">Nanotechnology</span><span class="mchip">Curcumin</span><span class="mchip">Published</span>
       </div>
-      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener noreferrer" class="m-action"><i
             class="fas fa-external-link-alt"></i> View on ResearchGate (DOI)</a>
         <a href="case-studies/ethosomal-curcumin-review.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
@@ -5243,7 +5251,7 @@
         <div class="m-ref-item"><strong>IIM Ahmedabad — Strategic DSS for Pharma (2016)</strong> — Multi-scenario optimisation under real-world constraints directly informs PharmAdhere-AI's risk stratification engine, which predicts adherence dropout across patient cohorts using federated learning.</div>
         <div class="m-ref-item"><strong>Cornerstone4Care — Novo Nordisk (DocMode, 2015)</strong> — Integrated digital adherence platform for insulin patients demonstrated measurable compliance improvement at scale, providing precedent for the CRM-integrated reminder ecosystem in PharmAdhere-AI.</div>
       </div>
-      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="case-studies/pharmadhere-ai.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
@@ -5285,7 +5293,7 @@
         <div class="m-ref-item"><strong>TBM Consulting — Pharma Strategy Execution (2015)</strong> — Documents how a pharma manufacturer achieved 33% cost reduction through rigorous management systems. Post-acquisition integration analysis in this M&amp;A study benchmarks Sun Pharma's operational synergy targets against this execution framework.</div>
         <div class="m-ref-item"><strong>Smilax Labs — Pharma Marketing Strategies (IOSR-JBM, 2013)</strong> — Segmentation analysis of Indian pharma field force and brand positioning frameworks inform the commercial synergy assessment for Organon's Women's Health &amp; biosimilar portfolio post-acquisition.</div>
       </div>
-      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="case-studies/sun-pharma-organon-ma.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View Full Case Study</a>
