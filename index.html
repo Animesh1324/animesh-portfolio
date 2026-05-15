@@ -2918,11 +2918,25 @@
         position: static;
       }
 
-      .mob-hd-brand {
+      .mob-nav-hd .mob-hd-brand {
         display: flex;
         align-items: center;
         gap: 10px;
         text-decoration: none;
+        padding: 0;
+        color: inherit;
+        font-size: inherit;
+        position: static;
+      }
+
+      .mob-nav-hd .mob-hd-brand::after {
+        display: none;
+      }
+
+      .mob-nav-hd .mob-hd-brand:hover,
+      .mob-nav-hd .mob-hd-brand:active {
+        color: inherit;
+        background: transparent;
       }
 
       .mob-hd-brand img {
@@ -2999,6 +3013,7 @@
         font-weight: 500;
         color: var(--c-mid);
         width: 100%;
+        position: static;
         transition: background .2s, color .2s, padding-left .2s;
       }
 
@@ -3009,6 +3024,13 @@
         font-size: .6rem;
         color: var(--c-border);
         transition: color .2s, transform .2s;
+        /* reset global absolute underline positioning */
+        position: static;
+        width: auto;
+        height: auto;
+        bottom: auto;
+        left: auto;
+        background: transparent;
       }
 
       .nav-menu > li:not(.mob-nav-hd):not(.mob-nav-ft)::before {
@@ -3040,6 +3062,9 @@
       .nav-menu > li:not(.mob-nav-hd):not(.mob-nav-ft) a:hover::after {
         color: var(--c-gold);
         transform: translateX(2px);
+        width: auto;
+        height: auto;
+        background: transparent;
       }
 
       /* ── Drawer footer ── */
@@ -3091,9 +3116,15 @@
         font-size: .78rem;
         transition: background .2s, transform .2s;
         text-decoration: none;
+        padding: 0;
+        position: static;
       }
 
-      .mob-ft-socials a:hover {
+      .mob-nav-ft .mob-ft-socials a::after {
+        display: none;
+      }
+
+      .mob-nav-ft .mob-ft-socials a:hover {
         background: var(--c-gold);
         color: var(--c-navy);
         transform: scale(1.08);
