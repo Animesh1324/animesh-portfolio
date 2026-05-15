@@ -4,15 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Animesh Mishra</title>
-<meta name="description" content="Animesh Mishra — MBA Pharmaceutical Management @ IIHMR University | QC Analyst | Medical Coder | Molecule to Market">
+<meta name="description" content="Animesh Mishra — Pharma MBA Fresher | B.Pharm Honours | PMT · Brand Strategy · Medical Coding · Molecule to Market">
 <!-- Open Graph / Social Meta Tags -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://animeshmishra.github.io/portfolio/">
-<meta property="og:title" content="Animesh Mishra | Pharma MBA">
-<meta property="og:description" content="MBA Pharmaceutical Management @ IIHMR | Molecule to Market">
-<meta property="og:image" content="profile.png">
+<meta property="og:url" content="https://animesh1324.github.io/animesh-portfolio/">
+<meta property="og:title" content="Animesh Mishra | Pharma MBA Fresher">
+<meta property="og:description" content="B.Pharm + MBA Pharmaceutical Management | PMT · Brand Strategy · Molecule to Market">
+<meta property="og:image" content="https://animesh1324.github.io/animesh-portfolio/PIC.jpg">
 <meta property="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>A</text></svg>">
+<meta property="twitter:image" content="https://animesh1324.github.io/animesh-portfolio/PIC.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -285,6 +287,23 @@ section{padding:100px 5%}
 .m-doi{display:inline-flex;align-items:center;gap:8px;margin-top:12px;margin-left:10px;background:var(--c-gold);color:#fff;padding:12px 24px;border-radius:var(--r-sm);font-size:.87rem;font-weight:600;transition:all .3s}
 .m-doi:hover{background:var(--c-gold-2)}
 
+/* ─── INSIGHTS ─── */
+.ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ins-card{background:#fff;border-radius:var(--r);padding:28px;border:1px solid var(--c-border);box-shadow:var(--s1);transition:all .35s var(--ease);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.ins-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-navy),var(--c-gold));transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.ins-card:hover{transform:translateY(-6px);box-shadow:var(--s3);border-color:var(--c-navy)}
+.ins-card:hover::before{transform:scaleX(1)}
+.ins-cat{display:inline-block;background:rgba(184,150,46,.1);color:var(--c-gold);font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 11px;border-radius:100px;margin-bottom:14px}
+.ins-card h3{font-size:.96rem;font-weight:700;color:var(--c-navy);line-height:1.45;margin-bottom:10px}
+.ins-card p{font-size:.83rem;color:var(--c-mid);line-height:1.8;flex:1;margin-bottom:12px}
+.ins-meta{font-size:.72rem;color:var(--c-muted);font-weight:500;margin-bottom:16px}
+.ins-link{display:inline-flex;align-items:center;gap:6px;color:var(--c-navy);font-size:.82rem;font-weight:600;transition:gap .3s,color .3s;margin-top:auto}
+.ins-link:hover{gap:10px;color:var(--c-gold)}
+[data-theme="dark"] .ins-card{background:var(--c-off);border-color:var(--c-border)}
+[data-theme="dark"] .ins-card h3{color:#fff}
+@media(max-width:1100px){.ins-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.ins-grid{grid-template-columns:1fr}}
+
 /* ─── CERTIFICATIONS ─── */
 .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
 .cert-card{background:#fff;border-radius:var(--r);padding:26px;border:1px solid var(--c-border);box-shadow:var(--s1);transition:all .35s var(--ease);display:flex;flex-direction:column}
@@ -461,6 +480,7 @@ footer em{font-style:normal;color:var(--c-gold)}
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#insights">Insights</a></li>
     <li><a href="#certifications">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -487,6 +507,7 @@ footer em{font-style:normal;color:var(--c-gold)}
           <a class="hero-social-btn" href="mailto:mishra.animesh1324@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
           <a class="hero-social-btn" href="tel:+918989468728" title="Phone"><i class="fas fa-phone"></i></a>
           <a class="hero-social-btn" href="https://wa.me/918989468728" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a class="hero-social-btn" href="https://github.com/Animesh1324" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
           <a class="hero-social-btn" href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener" title="Research Paper"><i class="fas fa-file-alt"></i></a>
         </div>
         <div class="hero-actions">
@@ -1016,6 +1037,43 @@ footer em{font-style:normal;color:var(--c-gold)}
     </div>
   </div>
 </div>
+
+<!-- INSIGHTS -->
+<section id="insights">
+  <div class="s-inner">
+    <div class="s-head sr up"><span class="s-kicker">Pharma Intelligence</span><h2 class="s-title">Featured <em>Insights</em></h2><div class="s-rule"></div></div>
+    <div class="ins-grid">
+
+      <article class="ins-card sr up" style="transition-delay:.04s">
+        <span class="ins-cat">Patent Strategy</span>
+        <h3>GLP-1 Patent Cliff: Semaglutide &amp; the Biosimilar Wave</h3>
+        <p>Executive analysis of Novo Nordisk's Ozempic/Wegovy patent expiry landscape, biosimilar entry timelines, and lifecycle management strategy in the $20B+ global GLP-1 market — with scenario modelling on market-share erosion.</p>
+        <div class="ins-meta">IQVIA Market Reflection · 2025</div>
+        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener" class="ins-link">Read on LinkedIn <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="ins-card sr up" style="transition-delay:.1s">
+        <span class="ins-cat">M&amp;A Strategy</span>
+        <h3>Sun Pharma × Organon: India's $11.75B Deal Decoded</h3>
+        <p>Forensic 15-section breakdown of India's largest pharma acquisition — EV/EBITDA mechanics, Women's Health &amp; biosimilar portfolios, governance crisis, and capital market reaction across NSE and global advisors.</p>
+        <div class="ins-meta">Strategic &amp; Financial Analysis · April 2026</div>
+        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener" class="ins-link">Read on LinkedIn <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+      <article class="ins-card sr up" style="transition-delay:.16s">
+        <span class="ins-cat">Digital Health</span>
+        <h3>AI in Pharma PMT: Reshaping Brand Planning &amp; HCP Targeting</h3>
+        <p>How generative AI is transforming go-to-market strategy, prescriber segmentation, and market access decisions — and what the next generation of PMT professionals in India need to prepare for.</p>
+        <div class="ins-meta">Opinion · MBA Research · IIHMR 2026</div>
+        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener" class="ins-link">Read on LinkedIn <i class="fas fa-arrow-right"></i></a>
+      </article>
+
+    </div>
+    <div class="sr up" style="text-align:center;margin-top:40px;transition-delay:.2s">
+      <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener" class="btn-ghost"><i class="fab fa-linkedin"></i> &nbsp;View All Posts on LinkedIn</a>
+    </div>
+  </div>
+</section>
 
 <!-- CERTIFICATIONS -->
 <section id="certifications">
