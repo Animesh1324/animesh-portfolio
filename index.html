@@ -165,6 +165,38 @@
       }
     }
 
+    /* ─── PRINT STYLESHEET ─── */
+    @media print {
+      :root, body, body[data-theme="dark"] {
+        --c-white: #fff;
+        --c-off: #fff;
+        --c-light: #f5f5f5;
+        --c-text: #000;
+        --c-mid: #222;
+        --c-muted: #444;
+        background: #fff !important;
+        color: #000 !important;
+      }
+      body { font-size: 11pt; line-height: 1.5; }
+      .nav, .marquee-wrap, .quick-bar, .sec-rail,
+      .bg-shape, .grid-bg, #cursor-dot, #cursor-ring,
+      #molCanvas, #progress-bar, #btt, .theme-switch,
+      .hero-actions, .hero-socials, .hero-stats,
+      .footer-socials, .m-overlay, .nav-cta,
+      .hamburger, #nav-backdrop {
+        display: none !important;
+      }
+      a { text-decoration: underline; color: #000; }
+      a[href^="http"]:after { content: " (" attr(href) ")"; font-size: .85em; color: #555; }
+      section { page-break-inside: avoid; padding: 16pt 0 !important; }
+      img { max-width: 100% !important; }
+      .sk-card, .tl-card, .edu-card, .proj-card, .cert-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+      }
+    }
+
     .hero-name,
     .s-title,
     .tl-role,
@@ -1327,6 +1359,27 @@
     .sk-tag:hover {
       background: var(--c-navy);
       color: #fff
+    }
+
+    /* Visual hint: glossary-mapped tags get a subtle dotted underline */
+    .has-glossary {
+      text-decoration: underline dotted;
+      text-decoration-color: rgba(184, 150, 46, .55);
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1.5px
+    }
+
+    .glossary-hint {
+      margin-top: 18px;
+      text-align: center;
+      font-size: .78rem;
+      color: var(--c-muted);
+      font-style: italic
+    }
+
+    .glossary-hint i {
+      color: var(--c-gold);
+      margin-right: 4px
     }
 
     .sk-hl {
@@ -3745,14 +3798,44 @@
       background: var(--c-navy-2);
       padding: 44px 5% 32px;
       text-align: center;
+      position: relative;
       border-top: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--c-gold), transparent)
     }
 
     .footer-inner {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px
+      gap: 18px
+    }
+
+    .footer-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: .76rem
+    }
+
+    .footer-meta a {
+      color: rgba(255, 255, 255, .55);
+      transition: color .25s
+    }
+
+    .footer-meta a:hover { color: var(--c-gold) }
+
+    .footer-meta .dot {
+      color: rgba(255, 255, 255, .25)
     }
 
     .footer-socials {
@@ -3789,10 +3872,16 @@
     }
 
     .footer-updated {
-      display: block;
-      margin-top: 6px;
+      display: inline-block;
+      margin-top: 4px;
+      padding: 4px 12px;
       font-size: .72rem;
-      color: rgba(255, 255, 255, .45)
+      color: var(--c-gold);
+      background: rgba(184, 150, 46, .1);
+      border: 1px solid rgba(184, 150, 46, .25);
+      border-radius: 100px;
+      font-weight: 600;
+      letter-spacing: .3px
     }
 
     .footer-copy em {
@@ -3926,6 +4015,10 @@
         <div class="mob-ft-socials">
           <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="mailto:animesh.pm17@iihmr.in" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+918989468728" aria-label="Phone"><i class="fas fa-phone"></i></a>
+          <a href="https://wa.me/918989468728" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://github.com/Animesh1324" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener noreferrer" aria-label="Research Paper"><i class="fas fa-file-alt"></i></a>
         </div>
       </li>
     </ul>
@@ -4255,6 +4348,10 @@
           </div>
         </div>
 
+      </div>
+
+      <div class="glossary-hint sr up" style="transition-delay:.27s">
+        <i class="fas fa-lightbulb"></i> Click any pharma term (dotted underline) for a quick definition.
       </div>
 
       <!-- Tools Strip -->
@@ -5345,10 +5442,18 @@
         <a class="footer-link" href="https://wa.me/918989468728" target="_blank" rel="noopener noreferrer"
           title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
-      <p class="footer-copy">Designed &amp; built by <em>Animesh Mishra</em> &nbsp;·&nbsp; Molecule to Market
-        &nbsp;·&nbsp; MBA Pharmaceutical Management, IIHMR University &nbsp;·&nbsp; 2026
-        <span class="footer-updated" id="footerUpdated" data-updated="2026-05-15">Last updated: May 15, 2026</span>
-      </p>
+      <p class="footer-copy">© 2026 <em>Animesh Mishra</em> &nbsp;·&nbsp; Molecule to Market &nbsp;·&nbsp;
+        MBA Pharmaceutical Management, IIHMR University</p>
+      <span class="footer-updated" id="footerUpdated" data-updated="2026-05-15">
+        <i class="fas fa-clock-rotate-left" style="margin-right:5px;"></i>Last updated: May 15, 2026
+      </span>
+      <div class="footer-meta">
+        <a href="sitemap.xml">Sitemap</a>
+        <span class="dot">·</span>
+        <a href="https://github.com/Animesh1324/animesh-portfolio" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+        <span class="dot">·</span>
+        <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf">Download CV</a>
+      </div>
     </div>
   </footer>
 
@@ -5779,8 +5884,15 @@
       for (const k in glossary) {
         if (txt.toLowerCase().includes(k.toLowerCase())) {
           el.style.cursor = 'help';
+          el.classList.add('has-glossary');
           el.title = 'Click to learn: ' + k;
+          el.setAttribute('role', 'button');
+          el.setAttribute('tabindex', '0');
+          el.setAttribute('aria-label', `Glossary: ${k}`);
           el.addEventListener('click', (e) => { e.stopPropagation(); openGlossary(k); });
+          el.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openGlossary(k); }
+          });
           break;
         }
       }
