@@ -1407,19 +1407,20 @@ if(window.matchMedia("(pointer: fine)").matches && cd && cr) {
   if(!canvas) return;
   const ctx = canvas.getContext('2d');
   const NAVY = '27,47,78', GOLD = '184,150,46';
-  let W, H, nodes=[], raf;
-  function resize(){ W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
-  function initNodes(){
-    nodes = [];
-    const count = Math.min(22, Math.floor(W*H/28000));
-    for(let i=0;i<count;i++) nodes.push({
-      x: Math.random()*W, y: Math.random()*H,
-      vx: (Math.random()-.5)*0.35, vy: (Math.random()-.5)*0.35,
-      r: 2+Math.random()*2,
-      col: Math.random()>.6 ? GOLD : NAVY
-    });
-  }
+  let isVisible = true;
+  const observer = new IntersectionObserver(entries => {
+    isVisible = entries[0].isIntersecting;
+    if(isVisible) {
+      cancelAnimationFrame(raf);
+      draw();
+    } else {
+      cancelAnimationFrame(raf);
+    }
+  }, { threshold: 0 });
+  observer.observe(canvas);
+
   function draw(){
+    if(!isVisible) return;
     ctx.clearRect(0,0,W,H);
     // lines
     for(let i=0;i<nodes.length;i++){
@@ -1449,20 +1450,34 @@ if(window.matchMedia("(pointer: fine)").matches && cd && cr) {
     });
     raf = requestAnimationFrame(draw);
   }
-  resize(); initNodes(); draw();
-  window.addEventListener('resize',()=>{ cancelAnimationFrame(raf); resize(); initNodes(); draw(); });
+  resize(); initNodes();
+  window.addEventListener('resize',()=>{ 
+    resize(); 
+    initNodes(); 
+    if(isVisible) {
+      cancelAnimationFrame(raf);
+      draw();
+    }
+  });
 })();
 
-// ── Magnetic CTA Buttons
+// ── Magnetic CTA Buttons (rAF optimized)
 if(window.matchMedia("(pointer: fine)").matches){
   document.querySelectorAll('.btn-cta, .btn-ghost').forEach(btn => {
+    let mRaf;
     btn.addEventListener('mousemove', e => {
       const r = btn.getBoundingClientRect();
       const x = (e.clientX - r.left - r.width/2) * 0.22;
       const y = (e.clientY - r.top - r.height/2) * 0.22;
-      btn.style.transform = `translate(${x}px,${y}px) translateY(-3px)`;
+      cancelAnimationFrame(mRaf);
+      mRaf = requestAnimationFrame(() => {
+        btn.style.transform = `translate(${x}px,${y}px) translateY(-3px)`;
+      });
     });
-    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    btn.addEventListener('mouseleave', () => { 
+      cancelAnimationFrame(mRaf);
+      btn.style.transform = ''; 
+    });
   });
 }
 </script>
