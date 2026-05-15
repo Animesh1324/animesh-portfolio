@@ -403,7 +403,7 @@ footer em{font-style:normal;color:var(--c-gold)}
 .theme-switch{cursor:pointer;font-size:1.1rem;color:var(--c-mid);transition:color .3s;margin-left:auto;margin-right:24px;}
 .theme-switch:hover{color:var(--c-navy);}
 [data-theme="dark"] .theme-switch:hover{color:var(--c-gold);}
-@media(max-width:768px){ .theme-switch{position:absolute;top:23px;right:60px;margin:0;} }
+@media(max-width:900px){ .theme-switch{position:absolute;top:23px;right:60px;margin:0;} }
 
 /* ─── GOLD SWEEP ON SECTION RULE ─── */
 .s-rule { transform-origin: left; transform: scaleX(0); transition: transform 0.55s cubic-bezier(0.16,1,0.3,1) 0.35s; }
@@ -429,7 +429,12 @@ footer em{font-style:normal;color:var(--c-gold)}
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:1100px){.sk-grid,.proj-grid{grid-template-columns:repeat(2,1fr)}.edge-inner{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){
+@media(max-width:1024px){
+  .nav-menu{gap:14px}
+  .nav-menu a{font-size:.76rem}
+  .nav-cta{font-size:.72rem;padding:7px 14px}
+}
+@media(max-width:900px){
   .hamburger{display:flex}
   .nav{grid-template-columns:auto 1fr auto}
   .nav-menu{position:fixed;top:0;right:-100%;left:auto;transform:none;width:76%;height:100vh;flex-direction:column;background:#fff;padding:96px 36px 40px;transition:right .4s var(--ease);gap:18px;box-shadow:var(--s4);border-left:1px solid var(--c-border)}
@@ -504,7 +509,7 @@ footer em{font-style:normal;color:var(--c-gold)}
         <p class="hero-bio">I've stood at an HPLC machine and coded a patient diagnosis. Most MBA candidates bring one lens. I bring two — combining laboratory science, clinical intelligence, and commercial strategy to drive real pharma outcomes.</p>
         <div class="hero-socials">
           <a class="hero-social-btn" href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a class="hero-social-btn" href="mailto:mishra.animesh1324@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a class="hero-social-btn" href="mailto:animesh.pm17@iihmr.in" title="Email"><i class="fas fa-envelope"></i></a>
           <a class="hero-social-btn" href="tel:+918989468728" title="Phone"><i class="fas fa-phone"></i></a>
           <a class="hero-social-btn" href="https://wa.me/918989468728" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           <a class="hero-social-btn" href="https://github.com/Animesh1324" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
@@ -521,8 +526,11 @@ footer em{font-style:normal;color:var(--c-gold)}
             <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra">
           </div>
           <div class="glass-badge badge-exp">
-            <div class="exp-n">2+</div>
-            <div class="exp-l">Years<br>Exp</div>
+            <div class="badge-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="badge-text">
+              <span class="badge-title">B.Pharm + MBA</span>
+              <span class="badge-sub">Pharma Fresher</span>
+            </div>
           </div>
           <div class="glass-badge badge-theme">
             <div class="badge-icon"><i class="fas fa-atom"></i></div>
@@ -535,7 +543,7 @@ footer em{font-style:normal;color:var(--c-gold)}
       </div>
     </div>
     <div class="hero-stats sr up">
-      <div class="hstat"><div class="hstat-n" data-t="2">0</div><div class="hstat-l">Years Experience</div></div>
+      <div class="hstat"><div class="hstat-n" data-t="78" data-sfx="%">0</div><div class="hstat-l">B.Pharm Score</div></div>
       <div class="hstat"><div class="hstat-n" data-t="5">0</div><div class="hstat-l">Projects Delivered</div></div>
       <div class="hstat"><div class="hstat-n" data-t="200">0</div><div class="hstat-l">ICD Codes Mastered</div></div>
       <div class="hstat"><div class="hstat-n" data-t="3">0</div><div class="hstat-l">Industry Internships</div></div>
@@ -573,7 +581,7 @@ footer em{font-style:normal;color:var(--c-gold)}
           <div class="inf"><i class="fas fa-graduation-cap"></i><span>MBA in Pharmaceutical Management</span></div>
           <div class="inf"><i class="fas fa-map-marker-alt"></i><span>Home: Rewa, M.P. / Current: Jaipur, Rajasthan</span></div>
           <div class="inf"><i class="fas fa-university"></i><span>IIHMR University</span></div>
-          <div class="inf"><i class="fas fa-envelope"></i><span>mishra.animesh1324@gmail.com</span></div>
+          <div class="inf"><i class="fas fa-envelope"></i><span>animesh.pm17@iihmr.in</span></div>
           <div class="inf"><i class="fas fa-phone"></i><span>+91 8989468728</span><a href="https://wa.me/918989468728" target="_blank" style="margin-left:8px; color:#25D366; font-size:1.1rem; cursor:pointer;" title="Available on WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
         </div>
         <div class="pill-wrap">
@@ -928,7 +936,7 @@ footer em{font-style:normal;color:var(--c-gold)}
     <h2>Semaglutide Patent Cliff Analysis</h2>
     <div class="m-sub">Strategic Intelligence · IQVIA Market Reflection · 2025</div>
     <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Chart" style="width:100%; height:100%; object-fit:cover;">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Chart" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
     </div>
     <p>An executive-level analysis of the GLP-1 patent expiry landscape for semaglutide, examining the commercial implications of Novo Nordisk's Ozempic and Wegovy patents approaching expiration and the anticipated biosimilar entry wave.</p>
     <p>Mapped competitive biosimilar entry timelines, estimated market-share erosion scenarios using IQVIA Market Reflection data, and proposed lifecycle management strategies. Quantified the impact on the $20B+ global GLP-1 market and identified adjacent therapeutic opportunities.</p>
@@ -947,7 +955,7 @@ footer em{font-style:normal;color:var(--c-gold)}
     <h2>PharmaIntel India App</h2>
     <div class="m-sub">Full-Stack PWA · React · Firebase · Vite · SQLite</div>
     <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-      <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80" alt="App Interface" style="width:100%; height:100%; object-fit:cover;">
+      <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80" alt="App Interface" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
     </div>
     <p>A comprehensive multilingual pharmaceutical intelligence platform for Indian healthcare professionals. Supports 13 regional languages and is built offline-first, ensuring accessibility in low-connectivity areas across Tier 2 and 3 cities.</p>
     <p>Architecture: A 20-table SQLite schema organises drug data, therapeutic categories, and regional formulary information. Firebase handles authentication and real-time sync; Vite/React powers the progressive web app frontend.</p>
@@ -966,7 +974,7 @@ footer em{font-style:normal;color:var(--c-gold)}
     <h2>AMR-Genius Intelligence Hub</h2>
     <div class="m-sub">AI Platform Concept · Research Methods · IIHMR 2025</div>
     <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-      <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" alt="Lab Research" style="width:100%; height:100%; object-fit:cover;">
+      <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" alt="Lab Research" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
     </div>
     <p>An AI-powered antimicrobial resistance (AMR) surveillance platform concept addressing the growing global AMR crisis — projected to cause 10 million deaths annually by 2050 — by aggregating hospital antibiogram data and predicting resistance patterns in real time.</p>
     <p>Deliverables included a full Business Model Canvas, three-tier monetisation plan (institutional, government, research), graph-database-powered data architecture, and market sizing analysis for the Indian AMR diagnostics segment.</p>
@@ -985,7 +993,7 @@ footer em{font-style:normal;color:var(--c-gold)}
     <h2>Ethosomal Curcumin — Narrative Review</h2>
     <div class="m-sub">Peer-Reviewed Publication · Drug Delivery · DOI: 10.13140/RG.2.2.36647.10405</div>
     <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-      <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80" alt="Molecular Science" style="width:100%; height:100%; object-fit:cover;">
+      <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80" alt="Molecular Science" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
     </div>
     <p>A publication-ready narrative review comparing ethosomal and liposomal drug delivery systems for curcumin — a compound with well-established anti-inflammatory and anti-cancer properties but notoriously poor oral bioavailability (~1%).</p>
     <p>Critically examined 40+ peer-reviewed publications, evaluating encapsulation efficiency, transdermal permeation rates, vesicular stability profiles, and clinical translation potential of both systems across oncology, dermatology, and nutraceutical applications.</p>
@@ -1004,7 +1012,7 @@ footer em{font-style:normal;color:var(--c-gold)}
     <h2>PharmAdhere-AI</h2>
     <div class="m-sub">AI Conceptual Framework · Patient Adherence · 2025</div>
     <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-      <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80" alt="Medicine Technology" style="width:100%; height:100%; object-fit:cover;">
+      <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80" alt="Medicine Technology" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
     </div>
     <p>A predictive AI framework for pharmaceutical patient adherence modelling — addressing one of the industry's most persistent and costly challenges, estimated to cost the global pharma sector $500B+ annually in lost revenue and suboptimal treatment outcomes.</p>
     <p>The framework integrates: a behavioural prediction model trained on anonymised adherence patterns, a real-time risk stratification engine, and a personalised intervention recommendation system for clinical teams — built on federated learning principles to preserve data privacy.</p>
@@ -1023,7 +1031,7 @@ footer em{font-style:normal;color:var(--c-gold)}
     <h2>Sun Pharma × Organon — Comprehensive M&amp;A Analysis</h2>
     <div class="m-sub">Strategic &amp; Financial Analysis · Cross-Border Pharma M&amp;A · April 2026</div>
     <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Corporate Buildings" style="width:100%; height:100%; object-fit:cover;">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Corporate Buildings" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
     </div>
     <p>A 15-section, 57-source executive-grade analysis of Sun Pharmaceutical Industries' $11.75 billion all-cash acquisition of Organon &amp; Co. — the largest cross-border pharmaceutical transaction ever executed by an Indian company, eclipsing Tata Steel's 2007 Corus acquisition.</p>
     <p><strong>Transaction mechanics:</strong> Mapped the full legal architecture across Sun Pharma Holdings USA, Sun Pharma America (Merger Sub), and Sun Pharma (Netherlands) B.V. Analysed the $14.00/share offer — a 103% premium to Organon's unaffected price, yet a conservative 6.2x EV/EBITDA takeout multiple — and the $120M termination fee structure with J.P. Morgan, Jefferies, Morgan Stanley, and Goldman Sachs as advisors.</p>
@@ -1190,7 +1198,7 @@ footer em{font-style:normal;color:var(--c-gold)}
             <div class="cl-item-ico"><i class="fas fa-envelope"></i></div>
             <div class="cl-item-body">
               <span class="cl-item-label">Email</span>
-              <span class="cl-item-val"><a href="mailto:mishra.animesh1324@gmail.com">mishra.animesh1324@gmail.com</a></span>
+              <span class="cl-item-val"><a href="mailto:animesh.pm17@iihmr.in">animesh.pm17@iihmr.in</a></span>
             </div>
           </div>
           <div class="cl-item">
@@ -1216,7 +1224,7 @@ footer em{font-style:normal;color:var(--c-gold)}
           </div>
         </div>
       </div>
-      <form class="cf sr right" id="cForm" action="https://formspree.io/mishra.animesh1324@gmail.com" method="POST">
+      <form class="cf sr right" id="cForm" action="https://formspree.io/animesh.pm17@iihmr.in" method="POST">
         <div id="cFormFields">
           <div class="cf-row">
             <div class="cf-g"><label>Name</label><input type="text" name="name" placeholder="Your Name" required></div>
@@ -1232,7 +1240,7 @@ footer em{font-style:normal;color:var(--c-gold)}
           <div style="color:rgba(255,255,255,.6);font-size:.88rem;">I'll get back to you within 24 hours.</div>
         </div>
         <div id="cFormError" style="display:none;padding:16px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);border-radius:10px;margin-top:12px;">
-          <div style="color:#fca5a5;font-size:.88rem;">Something went wrong. Please email me directly at <a href="mailto:mishra.animesh1324@gmail.com" style="color:var(--c-gold-2);text-decoration:underline;">mishra.animesh1324@gmail.com</a></div>
+          <div style="color:#fca5a5;font-size:.88rem;">Something went wrong. Please email me directly at <a href="mailto:animesh.pm17@iihmr.in" style="color:var(--c-gold-2);text-decoration:underline;">animesh.pm17@iihmr.in</a></div>
         </div>
       </form>
     </div>
@@ -1300,7 +1308,7 @@ const co=new IntersectionObserver(entries=>{
     if(e.isIntersecting&&!counted){
       counted=true;
       document.querySelectorAll('.hstat-n').forEach(n=>{
-        const tgt=+n.dataset.t,sfx='+';let c=0,step=tgt/55;
+        const tgt=+n.dataset.t,sfx=n.dataset.sfx||'+';let c=0,step=tgt/55;
         const tmr=setInterval(()=>{c+=step;if(c>=tgt){c=tgt;clearInterval(tmr);}n.textContent=Math.floor(c)+sfx;},22);
       });
     }

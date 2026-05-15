@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>404 — Page Not Found | Animesh Mishra</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --c-navy:#1b2f4e;
+    --c-gold:#b8962e;
+    --c-gold-2:#d4af37;
+    --c-bg:#f8f6f1;
+    --c-text:#2d3748;
+    --c-muted:#718096;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--c-bg);
+    color:var(--c-text);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:40px 24px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .bg-orb{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:0;
+  }
+  .orb-1{
+    width:500px;height:500px;
+    background:radial-gradient(circle,rgba(184,150,46,.12) 0%,transparent 70%);
+    top:-100px;right:-100px;
+  }
+  .orb-2{
+    width:400px;height:400px;
+    background:radial-gradient(circle,rgba(27,47,78,.08) 0%,transparent 70%);
+    bottom:-80px;left:-80px;
+  }
+  .card{
+    position:relative;
+    z-index:1;
+    background:#fff;
+    border:1px solid rgba(27,47,78,.1);
+    border-radius:24px;
+    padding:56px 48px 48px;
+    max-width:480px;
+    width:100%;
+    box-shadow:0 4px 6px rgba(0,0,0,.04),0 20px 40px rgba(0,0,0,.08);
+  }
+  .logo-link{
+    display:inline-block;
+    margin-bottom:32px;
+  }
+  .logo-link img{
+    height:48px;
+    width:48px;
+    object-fit:contain;
+    border-radius:10px;
+  }
+  .num{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(5rem,20vw,7rem);
+    font-weight:700;
+    line-height:1;
+    background:linear-gradient(135deg,var(--c-navy) 0%,var(--c-gold) 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    letter-spacing:-2px;
+    margin-bottom:16px;
+  }
+  .rule{
+    width:48px;height:3px;
+    background:linear-gradient(90deg,var(--c-navy),var(--c-gold));
+    border-radius:2px;
+    margin:0 auto 20px;
+  }
+  h1{
+    font-family:'Playfair Display',serif;
+    font-size:1.5rem;
+    color:var(--c-navy);
+    margin-bottom:12px;
+    font-weight:700;
+  }
+  p{
+    font-size:.95rem;
+    color:var(--c-muted);
+    line-height:1.7;
+    margin-bottom:32px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--c-navy);
+    color:#fff;
+    text-decoration:none;
+    font-family:'Inter',sans-serif;
+    font-size:.88rem;
+    font-weight:600;
+    padding:13px 28px;
+    border-radius:50px;
+    transition:background .25s,transform .2s;
+    letter-spacing:.3px;
+  }
+  .btn:hover{
+    background:var(--c-gold);
+    transform:translateY(-2px);
+  }
+  .btn svg{
+    width:15px;height:15px;
+    stroke:currentColor;stroke-width:2;fill:none;
+    stroke-linecap:round;stroke-linejoin:round;
+  }
+  @media(max-width:480px){
+    .card{padding:40px 28px 36px}
+  }
+</style>
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="card">
+    <a href="index.html" class="logo-link">
+      <img src="logo.png" alt="Animesh Mishra">
+    </a>
+    <div class="num">404</div>
+    <div class="rule"></div>
+    <h1>Page Not Found</h1>
+    <p>This page seems to have gone off-label. Let's get you back to the portfolio.</p>
+    <a href="index.html" class="btn">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to Portfolio
+    </a>
+  </div>
+</body>
+</html>
