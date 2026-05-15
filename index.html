@@ -3418,7 +3418,7 @@
       <div class="nav-badge" role="status" aria-label="Available for opportunities">Available</div>
       <button class="theme-switch" id="themeSwitch" type="button" aria-label="Toggle dark mode" aria-pressed="false"
         title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
-      <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf" class="nav-cta"><i class="fas fa-download"></i> Download
+      <a href="Animesh_CV.pdf" class="nav-cta" onclick="openM('cv'); return false;"><i class="fas fa-eye"></i> Preview
         CV</a>
       <button class="hamburger" id="hb" type="button" aria-label="Open menu" aria-controls="navMenu"
         aria-expanded="false"><span></span><span></span><span></span></button>
@@ -3440,7 +3440,8 @@
 
   <div class="quick-bar" aria-label="Quick access">
     <div class="quick-bar-inner">
-      <a class="quick-link" href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf"><i class="fas fa-download"></i><span>CV</span></a>
+        <a class="quick-link" href="Animesh_CV.pdf" onclick="openM('cv'); return false;"><i
+          class="fas fa-eye"></i><span>CV</span></a>
       <a class="quick-link" href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
       <a class="quick-link" href="#certifications"><i class="fas fa-certificate"></i><span>Certs</span></a>
       <a class="quick-link" href="#contact"><i class="fas fa-paper-plane"></i><span>Contact</span></a>
@@ -3476,8 +3477,8 @@
           </div>
           <div class="hero-actions">
             <a href="#contact" class="btn-cta"><i class="fas fa-handshake"></i> Open to Opportunities</a>
-            <a href="Animesh_CV.pdf" download="Animesh_Mishra_1-Page_Resume.pdf" class="btn-ghost"><i
-                class="fas fa-file-download"></i> Download 1-page Resume</a>
+            <a href="Animesh_CV.pdf" class="btn-ghost" onclick="openM('cv'); return false;"><i
+              class="fas fa-file"></i> Preview 1-page Resume</a>
             <a href="#projects" class="btn-ghost"><i class="fas fa-briefcase"></i> View My Work</a>
           </div>
         </div>
@@ -4008,6 +4009,22 @@
   </section>
 
   <!-- PROJECT MODALS -->
+  <div class="m-overlay" id="m-cv" onclick="closeOnBg(event,'cv')">
+    <div class="m-box">
+      <button class="m-close" onclick="closeM('cv')"><i class="fas fa-times"></i></button>
+      <div class="m-icon">📄</div>
+      <h2>Curriculum Vitae</h2>
+      <div class="m-sub">Animesh Mishra · MBA Pharmaceutical Management</div>
+      <div class="m-cert-viewer">
+        <iframe src="Animesh_CV.pdf#toolbar=0&navpanes=0" title="Animesh Mishra CV" loading="lazy"></iframe>
+      </div>
+      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf" class="m-action"><i
+            class="fas fa-download"></i> Download CV</a>
+      </div>
+    </div>
+  </div>
+
   <div class="m-overlay" id="m-p1" onclick="closeOnBg(event,'p1')">
     <div class="m-box">
       <button class="m-close" onclick="closeM('p1')"><i class="fas fa-times"></i></button>
