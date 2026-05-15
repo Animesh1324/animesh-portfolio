@@ -209,6 +209,18 @@
       letter-spacing: 0.2px
     }
 
+    /* Force deterministic emoji rendering across OSes — Apple/Win/Android
+       all see *their* native colour emoji rather than depending on the
+       generic body font. Without this, the same 🧬 looks very different
+       on Apple vs Windows vs Linux. */
+    .sk-ico, .proj-ico, .cert-ico, .m-icon, .proc-ico,
+    .ti, .marquee .star {
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
+                   "Twemoji Mozilla", EmojiOne, "Android Emoji", emoji,
+                   sans-serif;
+      font-variant-emoji: emoji;
+    }
+
     html {
       scrollbar-width: thin;
       scrollbar-color: var(--c-navy) var(--c-off)
@@ -4076,6 +4088,61 @@
       gap: 18px
     }
 
+    .footer-now {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      justify-content: center;
+      align-items: center;
+      max-width: 760px;
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .footer-now-pip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      background: rgba(34, 197, 94, .14);
+      border: 1px solid rgba(34, 197, 94, .35);
+      border-radius: 100px;
+      color: #86efac;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px
+    }
+
+    .footer-now-dot {
+      width: 6px;
+      height: 6px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, .55) }
+      50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0) }
+    }
+
+    .footer-now-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .footer-now-item i {
+      color: var(--c-gold);
+      font-size: .75rem
+    }
+
+    .footer-now-item em {
+      font-style: italic;
+      color: rgba(255, 255, 255, .75)
+    }
+
     .footer-meta {
       display: flex;
       gap: 18px;
@@ -4351,7 +4418,10 @@
         <div class="hero-visual">
           <div class="photo-wrap">
             <div class="photo-img-wrap">
-              <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra" width="280" height="330" onerror="this.style.opacity='0'">
+              <picture>
+                <source type="image/webp" srcset="PIC.webp">
+                <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra" width="280" height="330" loading="eager" onerror="this.style.opacity='0'">
+              </picture>
             </div>
             <div class="avail-pip" title="Open to pharma PM opportunities">
               <span class="avail-dot"></span>Available
@@ -4648,7 +4718,7 @@
         <div class="tl-item sr up">
           <div class="tl-dot gold"></div>
           <div class="tl-card">
-            <span class="tl-chip">May 2026 – Present</span>
+            <span class="tl-chip">May 2026 — Present</span>
             <div class="tl-role">Product Management Intern <span style="font-size:.75rem;font-weight:500;color:var(--c-gold);margin-left:6px;">● Ongoing</span></div>
             <div class="tl-org">Micro Labs Ltd. — Jaipur</div>
             <ul class="tl-pts">
@@ -4666,7 +4736,7 @@
         <div class="tl-item sr up" style="transition-delay:.08s">
           <div class="tl-dot gold"></div>
           <div class="tl-card">
-            <span class="tl-chip">January – March 2024</span>
+            <span class="tl-chip">Jan — Mar 2024</span>
             <div class="tl-role">Medical Coding Analyst (Certified)</div>
             <div class="tl-org">E-Cell, IIT Hyderabad</div>
             <ul class="tl-pts">
@@ -4682,7 +4752,7 @@
         <div class="tl-item sr up" style="transition-delay:.16s">
           <div class="tl-dot"></div>
           <div class="tl-card">
-            <span class="tl-chip">July 1–15, 2023</span>
+            <span class="tl-chip">Jul 1 — 15, 2023</span>
             <div class="tl-role">QC Analyst Intern</div>
             <div class="tl-org">Unidrug Innovative Pharma Technologies Ltd. — Indore</div>
             <ul class="tl-pts">
@@ -4698,7 +4768,7 @@
         <div class="tl-item sr up" style="transition-delay:.24s">
           <div class="tl-dot gold"></div>
           <div class="tl-card">
-            <span class="tl-chip">June 1–22, 2023</span>
+            <span class="tl-chip">Jun 1 — 22, 2023</span>
             <div class="tl-role">Pharma Industry Trainee</div>
             <div class="tl-org">SIRTSP / CARE, The SAGE Group — Bhopal</div>
             <ul class="tl-pts">
@@ -5760,6 +5830,12 @@
       </div>
       <p class="footer-copy">© 2026 <em>Animesh Mishra</em> &nbsp;·&nbsp; Molecule to Market &nbsp;·&nbsp;
         MBA Pharmaceutical Management, IIHMR University</p>
+      <div class="footer-now" aria-label="Currently">
+        <span class="footer-now-pip"><span class="footer-now-dot"></span>Now</span>
+        <span class="footer-now-item"><i class="fas fa-flask"></i> Live PMT internship at Micro Labs Ltd.</span>
+        <span class="footer-now-item"><i class="fas fa-book-open"></i> Reading: <em>The Pharma Letter</em> daily brief</span>
+        <span class="footer-now-item"><i class="fas fa-graduation-cap"></i> Studying: HEOR &amp; Market Access (MBA Term II)</span>
+      </div>
       <span class="footer-updated" id="footerUpdated" data-updated="2026-05-15">
         <i class="fas fa-clock-rotate-left" style="margin-right:5px;"></i>Last updated: May 15, 2026
       </span>
