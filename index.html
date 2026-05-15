@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animesh Mishra | Pharma MBA · PMT · Consulting</title>
+<title>Animesh Mishra</title>
 <meta name="description" content="Animesh Mishra — MBA Pharmaceutical Management @ IIHMR University | QC Analyst | Medical Coder | Molecule to Market">
 <!-- Open Graph / Social Meta Tags -->
 <meta property="og:type" content="website">
@@ -79,9 +79,9 @@ a{text-decoration:none;color:inherit}
 .nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:20px 5%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;transition:all .4s var(--ease)}
 .nav.stuck{background:rgba(255,255,255,.97);backdrop-filter:blur(16px);padding:13px 5%;box-shadow:var(--s2);border-bottom:1px solid var(--c-border)}
 .am-logo { display: flex; align-items: center; justify-content: flex-start; transition: transform 0.3s; }
-.am-logo:hover { transform: scale(1.05); }
-.am-logo img { height: 44px; width: 44px; object-fit: contain; border-radius: 10px; transition: transform 0.4s var(--ease); }
-.nav.stuck .am-logo img { transform: scale(0.86); }
+.am-logo:hover { transform: scale(1.06); }
+.am-logo img { height: 54px; width: 54px; object-fit: contain; border-radius: 12px; transition: transform 0.4s var(--ease); image-rendering: -webkit-optimize-contrast; }
+.nav.stuck .am-logo img { transform: scale(0.85); }
 .nav-menu{display:flex;gap:26px;list-style:none;align-items:center;justify-content:center;}
 .nav-right{display:flex;align-items:center;gap:20px;justify-content:flex-end;}
 .nav-menu a{font-size:.82rem;font-weight:500;color:var(--c-mid);position:relative;padding:4px 0;transition:color .3s}
@@ -303,29 +303,36 @@ section{padding:100px 5%}
 
 /* ─── CONTACT ─── */
 #contact{background:var(--c-navy)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
-.cl-kicker{display:inline-block;background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:16px}
-.cl-h{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.5rem);font-weight:700;color:#fff;line-height:1.2}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.cl-kicker{display:inline-block;background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px}
+.cl-h{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:#fff;line-height:1.2}
 .cl-h em{font-style:normal;color:var(--c-gold-2)}
-.cl-rule{width:44px;height:3px;background:linear-gradient(90deg,#fff,var(--c-gold));margin:18px 0;border-radius:2px;transform-origin:left;transform:scaleX(0);transition:transform 0.55s cubic-bezier(0.16,1,0.3,1) 0.35s}
+.cl-rule{width:44px;height:3px;background:linear-gradient(90deg,#fff,var(--c-gold));margin:16px 0;border-radius:2px;transform-origin:left;transform:scaleX(0);transition:transform 0.55s cubic-bezier(0.16,1,0.3,1) 0.35s}
 .sr.visible .cl-rule{transform:scaleX(1)}
-.cl-desc{color:rgba(255,255,255,.62);font-size:.9rem;line-height:1.85;margin-bottom:34px}
-.cl-items{display:flex;flex-direction:column;gap:10px}
-.cl-item{display:flex;align-items:flex-start;gap:14px;padding:13px 16px;background:rgba(255,255,255,.07);border-radius:var(--r-sm);border:1px solid rgba(255,255,255,.1);transition:all .3s}
-.cl-item:hover{background:rgba(255,255,255,.12);transform:translateX(4px)}
-.cl-item i{color:var(--c-gold-2);font-size:.95rem;width:18px;text-align:center;flex-shrink:0;margin-top:2px}
-.cl-item a,.cl-item span{color:rgba(255,255,255,.8);font-size:.84rem;transition:color .3s;word-break:break-word;line-height:1.5}
-.cl-item a:hover{color:var(--c-gold-2)}
+.cl-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(184,150,46,.18);border:1px solid rgba(184,150,46,.35);color:var(--c-gold-2);font-size:.72rem;font-weight:700;padding:5px 13px;border-radius:100px;margin-bottom:14px;letter-spacing:.5px}
+.cl-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--c-gold-2);animation:blink 1.4s infinite}
+.cl-desc{color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.9;margin-bottom:24px}
+.cl-items{display:flex;flex-direction:column;gap:9px}
+.cl-item{display:flex;align-items:center;gap:13px;padding:12px 15px;background:rgba(255,255,255,.06);border-radius:var(--r-sm);border:1px solid rgba(255,255,255,.09);transition:all .3s}
+.cl-item:hover{background:rgba(255,255,255,.11);transform:translateX(4px);border-color:rgba(184,150,46,.3)}
+.cl-item-ico{width:34px;height:34px;border-radius:8px;background:rgba(184,150,46,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cl-item-ico i{color:var(--c-gold-2);font-size:.85rem}
+.cl-item-ico i.fa-whatsapp{color:#25D366}
+.cl-item-body{display:flex;flex-direction:column;gap:1px;min-width:0}
+.cl-item-label{font-size:.65rem;font-weight:700;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:1px}
+.cl-item-val{font-size:.83rem;color:rgba(255,255,255,.82);word-break:break-word;line-height:1.4}
+.cl-item-val a{color:rgba(255,255,255,.82);transition:color .3s}
+.cl-item-val a:hover{color:var(--c-gold-2)}
 /* Form */
-.cf{display:flex;flex-direction:column;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:28px}
-.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.cf-g{display:flex;flex-direction:column;gap:7px}
-.cf-g label{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.8px}
-.cf input,.cf textarea{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:var(--r-sm);padding:12px 15px;color:#fff;font-family:'Inter',sans-serif;font-size:.88rem;outline:none;transition:border-color .3s,background .3s}
-.cf input::placeholder,.cf textarea::placeholder{color:rgba(255,255,255,.3)}
-.cf input:focus,.cf textarea:focus{border-color:var(--c-gold);background:rgba(255,255,255,.11)}
-.cf textarea{min-height:120px;resize:vertical}
-.cf-submit{background:var(--c-gold);color:var(--c-navy);padding:13px 28px;border:none;border-radius:var(--r-sm);font-family:'Inter',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:9px;width:100%}
+.cf{display:flex;flex-direction:column;gap:13px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:26px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.cf-g{display:flex;flex-direction:column;gap:6px}
+.cf-g label{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1px}
+.cf input,.cf textarea{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-sm);padding:11px 14px;color:#fff;font-family:'Inter',sans-serif;font-size:.87rem;outline:none;transition:border-color .3s,background .3s;width:100%}
+.cf input::placeholder,.cf textarea::placeholder{color:rgba(255,255,255,.28)}
+.cf input:focus,.cf textarea:focus{border-color:var(--c-gold);background:rgba(255,255,255,.1)}
+.cf textarea{min-height:110px;resize:vertical}
+.cf-submit{background:var(--c-gold);color:var(--c-navy);padding:13px 24px;border:none;border-radius:var(--r-sm);font-family:'Inter',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:2px}
 .cf-submit:hover{background:var(--c-gold-2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
 
 /* ─── BACK TO TOP ─── */
@@ -1111,13 +1118,44 @@ footer em{font-style:normal;color:var(--c-gold)}
         <span class="cl-kicker">Get in Touch</span>
         <h2 class="cl-h">Let's <em>Connect</em></h2>
         <div class="cl-rule"></div>
-        <p class="cl-desc">Open to PMT, Medical Affairs, Consulting, and Brand Management roles at pharma companies, CROs, and consulting firms. I reply within 24 hours.</p>
+        <div class="cl-badge">Fresher &nbsp;·&nbsp; Available Immediately</div>
+        <p class="cl-desc">B.Pharm (Hons.) + MBA Pharmaceutical Management fresher seeking entry-level roles in PMT, Medical Affairs, and Brand Management. Lab-trained, clinically aware, and strategy-ready. I reply within 24 hours.</p>
         <div class="cl-items">
-          <div class="cl-item"><i class="fab fa-linkedin-in"></i><a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener">linkedin.com/in/animesh-mishra-69a382378</a></div>
-          <div class="cl-item"><i class="fas fa-envelope"></i><a href="mailto:mishra.animesh1324@gmail.com">mishra.animesh1324@gmail.com</a></div>
-          <div class="cl-item"><i class="fas fa-phone"></i><span>+91 8989468728</span><a href="https://wa.me/918989468728" target="_blank" style="margin-left:8px; color:#25D366; font-size:1.1rem; cursor:pointer;" title="Available on WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
-          <div class="cl-item"><i class="fas fa-map-marker-alt"></i><span>Home: Rewa, M.P. / Current: Jaipur, Rajasthan</span></div>
-          <div class="cl-item"><i class="fas fa-file-alt"></i><a href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener">Research Paper (DOI: 10.13140/RG.2.2.36647.10405)</a></div>
+          <div class="cl-item">
+            <div class="cl-item-ico"><i class="fab fa-linkedin-in"></i></div>
+            <div class="cl-item-body">
+              <span class="cl-item-label">LinkedIn</span>
+              <span class="cl-item-val"><a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener">animesh-mishra-69a382378</a></span>
+            </div>
+          </div>
+          <div class="cl-item">
+            <div class="cl-item-ico"><i class="fas fa-envelope"></i></div>
+            <div class="cl-item-body">
+              <span class="cl-item-label">Email</span>
+              <span class="cl-item-val"><a href="mailto:mishra.animesh1324@gmail.com">mishra.animesh1324@gmail.com</a></span>
+            </div>
+          </div>
+          <div class="cl-item">
+            <div class="cl-item-ico"><i class="fas fa-phone"></i></div>
+            <div class="cl-item-body">
+              <span class="cl-item-label">Phone</span>
+              <span class="cl-item-val"><a href="tel:+918989468728">+91 8989468728</a></span>
+            </div>
+          </div>
+          <div class="cl-item">
+            <div class="cl-item-ico"><i class="fab fa-whatsapp"></i></div>
+            <div class="cl-item-body">
+              <span class="cl-item-label">WhatsApp</span>
+              <span class="cl-item-val"><a href="https://wa.me/918989468728" target="_blank" rel="noopener">Chat on WhatsApp</a></span>
+            </div>
+          </div>
+          <div class="cl-item">
+            <div class="cl-item-ico"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="cl-item-body">
+              <span class="cl-item-label">Location</span>
+              <span class="cl-item-val">Jaipur, Rajasthan (Home: Rewa, M.P.)</span>
+            </div>
+          </div>
         </div>
       </div>
       <form class="cf sr right" id="cForm" action="https://formspree.io/mishra.animesh1324@gmail.com" method="POST">
