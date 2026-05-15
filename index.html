@@ -535,8 +535,9 @@
     }
 
     .nav-cta:hover {
-      background: var(--c-navy-2);
-      box-shadow: var(--s3);
+      background: var(--c-gold);
+      color: var(--c-navy);
+      box-shadow: 0 4px 18px rgba(184,150,46,0.28);
       transform: translateY(-1px)
     }
 
@@ -701,9 +702,9 @@
     }
 
     .hero-social-btn:hover {
-      border-color: var(--c-navy);
-      color: var(--c-navy);
-      background: var(--c-light);
+      border-color: var(--c-gold);
+      color: var(--c-gold);
+      background: rgba(184,150,46,0.07);
       transform: translateY(-3px);
       box-shadow: var(--s2)
     }
@@ -965,6 +966,7 @@
       text-transform: uppercase;
       padding: 5px 15px;
       border-radius: 100px;
+      border: 1px solid rgba(184,150,46,0.22);
       margin-bottom: 16px
     }
 
@@ -1002,7 +1004,12 @@
       border-radius: var(--r);
       padding: 36px;
       border: 1px solid var(--c-border);
-      box-shadow: var(--s1)
+      box-shadow: var(--s1);
+      transition: box-shadow .35s var(--ease)
+    }
+
+    .abox:hover {
+      box-shadow: var(--s3)
     }
 
     .abox-title {
@@ -1450,12 +1457,31 @@
       padding: 28px;
       border: 1px solid var(--c-border);
       box-shadow: var(--s1);
-      transition: all .35s var(--ease)
+      transition: all .35s var(--ease);
+      position: relative;
+      overflow: hidden
+    }
+
+    .edu-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--c-gold), var(--c-navy));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s var(--ease)
     }
 
     .edu-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--s3)
+    }
+
+    .edu-card:hover::before {
+      transform: scaleX(1)
     }
 
     .edu-card.current {
@@ -1939,13 +1965,32 @@
       box-shadow: var(--s1);
       transition: all .35s var(--ease);
       display: flex;
-      flex-direction: column
+      flex-direction: column;
+      position: relative;
+      overflow: hidden
+    }
+
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--c-navy), var(--c-gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s var(--ease)
     }
 
     .cert-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--s3);
       border-color: var(--c-navy)
+    }
+
+    .cert-card:hover::before {
+      transform: scaleX(1)
     }
 
     .feature-badge {
@@ -2394,7 +2439,7 @@
     }
 
     footer p {
-      color: rgba(255, 255, 255, .38);
+      color: rgba(255, 255, 255, .58);
       font-size: .79rem
     }
 
@@ -3328,12 +3373,12 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.65);
       font-size: .95rem;
       transition: all 0.3s var(--ease)
     }
@@ -3347,7 +3392,7 @@
     }
 
     .footer-copy {
-      color: rgba(255, 255, 255, .35);
+      color: rgba(255, 255, 255, .58);
       font-size: .78rem;
       margin: 0
     }
@@ -3365,7 +3410,7 @@
     }
 
     footer p {
-      color: rgba(255, 255, 255, .38);
+      color: rgba(255, 255, 255, .58);
       font-size: .79rem
     }
 
