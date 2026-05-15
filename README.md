@@ -9,7 +9,7 @@
 - Typewriter animation cycling 6 roles
 - Spinning conic-gradient profile ring with pulse effects
 - Scroll-reveal animations with blur-to-clear transitions
-- Animated stat counters (2+ Years, 6+ Projects, 500+ ICD Codes, 4 Internships)
+- Animated stat counters (78% Score, 5+ Projects, 200+ ICD Codes, 3 Internships)
 - 3D tilt effect on project/skill/education cards
 - Animated skill progress bars
 - Glowing timeline with color-coded dots
