@@ -1,76 +1,48 @@
-# Animesh Mishra — Digital Portfolio
+# Animesh Mishra Portfolio
 
-> **Molecule to Market** — A cinematic, futuristic personal portfolio website built with pure HTML, CSS, and JavaScript.
+Static personal portfolio for Animesh Mishra, focused on pharmaceutical management, PMT, brand strategy, market access, medical coding, and molecule-to-market work.
 
-## ⚡ Features
+## What Is Live
 
-- 160+ particle engine with mouse interaction & depth parallax
-- Magnetic custom cursor with hover morphing
-- Typewriter animation cycling 6 roles
-- Spinning conic-gradient profile ring with pulse effects
-- Scroll-reveal animations with blur-to-clear transitions
-- Animated stat counters (78% Score, 5+ Projects, 200+ ICD Codes, 3 Internships)
-- 3D tilt effect on project/skill/education cards
-- Animated skill progress bars
-- Glowing timeline with color-coded dots
-- Mobile-responsive with hamburger menu
-- Glassmorphism cards with neon borders
-- Animated background grid + floating orbs
+- Single-page portfolio in `index.html`
+- Inline CSS and JavaScript inside `index.html`
+- CV preview and download from `Animesh_CV.pdf`
+- Project case-study PDFs in `case-studies/`
+- Certificate previews in `certificates/`
+- Contact form with a mailto fallback
+- SEO basics: canonical URL, Open Graph tags, JSON-LD, `robots.txt`, and `sitemap.xml`
 
-## 🚀 Setup
+## Editing
 
-1. Place `PIC.jpg` (your photo) in this folder
-2. Place `Animesh_CV.pdf` in this folder
-3. Open `index.html` in any browser — that's it!
+| Item | Where to edit |
+| --- | --- |
+| Name / headline | Search `Animesh Mishra` in `index.html` |
+| Profile photo | Replace `PIC.jpg` or update `src="PIC.jpg"` |
+| Logo | Replace `logo.png` |
+| CV | Replace `Animesh_CV.pdf` |
+| Primary email | Search `animesh.pm17@iihmr.in` |
+| Phone / WhatsApp | Search `8989468728` |
+| Projects | Search `Featured Projects` and the matching `m-p` modal |
+| Insights | Search `Featured Insights` and the matching `m-ins` modal |
+| Certificates | Search `Certifications` and the matching `m-cert` modal |
+| Last updated text | Search `footerUpdated` |
 
-## ✏️ Editing Guide
+## Contact Form
 
-| Item | How to Edit |
-|------|-------------|
-| Name / Headline | Search `Animesh Mishra` |
-| Photo | Change `src="PIC.jpg"` |
-| CV | Change `href="Animesh_CV.pdf"` |
-| Email | Search `mishra.animesh1324` |
-| Phone | Search `8989468728` |
-| Colors | CSS variables at top of `<style>` tag |
-| Typing roles | `const roles = [` array in JS |
-| Stats numbers | `data-target=` attributes |
-| Add project | Duplicate a `.project-card` div |
-| Add experience | Duplicate a `.timeline-item` div |
+The form currently opens a prefilled email to `animesh.pm17@iihmr.in`. To use Formspree later:
 
-## 🌐 Deploy to GitHub Pages (Free)
+1. Create a form in the Formspree dashboard.
+2. Copy the endpoint that looks like `https://formspree.io/f/your-form-id`.
+3. Put that URL in `data-formspree-action` on the `#cForm` form.
 
-1. Create account at [github.com](https://github.com)
-2. New repository named `animesh-portfolio`
-3. Upload `index.html` + `PIC.jpg` + `Animesh_CV.pdf`
-4. Settings → Pages → Source: main branch → Save
-5. URL becomes: `https://[username].github.io/animesh-portfolio`
-6. Add this URL to LinkedIn Featured Section
+The JavaScript only posts to valid `/f/...` Formspree endpoints; otherwise it keeps the email fallback.
 
-## 📎 Google Sites Option
+## Notes
 
-1. Go to [sites.google.com](https://sites.google.com) → New Site
-2. Insert → Embed → paste GitHub Pages URL
-3. Publish → share Google Sites URL on LinkedIn
+`style.css` and `dark.css` are reference mirror files only. The active styling is the inline `<style>` block in `index.html`.
 
-## 🛠 Tech Stack
+## Deploy
 
-- **HTML5** — Semantic structure
-- **CSS3** — Variables, glassmorphism, animations, responsive
-- **Vanilla JS** — Particle engine, IntersectionObserver, typing effect
-- **Google Fonts** — Orbitron, Rajdhani, DM Sans
-- **Font Awesome 6.4** — Icons
+Publish the repository with GitHub Pages from the main branch. The expected URL is:
 
-## 📁 File Structure
-
-```
-digital portfolio/
-├── index.html          ← All code (CSS + JS embedded)
-├── PIC.jpg             ← Your profile photo
-├── Animesh_CV.pdf      ← Your CV
-└── README.md           ← This file
-```
-
----
-
-Built for **Animesh Mishra** | MBA Pharmaceutical Management | IIHMR University | 2026
+`https://animesh1324.github.io/animesh-portfolio/`

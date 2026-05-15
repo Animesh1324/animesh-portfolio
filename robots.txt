@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://animesh1324.github.io/animesh-portfolio/sitemap.xml

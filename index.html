@@ -989,7 +989,8 @@
 
     /* ─── SECTION BASE ─── */
     section {
-      padding: 100px 5%
+      padding: 100px 5%;
+      scroll-margin-top: 92px
     }
 
     .s-inner {
@@ -2807,11 +2808,12 @@
 
     @media(max-width:900px) {
       body {
-        padding-bottom: 86px
+        padding-bottom: 104px
       }
 
       .quick-bar {
-        display: block
+        display: block;
+        bottom: 10px
       }
 
       .sec-rail {
@@ -2857,7 +2859,11 @@
       }
 
       .hero {
-        padding: 108px 5% 64px
+        padding: 108px 5% 118px
+      }
+
+      section {
+        scroll-margin-top: 82px
       }
 
       .hero-inner {
@@ -2877,7 +2883,8 @@
       }
 
       .hero-visual {
-        justify-self: center
+        justify-self: center;
+        margin-top: 80px
       }
 
       .photo-wrap {
@@ -2913,7 +2920,8 @@
       }
 
       .cf {
-        padding: 20px
+        padding: 20px;
+        margin-bottom: 28px
       }
 
       .cf-row {
@@ -3302,6 +3310,13 @@
       margin: 0
     }
 
+    .footer-updated {
+      display: block;
+      margin-top: 6px;
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .45)
+    }
+
     .footer-copy em {
       font-style: normal;
       color: var(--c-gold)
@@ -3442,7 +3457,7 @@
     <div class="quick-bar-inner">
         <a class="quick-link" href="Animesh_CV.pdf" onclick="openM('cv'); return false;"><i
           class="fas fa-eye"></i><span>CV</span></a>
-      <a class="quick-link" href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+      <a class="quick-link" href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
       <a class="quick-link" href="#certifications"><i class="fas fa-certificate"></i><span>Certs</span></a>
       <a class="quick-link" href="#contact"><i class="fas fa-paper-plane"></i><span>Contact</span></a>
     </div>
@@ -3463,17 +3478,17 @@
             real pharma outcomes.</p>
           <div class="hero-socials">
             <a class="hero-social-btn" href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank"
-              rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a class="hero-social-btn" href="mailto:animesh.pm17@iihmr.in" title="Email" aria-label="Email"><i
                 class="fas fa-envelope"></i></a>
             <a class="hero-social-btn" href="tel:+918989468728" title="Phone" aria-label="Phone"><i
                 class="fas fa-phone"></i></a>
-            <a class="hero-social-btn" href="https://wa.me/918989468728" target="_blank" rel="noopener"
+            <a class="hero-social-btn" href="https://wa.me/918989468728" target="_blank" rel="noopener noreferrer"
               title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a class="hero-social-btn" href="https://github.com/Animesh1324" target="_blank" rel="noopener"
+            <a class="hero-social-btn" href="https://github.com/Animesh1324" target="_blank" rel="noopener noreferrer"
               title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
             <a class="hero-social-btn" href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank"
-              rel="noopener" title="Research Paper" aria-label="Research Paper"><i class="fas fa-file-alt"></i></a>
+              rel="noopener noreferrer" title="Research Paper" aria-label="Research Paper"><i class="fas fa-file-alt"></i></a>
           </div>
           <div class="hero-actions">
             <a href="#contact" class="btn-cta"><i class="fas fa-handshake"></i> Open to Opportunities</a>
@@ -3561,7 +3576,7 @@
             <div class="inf"><i class="fas fa-university"></i><span>IIHMR University</span></div>
             <div class="inf"><i class="fas fa-envelope"></i><span>animesh.pm17@iihmr.in</span></div>
             <div class="inf"><i class="fas fa-phone"></i><span>+91 8989468728</span><a href="https://wa.me/918989468728"
-              target="_blank" rel="noopener" style="margin-left:8px; color:#25D366; font-size:1.1rem; cursor:pointer;"
+              target="_blank" rel="noopener noreferrer" style="margin-left:8px; color:#25D366; font-size:1.1rem; cursor:pointer;"
               title="Available on WhatsApp" aria-label="Available on WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
           </div>
           <div class="pill-wrap">
@@ -4019,7 +4034,7 @@
         <iframe src="Animesh_CV.pdf#toolbar=0&navpanes=0" title="Animesh Mishra CV" loading="lazy"></iframe>
       </div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="Animesh_CV.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+        <a href="Animesh_CV.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
             class="fas fa-up-right-from-square"></i> Open in new tab</a>
         <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf" class="m-action"><i
             class="fas fa-download"></i> Download CV</a>
@@ -4049,9 +4064,9 @@
           class="mchip">IQVIA</span><span class="mchip">Lifecycle Management</span><span
           class="mchip">Biosimilars</span></div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/semaglutide-patent-cliff.pdf" target="_blank" rel="noopener"
+        <a href="case-studies/semaglutide-patent-cliff.pdf" target="_blank" rel="noopener noreferrer"
           class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
-        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
+        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
     </div>
@@ -4079,9 +4094,9 @@
       <div class="m-chips"><span class="mchip">React</span><span class="mchip">Firebase</span><span
           class="mchip">PWA</span><span class="mchip">SQLite</span><span class="mchip">Multilingual</span></div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/pharmaintel-india-app.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+        <a href="case-studies/pharmaintel-india-app.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
             class="fas fa-file-pdf"></i> Case Study PDF</a>
-        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
+        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
     </div>
@@ -4109,9 +4124,9 @@
           class="mchip">SaaS</span><span class="mchip">Health Economics</span><span class="mchip">Epidemiology</span>
       </div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/amr-genius-intelligence-hub.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+        <a href="case-studies/amr-genius-intelligence-hub.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
             class="fas fa-file-pdf"></i> Case Study PDF</a>
-        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
+        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
     </div>
@@ -4140,9 +4155,9 @@
           class="mchip">Nanotechnology</span><span class="mchip">Curcumin</span><span class="mchip">Published</span>
       </div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/ethosomal-curcumin-review.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+        <a href="case-studies/ethosomal-curcumin-review.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
           class="fas fa-file-pdf"></i> Case Study PDF</a>
-        <a href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener" class="m-action"><i
+        <a href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener noreferrer" class="m-action"><i
             class="fas fa-external-link-alt"></i> View on ResearchGate (DOI)</a>
       </div>
     </div>
@@ -4170,9 +4185,9 @@
       <div class="m-chips"><span class="mchip">Predictive AI</span><span class="mchip">Patient Adherence</span><span
           class="mchip">ML</span><span class="mchip">Digital Health</span><span class="mchip">Pharma Tech</span></div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/pharmadhere-ai.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+        <a href="case-studies/pharmadhere-ai.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
             class="fas fa-file-pdf"></i> Case Study PDF</a>
-        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
+        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
     </div>
@@ -4211,396 +4226,20 @@
           class="mchip">EV/EBITDA</span><span class="mchip">Governance</span><span class="mchip">Capital Markets</span>
       </div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/sun-pharma-organon-ma.pdf" target="_blank" rel="noopener" class="m-action secondary"><i
+        <a href="case-studies/sun-pharma-organon-ma.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
             class="fas fa-file-pdf"></i> Case Study PDF</a>
-        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
+        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View Full Case Study</a>
       </div>
-      <div class="ins-metrics">
-        <span class="ins-metric">$20B+ Market</span>
-        <span class="ins-metric">2026 Patent Expiry</span>
-        <span class="ins-metric">8+ Biosimilar Entrants</span>
-        <span class="ins-metric">IQVIA Data</span>
-      </div>
-      <p>An executive-level analysis of the GLP-1 patent expiry landscape, examining the commercial implications of Novo
-        Nordisk's Ozempic and Wegovy patents approaching expiration and the anticipated biosimilar wave.</p>
-      <p>The analysis mapped competitive biosimilar entry timelines across manufacturers in India, Europe, and the US —
-        estimating market-share erosion scenarios using IQVIA Market Reflection data. Lifecycle management strategies
-        for Novo Nordisk were proposed alongside adjacent therapeutic expansion opportunities in obesity and NASH.</p>
-      <div class="m-learnings">
-        <h4>Key Insights</h4>
-        <ul>
-          <li>Patent cliff analysis methodology — mapping expiry dates across geographic markets</li>
-          <li>Biosimilar regulatory pathways and their commercial timing implications</li>
-          <li>IQVIA Market Reflection interpretation for real-world brand performance</li>
-          <li>Lifecycle management strategies — new formulations, indications, patient support programmes</li>
-          <li>Market-share erosion modeling with quantified scenario outcomes</li>
-        </ul>
-      </div>
-      <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
-        class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
     </div>
   </div>
 
-  <div class="m-overlay" id="m-ins2" onclick="closeOnBg(event,'ins2')">
-    <div class="m-box">
-      <button class="m-close" onclick="closeM('ins2')"><i class="fas fa-times"></i></button>
-      <div class="gl-keyword-bar"><i class="fas fa-handshake"></i> &nbsp;M&amp;A Strategy</div>
-      <h2>Sun Pharma × Organon: India's $11.75B Deal Decoded</h2>
-      <div class="m-sub">Strategic &amp; Financial Analysis · April 2026</div>
-      <div
-        style="margin:16px 0;border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--c-border);height:200px;">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80"
-          alt="Corporate M&A" loading="lazy" style="width:100%;height:100%;object-fit:cover;"
-          onerror="this.parentElement.style.display='none'">
-      </div>
-      <div class="ins-metrics">
-        <span class="ins-metric">$11.75B Deal</span>
-        <span class="ins-metric">103% Premium</span>
-        <span class="ins-metric">6.2x EV/EBITDA</span>
-        <span class="ins-metric">15 Sections</span>
-      </div>
-      <p>A forensic 15-section breakdown of India's largest pharma acquisition — including deal mechanics ($14.00/share
-        offer, 103% premium over unaffected share price), EV/EBITDA valuation, and strategic rationale across four
-        pillars: Women's Health leadership, biosimilar scale, cash-generative brand portfolio, and China platform.</p>
-      <p>Analysed the governance crisis at Organon and its impact on deal pricing. Modelled post-close PAT accretion
-        (27%) and deleveraging timeline to 1.0x Net Debt/EBITDA by FY30. Capital market reaction was assessed across NSE
-        listing and global advisor mandates.</p>
-      <div class="m-learnings">
-        <h4>Key Insights</h4>
-        <ul>
-          <li>EV/EBITDA deal valuation mechanics in cross-border pharma M&amp;A</li>
-          <li>Strategic portfolio synergy analysis — Women's Health, biosimilars, China platform</li>
-          <li>PAT accretion and deleveraging modeling post-acquisition</li>
-          <li>Governance crisis impact on deal pricing and premium justification</li>
-          <li>Capital market reactions and NSE performance analysis</li>
-        </ul>
-      </div>
-      <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
-        class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
-    </div>
-  </div>
-
-  <div class="m-overlay" id="m-ins3" onclick="closeOnBg(event,'ins3')">
-    <div class="m-box">
-      <button class="m-close" onclick="closeM('ins3')"><i class="fas fa-times"></i></button>
-      <div class="gl-keyword-bar"><i class="fas fa-robot"></i> &nbsp;Digital Health</div>
-      <h2>AI in Pharma PMT: Reshaping Brand Planning &amp; HCP Targeting</h2>
-      <div class="m-sub">Opinion · MBA Research · IIHMR 2026</div>
-      <div
-        style="margin:16px 0;border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--c-border);height:200px;">
-        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
-          alt="AI in Healthcare" loading="lazy" style="width:100%;height:100%;object-fit:cover;"
-          onerror="this.parentElement.style.display='none'">
-      </div>
-      <div class="ins-metrics">
-        <span class="ins-metric">GenAI Impact</span>
-        <span class="ins-metric">HCP Targeting</span>
-        <span class="ins-metric">Brand Planning</span>
-        <span class="ins-metric">GTM Strategy</span>
-      </div>
-      <p>An analytical piece examining how Generative AI is transforming go-to-market strategy, prescriber segmentation,
-        and market access decisions in Indian pharma — with specific focus on the PMT function.</p>
-      <p>Key themes: AI-driven RCPA analysis replacing manual field data, LLM-powered KVA (key visual aid)
-        personalisation by HCP segment, real-time competitor intelligence dashboards, and predictive HCP targeting
-        models. Also covers ethical and regulatory boundaries of AI in pharma promotion.</p>
-      <div class="m-learnings">
-        <h4>Key Insights</h4>
-        <ul>
-          <li>GenAI applications in brand planning — automated content, personalised detailing</li>
-          <li>AI-enhanced RCPA analysis for real-time competitor prescription tracking</li>
-          <li>Predictive HCP targeting using prescribing behaviour models</li>
-          <li>Ethical and regulatory considerations for AI in pharma promotion</li>
-          <li>Skills PMT professionals need for the AI-augmented pharma environment</li>
-        </ul>
-      </div>
-      <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
-        class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
-    </div>
-  </div>
-
-  <!-- CERT MODALS -->
-  <div class="m-overlay" id="m-cert1" onclick="closeOnBg(event,'cert1')">
-    <div class="m-box">
-      <button class="m-close" onclick="closeM('cert1')"><i class="fas fa-times"></i></button>
-      <div class="m-icon">🎓</div>
-      <h2>Product Management: An Introduction</h2>
-      <div class="m-sub">IBM / Coursera Professional Certificate · May 2026</div>
-      <div class="m-learnings">
-        <h4>What I Learned</h4>
-        <ul>
-          <li>Product lifecycle management from concept to market launch</li>
-          <li>Writing user stories, acceptance criteria, and product roadmaps</li>
-          <li>Agile and Scrum frameworks applied to pharma product development</li>
-          <li>AI integration in product management — automating discovery and prioritisation</li>
-          <li>Market requirements documentation and competitive analysis frameworks</li>
-          <li>Go-to-market strategy design and launch readiness assessment</li>
-        </ul>
-      </div>
-      <div class="m-cert-viewer">
-        <iframe src="certificates/professional-certificate.pdf#toolbar=0&navpanes=0" title="IBM PM Certificate"
-          loading="lazy"></iframe>
-      </div>
-      <a class="cert-fallback" href="certificates/professional-certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-      <a class="cert-fallback" href="certificates/professional-certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-    </div>
-  </div>
-
-  <div class="m-overlay" id="m-cert2" onclick="closeOnBg(event,'cert2')">
-    <div class="m-box">
-      <button class="m-close" onclick="closeM('cert2')"><i class="fas fa-times"></i></button>
-      <div class="m-icon">🤖</div>
-      <h2>Generative AI Foundations Certificate</h2>
-      <div class="m-sub">Microsoft × upGrad · UID: Br3hxZNKPVECfd81</div>
-      <div class="m-learnings">
-        <h4>What I Learned</h4>
-        <ul>
-          <li>Fundamentals of Large Language Models (LLMs) and transformer architecture</li>
-          <li>Prompt engineering techniques — few-shot, chain-of-thought, role-based prompting</li>
-          <li>Microsoft Copilot and Azure OpenAI service integration workflows</li>
-          <li>Responsible AI principles — bias, hallucination, and ethical boundaries</li>
-          <li>Building AI-augmented workflows for business analytics and content generation</li>
-          <li>Applied GenAI use cases in pharma: medical writing, market research, brand strategy</li>
-        </ul>
-      </div>
-      <div class="m-cert-viewer">
-        <iframe src="certificates/participation-certificate.pdf#toolbar=0&navpanes=0"
-          title="GenAI Foundations Certificate" loading="lazy"></iframe>
-      </div>
-      <a class="cert-fallback" href="certificates/participation-certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-      <a class="cert-fallback" href="certificates/participation-certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-    </div>
-  </div>
-
-  <div class="m-overlay" id="m-cert3" onclick="closeOnBg(event,'cert3')">
-    <div class="m-box">
-      <button class="m-close" onclick="closeM('cert3')"><i class="fas fa-times"></i></button>
-      <div class="m-icon">🏥</div>
-      <h2>Medical Coding Specialist — ICD-10-CM</h2>
-      <div class="m-sub">E-Cell, IIT Hyderabad · Certificate ID: SDCERTI1031</div>
-      <div class="m-learnings">
-        <h4>What I Learned</h4>
-        <ul>
-          <li>200+ ICD-10-CM alphanumeric diagnostic codes across major therapeutic areas</li>
-          <li>Clinical documentation standards and their role in revenue cycle management</li>
-          <li>Translating physician notes to standardised codes for insurance claims processing</li>
-          <li>International drug nomenclature and therapeutic area classification</li>
-          <li>Pharmacovigilance linkages — how coding accuracy affects drug safety reporting</li>
-          <li>Hospital billing systems and their commercial impact on pharma market access</li>
-        </ul>
-      </div>
-      <div class="m-cert-viewer">
-        <iframe src="certificates/medical-coding-certificate.pdf#toolbar=0&navpanes=0"
-          title="Medical Coding Certificate" loading="lazy"></iframe>
-      </div>
-      <a class="cert-fallback" href="certificates/medical-coding-certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-      <a class="cert-fallback" href="certificates/medical-coding-certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-    </div>
-  </div>
-
-  <div class="m-overlay" id="m-cert4" onclick="closeOnBg(event,'cert4')">
-    <div class="m-box">
-      <button class="m-close" onclick="closeM('cert4')"><i class="fas fa-times"></i></button>
-      <div class="m-icon">🌐</div>
-      <h2>Global Health Management Research Award</h2>
-      <div class="m-sub">Pradanya 2026 — IIHMR University · February 2026</div>
-      <div class="m-learnings">
-        <h4>What I Learned</h4>
-        <ul>
-          <li>Structuring research papers for health management conferences and peer review</li>
-          <li>Strategic analysis frameworks applied to real-world global health challenges</li>
-          <li>Presenting complex pharmaceutical data to academic and industry audiences</li>
-          <li>GHMRC methodology — evidence-based health policy recommendations</li>
-          <li>Cross-disciplinary thinking: connecting health economics with operational strategy</li>
-        </ul>
-      </div>
-      <div class="m-cert-viewer">
-        <iframe src="certificates/pradanya-conference-2026.pdf#toolbar=0&navpanes=0" title="GHMRC Award Certificate"
-          loading="lazy"></iframe>
-      </div>
-      <a class="cert-fallback" href="certificates/pradanya-conference-2026.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-      <a class="cert-fallback" href="certificates/pradanya-conference-2026.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-    </div>
-  </div>
-
-  <div class="m-overlay" id="m-cert5" onclick="closeOnBg(event,'cert5')">
-    <div class="m-box">
-      <button class="m-close" onclick="closeM('cert5')"><i class="fas fa-times"></i></button>
-      <div class="m-icon">🧪</div>
-      <h2>Pharma Industry Training Workshop</h2>
-      <div class="m-sub">SIRTSP / CARE, The SAGE Group — Bhopal · June 2023</div>
-      <div class="m-learnings">
-        <h4>What I Learned</h4>
-        <ul>
-          <li>Formulation and evaluation of pharmaceutical products per industry standards</li>
-          <li>Live plant visits to Indian Capsule Ltd. — end-to-end supply chain visibility</li>
-          <li>Ayurvedic nutraceutical manufacturing processes and quality frameworks</li>
-          <li>Pharmaceutical commercialisation and market-entry constraints</li>
-          <li>Bridging academic pharmacology with operational manufacturing realities</li>
-        </ul>
-      </div>
-      <div class="m-cert-viewer">
-        <iframe src="certificates/sage-Certificate.pdf#toolbar=0&navpanes=0" title="SAGE Training Certificate"
-          loading="lazy"></iframe>
-      </div>
-      <a class="cert-fallback" href="certificates/sage-Certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-      <a class="cert-fallback" href="certificates/sage-Certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-    </div>
-  </div>
-
-  <div class="m-overlay" id="m-cert6" onclick="closeOnBg(event,'cert6')">
-    <div class="m-box">
-      <button class="m-close" onclick="closeM('cert6')"><i class="fas fa-times"></i></button>
-      <div class="m-icon">🏭</div>
-      <h2>QC &amp; Production Department Training</h2>
-      <div class="m-sub">Unidrug Innovative Pharma Technologies Ltd. — Indore · July 2023</div>
-      <div class="m-learnings">
-        <h4>What I Learned</h4>
-        <ul>
-          <li>Hands-on operation of HPLC, GC, and LC instruments on live pharmaceutical batches</li>
-          <li>GMP protocol application — how regulatory compliance shapes every production decision</li>
-          <li>Batch release process — 20+ samples per cycle, zero-delay batch completion</li>
-          <li>CAPA implementation — redesigning desiccation protocols for batch consistency</li>
-          <li>Quality control as patient safety — connecting lab failures to real-world risk</li>
-        </ul>
-      </div>
-      <div class="m-cert-viewer">
-        <iframe src="certificates/unidrug-certificate.pdf#toolbar=0&navpanes=0" title="Unidrug QC Certificate"
-          loading="lazy"></iframe>
-      </div>
-      <a class="cert-fallback" href="certificates/unidrug-certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-      <a class="cert-fallback" href="certificates/unidrug-certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-    </div>
-  </div>
-
-  <div class="m-overlay" id="m-cert7" onclick="closeOnBg(event,'cert7')">
-    <div class="m-box">
-      <button class="m-close" onclick="closeM('cert7')"><i class="fas fa-times"></i></button>
-      <div class="m-icon">🏆</div>
-      <h2>AI Product Manager Specialisation</h2>
-      <div class="m-sub">IBM — Coursera · 2026</div>
-      <div class="m-learnings">
-        <h4>What I Learned</h4>
-        <ul>
-          <li>Integrating AI/ML capabilities into product strategy and roadmapping</li>
-          <li>Defining AI-powered feature sets with measurable business outcomes</li>
-          <li>Evaluating AI model performance metrics relevant to product decisions</li>
-          <li>Building cross-functional workflows around AI-driven product development</li>
-          <li>Applied AI ethics — responsible AI frameworks for product managers</li>
-        </ul>
-      </div>
-      <div class="m-cert-viewer">
-        <img src="certificates/ibm-ai-product-manager.png" alt="IBM AI Product Manager Certificate" loading="lazy">
-      </div>
-      <a class="cert-fallback" href="certificates/ibm-ai-product-manager.png" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-      <a class="cert-fallback" href="certificates/ibm-ai-product-manager.png" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-    </div>
-  </div>
-
-  <div class="m-overlay" id="m-cert8" onclick="closeOnBg(event,'cert8')">
-    <div class="m-box">
-      <button class="m-close" onclick="closeM('cert8')"><i class="fas fa-times"></i></button>
-      <div class="m-icon">🥇</div>
-      <h2>NIPER JEE — Nationally Qualified</h2>
-      <div class="m-sub">National Institute of Pharmaceutical Education &amp; Research · 2024</div>
-      <p>Cleared the NIPER Joint Entrance Examination — India's most competitive postgraduate entrance for
-        pharmaceutical sciences, administered by the National Institutes of Pharmaceutical Education and Research under
-        the Ministry of Chemicals &amp; Fertilizers.</p>
-      <div class="m-learnings">
-        <h4>Significance</h4>
-        <ul>
-          <li>One of the most competitive pharma science exams in India — tests pharmacology, chemistry, pharmaceutical
-            sciences, and analytical reasoning</li>
-          <li>Demonstrates academic mastery of pharmaceutical sciences at a nationally competitive level</li>
-          <li>Validates deep scientific foundation prior to pursuing MBA Pharmaceutical Management</li>
-          <li>NIPER institutes are India's premier postgraduate pharma research institutions</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="m-overlay" id="m-cert9" onclick="closeOnBg(event,'cert9')">
-    <div class="m-box">
-      <button class="m-close" onclick="closeM('cert9')"><i class="fas fa-times"></i></button>
-      <div class="m-icon">📊</div>
-      <h2>Advanced Excel Workshop</h2>
-      <div class="m-sub">IIHMR Analytica Club, IIHMR University · March 2026</div>
-      <div class="m-learnings">
-        <h4>What I Learned</h4>
-        <ul>
-          <li>Advanced pivot tables and dynamic dashboards for market data analysis</li>
-          <li>Financial modelling — NPV, IRR, WACC calculations applied to pharma investments</li>
-          <li>Data visualisation techniques for presenting market access and HEOR data</li>
-          <li>VLOOKUP, INDEX-MATCH, and array formulas for large pharmaceutical datasets</li>
-          <li>Power Query for cleaning and transforming raw IQVIA / sales data</li>
-        </ul>
-      </div>
-      <div class="m-cert-viewer">
-        <iframe src="certificates/advanced-excel-certificate.pdf#toolbar=0&navpanes=0"
-          title="Advanced Excel Workshop Certificate" loading="lazy"></iframe>
-      </div>
-      <a class="cert-fallback" href="certificates/advanced-excel-certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-      <a class="cert-fallback" href="certificates/advanced-excel-certificate.pdf" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-    </div>
-  </div>
-
-  <!-- GLOSSARY MODAL -->
-  <div class="m-overlay" id="m-glossary" onclick="closeOnBg(event,'glossary')">
-    <div class="m-box" style="max-width:500px">
-      <button class="m-close" onclick="closeM('glossary')"><i class="fas fa-times"></i></button>
-      <div class="m-icon" id="gl-icon">📚</div>
-      <h2 id="gl-title" style="margin-bottom:8px;"></h2>
-      <div class="gl-keyword-bar" style="margin-bottom:20px;"><i class="fas fa-book-open"></i> &nbsp;Pharma Glossary
-      </div>
-      <p id="gl-desc" style="font-size:.93rem;color:var(--c-mid);line-height:1.9;margin:0;"></p>
-    </div>
-  </div>
-
-  <!-- INSIGHT MODALS -->
   <div class="m-overlay" id="m-ins1" onclick="closeOnBg(event,'ins1')">
     <div class="m-box">
       <button class="m-close" onclick="closeM('ins1')"><i class="fas fa-times"></i></button>
       <div class="gl-keyword-bar"><i class="fas fa-chart-line"></i> &nbsp;Patent Strategy</div>
       <h2>GLP-1 Patent Cliff: Semaglutide &amp; the Biosimilar Wave</h2>
       <div class="m-sub">IQVIA Market Reflection · 2025</div>
-      <div
-        style="margin:16px 0;border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--c-border);height:200px;">
-        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
-          alt="Market Analytics" loading="lazy" style="width:100%;height:100%;object-fit:cover;"
-          onerror="this.parentElement.style.display='none'">
-      </div>
       <div class="ins-metrics">
         <span class="ins-metric">$20B+ Market</span>
         <span class="ins-metric">2026 Patent Expiry</span>
@@ -4726,6 +4365,9 @@
         <iframe src="certificates/professional-certificate.pdf#toolbar=0&navpanes=0" title="IBM PM Certificate"
           loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/professional-certificate.pdf" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -4750,6 +4392,9 @@
         <iframe src="certificates/participation-certificate.pdf#toolbar=0&navpanes=0"
           title="GenAI Foundations Certificate" loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/participation-certificate.pdf" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -4774,6 +4419,9 @@
         <iframe src="certificates/medical-coding-certificate.pdf#toolbar=0&navpanes=0"
           title="Medical Coding Certificate" loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/medical-coding-certificate.pdf" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -4797,6 +4445,9 @@
         <iframe src="certificates/pradanya-conference-2026.pdf#toolbar=0&navpanes=0" title="GHMRC Award Certificate"
           loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/pradanya-conference-2026.pdf" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -4820,6 +4471,9 @@
         <iframe src="certificates/sage-Certificate.pdf#toolbar=0&navpanes=0" title="SAGE Training Certificate"
           loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/sage-Certificate.pdf" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -4843,6 +4497,9 @@
         <iframe src="certificates/unidrug-certificate.pdf#toolbar=0&navpanes=0" title="Unidrug QC Certificate"
           loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/unidrug-certificate.pdf" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -4865,6 +4522,9 @@
       <div class="m-cert-viewer">
         <img src="certificates/ibm-ai-product-manager.png" alt="IBM AI Product Manager Certificate" loading="lazy">
       </div>
+      <a class="cert-fallback" href="certificates/ibm-ai-product-manager.png" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -4877,6 +4537,8 @@
       <p>Cleared the NIPER Joint Entrance Examination — India's most competitive postgraduate entrance for
         pharmaceutical sciences, administered by the National Institutes of Pharmaceutical Education and Research under
         the Ministry of Chemicals &amp; Fertilizers.</p>
+      <p><strong>Verification note:</strong> listed as a self-reported national qualification; official scorecard can be
+        shared during screening if required.</p>
       <div class="m-learnings">
         <h4>Significance</h4>
         <ul>
@@ -4910,6 +4572,9 @@
         <iframe src="certificates/advanced-excel-certificate.pdf#toolbar=0&navpanes=0"
           title="Advanced Excel Workshop Certificate" loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/advanced-excel-certificate.pdf" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -4972,7 +4637,7 @@
 
       </div>
       <div class="sr up" style="text-align:center;margin-top:40px;transition-delay:.2s">
-        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"
+        <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="btn-ghost"><i class="fab fa-linkedin"></i> &nbsp;View All Posts on LinkedIn</a>
       </div>
     </div>
@@ -5094,7 +4759,7 @@
               <div class="cl-item-body">
                 <span class="cl-item-label">LinkedIn</span>
                 <span class="cl-item-val"><a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank"
-                    rel="noopener">animesh-mishra-69a382378</a></span>
+                    rel="noopener noreferrer">animesh-mishra-69a382378</a></span>
               </div>
             </div>
             <div class="cl-item">
@@ -5115,7 +4780,7 @@
               <div class="cl-item-ico"><i class="fab fa-whatsapp"></i></div>
               <div class="cl-item-body">
                 <span class="cl-item-label">WhatsApp</span>
-                <span class="cl-item-val"><a href="https://wa.me/918989468728" target="_blank" rel="noopener">Chat on
+                <span class="cl-item-val"><a href="https://wa.me/918989468728" target="_blank" rel="noopener noreferrer">Chat on
                     WhatsApp</a></span>
               </div>
             </div>
@@ -5128,26 +4793,30 @@
             </div>
           </div>
         </div>
-        <form class="cf sr right" id="cForm" action="https://formspree.io/animesh.pm17@iihmr.in" method="POST">
+        <form class="cf sr right" id="cForm" action="mailto:animesh.pm17@iihmr.in" method="POST"
+          data-formspree-action="">
           <div id="cFormFields">
             <div class="cf-row">
-              <div class="cf-g"><label>Name</label><input type="text" name="name" placeholder="Your Name" required>
+              <div class="cf-g"><label for="contactName">Name</label><input id="contactName" type="text" name="name"
+                  placeholder="Your Name" autocomplete="name" required>
               </div>
-              <div class="cf-g"><label>Email</label><input type="email" name="email" placeholder="Your Email" required>
+              <div class="cf-g"><label for="contactEmail">Email</label><input id="contactEmail" type="email"
+                  name="email" placeholder="Your Email" autocomplete="email" required>
               </div>
             </div>
-            <div class="cf-g"><label>Subject</label><input type="text" name="subject"
-                placeholder="Subject / Role / Opportunity"></div>
-            <div class="cf-g"><label>Message</label><textarea name="message" placeholder="Your message..."
+            <div class="cf-g"><label for="contactSubject">Subject</label><input id="contactSubject" type="text"
+                name="subject" placeholder="Subject / Role / Opportunity"></div>
+            <div class="cf-g"><label for="contactMessage">Message</label><textarea id="contactMessage" name="message"
+                placeholder="Your message..."
                 required></textarea></div>
             <button type="submit" class="cf-submit" id="cSubmitBtn">Send Message <i
                 class="fas fa-paper-plane"></i></button>
           </div>
           <div id="cFormSuccess" role="status" aria-live="polite"
             style="display:none;padding:32px 0;text-align:center;">
-            <div style="font-size:2.5rem;margin-bottom:12px;">✅</div>
-            <div style="color:#fff;font-size:1.1rem;font-weight:700;margin-bottom:8px;">Message sent!</div>
-            <div style="color:rgba(255,255,255,.6);font-size:.88rem;">I'll get back to you within 24 hours.</div>
+            <div style="font-size:2.5rem;margin-bottom:12px;">✓</div>
+            <div style="color:#fff;font-size:1.1rem;font-weight:700;margin-bottom:8px;">Message ready!</div>
+            <div style="color:rgba(255,255,255,.6);font-size:.88rem;">Your email client should open with the message.</div>
           </div>
           <div id="cFormError" role="alert" aria-live="assertive"
             style="display:none;padding:16px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);border-radius:10px;margin-top:12px;">
@@ -5171,13 +4840,15 @@
         <a class="footer-link" href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank"
           rel="noopener noreferrer" title="ResearchGate Publication" aria-label="ResearchGate Publication"><i
             class="fas fa-flask"></i></a>
-        <a class="footer-link" href="mailto:mishra.animesh1324@gmail.com" title="Email" aria-label="Email"><i
+        <a class="footer-link" href="mailto:animesh.pm17@iihmr.in" title="Email" aria-label="Email"><i
             class="fas fa-envelope"></i></a>
         <a class="footer-link" href="https://wa.me/918989468728" target="_blank" rel="noopener noreferrer"
           title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
       <p class="footer-copy">Designed &amp; built by <em>Animesh Mishra</em> &nbsp;·&nbsp; Molecule to Market
-        &nbsp;·&nbsp; MBA Pharmaceutical Management, IIHMR University &nbsp;·&nbsp; 2026</p>
+        &nbsp;·&nbsp; MBA Pharmaceutical Management, IIHMR University &nbsp;·&nbsp; 2026
+        <span class="footer-updated" id="footerUpdated" data-updated="2026-05-15">Last updated: May 15, 2026</span>
+      </p>
     </div>
   </footer>
 
@@ -5359,16 +5030,26 @@
     document.getElementById('cForm').addEventListener('submit', async e => {
       e.preventDefault();
       const btn = document.getElementById('cSubmitBtn');
-      btn.textContent = 'Sending…'; btn.disabled = true;
+      const form = e.target;
+      const fields = new FormData(form);
+      const endpoint = form.dataset.formspreeAction || form.action;
+      btn.textContent = 'Sending...'; btn.disabled = true;
       try {
-        const res = await fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { Accept: 'application/json' } });
-        if (res.ok) {
-          document.getElementById('cFormFields').style.display = 'none';
-          document.getElementById('cFormSuccess').style.display = 'block';
+        if (/^https:\/\/formspree\.io\/f\/[\w-]+$/i.test(endpoint)) {
+          const res = await fetch(endpoint, { method: 'POST', body: fields, headers: { Accept: 'application/json' } });
+          if (!res.ok) throw new Error('Form endpoint rejected the submission');
         } else {
-          document.getElementById('cFormError').style.display = 'block';
-          btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>'; btn.disabled = false;
+          const subject = fields.get('subject') || 'Portfolio enquiry';
+          const body = [
+            `Name: ${fields.get('name') || ''}`,
+            `Email: ${fields.get('email') || ''}`,
+            '',
+            fields.get('message') || ''
+          ].join('\n');
+          window.location.href = `mailto:animesh.pm17@iihmr.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
+        document.getElementById('cFormFields').style.display = 'none';
+        document.getElementById('cFormSuccess').style.display = 'block';
       } catch {
         document.getElementById('cFormError').style.display = 'block';
         btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>'; btn.disabled = false;
