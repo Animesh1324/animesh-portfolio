@@ -444,7 +444,7 @@
 
     .nav-menu {
       display: flex;
-      gap: 26px;
+      gap: 18px;
       list-style: none;
       align-items: center;
       justify-content: center;
@@ -453,7 +453,7 @@
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
       justify-content: flex-end;
     }
 
@@ -825,6 +825,7 @@
       object-fit: cover;
       object-position: center 10%;
       transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      filter: brightness(1.05) contrast(1.07) saturate(1.1);
     }
 
     .photo-wrap:hover .photo-img {
@@ -833,6 +834,61 @@
 
     .photo-wrap:hover .photo-img-wrap {
       transform: translateY(-5px);
+    }
+
+    /* Cinematic gradient overlay on photo */
+    .photo-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(175deg, rgba(27,47,78,0.06) 0%, transparent 45%, rgba(27,47,78,0.32) 100%);
+      pointer-events: none;
+      z-index: 3;
+      border-radius: 18px;
+    }
+
+    /* Availability indicator */
+    .avail-indicator {
+      position: absolute;
+      bottom: -14px;
+      right: 18px;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 30px;
+      padding: 5px 13px 5px 8px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--c-navy);
+      box-shadow: var(--s2);
+      z-index: 10;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    [data-theme="dark"] .avail-indicator {
+      background: rgba(15,23,42,0.93);
+      border-color: rgba(255,255,255,0.1);
+      color: #e2e8f0;
+    }
+
+    .avail-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: availPulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes availPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
+      55% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
     }
 
     /* Floating Glass Badges */
@@ -2018,7 +2074,31 @@
 
     .proj-card.featured,
     .cert-card.featured {
-      border-color: var(--c-gold)
+      border-color: var(--c-gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-card.featured::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(184,150,46,0.1), transparent);
+      animation: cardShimmer 4s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes cardShimmer {
+      0% { left: -100%; }
+      50%, 100% { left: 160%; }
+    }
+
+    .proj-card.featured:hover::before {
+      transform: none;
     }
 
     #certifications {
@@ -2791,18 +2871,41 @@
       }
     }
 
-    @media(max-width:1024px) {
+    @media(max-width:1440px) {
+      .nav-badge {
+        display: none
+      }
+
+      .nav-menu {
+        gap: 16px
+      }
+
+      .nav-right {
+        gap: 12px
+      }
+    }
+
+    @media(max-width:1280px) {
+      .nav-cta {
+        display: none
+      }
+
       .nav-menu {
         gap: 14px
       }
 
       .nav-menu a {
-        font-size: .76rem
+        font-size: .78rem
+      }
+    }
+
+    @media(max-width:1024px) {
+      .nav-menu {
+        gap: 12px
       }
 
-      .nav-cta {
-        font-size: .72rem;
-        padding: 7px 14px
+      .nav-menu a {
+        font-size: .75rem
       }
     }
 
@@ -2892,7 +2995,12 @@
         height: 290px
       }
 
-      .glass-badge {
+      .glass-badge,
+      .avail-indicator {
+        display: none
+      }
+
+      #btt {
         display: none
       }
 
@@ -3166,6 +3274,47 @@
       position: absolute;
       left: 0;
       color: var(--c-gold)
+    }
+
+    /* ─── MODAL REFERENCES ─── */
+    .m-refs {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--c-border);
+    }
+
+    .m-refs-title {
+      font-size: .68rem;
+      font-weight: 800;
+      color: var(--c-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .m-ref-item {
+      display: flex;
+      gap: 10px;
+      padding: 9px 12px 9px 10px;
+      background: var(--c-off);
+      border-radius: var(--r-sm);
+      border-left: 3px solid var(--c-gold);
+      margin-bottom: 7px;
+      font-size: .78rem;
+      line-height: 1.55;
+      color: var(--c-mid);
+    }
+
+    .m-ref-item strong {
+      color: var(--c-text);
+      font-weight: 600;
+    }
+
+    [data-theme="dark"] .m-ref-item {
+      background: rgba(255,255,255,0.04);
     }
 
     /* ─── CERT MODAL VIEWER ─── */
@@ -3501,6 +3650,9 @@
           <div class="photo-wrap">
             <div class="photo-img-wrap">
               <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra" width="280" height="330">
+            </div>
+            <div class="avail-indicator" title="Open to new pharma PM opportunities">
+              <span class="avail-dot"></span>Open to Opportunities
             </div>
             <div class="glass-badge badge-exp">
               <div class="badge-icon"><i class="fas fa-graduation-cap"></i></div>
@@ -4063,9 +4215,13 @@
       <div class="m-chips"><span class="mchip">Patent Strategy</span><span class="mchip">GLP-1</span><span
           class="mchip">IQVIA</span><span class="mchip">Lifecycle Management</span><span
           class="mchip">Biosimilars</span></div>
-      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/semaglutide-patent-cliff.pdf" target="_blank" rel="noopener noreferrer"
-          class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
+      <div class="m-refs">
+        <div class="m-refs-title"><i class="fas fa-book-open"></i> Research Foundation</div>
+        <div class="m-ref-item"><strong>AstraZeneca Nexium Case (DocMode, 2015)</strong> — Purple Pill lifecycle management: brand repositioning via premium pricing &amp; patient education to protect revenue post-patent expiry. Validated LCM strategies applied in this analysis.</div>
+        <div class="m-ref-item"><strong>Novartis Gilenya Launch (DocMode, 2015)</strong> — Disease-education-led launch at $48,000/year (20× over generic), targeting neurologists with unbranded awareness campaigns. Informs premium biosimilar defence frameworks used in this study.</div>
+      </div>
+      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="case-studies/semaglutide-patent-cliff.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
@@ -4093,9 +4249,13 @@
         applications.</p>
       <div class="m-chips"><span class="mchip">React</span><span class="mchip">Firebase</span><span
           class="mchip">PWA</span><span class="mchip">SQLite</span><span class="mchip">Multilingual</span></div>
-      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/pharmaintel-india-app.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
-            class="fas fa-file-pdf"></i> Case Study PDF</a>
+      <div class="m-refs">
+        <div class="m-refs-title"><i class="fas fa-book-open"></i> Research Foundation</div>
+        <div class="m-ref-item"><strong>Smilax Labs Marketing Study (IOSR-JBM, 2013)</strong> — Field force effectiveness and detailing strategies in Indian pharma markets reveal the critical gap in real-time drug intelligence tools accessible to HCPs — the core problem PharmaIntel India solves.</div>
+        <div class="m-ref-item"><strong>Novo Nordisk India Diabetes Awareness (DocMode, 2015)</strong> — Digital patient education through vernacular content in 9 languages demonstrated the viability of multilingual health communication in India, directly informing the app's 13-language architecture.</div>
+      </div>
+      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="case-studies/pharmaintel-india-app.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
@@ -4123,9 +4283,13 @@
       <div class="m-chips"><span class="mchip">AI/ML</span><span class="mchip">AMR</span><span
           class="mchip">SaaS</span><span class="mchip">Health Economics</span><span class="mchip">Epidemiology</span>
       </div>
-      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/amr-genius-intelligence-hub.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
-            class="fas fa-file-pdf"></i> Case Study PDF</a>
+      <div class="m-refs">
+        <div class="m-refs-title"><i class="fas fa-book-open"></i> Research Foundation</div>
+        <div class="m-ref-item"><strong>IIM Ahmedabad — Optimization-Based DSS for Pharma (2016)</strong> — Demonstrates how multi-objective optimisation and scenario modelling can guide strategic decisions in pharmaceutical companies. AMR-Genius applies this DSS framework to antibiogram surveillance and resistance prediction.</div>
+        <div class="m-ref-item"><strong>Vertex Pharmaceuticals Incivek Launch (DocMode, 2015)</strong> — Risk-share contracting and outcomes-based pricing in speciality pharma validated the health-economics monetisation model used in AMR-Genius's institutional tier pricing strategy.</div>
+      </div>
+      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="case-studies/amr-genius-intelligence-hub.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
@@ -4155,10 +4319,9 @@
           class="mchip">Nanotechnology</span><span class="mchip">Curcumin</span><span class="mchip">Published</span>
       </div>
       <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/ethosomal-curcumin-review.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
-          class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener noreferrer" class="m-action"><i
             class="fas fa-external-link-alt"></i> View on ResearchGate (DOI)</a>
+        <a href="case-studies/ethosomal-curcumin-review.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
       </div>
     </div>
   </div>
@@ -4184,9 +4347,14 @@
         dashboards.</p>
       <div class="m-chips"><span class="mchip">Predictive AI</span><span class="mchip">Patient Adherence</span><span
           class="mchip">ML</span><span class="mchip">Digital Health</span><span class="mchip">Pharma Tech</span></div>
-      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/pharmadhere-ai.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
-            class="fas fa-file-pdf"></i> Case Study PDF</a>
+      <div class="m-refs">
+        <div class="m-refs-title"><i class="fas fa-book-open"></i> Research Foundation</div>
+        <div class="m-ref-item"><strong>TBM Consulting — Pharma Operational Excellence (2015)</strong> — A pharma manufacturer reduced operating costs by 33% through structured performance management systems. PharmAdhere-AI applies the same execution-layer discipline to patient adherence KPIs, bridging clinical intent with measurable outcomes.</div>
+        <div class="m-ref-item"><strong>IIM Ahmedabad — Strategic DSS for Pharma (2016)</strong> — Multi-scenario optimisation under real-world constraints directly informs PharmAdhere-AI's risk stratification engine, which predicts adherence dropout across patient cohorts using federated learning.</div>
+        <div class="m-ref-item"><strong>Cornerstone4Care — Novo Nordisk (DocMode, 2015)</strong> — Integrated digital adherence platform for insulin patients demonstrated measurable compliance improvement at scale, providing precedent for the CRM-integrated reminder ecosystem in PharmAdhere-AI.</div>
+      </div>
+      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="case-studies/pharmadhere-ai.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
       </div>
@@ -4225,9 +4393,13 @@
       <div class="m-chips"><span class="mchip">M&amp;A Strategy</span><span class="mchip">Finance Modelling</span><span
           class="mchip">EV/EBITDA</span><span class="mchip">Governance</span><span class="mchip">Capital Markets</span>
       </div>
-      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="case-studies/sun-pharma-organon-ma.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
-            class="fas fa-file-pdf"></i> Case Study PDF</a>
+      <div class="m-refs">
+        <div class="m-refs-title"><i class="fas fa-book-open"></i> Research Foundation</div>
+        <div class="m-ref-item"><strong>TBM Consulting — Pharma Strategy Execution (2015)</strong> — Documents how a pharma manufacturer achieved 33% cost reduction through rigorous management systems. Post-acquisition integration analysis in this M&amp;A study benchmarks Sun Pharma's operational synergy targets against this execution framework.</div>
+        <div class="m-ref-item"><strong>Smilax Labs — Pharma Marketing Strategies (IOSR-JBM, 2013)</strong> — Segmentation analysis of Indian pharma field force and brand positioning frameworks inform the commercial synergy assessment for Organon's Women's Health &amp; biosimilar portfolio post-acquisition.</div>
+      </div>
+      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="case-studies/sun-pharma-organon-ma.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View Full Case Study</a>
       </div>
