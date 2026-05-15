@@ -16,11 +16,27 @@
   <meta property="og:image" content="https://animesh1324.github.io/animesh-portfolio/PIC.jpg">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:image" content="https://animesh1324.github.io/animesh-portfolio/PIC.jpg">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Animesh Mishra",
+      "jobTitle": "MBA Pharmaceutical Management Candidate",
+      "description": "Pharma MBA fresher with B.Pharm (Honours) and interests in PMT, brand strategy, medical coding, and molecule-to-market execution.",
+      "url": "https://animesh1324.github.io/animesh-portfolio/",
+      "image": "https://animesh1324.github.io/animesh-portfolio/PIC.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/animesh-mishra-69a382378",
+        "https://github.com/Animesh1324",
+        "https://doi.org/10.13140/RG.2.2.36647.10405"
+      ]
+    }
+  </script>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -47,6 +63,7 @@
       --c-text: #1a2332;
       --c-mid: #4a5568;
       --c-muted: #8898aa;
+      --font-display: "DM Serif Display", "Playfair Display", serif;
       --r: 16px;
       --r-sm: 10px;
       --r-lg: 24px;
@@ -67,6 +84,15 @@
       background: var(--c-white);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased
+    }
+
+    .hero-name,
+    .s-title,
+    .tl-role,
+    .edu-deg,
+    .abox-title {
+      font-family: var(--font-display);
+      letter-spacing: 0.2px
     }
 
     ::-webkit-scrollbar {
@@ -269,6 +295,38 @@
       width: 0%;
       z-index: 9999;
       transition: width .1s linear
+    }
+
+    .sec-rail {
+      position: fixed;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 800
+    }
+
+    .sec-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid rgba(27, 47, 78, 0.35);
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      transition: transform .3s, background .3s, border-color .3s
+    }
+
+    .sec-dot.active {
+      background: var(--c-gold);
+      border-color: var(--c-gold);
+      transform: scale(1.25)
+    }
+
+    [data-theme="dark"] .sec-dot {
+      border-color: rgba(255, 255, 255, 0.35)
     }
 
     /* ─── SCROLL REVEAL ─── */
@@ -1806,6 +1864,40 @@
     }
 
     /* ─── CERTIFICATIONS ─── */
+    .cert-tools {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin: 18px 0 26px;
+      flex-wrap: wrap
+    }
+
+    .cert-tools input,
+    .cert-tools select {
+      border: 1px solid var(--c-border);
+      background: var(--c-white);
+      color: var(--c-text);
+      padding: 10px 14px;
+      border-radius: var(--r-sm);
+      font-size: .85rem;
+      min-width: 200px;
+      outline: none;
+      transition: border-color .3s, box-shadow .3s
+    }
+
+    .cert-tools input:focus,
+    .cert-tools select:focus {
+      border-color: var(--c-gold);
+      box-shadow: 0 0 0 3px rgba(184, 150, 46, 0.15)
+    }
+
+    .cert-empty {
+      display: none;
+      margin-top: 12px;
+      font-size: .9rem;
+      color: var(--c-mid)
+    }
+
     .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1827,6 +1919,55 @@
       transform: translateY(-5px);
       box-shadow: var(--s3);
       border-color: var(--c-navy)
+    }
+
+    .feature-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: linear-gradient(135deg, var(--c-navy), var(--c-gold));
+      color: #fff;
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 8px;
+      border-radius: 999px;
+      box-shadow: var(--s2);
+      z-index: 2
+    }
+
+    .proj-card.featured,
+    .cert-card.featured {
+      border-color: var(--c-gold)
+    }
+
+    #certifications {
+      position: relative;
+      overflow: hidden
+    }
+
+    #certifications .s-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .cert-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 15% 20%, rgba(184, 150, 46, 0.12), transparent 45%),
+        radial-gradient(circle at 80% 30%, rgba(27, 47, 78, 0.08), transparent 50%),
+        repeating-linear-gradient(45deg, rgba(27, 47, 78, 0.04), rgba(27, 47, 78, 0.04) 1px, transparent 1px, transparent 14px);
+      opacity: 0.7;
+      pointer-events: none;
+      z-index: 0
+    }
+
+    [data-theme="dark"] .cert-pattern {
+      opacity: 0.35;
+      background-image: radial-gradient(circle at 15% 20%, rgba(184, 150, 46, 0.18), transparent 45%),
+        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.06), transparent 50%),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 14px);
     }
 
     .cert-ico {
@@ -2307,6 +2448,20 @@
       color: var(--c-gold);
     }
 
+    [data-theme="dark"] .proj-stat {
+      background: var(--c-off);
+      border-color: var(--c-border);
+    }
+
+    [data-theme="dark"] .proj-stat p {
+      color: #fff;
+    }
+
+    [data-theme="dark"] .proj-stat-ico {
+      background: rgba(184, 150, 46, 0.2);
+      color: var(--c-gold-2);
+    }
+
     [data-theme="dark"] .cert-link {
       background: var(--c-light);
       color: var(--c-text);
@@ -2314,6 +2469,39 @@
     }
 
     [data-theme="dark"] .cert-link:hover {
+      background: var(--c-gold);
+      color: #000;
+    }
+
+    [data-theme="dark"] .cert-fallback {
+      background: var(--c-light);
+      color: var(--c-text);
+      border-color: var(--c-border);
+    }
+
+    [data-theme="dark"] .cert-fallback:hover {
+      background: var(--c-gold);
+      color: #000;
+    }
+
+    [data-theme="dark"] .cert-tools input,
+    [data-theme="dark"] .cert-tools select {
+      background: var(--c-off);
+      color: var(--c-text);
+      border-color: var(--c-border);
+    }
+
+    [data-theme="dark"] .quick-bar {
+      background: rgba(17, 24, 39, 0.96);
+      border-color: var(--c-border);
+    }
+
+    [data-theme="dark"] .quick-link {
+      background: var(--c-light);
+      color: var(--c-text);
+    }
+
+    [data-theme="dark"] .quick-link:hover {
       background: var(--c-gold);
       color: #000;
     }
@@ -2450,6 +2638,50 @@
       }
     }
 
+    .quick-bar {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--c-border);
+      border-radius: 16px;
+      box-shadow: var(--s3);
+      display: none;
+      z-index: 900;
+      padding: 8px
+    }
+
+    .quick-bar-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px
+    }
+
+    .quick-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 8px 6px;
+      border-radius: 12px;
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--c-navy);
+      background: var(--c-off);
+      transition: all .3s
+    }
+
+    .quick-link i {
+      font-size: .95rem
+    }
+
+    .quick-link:hover {
+      background: var(--c-navy);
+      color: #fff
+    }
+
     /* ─── RESPONSIVE ─── */
     @media(max-width:1100px) {
 
@@ -2479,6 +2711,18 @@
     }
 
     @media(max-width:900px) {
+      body {
+        padding-bottom: 86px
+      }
+
+      .quick-bar {
+        display: block
+      }
+
+      .sec-rail {
+        display: none
+      }
+
       .hamburger {
         display: flex
       }
@@ -2558,6 +2802,10 @@
 
       .sk-grid,
       .proj-grid {
+        grid-template-columns: 1fr
+      }
+
+      .proj-stats {
         grid-template-columns: 1fr
       }
 
@@ -2673,6 +2921,10 @@
       overflow: hidden
     }
 
+    .proj-card {
+      position: relative
+    }
+
     .proj-card::after,
     .cert-card::after,
     .edu-card::after {
@@ -2705,6 +2957,7 @@
       width: 100%;
       height: 120px;
       object-fit: cover;
+      aspect-ratio: 16 / 9;
       border-radius: var(--r-sm);
       margin-bottom: 18px;
       display: block;
@@ -2715,10 +2968,54 @@
       transform: scale(1.04)
     }
 
+    .proj-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 22px 0 32px
+    }
+
+    .proj-stat {
+      background: #fff;
+      border: 1px solid var(--c-border);
+      border-radius: var(--r);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--s1)
+    }
+
+    .proj-stat-ico {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(184, 150, 46, 0.15);
+      color: var(--c-gold);
+      font-size: .95rem
+    }
+
+    .proj-stat h4 {
+      font-size: .8rem;
+      color: var(--c-muted);
+      margin: 0 0 4px
+    }
+
+    .proj-stat p {
+      margin: 0;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--c-navy)
+    }
+
     .ins-img {
       width: 100%;
       height: 150px;
       object-fit: cover;
+      aspect-ratio: 16 / 9;
       border-radius: var(--r-sm);
       margin-bottom: 14px;
       display: block
@@ -2794,6 +3091,27 @@
       object-fit: contain;
       pointer-events: none;
       user-select: none
+    }
+
+    .cert-fallback {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--c-navy);
+      background: var(--c-light);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-sm);
+      padding: 8px 14px;
+      transition: all .3s
+    }
+
+    .cert-fallback:hover {
+      background: var(--c-navy);
+      color: #fff;
+      border-color: var(--c-navy)
     }
 
     /* ─── INS METRICS ─── */
@@ -2986,7 +3304,7 @@
   <!-- NAVBAR -->
   <nav class="nav" id="nav">
     <a href="#home" class="am-logo" title="Animesh Mishra">
-      <img src="logo.png" alt="Animesh Mishra">
+      <img src="logo.png" alt="Animesh Mishra" width="54" height="54">
     </a>
     <ul class="nav-menu" id="navMenu">
       <li><a href="#home" class="active">Home</a></li>
@@ -3007,6 +3325,27 @@
     </div>
   </nav>
   <div id="nav-backdrop"></div>
+
+  <div class="sec-rail" aria-label="Section progress">
+    <button class="sec-dot" data-target="home" aria-label="Home"></button>
+    <button class="sec-dot" data-target="about" aria-label="About"></button>
+    <button class="sec-dot" data-target="skills" aria-label="Skills"></button>
+    <button class="sec-dot" data-target="experience" aria-label="Experience"></button>
+    <button class="sec-dot" data-target="education" aria-label="Education"></button>
+    <button class="sec-dot" data-target="projects" aria-label="Projects"></button>
+    <button class="sec-dot" data-target="insights" aria-label="Insights"></button>
+    <button class="sec-dot" data-target="certifications" aria-label="Certifications"></button>
+    <button class="sec-dot" data-target="contact" aria-label="Contact"></button>
+  </div>
+
+  <div class="quick-bar" aria-label="Quick access">
+    <div class="quick-bar-inner">
+      <a class="quick-link" href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf"><i class="fas fa-download"></i><span>CV</span></a>
+      <a class="quick-link" href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+      <a class="quick-link" href="#certifications"><i class="fas fa-certificate"></i><span>Certs</span></a>
+      <a class="quick-link" href="#contact"><i class="fas fa-paper-plane"></i><span>Contact</span></a>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero" id="home">
@@ -3042,7 +3381,7 @@
         <div class="hero-visual">
           <div class="photo-wrap">
             <div class="photo-img-wrap">
-              <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra">
+              <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra" width="280" height="330">
             </div>
             <div class="glass-badge badge-exp">
               <div class="badge-icon"><i class="fas fa-graduation-cap"></i></div>
@@ -3463,9 +3802,33 @@
         <h2 class="s-title">Featured <em>Projects</em></h2>
         <div class="s-rule"></div>
       </div>
+      <div class="proj-stats sr up" style="transition-delay:.06s">
+        <div class="proj-stat">
+          <div class="proj-stat-ico"><i class="fas fa-layer-group"></i></div>
+          <div>
+            <h4>Projects</h4>
+            <p>6 strategic case studies</p>
+          </div>
+        </div>
+        <div class="proj-stat">
+          <div class="proj-stat-ico"><i class="fas fa-language"></i></div>
+          <div>
+            <h4>PharmaIntel</h4>
+            <p>13-language platform</p>
+          </div>
+        </div>
+        <div class="proj-stat">
+          <div class="proj-stat-ico"><i class="fas fa-database"></i></div>
+          <div>
+            <h4>Data Depth</h4>
+            <p>20-table schema</p>
+          </div>
+        </div>
+      </div>
       <div class="proj-grid">
-        <div class="proj-card sr up" onclick="openM('p1')" style="transition-delay:.04s">
+        <div class="proj-card featured sr up" onclick="openM('p1')" style="transition-delay:.04s">
           <div class="proj-ico">📈</div>
+          <span class="feature-badge">Featured</span>
           <img class="proj-img"
             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=70"
             alt="Analytics Dashboard" loading="lazy" onerror="this.style.display='none'">
@@ -3476,8 +3839,9 @@
               class="pchip">IQVIA</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card sr up" onclick="openM('p2')" style="transition-delay:.1s">
+        <div class="proj-card featured sr up" onclick="openM('p2')" style="transition-delay:.1s">
           <div class="proj-ico">📱</div>
+          <span class="feature-badge">Featured</span>
           <img class="proj-img"
             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=70"
             alt="App Development" loading="lazy" onerror="this.style.display='none'">
@@ -3843,6 +4207,12 @@
         <iframe src="certificates/professional-certificate.pdf#toolbar=0&navpanes=0" title="IBM PM Certificate"
           loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/professional-certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
+      <a class="cert-fallback" href="certificates/professional-certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -3867,6 +4237,12 @@
         <iframe src="certificates/participation-certificate.pdf#toolbar=0&navpanes=0"
           title="GenAI Foundations Certificate" loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/participation-certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
+      <a class="cert-fallback" href="certificates/participation-certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -3891,6 +4267,12 @@
         <iframe src="certificates/medical-coding-certificate.pdf#toolbar=0&navpanes=0"
           title="Medical Coding Certificate" loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/medical-coding-certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
+      <a class="cert-fallback" href="certificates/medical-coding-certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -3914,6 +4296,12 @@
         <iframe src="certificates/pradanya-conference-2026.pdf#toolbar=0&navpanes=0" title="GHMRC Award Certificate"
           loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/pradanya-conference-2026.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
+      <a class="cert-fallback" href="certificates/pradanya-conference-2026.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -3937,6 +4325,12 @@
         <iframe src="certificates/sage-Certificate.pdf#toolbar=0&navpanes=0" title="SAGE Training Certificate"
           loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/sage-Certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
+      <a class="cert-fallback" href="certificates/sage-Certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -3960,6 +4354,12 @@
         <iframe src="certificates/unidrug-certificate.pdf#toolbar=0&navpanes=0" title="Unidrug QC Certificate"
           loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/unidrug-certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
+      <a class="cert-fallback" href="certificates/unidrug-certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -3982,6 +4382,12 @@
       <div class="m-cert-viewer">
         <img src="certificates/ibm-ai-product-manager.png" alt="IBM AI Product Manager Certificate" loading="lazy">
       </div>
+      <a class="cert-fallback" href="certificates/ibm-ai-product-manager.png" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
+      <a class="cert-fallback" href="certificates/ibm-ai-product-manager.png" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -4027,6 +4433,12 @@
         <iframe src="certificates/advanced-excel-certificate.pdf#toolbar=0&navpanes=0"
           title="Advanced Excel Workshop Certificate" loading="lazy"></iframe>
       </div>
+      <a class="cert-fallback" href="certificates/advanced-excel-certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
+      <a class="cert-fallback" href="certificates/advanced-excel-certificate.pdf" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open certificate
+      </a>
     </div>
   </div>
 
@@ -4434,22 +4846,35 @@
 
   <!-- CERTIFICATIONS -->
   <section id="certifications">
+    <div class="cert-pattern" aria-hidden="true"></div>
     <div class="s-inner">
       <div class="s-head sr up"><span class="s-kicker">Credentials</span>
         <h2 class="s-title">Certifications &amp; <em>Achievements</em></h2>
         <div class="s-rule"></div>
       </div>
+      <div class="cert-tools">
+        <input id="certSearch" type="search" placeholder="Search certificates or issuers" aria-label="Search certificates">
+        <select id="certFilter" aria-label="Filter certificates">
+          <option value="all">All statuses</option>
+          <option value="completed">Completed</option>
+          <option value="awarded">Awarded</option>
+          <option value="certified">Certified</option>
+          <option value="qualified">Qualified</option>
+        </select>
+      </div>
       <div class="cert-grid">
-        <div class="cert-card sr up" style="transition-delay:.04s" onclick="openM('cert1')">
+        <div class="cert-card featured sr up" style="transition-delay:.04s" onclick="openM('cert1')">
           <div class="cert-ico">🎓</div>
+          <span class="feature-badge">Featured</span>
           <span class="cert-status done">Completed</span>
           <div class="cert-name">Product Management: An Introduction</div>
           <div class="cert-iss">IBM / Coursera · Professional Certificate</div>
           <div class="cert-date">Issued: May 2026</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.1s" onclick="openM('cert2')">
+        <div class="cert-card featured sr up" style="transition-delay:.1s" onclick="openM('cert2')">
           <div class="cert-ico">🤖</div>
+          <span class="feature-badge">Featured</span>
           <span class="cert-status done">Completed</span>
           <div class="cert-name">Generative AI Foundations Certificate</div>
           <div class="cert-iss">Microsoft × upGrad</div>
@@ -4513,6 +4938,7 @@
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
       </div>
+      <div class="cert-empty" id="certEmpty">No certificates match your search.</div>
     </div>
   </section>
 
@@ -4637,6 +5063,7 @@
     const navEl = document.getElementById('nav');
     const secs = [...document.querySelectorAll('section[id]')];
     const links = [...document.querySelectorAll('.nav-menu a')];
+    const dots = [...document.querySelectorAll('.sec-dot')];
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       navEl.classList.toggle('stuck', y > 60);
@@ -4648,7 +5075,9 @@
       let cur = 'home';
       secs.forEach(s => { if (y >= s.offsetTop - 180) cur = s.id; });
       links.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+      dots.forEach(d => { d.classList.toggle('active', d.dataset.target === cur); });
     }, { passive: true });
+    window.dispatchEvent(new Event('scroll'));
 
     // ── Hamburger + Nav Backdrop
     const hbEl = document.getElementById('hb'), mnEl = document.getElementById('navMenu'), bdEl = document.getElementById('nav-backdrop');
@@ -4660,6 +5089,13 @@
     // ── Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth' }); });
+    });
+
+    dots.forEach(d => {
+      d.addEventListener('click', () => {
+        const t = document.getElementById(d.dataset.target);
+        if (t) t.scrollIntoView({ behavior: 'smooth' });
+      });
     });
 
     // ── Scroll reveal
@@ -4690,6 +5126,29 @@
     function closeM(id) { const o = document.getElementById('m-' + id); if (o) { o.classList.remove('show'); document.body.style.overflow = ''; } }
     function closeOnBg(e, id) { if (e.target.classList.contains('m-overlay')) closeM(id); }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.querySelectorAll('.m-overlay.show').forEach(o => o.classList.remove('show')); document.body.style.overflow = ''; } });
+
+    // ── Certificates filter/search
+    const certSearch = document.getElementById('certSearch');
+    const certFilter = document.getElementById('certFilter');
+    const certCards = [...document.querySelectorAll('.cert-card')];
+    const certEmpty = document.getElementById('certEmpty');
+    function filterCerts() {
+      const q = (certSearch?.value || '').toLowerCase().trim();
+      const status = (certFilter?.value || 'all').toLowerCase();
+      let visible = 0;
+      certCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const statusText = (card.querySelector('.cert-status')?.textContent || '').toLowerCase();
+        const matchesQuery = !q || text.includes(q);
+        const matchesStatus = status === 'all' || statusText.includes(status);
+        const show = matchesQuery && matchesStatus;
+        card.style.display = show ? 'flex' : 'none';
+        if (show) visible++;
+      });
+      if (certEmpty) certEmpty.style.display = visible ? 'none' : 'block';
+    }
+    if (certSearch) certSearch.addEventListener('input', filterCerts);
+    if (certFilter) certFilter.addEventListener('change', filterCerts);
 
     // ── Contact form
     document.getElementById('cForm').addEventListener('submit', async e => {
