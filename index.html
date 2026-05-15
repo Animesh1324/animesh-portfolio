@@ -4350,7 +4350,7 @@
     <div class="nav-right">
       <button class="theme-switch" id="themeSwitch" type="button" aria-label="Toggle dark mode" aria-pressed="false"
         title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
-      <a href="Animesh_CV.pdf" class="nav-cta" onclick="openM('cv'); return false;"><i class="fas fa-eye"></i> Preview
+      <a href="Animesh_CV.pdf" class="nav-cta" data-modal="cv"><i class="fas fa-eye"></i> Preview
         CV</a>
       <button class="hamburger" id="hb" type="button" aria-label="Open menu" aria-controls="navMenu"
         aria-expanded="false"><span></span><span></span><span></span></button>
@@ -4373,7 +4373,7 @@
 
   <div class="quick-bar" aria-label="Quick access">
     <div class="quick-bar-inner">
-        <a class="quick-link" href="Animesh_CV.pdf" onclick="openM('cv'); return false;"><i
+        <a class="quick-link" href="Animesh_CV.pdf" data-modal="cv"><i
           class="fas fa-eye"></i><span>CV</span></a>
       <a class="quick-link" href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
       <a class="quick-link" href="#certifications"><i class="fas fa-certificate"></i><span>Certs</span></a>
@@ -4410,7 +4410,7 @@
           </div>
           <div class="hero-actions">
             <a href="#contact" class="btn-cta"><i class="fas fa-handshake"></i> Hire Me for PMT</a>
-            <a href="Animesh_CV.pdf" class="btn-ghost" onclick="openM('cv'); return false;"><i
+            <a href="Animesh_CV.pdf" class="btn-ghost" data-modal="cv"><i
               class="fas fa-file"></i> Preview 1-page Resume</a>
             <a href="#projects" class="btn-ghost"><i class="fas fa-briefcase"></i> View My Work</a>
           </div>
@@ -4937,7 +4937,7 @@
         </div>
       </div>
       <div class="proj-grid">
-        <div class="proj-card sr up" onclick="openM('p1')" style="transition-delay:.04s">
+        <div class="proj-card sr up" data-modal="p1" style="transition-delay:.04s">
           <div class="proj-ico">📈</div>
           <img class="proj-img"
             src="case-studies/thumbs/p1-semaglutide.png"
@@ -4949,7 +4949,7 @@
               class="pchip">IQVIA</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card sr up" onclick="openM('p2')" style="transition-delay:.1s">
+        <div class="proj-card sr up" data-modal="p2" style="transition-delay:.1s">
           <div class="proj-ico">📱</div>
           <img class="proj-img"
             src="case-studies/thumbs/p2-pharmaintel.png"
@@ -4961,7 +4961,7 @@
               class="pchip">PWA</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card sr up" onclick="openM('p3')" style="transition-delay:.16s">
+        <div class="proj-card sr up" data-modal="p3" style="transition-delay:.16s">
           <div class="proj-ico">🧠</div>
           <img class="proj-img"
             src="case-studies/thumbs/p3-amr.png"
@@ -4972,7 +4972,7 @@
           <div class="proj-chips"><span class="pchip outcome">SaaS BMC</span><span class="pchip">AI/ML</span><span class="pchip">AMR</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card sr up" onclick="openM('p4')" style="transition-delay:.22s">
+        <div class="proj-card sr up" data-modal="p4" style="transition-delay:.22s">
           <div class="proj-ico">🔬</div>
           <img class="proj-img"
             src="case-studies/thumbs/p4-curcumin.png"
@@ -4983,7 +4983,7 @@
           <div class="proj-chips"><span class="pchip outcome">DOI · First-author</span><span class="pchip">Scientific Writing</span><span class="pchip">Drug Delivery</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card sr up" onclick="openM('p5')" style="transition-delay:.28s">
+        <div class="proj-card sr up" data-modal="p5" style="transition-delay:.28s">
           <div class="proj-ico">🤖</div>
           <img class="proj-img"
             src="case-studies/thumbs/p5-pharmadhere.png"
@@ -4994,7 +4994,7 @@
           <div class="proj-chips"><span class="pchip outcome">ML framework</span><span class="pchip">Predictive AI</span><span class="pchip">Adherence</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card featured sr up" onclick="openM('p6')" style="transition-delay:.34s">
+        <div class="proj-card featured sr up" data-modal="p6" style="transition-delay:.34s">
           <div class="proj-ico">🏢</div>
           <span class="feature-badge">Featured</span>
           <img class="proj-img"
@@ -5011,9 +5011,9 @@
   </section>
 
   <!-- PROJECT MODALS -->
-  <div class="m-overlay" id="m-cv" onclick="closeOnBg(event,'cv')">
+  <div class="m-overlay" id="m-cv">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cv')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cv"><i class="fas fa-times"></i></button>
       <div class="m-icon">📄</div>
       <h2>Curriculum Vitae</h2>
       <div class="m-sub">Animesh Mishra · MBA Pharmaceutical Management</div>
@@ -5029,9 +5029,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p1" onclick="closeOnBg(event,'p1')">
+  <div class="m-overlay" id="m-p1">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p1')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p1"><i class="fas fa-times"></i></button>
       <div class="m-icon">📈</div>
       <h2>Semaglutide Patent Cliff Analysis</h2>
       <div class="m-sub">Strategic Intelligence · IQVIA Market Reflection · 2025</div>
@@ -5060,9 +5060,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p2" onclick="closeOnBg(event,'p2')">
+  <div class="m-overlay" id="m-p2">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p2')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p2"><i class="fas fa-times"></i></button>
       <div class="m-icon">📱</div>
       <h2>PharmaIntel India App</h2>
       <div class="m-sub">Full-Stack PWA · React · Firebase · Vite · SQLite</div>
@@ -5091,9 +5091,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p3" onclick="closeOnBg(event,'p3')">
+  <div class="m-overlay" id="m-p3">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p3')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p3"><i class="fas fa-times"></i></button>
       <div class="m-icon">🧠</div>
       <h2>AMR-Genius Intelligence Hub</h2>
       <div class="m-sub">AI Platform Concept · Research Methods · IIHMR 2025</div>
@@ -5122,9 +5122,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p4" onclick="closeOnBg(event,'p4')">
+  <div class="m-overlay" id="m-p4">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p4')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p4"><i class="fas fa-times"></i></button>
       <div class="m-icon">🔬</div>
       <h2>Ethosomal Curcumin — Narrative Review</h2>
       <div class="m-sub">Peer-Reviewed Publication · Drug Delivery · DOI: 10.13140/RG.2.2.36647.10405</div>
@@ -5149,9 +5149,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p5" onclick="closeOnBg(event,'p5')">
+  <div class="m-overlay" id="m-p5">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p5')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p5"><i class="fas fa-times"></i></button>
       <div class="m-icon">🤖</div>
       <h2>PharmAdhere-AI</h2>
       <div class="m-sub">AI Conceptual Framework · Patient Adherence · 2025</div>
@@ -5181,9 +5181,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p6" onclick="closeOnBg(event,'p6')">
+  <div class="m-overlay" id="m-p6">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p6')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p6"><i class="fas fa-times"></i></button>
       <div class="m-icon">🏢</div>
       <h2>Sun Pharma × Organon — Comprehensive M&amp;A Analysis</h2>
       <div class="m-sub">Strategic &amp; Financial Analysis · Cross-Border Pharma M&amp;A · April 2026</div>
@@ -5223,9 +5223,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-ins1" onclick="closeOnBg(event,'ins1')">
+  <div class="m-overlay" id="m-ins1">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('ins1')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="ins1"><i class="fas fa-times"></i></button>
       <div class="gl-keyword-bar"><i class="fas fa-chart-line"></i> &nbsp;Patent Strategy</div>
       <h2>GLP-1 Patent Cliff: Semaglutide &amp; the Biosimilar Wave</h2>
       <div class="m-sub">IQVIA Market Reflection · 2025</div>
@@ -5255,9 +5255,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-ins2" onclick="closeOnBg(event,'ins2')">
+  <div class="m-overlay" id="m-ins2">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('ins2')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="ins2"><i class="fas fa-times"></i></button>
       <div class="gl-keyword-bar"><i class="fas fa-handshake"></i> &nbsp;M&amp;A Strategy</div>
       <h2>Sun Pharma × Organon: India's $11.75B Deal Decoded</h2>
       <div class="m-sub">Strategic &amp; Financial Analysis · April 2026</div>
@@ -5289,9 +5289,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-ins3" onclick="closeOnBg(event,'ins3')">
+  <div class="m-overlay" id="m-ins3">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('ins3')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="ins3"><i class="fas fa-times"></i></button>
       <div class="gl-keyword-bar"><i class="fas fa-robot"></i> &nbsp;Digital Health</div>
       <h2>AI in Pharma PMT: Reshaping Brand Planning &amp; HCP Targeting</h2>
       <div class="m-sub">Opinion · MBA Research · IIHMR 2026</div>
@@ -5323,9 +5323,9 @@
   </div>
 
   <!-- CERT MODALS -->
-  <div class="m-overlay" id="m-cert1" onclick="closeOnBg(event,'cert1')">
+  <div class="m-overlay" id="m-cert1">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert1')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert1"><i class="fas fa-times"></i></button>
       <div class="m-icon">🎓</div>
       <h2>Product Management: An Introduction</h2>
       <div class="m-sub">IBM / Coursera Professional Certificate · May 2026</div>
@@ -5349,9 +5349,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert2" onclick="closeOnBg(event,'cert2')">
+  <div class="m-overlay" id="m-cert2">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert2')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert2"><i class="fas fa-times"></i></button>
       <div class="m-icon">🤖</div>
       <h2>Generative AI Foundations Certificate</h2>
       <div class="m-sub">Microsoft × upGrad · UID: Br3hxZNKPVECfd81</div>
@@ -5375,9 +5375,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert3" onclick="closeOnBg(event,'cert3')">
+  <div class="m-overlay" id="m-cert3">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert3')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert3"><i class="fas fa-times"></i></button>
       <div class="m-icon">🏥</div>
       <h2>Medical Coding Specialist — ICD-10-CM</h2>
       <div class="m-sub">E-Cell, IIT Hyderabad · Certificate ID: SDCERTI1031</div>
@@ -5402,9 +5402,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert4" onclick="closeOnBg(event,'cert4')">
+  <div class="m-overlay" id="m-cert4">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert4')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert4"><i class="fas fa-times"></i></button>
       <div class="m-icon">🌐</div>
       <h2>Global Health Management Research Award</h2>
       <div class="m-sub">Pradanya 2026 — IIHMR University · February 2026</div>
@@ -5428,9 +5428,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert5" onclick="closeOnBg(event,'cert5')">
+  <div class="m-overlay" id="m-cert5">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert5')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert5"><i class="fas fa-times"></i></button>
       <div class="m-icon">🧪</div>
       <h2>Pharma Industry Training Workshop</h2>
       <div class="m-sub">SIRTSP / CARE, The SAGE Group — Bhopal · June 2023</div>
@@ -5454,9 +5454,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert6" onclick="closeOnBg(event,'cert6')">
+  <div class="m-overlay" id="m-cert6">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert6')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert6"><i class="fas fa-times"></i></button>
       <div class="m-icon">🏭</div>
       <h2>QC &amp; Production Department Training</h2>
       <div class="m-sub">Unidrug Innovative Pharma Technologies Ltd. — Indore · July 2023</div>
@@ -5480,9 +5480,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert7" onclick="closeOnBg(event,'cert7')">
+  <div class="m-overlay" id="m-cert7">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert7')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert7"><i class="fas fa-times"></i></button>
       <div class="m-icon">🏆</div>
       <h2>AI Product Manager Specialisation</h2>
       <div class="m-sub">IBM — Coursera · 2026</div>
@@ -5505,9 +5505,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert8" onclick="closeOnBg(event,'cert8')">
+  <div class="m-overlay" id="m-cert8">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert8')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert8"><i class="fas fa-times"></i></button>
       <div class="m-icon">🥇</div>
       <h2>NIPER JEE — Nationally Qualified</h2>
       <div class="m-sub">National Institute of Pharmaceutical Education &amp; Research · 2024</div>
@@ -5529,9 +5529,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert9" onclick="closeOnBg(event,'cert9')">
+  <div class="m-overlay" id="m-cert9">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert9')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert9"><i class="fas fa-times"></i></button>
       <div class="m-icon">📊</div>
       <h2>Advanced Excel Workshop</h2>
       <div class="m-sub">IIHMR Analytica Club, IIHMR University · March 2026</div>
@@ -5556,9 +5556,9 @@
   </div>
 
   <!-- GLOSSARY MODAL -->
-  <div class="m-overlay" id="m-glossary" onclick="closeOnBg(event,'glossary')">
+  <div class="m-overlay" id="m-glossary">
     <div class="m-box" style="max-width:500px">
-      <button class="m-close" onclick="closeM('glossary')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="glossary"><i class="fas fa-times"></i></button>
       <div class="m-icon" id="gl-icon">📚</div>
       <h2 id="gl-title" style="margin-bottom:8px;"></h2>
       <div class="gl-keyword-bar" style="margin-bottom:20px;"><i class="fas fa-book-open"></i> &nbsp;Pharma Glossary
@@ -5576,7 +5576,7 @@
       </div>
       <div class="ins-grid">
 
-        <article class="ins-card sr up" style="transition-delay:.04s" onclick="openM('ins1')">
+        <article class="ins-card sr up" style="transition-delay:.04s" data-modal="ins1">
           <img class="ins-img"
             src="case-studies/thumbs/p1-semaglutide.png"
             alt="Pharma Market Analytics" loading="lazy" onerror="this.style.display='none'">
@@ -5588,7 +5588,7 @@
           <span class="ins-link">Read Analysis <i class="fas fa-arrow-right"></i></span>
         </article>
 
-        <article class="ins-card sr up" style="transition-delay:.1s" onclick="openM('ins2')">
+        <article class="ins-card sr up" style="transition-delay:.1s" data-modal="ins2">
           <img class="ins-img"
             src="case-studies/thumbs/p6-sun-organon.png"
             alt="Pharma M&A Strategy" loading="lazy" onerror="this.style.display='none'">
@@ -5600,7 +5600,7 @@
           <span class="ins-link">Read Analysis <i class="fas fa-arrow-right"></i></span>
         </article>
 
-        <article class="ins-card sr up" style="transition-delay:.16s" onclick="openM('ins3')">
+        <article class="ins-card sr up" style="transition-delay:.16s" data-modal="ins3">
           <img class="ins-img"
             src="case-studies/thumbs/p3-amr.png"
             alt="AI in Pharma" loading="lazy" onerror="this.style.display='none'">
@@ -5639,7 +5639,7 @@
         </select>
       </div>
       <div class="cert-grid">
-        <div class="cert-card featured sr up" style="transition-delay:.04s" onclick="openM('cert1')">
+        <div class="cert-card featured sr up" style="transition-delay:.04s" data-modal="cert1">
           <div class="cert-ico">🎓</div>
           <span class="feature-badge">Featured</span>
           <span class="cert-status done">Completed</span>
@@ -5648,7 +5648,7 @@
           <div class="cert-date">Issued: May 2026</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card featured sr up" style="transition-delay:.1s" onclick="openM('cert2')">
+        <div class="cert-card featured sr up" style="transition-delay:.1s" data-modal="cert2">
           <div class="cert-ico">🤖</div>
           <span class="feature-badge">Featured</span>
           <span class="cert-status done">Completed</span>
@@ -5657,7 +5657,7 @@
           <div class="cert-date">UID: Br3hxZNKPVECfd81</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.16s" onclick="openM('cert3')">
+        <div class="cert-card sr up" style="transition-delay:.16s" data-modal="cert3">
           <div class="cert-ico">🏥</div>
           <span class="cert-status done">Completed</span>
           <div class="cert-name">Medical Coding Internship (ICD-10-CM)</div>
@@ -5665,7 +5665,7 @@
           <div class="cert-date">ID: SDCERTI1031 · 200+ Codes Mastered</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.22s" onclick="openM('cert4')">
+        <div class="cert-card sr up" style="transition-delay:.22s" data-modal="cert4">
           <div class="cert-ico">🌐</div>
           <span class="cert-status done">Awarded</span>
           <div class="cert-name">Global Health Management Research Award</div>
@@ -5673,7 +5673,7 @@
           <div class="cert-date">February 2026 · Strategic Analysis</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.28s" onclick="openM('cert5')">
+        <div class="cert-card sr up" style="transition-delay:.28s" data-modal="cert5">
           <div class="cert-ico">🧪</div>
           <span class="cert-status done">Completed</span>
           <div class="cert-name">Pharma Industry Training Workshop</div>
@@ -5681,7 +5681,7 @@
           <div class="cert-date">June 1–22, 2023 · Formulation &amp; Evaluation</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.34s" onclick="openM('cert6')">
+        <div class="cert-card sr up" style="transition-delay:.34s" data-modal="cert6">
           <div class="cert-ico">🏭</div>
           <span class="cert-status done">Completed</span>
           <div class="cert-name">QC &amp; Production Department Training</div>
@@ -5689,7 +5689,7 @@
           <div class="cert-date">July 1–15, 2023</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.4s" onclick="openM('cert7')">
+        <div class="cert-card sr up" style="transition-delay:.4s" data-modal="cert7">
           <div class="cert-ico">🏆</div>
           <span class="cert-status done">Certified</span>
           <div class="cert-name">AI Product Manager Specialisation</div>
@@ -5697,7 +5697,7 @@
           <div class="cert-date">2026 · AI-Driven Product Strategy</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.46s" onclick="openM('cert8')">
+        <div class="cert-card sr up" style="transition-delay:.46s" data-modal="cert8">
           <div class="cert-ico">🥇</div>
           <span class="cert-status done">Qualified</span>
           <div class="cert-name">NIPER JEE — Nationally Qualified</div>
@@ -5705,7 +5705,7 @@
           <div class="cert-date">2024 · India's Premier Pharma Entrance</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.52s" onclick="openM('cert9')">
+        <div class="cert-card sr up" style="transition-delay:.52s" data-modal="cert9">
           <div class="cert-ico">📊</div>
           <span class="cert-status done">Completed</span>
           <div class="cert-name">Advanced Excel Workshop</div>
@@ -5992,13 +5992,33 @@
       }
     }
 
-    function closeOnBg(e, id) { if (e.target.classList.contains('m-overlay')) closeM(id); }
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
         document.querySelectorAll('.m-overlay.show').forEach(o => {
           const id = o.id.replace('m-', '');
           closeM(id);
         });
+      }
+    });
+
+    // ── Delegated handlers for [data-modal] / [data-close-modal] / .m-overlay backdrop
+    // Replaces the dozens of inline onclick="openM('X')" handlers
+    document.addEventListener('click', e => {
+      const overlay = e.target.closest('.m-overlay');
+      if (overlay && e.target === overlay) {
+        closeM(overlay.id.replace('m-', ''));
+        return;
+      }
+      const closer = e.target.closest('[data-close-modal]');
+      if (closer) {
+        e.preventDefault();
+        closeM(closer.dataset.closeModal);
+        return;
+      }
+      const opener = e.target.closest('[data-modal]');
+      if (opener) {
+        if (opener.tagName === 'A') e.preventDefault();
+        openM(opener.dataset.modal);
       }
     });
 
@@ -6100,20 +6120,16 @@
     themeSwitch.addEventListener('click', () => { isDark = !isDark; applyTheme(isDark); });
     if (mobThemeSwitch) mobThemeSwitch.addEventListener('click', () => { isDark = !isDark; applyTheme(isDark); });
 
-    // ── Card keyboard access
-    document.querySelectorAll('.proj-card, .ins-card, .cert-card').forEach(card => {
-      const onclick = card.getAttribute('onclick') || '';
-      const match = onclick.match(/openM\('([^']+)'\)/);
-      if (match) {
-        card.setAttribute('role', 'button');
-        card.setAttribute('tabindex', '0');
-        card.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openM(match[1]);
-          }
-        });
-      }
+    // ── Card keyboard access (now reads data-modal instead of onclick)
+    document.querySelectorAll('[data-modal].proj-card, [data-modal].ins-card, [data-modal].cert-card').forEach(card => {
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openM(card.dataset.modal);
+        }
+      });
     });
 
     // ── 3D Tilt Effect on Photo (rAF throttled)
