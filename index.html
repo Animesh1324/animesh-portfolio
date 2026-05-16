@@ -5006,14 +5006,16 @@
       <div class="m-icon">📄</div>
       <h2>Curriculum Vitae</h2>
       <div class="m-sub">Animesh Mishra · MBA Pharmaceutical Management</div>
-      <div class="m-cert-viewer">
-        <iframe src="Animesh_CV.pdf#toolbar=0&navpanes=0" title="Animesh Mishra CV" loading="lazy"></iframe>
+      <div style="display:flex;gap:8px;margin:12px 0 4px;flex-wrap:wrap;">
+        <button class="cv-tab active" data-cv="Animesh_CV.pdf" type="button" style="flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--c-gold);background:var(--c-navy);color:#fff;font-size:.8rem;font-weight:600;cursor:pointer;">Portfolio CV</button>
+        <button class="cv-tab" data-cv="Animesh_CV_IIHMR.pdf" type="button" style="flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--c-border);background:var(--c-light);color:var(--c-navy);font-size:.8rem;font-weight:600;cursor:pointer;">IIHMR Template CV</button>
+      </div>
+      <div class="m-cert-viewer" id="cvViewer">
+        <iframe id="cvFrame" src="Animesh_CV.pdf#toolbar=0&navpanes=0" title="Animesh Mishra CV" loading="lazy"></iframe>
       </div>
       <div class="m-actions">
-        <a href="Animesh_CV.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
-            class="fas fa-up-right-from-square"></i> Open in new tab</a>
-        <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf" class="m-action"><i
-            class="fas fa-download"></i> Download CV</a>
+        <a href="Animesh_CV.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary" id="cvOpenBtn"><i class="fas fa-up-right-from-square"></i> Open in new tab</a>
+        <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf" class="m-action" id="cvDownloadBtn"><i class="fas fa-download"></i> Download CV</a>
       </div>
     </div>
   </div>
@@ -5382,12 +5384,12 @@
         </ul>
       </div>
       <div class="m-cert-viewer">
-        <iframe src="certificates/medical-coding-certificate.pdf#toolbar=0&navpanes=0"
-          title="Medical Coding Certificate" loading="lazy"></iframe>
+        <img src="certificates/medical-coding-certificate-odcet.jpg" alt="Medical Coding Internship Certificate — Skill Dunia / ODCET Technologies" loading="lazy">
       </div>
-      <a class="cert-fallback" href="certificates/medical-coding-certificate.pdf" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
+      <div class="m-actions" style="margin-top:12px;">
+        <a class="m-action secondary" href="certificates/medical-coding-certificate-odcet.jpg" target="_blank" rel="noopener noreferrer"><i class="fas fa-image"></i> View Certificate Image</a>
+        <a class="m-action secondary" href="certificates/medical-coding-certificate.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i> View Completion PDF</a>
+      </div>
     </div>
   </div>
 
@@ -5880,6 +5882,26 @@
     mnEl.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
     const mobCloseEl = document.getElementById('mobClose');
     if (mobCloseEl) mobCloseEl.addEventListener('click', closeNav);
+
+    // ── CV tab switcher in CV modal
+    document.querySelectorAll('.cv-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.cv-tab').forEach(t => {
+          t.style.background = 'var(--c-light)'; t.style.color = 'var(--c-navy)'; t.style.borderColor = 'var(--c-border)';
+          t.classList.remove('active');
+        });
+        tab.style.background = 'var(--c-navy)'; tab.style.color = '#fff'; tab.style.borderColor = 'var(--c-gold)';
+        tab.classList.add('active');
+        const cv = tab.dataset.cv;
+        const frame = document.getElementById('cvFrame');
+        const openBtn = document.getElementById('cvOpenBtn');
+        const dlBtn = document.getElementById('cvDownloadBtn');
+        const viewer = document.getElementById('cvViewer');
+        if (frame) { frame.src = cv + '#toolbar=0&navpanes=0'; viewer.classList.remove('loaded'); }
+        if (openBtn) openBtn.href = cv;
+        if (dlBtn) { dlBtn.href = cv; dlBtn.download = cv === 'Animesh_CV.pdf' ? 'Animesh_Mishra_CV.pdf' : 'Animesh_Mishra_IIHMR_CV.pdf'; }
+      });
+    });
 
     // ── Cert viewer iframe loading state
     document.querySelectorAll('.m-cert-viewer iframe, .m-cert-viewer img').forEach(el => {
