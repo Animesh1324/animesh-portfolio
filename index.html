@@ -15,21 +15,55 @@
   <meta property="og:title" content="Animesh Mishra | Pharma MBA Fresher">
   <meta property="og:description"
     content="B.Pharm + MBA Pharmaceutical Management | Product Management Trainee · Pharma Consulting · Business Analyst">
-  <meta property="og:image" content="https://animesh1324.github.io/animesh-portfolio/PIC.jpg">
+  <meta property="og:image" content="https://animesh1324.github.io/animesh-portfolio/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Animesh Mishra — MBA Pharmaceutical Management · Molecule to Market">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="Animesh Mishra | Pharma MBA Fresher">
   <meta property="twitter:description" content="B.Pharm + MBA Pharmaceutical Management | Product Management Trainee · Pharma Consulting · Business Analyst">
-  <meta property="twitter:image" content="https://animesh1324.github.io/animesh-portfolio/PIC.jpg">
+  <meta property="twitter:image" content="https://animesh1324.github.io/animesh-portfolio/og-card.png">
   <link rel="canonical" href="https://animesh1324.github.io/animesh-portfolio/">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Animesh Mishra",
+      "givenName": "Animesh",
+      "familyName": "Mishra",
       "jobTitle": "MBA Pharmaceutical Management Candidate",
       "description": "Pharma MBA fresher with B.Pharm (Honours) seeking roles in Product Management Trainee, Pharma Consulting, and Business Analyst.",
       "url": "https://animesh1324.github.io/animesh-portfolio/",
       "image": "https://animesh1324.github.io/animesh-portfolio/PIC.jpg",
+      "email": "mailto:animesh.pm17@iihmr.in",
+      "telephone": "+91-8989468728",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "addressCountry": "IN"
+      },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "IIHMR University, Jaipur" },
+        { "@type": "CollegeOrUniversity", "name": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)" },
+        { "@type": "CollegeOrUniversity", "name": "NRI Institute of Pharmacy, Bhopal" }
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Micro Labs Ltd.",
+        "url": "https://www.microlabsltd.com/"
+      },
+      "knowsAbout": [
+        "Pharmaceutical Product Management",
+        "Health Economics and Outcomes Research",
+        "Market Access",
+        "Brand Strategy",
+        "Medical Coding (ICD-10-CM)",
+        "Good Manufacturing Practice (GMP)",
+        "Generative AI for Pharma",
+        "Lifecycle Management"
+      ],
+      "knowsLanguage": ["English", "Hindi"],
       "sameAs": [
         "https://www.linkedin.com/in/animesh-mishra-69a382378",
         "https://github.com/Animesh1324",
@@ -39,6 +73,7 @@
   </script>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -133,6 +168,38 @@
       }
     }
 
+    /* ─── PRINT STYLESHEET ─── */
+    @media print {
+      :root, body, body[data-theme="dark"] {
+        --c-white: #fff;
+        --c-off: #fff;
+        --c-light: #f5f5f5;
+        --c-text: #000;
+        --c-mid: #222;
+        --c-muted: #444;
+        background: #fff !important;
+        color: #000 !important;
+      }
+      body { font-size: 11pt; line-height: 1.5; }
+      .nav, .marquee-wrap, .quick-bar, .sec-rail,
+      .bg-shape, .grid-bg, #cursor-dot, #cursor-ring,
+      #molCanvas, #progress-bar, #btt, .theme-switch,
+      .hero-actions, .hero-socials, .hero-stats,
+      .footer-socials, .m-overlay, .nav-cta,
+      .hamburger, #nav-backdrop {
+        display: none !important;
+      }
+      a { text-decoration: underline; color: #000; }
+      a[href^="http"]:after { content: " (" attr(href) ")"; font-size: .85em; color: #555; }
+      section { page-break-inside: avoid; padding: 16pt 0 !important; }
+      img { max-width: 100% !important; }
+      .sk-card, .tl-card, .edu-card, .proj-card, .cert-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+      }
+    }
+
     .hero-name,
     .s-title,
     .tl-role,
@@ -140,6 +207,18 @@
     .abox-title {
       font-family: var(--font-display);
       letter-spacing: 0.2px
+    }
+
+    /* Force deterministic emoji rendering across OSes — Apple/Win/Android
+       all see *their* native colour emoji rather than depending on the
+       generic body font. Without this, the same 🧬 looks very different
+       on Apple vs Windows vs Linux. */
+    .sk-ico, .proj-ico, .cert-ico, .m-icon, .proc-ico,
+    .ti, .marquee .star {
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
+                   "Twemoji Mozilla", EmojiOne, "Android Emoji", emoji,
+                   sans-serif;
+      font-variant-emoji: emoji;
     }
 
     html {
@@ -170,23 +249,29 @@
       color: inherit
     }
 
-    /* ─── CUSTOM CURSOR ─── */
-    @media (pointer: fine) {
+    /* ─── CUSTOM CURSOR (opt-in via body.custom-cursor) ─── */
+    #cursor-dot, #cursor-ring { display: none; }
 
-      body,
-      a,
-      button,
-      .proj-card,
-      .ins-card,
-      .cert-card,
-      .theme-switch,
-      .hero-social-btn,
-      .pill,
-      .m-close,
-      .m-action,
-      .sk-tag,
-      .pchip {
+    @media (pointer: fine) {
+      body.custom-cursor,
+      body.custom-cursor a,
+      body.custom-cursor button,
+      body.custom-cursor .proj-card,
+      body.custom-cursor .ins-card,
+      body.custom-cursor .cert-card,
+      body.custom-cursor .theme-switch,
+      body.custom-cursor .hero-social-btn,
+      body.custom-cursor .pill,
+      body.custom-cursor .m-close,
+      body.custom-cursor .m-action,
+      body.custom-cursor .sk-tag,
+      body.custom-cursor .pchip {
         cursor: none !important;
+      }
+
+      body.custom-cursor #cursor-dot,
+      body.custom-cursor #cursor-ring {
+        display: block;
       }
 
       #cursor-dot {
@@ -217,17 +302,25 @@
         transition: transform 0.15s ease-out, width 0.3s, height 0.3s, background 0.3s;
       }
 
-      body.hovering #cursor-dot {
+      body.custom-cursor.hovering #cursor-dot {
         width: 0;
         height: 0;
       }
 
-      body.hovering #cursor-ring {
+      body.custom-cursor.hovering #cursor-ring {
         width: 54px;
         height: 54px;
         background: rgba(184, 150, 46, 0.15);
         border-color: rgba(184, 150, 46, 0.5);
       }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body.custom-cursor { /* user preference wins — disable */
+        cursor: auto !important;
+      }
+      body.custom-cursor #cursor-dot,
+      body.custom-cursor #cursor-ring { display: none; }
     }
 
     /* ─── BACKGROUND EFFECTS ─── */
@@ -443,10 +536,15 @@
       height: 54px;
       width: 54px;
       object-fit: contain;
-      border-radius: 12px;
       transition: transform 0.4s var(--ease);
       image-rendering: -webkit-optimize-contrast;
     }
+
+    .am-logo .logo-light { display: block; }
+    .am-logo .logo-dark  { display: none; }
+
+    [data-theme="dark"] .am-logo .logo-light { display: none; }
+    [data-theme="dark"] .am-logo .logo-dark  { display: block; }
 
     .nav.stuck .am-logo img {
       transform: scale(0.85);
@@ -678,7 +776,63 @@
       max-width: 490px;
       margin-bottom: 32px;
       opacity: 0;
-      animation: fadeUp .7s .4s var(--ease) forwards
+      animation: fadeUp .7s .4s var(--ease) forwards;
+      transition: opacity .3s
+    }
+
+    .hero-bio.swapping {
+      opacity: 0
+    }
+
+    /* "Fit For Role" segmented switch */
+    .role-switch {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding: 4px;
+      margin: 6px 0 18px;
+      background: rgba(27, 47, 78, .05);
+      border: 1px solid var(--c-border);
+      border-radius: 100px;
+      opacity: 0;
+      animation: fadeUp .7s .35s var(--ease) forwards
+    }
+
+    [data-theme="dark"] .role-switch {
+      background: rgba(255, 255, 255, .04);
+      border-color: var(--c-border)
+    }
+
+    .role-btn {
+      background: transparent;
+      border: none;
+      padding: 6px 13px;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: .76rem;
+      font-weight: 600;
+      color: var(--c-mid);
+      cursor: pointer;
+      transition: all .25s var(--ease)
+    }
+
+    .role-btn:hover {
+      color: var(--c-navy)
+    }
+
+    [data-theme="dark"] .role-btn:hover {
+      color: var(--c-gold)
+    }
+
+    .role-btn.active {
+      background: var(--c-navy);
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(27, 47, 78, .2)
+    }
+
+    [data-theme="dark"] .role-btn.active {
+      background: var(--c-gold);
+      color: var(--c-navy)
     }
 
     .hero-socials {
@@ -1278,6 +1432,27 @@
       color: #fff
     }
 
+    /* Visual hint: glossary-mapped tags get a subtle dotted underline */
+    .has-glossary {
+      text-decoration: underline dotted;
+      text-decoration-color: rgba(184, 150, 46, .55);
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1.5px
+    }
+
+    .glossary-hint {
+      margin-top: 18px;
+      text-align: center;
+      font-size: .78rem;
+      color: var(--c-muted);
+      font-style: italic
+    }
+
+    .glossary-hint i {
+      color: var(--c-gold);
+      margin-right: 4px
+    }
+
     .sk-hl {
       display: flex;
       align-items: flex-start;
@@ -1305,22 +1480,50 @@
     /* tools strip */
     .tools-strip {
       margin-top: 44px;
-      text-align: center
+      background: #fff;
+      border-radius: var(--r);
+      padding: 32px 36px;
+      border: 1px solid var(--c-border);
+      box-shadow: var(--s1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all .35s var(--ease)
+    }
+
+    .tools-strip::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--c-navy), var(--c-gold))
+    }
+
+    .tools-strip:hover {
+      box-shadow: var(--s2);
+      border-color: rgba(27, 47, 78, .15)
     }
 
     .tools-lbl {
+      display: inline-block;
       font-size: .7rem;
       font-weight: 700;
-      color: var(--c-muted);
+      color: var(--c-navy);
       text-transform: uppercase;
       letter-spacing: 2.5px;
-      margin-bottom: 18px
+      background: rgba(27, 47, 78, .06);
+      padding: 5px 15px;
+      border-radius: 100px;
+      border: 1px solid rgba(184, 150, 46, .22);
+      margin-bottom: 20px
     }
 
     .tools-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 9px;
       justify-content: center
     }
 
@@ -1328,23 +1531,20 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 8px 17px;
-      background: #fff;
-      border: 1px solid var(--c-border);
+      padding: 6px 14px;
+      background: var(--c-light);
       border-radius: 100px;
-      font-size: .8rem;
+      font-size: .79rem;
       font-weight: 500;
       color: var(--c-mid);
-      box-shadow: var(--s1);
-      transition: all .3s;
+      transition: all .25s;
       cursor: default
     }
 
     .tool-pill:hover {
-      border-color: var(--c-navy);
-      color: var(--c-navy);
-      transform: translateY(-2px);
-      box-shadow: var(--s2)
+      background: var(--c-navy);
+      color: #fff;
+      transform: translateY(-2px)
     }
 
     .tool-pill .ti {
@@ -1451,6 +1651,192 @@
       position: absolute;
       left: 0;
       color: var(--c-gold)
+    }
+
+    /* ─── HOW I WORK (process strip) ─── */
+    .proc-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px
+    }
+
+    .proc-step {
+      background: #fff;
+      border: 1px solid var(--c-border);
+      border-radius: var(--r);
+      padding: 28px 26px;
+      box-shadow: var(--s1);
+      position: relative;
+      overflow: hidden;
+      transition: all .35s var(--ease)
+    }
+
+    .proc-step::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 0;
+      background: linear-gradient(to bottom, var(--c-navy), var(--c-gold));
+      transition: height .4s var(--ease)
+    }
+
+    .proc-step:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--s2);
+      border-color: rgba(27, 47, 78, .15)
+    }
+
+    .proc-step:hover::before {
+      height: 100%
+    }
+
+    .proc-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--c-gold);
+      letter-spacing: 1px;
+      margin-bottom: 8px
+    }
+
+    .proc-ico {
+      width: 44px;
+      height: 44px;
+      background: rgba(27, 47, 78, .06);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      color: var(--c-navy);
+      margin-bottom: 14px
+    }
+
+    .proc-step h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--c-navy);
+      margin-bottom: 8px
+    }
+
+    .proc-step p {
+      font-size: .82rem;
+      color: var(--c-mid);
+      line-height: 1.7;
+      margin-bottom: 14px
+    }
+
+    .proc-eg {
+      font-size: .72rem;
+      color: var(--c-muted);
+      font-style: italic;
+      padding-top: 10px;
+      border-top: 1px dashed var(--c-border)
+    }
+
+    [data-theme="dark"] .proc-step {
+      background: var(--c-off);
+      border-color: var(--c-border)
+    }
+
+    [data-theme="dark"] .proc-step h3 { color: #fff }
+
+    @media(max-width:1024px) {
+      .proc-grid { grid-template-columns: repeat(2, 1fr) }
+    }
+
+    @media(max-width:560px) {
+      .proc-grid { grid-template-columns: 1fr }
+    }
+
+    /* ─── RECOMMENDATIONS ─── */
+    .rec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px
+    }
+
+    .rec-card {
+      background: #fff;
+      border-radius: var(--r);
+      padding: 36px 32px 28px;
+      border: 1px solid var(--c-border);
+      border-left: 4px solid var(--c-gold);
+      box-shadow: var(--s1);
+      position: relative;
+      transition: all .35s var(--ease);
+      margin: 0
+    }
+
+    .rec-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--s2)
+    }
+
+    .rec-quote-mark {
+      color: var(--c-gold);
+      font-size: 1.6rem;
+      opacity: .35;
+      position: absolute;
+      top: 22px;
+      right: 26px
+    }
+
+    .rec-text {
+      font-style: italic;
+      font-size: .95rem;
+      color: var(--c-text);
+      line-height: 1.85;
+      margin: 0 0 22px;
+      font-family: 'Playfair Display', serif
+    }
+
+    .rec-attrib {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-top: 16px;
+      border-top: 1px solid var(--c-border)
+    }
+
+    .rec-name {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--c-navy)
+    }
+
+    .rec-role {
+      font-size: .76rem;
+      color: var(--c-muted)
+    }
+
+    .rec-note {
+      margin-top: 24px;
+      text-align: center;
+      font-size: .76rem;
+      color: var(--c-muted);
+      font-style: italic
+    }
+
+    .rec-note i {
+      color: var(--c-gold);
+      margin-right: 5px
+    }
+
+    [data-theme="dark"] .rec-card {
+      background: var(--c-off);
+      border-color: var(--c-border);
+      border-left-color: var(--c-gold)
+    }
+
+    [data-theme="dark"] .rec-text { color: var(--c-text) }
+    [data-theme="dark"] .rec-name { color: #fff }
+
+    @media(max-width:768px) {
+      .rec-grid { grid-template-columns: 1fr }
     }
 
     /* ─── EDUCATION ─── */
@@ -1643,6 +2029,19 @@
       font-size: .7rem;
       color: var(--c-mid);
       font-weight: 500
+    }
+
+    .pchip.outcome {
+      background: rgba(184, 150, 46, .1);
+      color: var(--c-navy);
+      border: 1px solid rgba(184, 150, 46, .3);
+      font-weight: 700
+    }
+
+    [data-theme="dark"] .pchip.outcome {
+      background: rgba(184, 150, 46, .14);
+      color: var(--c-gold-2, #d4ae45);
+      border-color: rgba(184, 150, 46, .35)
     }
 
     .proj-arrow {
@@ -2345,6 +2744,45 @@
       gap: 6px
     }
 
+    .cf-templates {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1)
+    }
+
+    .cf-templates-lbl {
+      font-size: .7rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, .55);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-right: 4px
+    }
+
+    .cf-template-btn {
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 100px;
+      color: rgba(255, 255, 255, .85);
+      font-family: 'Inter', sans-serif;
+      font-size: .76rem;
+      font-weight: 500;
+      padding: 6px 13px;
+      cursor: pointer;
+      transition: all .25s
+    }
+
+    .cf-template-btn:hover {
+      background: var(--c-gold);
+      color: var(--c-navy);
+      border-color: var(--c-gold);
+      transform: translateY(-1px)
+    }
+
     .cf-g label {
       font-size: .7rem;
       font-weight: 700;
@@ -2526,6 +2964,17 @@
       background: var(--c-light);
       color: #fff;
       border-left-color: var(--c-gold);
+    }
+
+    [data-theme="dark"] .tools-strip {
+      background: var(--c-off);
+      border-color: var(--c-border);
+    }
+
+    [data-theme="dark"] .tools-lbl {
+      background: rgba(255, 255, 255, .07);
+      color: var(--c-gold);
+      border-color: rgba(184, 150, 46, .3);
     }
 
     [data-theme="dark"] .tool-pill,
@@ -2942,9 +3391,13 @@
       .mob-hd-brand img {
         width: 40px;
         height: 40px;
-        border-radius: 10px;
         object-fit: contain;
       }
+
+      .mob-hd-brand .logo-light { display: block; }
+      .mob-hd-brand .logo-dark  { display: none; }
+      [data-theme="dark"] .mob-hd-brand .logo-light { display: none; }
+      [data-theme="dark"] .mob-hd-brand .logo-dark  { display: block; }
 
       .mob-hd-text {
         display: flex;
@@ -3572,6 +4025,62 @@
       border-color: var(--c-navy)
     }
 
+    /* Reusable modal image wrap (formerly inline-styled in 6+ places) */
+    .m-img-wrap {
+      margin: 16px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--c-border);
+      height: 220px
+    }
+
+    .m-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .ins-img-wrap {
+      margin: 16px 0;
+      border-radius: var(--r-sm);
+      overflow: hidden;
+      border: 1px solid var(--c-border);
+      height: 200px
+    }
+
+    .ins-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    /* Modal action-button rows (formerly inline-styled in 7 modals) */
+    .m-actions {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    /* iOS Safari + many mobile browsers can't render <iframe src="*.pdf">.
+       On small screens, hide the iframe viewer and promote the fallback
+       link into a prominent button so the user can still open the PDF. */
+    @media (max-width: 768px) {
+      .m-cert-viewer {
+        display: none;
+      }
+      .cert-fallback {
+        display: flex;
+        justify-content: center;
+        margin-top: 18px;
+        padding: 14px 18px;
+        background: var(--c-navy);
+        color: #fff;
+        border-color: var(--c-navy);
+        font-size: .88rem
+      }
+    }
+
     /* ─── INS METRICS ─── */
     .ins-metrics {
       display: flex;
@@ -3622,14 +4131,99 @@
       background: var(--c-navy-2);
       padding: 44px 5% 32px;
       text-align: center;
+      position: relative;
       border-top: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--c-gold), transparent)
     }
 
     .footer-inner {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px
+      gap: 18px
+    }
+
+    .footer-now {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      justify-content: center;
+      align-items: center;
+      max-width: 760px;
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .footer-now-pip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      background: rgba(34, 197, 94, .14);
+      border: 1px solid rgba(34, 197, 94, .35);
+      border-radius: 100px;
+      color: #86efac;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px
+    }
+
+    .footer-now-dot {
+      width: 6px;
+      height: 6px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s infinite
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, .55) }
+      50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0) }
+    }
+
+    .footer-now-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .footer-now-item i {
+      color: var(--c-gold);
+      font-size: .75rem
+    }
+
+    .footer-now-item em {
+      font-style: italic;
+      color: rgba(255, 255, 255, .75)
+    }
+
+    .footer-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: .76rem
+    }
+
+    .footer-meta a {
+      color: rgba(255, 255, 255, .55);
+      transition: color .25s
+    }
+
+    .footer-meta a:hover { color: var(--c-gold) }
+
+    .footer-meta .dot {
+      color: rgba(255, 255, 255, .25)
     }
 
     .footer-socials {
@@ -3666,10 +4260,16 @@
     }
 
     .footer-updated {
-      display: block;
-      margin-top: 6px;
+      display: inline-block;
+      margin-top: 4px;
+      padding: 4px 12px;
       font-size: .72rem;
-      color: rgba(255, 255, 255, .45)
+      color: var(--c-gold);
+      background: rgba(184, 150, 46, .1);
+      border: 1px solid rgba(184, 150, 46, .25);
+      border-radius: 100px;
+      font-weight: 600;
+      letter-spacing: .3px
     }
 
     .footer-copy em {
@@ -3771,12 +4371,14 @@
   <!-- NAVBAR -->
   <nav class="nav" id="nav">
     <a href="#home" class="am-logo" title="Animesh Mishra">
-      <img src="logo.png" alt="Animesh Mishra" width="54" height="54" onerror="this.style.visibility='hidden'">
+      <img class="logo-light" src="logo-light.png" alt="Animesh Mishra" width="54" height="54">
+      <img class="logo-dark"  src="logo-dark.png"  alt="Animesh Mishra" width="54" height="54">
     </a>
     <ul class="nav-menu" id="navMenu">
       <li class="mob-nav-hd">
         <a href="#home" class="mob-hd-brand">
-          <img src="logo.png" alt="AM" width="40" height="40" onerror="this.style.display='none'">
+          <img class="logo-light" src="logo-light.png" alt="AM" width="40" height="40">
+          <img class="logo-dark"  src="logo-dark.png"  alt="AM" width="40" height="40">
           <div class="mob-hd-text">
             <strong>Animesh Mishra</strong>
             <span>Pharma MBA · IIHMR</span>
@@ -3791,6 +4393,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#process">Process</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#insights">Insights</a></li>
@@ -3801,13 +4404,17 @@
         <div class="mob-ft-socials">
           <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="mailto:animesh.pm17@iihmr.in" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+918989468728" aria-label="Phone"><i class="fas fa-phone"></i></a>
+          <a href="https://wa.me/918989468728" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://github.com/Animesh1324" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener noreferrer" aria-label="Research Paper"><i class="fas fa-file-alt"></i></a>
         </div>
       </li>
     </ul>
     <div class="nav-right">
       <button class="theme-switch" id="themeSwitch" type="button" aria-label="Toggle dark mode" aria-pressed="false"
         title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
-      <a href="Animesh_CV.pdf" class="nav-cta" onclick="openM('cv'); return false;"><i class="fas fa-eye"></i> Preview
+      <a href="Animesh_CV.pdf" class="nav-cta" data-modal="cv"><i class="fas fa-eye"></i> Preview
         CV</a>
       <button class="hamburger" id="hb" type="button" aria-label="Open menu" aria-controls="navMenu"
         aria-expanded="false"><span></span><span></span><span></span></button>
@@ -3820,6 +4427,7 @@
     <button class="sec-dot" data-target="about" aria-label="About"></button>
     <button class="sec-dot" data-target="skills" aria-label="Skills"></button>
     <button class="sec-dot" data-target="experience" aria-label="Experience"></button>
+    <button class="sec-dot" data-target="process" aria-label="Process"></button>
     <button class="sec-dot" data-target="education" aria-label="Education"></button>
     <button class="sec-dot" data-target="projects" aria-label="Projects"></button>
     <button class="sec-dot" data-target="insights" aria-label="Insights"></button>
@@ -3829,7 +4437,7 @@
 
   <div class="quick-bar" aria-label="Quick access">
     <div class="quick-bar-inner">
-        <a class="quick-link" href="Animesh_CV.pdf" onclick="openM('cv'); return false;"><i
+        <a class="quick-link" href="Animesh_CV.pdf" data-modal="cv"><i
           class="fas fa-eye"></i><span>CV</span></a>
       <a class="quick-link" href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
       <a class="quick-link" href="#certifications"><i class="fas fa-certificate"></i><span>Certs</span></a>
@@ -3847,7 +4455,21 @@
           <div class="hero-label">MBA Pharmaceutical Management · IIHMR University</div>
           <h1 class="hero-name">Animesh<br>Mishra</h1>
           <div class="hero-typing"><span id="typingEl"></span><span class="cur">|</span></div>
-          <p class="hero-bio">I've stood at an HPLC machine and coded a patient diagnosis. Most MBA candidates bring one
+
+          <div class="role-switch" role="tablist" aria-label="Pick a role lens">
+            <button type="button" class="role-btn active" role="tab" data-role="all"
+              aria-selected="true">All-rounder</button>
+            <button type="button" class="role-btn" role="tab" data-role="pmt"
+              aria-selected="false">PMT</button>
+            <button type="button" class="role-btn" role="tab" data-role="brand"
+              aria-selected="false">Brand</button>
+            <button type="button" class="role-btn" role="tab" data-role="consulting"
+              aria-selected="false">Consulting</button>
+            <button type="button" class="role-btn" role="tab" data-role="coding"
+              aria-selected="false">Med Coding</button>
+          </div>
+
+          <p class="hero-bio" id="heroBio" data-bio-all="I've stood at an HPLC machine and coded a patient diagnosis. Most MBA candidates bring one lens. I bring two — combining laboratory science, clinical intelligence, and commercial strategy to drive real pharma outcomes." data-bio-pmt="A PMT-focused MBA fresher with live exposure at Micro Labs Ltd. — running market research on Rasagiline and Apixaban, applying SWOT/PESTEL to therapy-area strategy in CNS and cardiology, and learning brand planning from experienced managers." data-bio-brand="A brand-strategy candidate fluent in IQVIA Market Reflection, RCPA analysis, KOL engagement, and lifecycle management. I read the CMO deck and the field-force daily report with equal focus — and ask what would actually move share." data-bio-consulting="A pharma-consulting candidate with NPV/WACC/EV-EBITDA modelling chops, a $11.75B M&amp;A deep-dive in my portfolio, and a clinically-trained mind. I structure messy problems and ship executive-grade briefs." data-bio-coding="A certified ICD-10-CM medical coder (200+ codes, IIT Hyderabad) who understands how clinical documentation drives revenue cycles, payer reimbursement, and ultimately the pharma commercial decisions downstream.">I've stood at an HPLC machine and coded a patient diagnosis. Most MBA candidates bring one
             lens. I bring two — combining laboratory science, clinical intelligence, and commercial strategy to drive
             real pharma outcomes.</p>
           <div class="hero-socials">
@@ -3865,8 +4487,8 @@
               rel="noopener noreferrer" title="Research Paper" aria-label="Research Paper"><i class="fas fa-file-alt"></i></a>
           </div>
           <div class="hero-actions">
-            <a href="#contact" class="btn-cta"><i class="fas fa-handshake"></i> Open to Opportunities</a>
-            <a href="Animesh_CV.pdf" class="btn-ghost" onclick="openM('cv'); return false;"><i
+            <a href="#contact" class="btn-cta"><i class="fas fa-handshake"></i> Hire Me for PMT</a>
+            <a href="Animesh_CV.pdf" class="btn-ghost" data-modal="cv"><i
               class="fas fa-file"></i> Preview 1-page Resume</a>
             <a href="#projects" class="btn-ghost"><i class="fas fa-briefcase"></i> View My Work</a>
           </div>
@@ -3874,7 +4496,10 @@
         <div class="hero-visual">
           <div class="photo-wrap">
             <div class="photo-img-wrap">
-              <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra" width="280" height="330" onerror="this.style.opacity='0'">
+              <picture>
+                <source type="image/webp" srcset="PIC.webp">
+                <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra" width="280" height="330" loading="eager" onerror="this.style.opacity='0'">
+              </picture>
             </div>
             <div class="avail-pip" title="Open to pharma PM opportunities">
               <span class="avail-dot"></span>Available
@@ -3888,7 +4513,7 @@
           <div class="hstat-l">B.Pharm Score</div>
         </div>
         <div class="hstat">
-          <div class="hstat-n" data-t="5">0</div>
+          <div class="hstat-n" data-t="6">0</div>
           <div class="hstat-l">Projects Delivered</div>
         </div>
         <div class="hstat">
@@ -3896,8 +4521,8 @@
           <div class="hstat-l">ICD Codes Mastered</div>
         </div>
         <div class="hstat">
-          <div class="hstat-n" data-t="3">0</div>
-          <div class="hstat-l">Industry Internships</div>
+          <div class="hstat-n" data-t="4">0</div>
+          <div class="hstat-l">Industry Engagements</div>
         </div>
       </div>
     </div>
@@ -3906,18 +4531,18 @@
   <!-- SCROLLING MARQUEE -->
   <div class="marquee-wrap">
     <div class="marquee">
-      <span>PHARMA STRATEGY</span><span class="star">✦</span>
-      <span>MARKET ACCESS</span><span class="star">✦</span>
-      <span>HEALTH ECONOMICS</span><span class="star">✦</span>
-      <span>CLINICAL DATA</span><span class="star">✦</span>
-      <span>PRODUCT MANAGEMENT</span><span class="star">✦</span>
-      <span>GENERATIVE AI</span><span class="star">✦</span>
-      <span>PHARMA STRATEGY</span><span class="star">✦</span>
-      <span>MARKET ACCESS</span><span class="star">✦</span>
-      <span>HEALTH ECONOMICS</span><span class="star">✦</span>
-      <span>CLINICAL DATA</span><span class="star">✦</span>
-      <span>PRODUCT MANAGEMENT</span><span class="star">✦</span>
-      <span>GENERATIVE AI</span><span class="star">✦</span>
+      <span>Pharma Strategy</span><span class="star">✦</span>
+      <span>Market Access</span><span class="star">✦</span>
+      <span>Health Economics</span><span class="star">✦</span>
+      <span>Clinical Data</span><span class="star">✦</span>
+      <span>Product Management</span><span class="star">✦</span>
+      <span>Generative AI</span><span class="star">✦</span>
+      <span>Pharma Strategy</span><span class="star">✦</span>
+      <span>Market Access</span><span class="star">✦</span>
+      <span>Health Economics</span><span class="star">✦</span>
+      <span>Clinical Data</span><span class="star">✦</span>
+      <span>Product Management</span><span class="star">✦</span>
+      <span>Generative AI</span><span class="star">✦</span>
     </div>
   </div>
 
@@ -4066,8 +4691,7 @@
           </div>
           <div class="sk-hl">
             <i class="fas fa-star"></i>
-            <span>Currently gaining live PMT exposure at Micro Labs Ltd. — market research, HCP insight analysis, and
-              cross-functional learning across CNS and cardiology therapy areas</span>
+            <span>NPV / WACC / EV-EBITDA modelling — applied to live pharma M&amp;A and patent-cliff scenarios</span>
           </div>
         </div>
 
@@ -4133,6 +4757,10 @@
 
       </div>
 
+      <div class="glossary-hint sr up" style="transition-delay:.27s">
+        <i class="fas fa-lightbulb"></i> Click any pharma term (dotted underline) for a quick definition.
+      </div>
+
       <!-- Tools Strip -->
       <div class="tools-strip sr up" style="transition-delay:.3s">
         <div class="tools-lbl">Tools &amp; Platforms I Work With</div>
@@ -4168,7 +4796,7 @@
         <div class="tl-item sr up">
           <div class="tl-dot gold"></div>
           <div class="tl-card">
-            <span class="tl-chip">May 2026 – Present</span>
+            <span class="tl-chip">May 2026 — Present</span>
             <div class="tl-role">Product Management Intern <span style="font-size:.75rem;font-weight:500;color:var(--c-gold);margin-left:6px;">● Ongoing</span></div>
             <div class="tl-org">Micro Labs Ltd. — Jaipur</div>
             <ul class="tl-pts">
@@ -4186,7 +4814,7 @@
         <div class="tl-item sr up" style="transition-delay:.08s">
           <div class="tl-dot gold"></div>
           <div class="tl-card">
-            <span class="tl-chip">January – March 2024</span>
+            <span class="tl-chip">Jan — Mar 2024</span>
             <div class="tl-role">Medical Coding Analyst (Certified)</div>
             <div class="tl-org">E-Cell, IIT Hyderabad</div>
             <ul class="tl-pts">
@@ -4202,7 +4830,7 @@
         <div class="tl-item sr up" style="transition-delay:.16s">
           <div class="tl-dot"></div>
           <div class="tl-card">
-            <span class="tl-chip">July 1–15, 2023</span>
+            <span class="tl-chip">Jul 1 — 15, 2023</span>
             <div class="tl-role">QC Analyst Intern</div>
             <div class="tl-org">Unidrug Innovative Pharma Technologies Ltd. — Indore</div>
             <ul class="tl-pts">
@@ -4218,7 +4846,7 @@
         <div class="tl-item sr up" style="transition-delay:.24s">
           <div class="tl-dot gold"></div>
           <div class="tl-card">
-            <span class="tl-chip">June 1–22, 2023</span>
+            <span class="tl-chip">Jun 1 — 22, 2023</span>
             <div class="tl-role">Pharma Industry Trainee</div>
             <div class="tl-org">SIRTSP / CARE, The SAGE Group — Bhopal</div>
             <ul class="tl-pts">
@@ -4232,6 +4860,85 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section id="process">
+    <div class="s-inner">
+      <div class="s-head sr up">
+        <span class="s-kicker">How I Work</span>
+        <h2 class="s-title">From Insight to <em>Execution</em></h2>
+        <div class="s-rule"></div>
+      </div>
+      <div class="proc-grid">
+        <div class="proc-step sr up" style="transition-delay:.04s">
+          <div class="proc-num">01</div>
+          <div class="proc-ico"><i class="fas fa-magnifying-glass-chart"></i></div>
+          <h3>Discovery</h3>
+          <p>Read clinical data, secondary research, IQVIA exports, and HCP voice. The right question shapes the right strategy.</p>
+          <div class="proc-eg">e.g. RCPA + IQVIA scan before the Semaglutide patent-cliff brief</div>
+        </div>
+        <div class="proc-step sr up" style="transition-delay:.12s">
+          <div class="proc-num">02</div>
+          <div class="proc-ico"><i class="fas fa-lightbulb"></i></div>
+          <h3>Insight</h3>
+          <p>Synthesise data into a one-line "so what?" — the insight that survives a brand review and a CFO challenge alike.</p>
+          <div class="proc-eg">e.g. The biosimilar entry curve hides a 12-month premium-defence window</div>
+        </div>
+        <div class="proc-step sr up" style="transition-delay:.2s">
+          <div class="proc-num">03</div>
+          <div class="proc-ico"><i class="fas fa-chess-knight"></i></div>
+          <h3>Strategy</h3>
+          <p>Frame options against SWOT/PESTEL, model NPV/WACC, and pick a defensible play with clear KPIs.</p>
+          <div class="proc-eg">e.g. Lifecycle plays + KOL re-engagement to defend brand share</div>
+        </div>
+        <div class="proc-step sr up" style="transition-delay:.28s">
+          <div class="proc-num">04</div>
+          <div class="proc-ico"><i class="fas fa-rocket"></i></div>
+          <h3>Execution</h3>
+          <p>Translate strategy into briefs, dashboards, and field-force messaging — with measurable feedback loops.</p>
+          <div class="proc-eg">e.g. PMT detailing decks, IQVIA dashboards, AI workflow prototypes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section id="recommendations" class="bg-off">
+    <div class="s-inner">
+      <div class="s-head sr up">
+        <span class="s-kicker">What People Say</span>
+        <h2 class="s-title">Recommendations &amp; <em>Endorsements</em></h2>
+        <div class="s-rule"></div>
+      </div>
+      <div class="rec-grid">
+        <figure class="rec-card sr up" style="transition-delay:.04s">
+          <i class="fas fa-quote-left rec-quote-mark" aria-hidden="true"></i>
+          <blockquote class="rec-text">
+            Animesh combines lab discipline with commercial curiosity in a way that's rare at entry level. He reads
+            an HPLC chromatogram and an IQVIA dashboard with the same focus — and asks the right "so what?"
+          </blockquote>
+          <figcaption class="rec-attrib">
+            <span class="rec-name">[Mentor / Faculty Name]</span>
+            <span class="rec-role">[Role · Organisation]</span>
+          </figcaption>
+        </figure>
+        <figure class="rec-card sr up" style="transition-delay:.12s">
+          <i class="fas fa-quote-left rec-quote-mark" aria-hidden="true"></i>
+          <blockquote class="rec-text">
+            Among the few MBA candidates I've worked with who can actually translate molecule-level science into
+            a brand strategy conversation. Detail-oriented, structured, and reliable.
+          </blockquote>
+          <figcaption class="rec-attrib">
+            <span class="rec-name">[Industry Manager Name]</span>
+            <span class="rec-role">[Role · Organisation]</span>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="rec-note sr up" style="transition-delay:.2s">
+        <i class="fas fa-circle-info"></i> Replace bracketed placeholders with real attributions before publishing.
+      </p>
     </div>
   </section>
 
@@ -4308,78 +5015,73 @@
         </div>
       </div>
       <div class="proj-grid">
-        <div class="proj-card featured sr up" onclick="openM('p1')" style="transition-delay:.04s">
+        <div class="proj-card sr up" data-modal="p1" style="transition-delay:.04s">
           <div class="proj-ico">📈</div>
-          <span class="feature-badge">Featured</span>
           <img class="proj-img"
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=70"
-            alt="Analytics Dashboard" loading="lazy" onerror="this.style.display='none'">
+            src="case-studies/thumbs/p1-semaglutide.png"
+            alt="Semaglutide Patent Cliff case-study cover" loading="lazy" onerror="this.style.display='none'">
           <h3>Semaglutide Patent Cliff Analysis</h3>
           <p>Executive-level GLP-1 patent expiry impact analysis using IQVIA Market Reflection data. Presented as
             academic brief and LinkedIn carousel.</p>
-          <div class="proj-chips"><span class="pchip">Patent Strategy</span><span class="pchip">GLP-1</span><span
+          <div class="proj-chips"><span class="pchip outcome">$20B+ market</span><span class="pchip">Patent Strategy</span><span class="pchip">GLP-1</span><span
               class="pchip">IQVIA</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card featured sr up" onclick="openM('p2')" style="transition-delay:.1s">
+        <div class="proj-card sr up" data-modal="p2" style="transition-delay:.1s">
           <div class="proj-ico">📱</div>
-          <span class="feature-badge">Featured</span>
           <img class="proj-img"
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=70"
-            alt="App Development" loading="lazy" onerror="this.style.display='none'">
+            src="case-studies/thumbs/p2-pharmaintel.png"
+            alt="PharmaIntel India case-study cover" loading="lazy" onerror="this.style.display='none'">
           <h3>PharmaIntel India App</h3>
           <p>Multilingual Indian pharma intelligence platform — 13 regional languages, offline-first, 20-table SQLite
             schema on React/Firebase/Vite.</p>
-          <div class="proj-chips"><span class="pchip">React</span><span class="pchip">Firebase</span><span
+          <div class="proj-chips"><span class="pchip outcome">13 languages</span><span class="pchip outcome">20-table schema</span><span class="pchip">React</span><span class="pchip">Firebase</span><span
               class="pchip">PWA</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card sr up" onclick="openM('p3')" style="transition-delay:.16s">
+        <div class="proj-card sr up" data-modal="p3" style="transition-delay:.16s">
           <div class="proj-ico">🧠</div>
           <img class="proj-img"
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=70"
-            alt="AI Research" loading="lazy" onerror="this.style.display='none'">
+            src="case-studies/thumbs/p3-amr.png"
+            alt="AMR-Genius Intelligence Hub case-study cover" loading="lazy" onerror="this.style.display='none'">
           <h3>AMR-Genius Intelligence Hub</h3>
           <p>AI-powered AMR surveillance platform with business model canvas, monetisation plan, and data architecture —
             Research Methods, IIHMR.</p>
-          <div class="proj-chips"><span class="pchip">AI/ML</span><span class="pchip">AMR</span><span
-              class="pchip">SaaS</span></div>
+          <div class="proj-chips"><span class="pchip outcome">SaaS BMC</span><span class="pchip">AI/ML</span><span class="pchip">AMR</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card sr up" onclick="openM('p4')" style="transition-delay:.22s">
+        <div class="proj-card sr up" data-modal="p4" style="transition-delay:.22s">
           <div class="proj-ico">🔬</div>
           <img class="proj-img"
-            src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=70"
-            alt="Molecular Research" loading="lazy" onerror="this.style.display='none'">
+            src="case-studies/thumbs/p4-curcumin.png"
+            alt="Ethosomal Curcumin research paper cover" loading="lazy" onerror="this.style.display='none'">
           <h3>Ethosomal Curcumin — Research Paper</h3>
           <p>Peer-reviewed narrative review on ethosomal vs. liposomal curcumin delivery systems. Published with DOI on
             ResearchGate.</p>
-          <div class="proj-chips"><span class="pchip">Scientific Writing</span><span class="pchip">Drug
-              Delivery</span><span class="pchip">DOI: RG.2.2.36647</span></div>
+          <div class="proj-chips"><span class="pchip outcome">DOI · First-author</span><span class="pchip">Scientific Writing</span><span class="pchip">Drug Delivery</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card sr up" onclick="openM('p5')" style="transition-delay:.28s">
+        <div class="proj-card sr up" data-modal="p5" style="transition-delay:.28s">
           <div class="proj-ico">🤖</div>
           <img class="proj-img"
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=70"
-            alt="Digital Health Analytics" loading="lazy" onerror="this.style.display='none'">
+            src="case-studies/thumbs/p5-pharmadhere.png"
+            alt="PharmAdhere-AI case-study cover" loading="lazy" onerror="this.style.display='none'">
           <h3>PharmAdhere-AI</h3>
           <p>Predictive AI framework for pharmaceutical patient adherence modelling, integrating ML with patient
             behaviour analytics.</p>
-          <div class="proj-chips"><span class="pchip">Predictive AI</span><span class="pchip">Adherence</span><span
-              class="pchip">ML</span></div>
+          <div class="proj-chips"><span class="pchip outcome">ML framework</span><span class="pchip">Predictive AI</span><span class="pchip">Adherence</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
-        <div class="proj-card sr up" onclick="openM('p6')" style="transition-delay:.34s">
+        <div class="proj-card featured sr up" data-modal="p6" style="transition-delay:.34s">
           <div class="proj-ico">🏢</div>
+          <span class="feature-badge">Featured</span>
           <img class="proj-img"
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=70"
-            alt="Corporate Strategy" loading="lazy" onerror="this.style.display='none'">
+            src="case-studies/thumbs/p6-sun-organon.png"
+            alt="Sun Pharma × Organon M&amp;A case-study cover" loading="lazy" onerror="this.style.display='none'">
           <h3>Sun Pharma × Organon — M&amp;A Deep Dive</h3>
           <p>15-section executive-grade analysis of India's largest-ever pharma acquisition: $11.75B deal mechanics,
             financial leverage modelling, 4 strategic pillars, governance crisis, and capital market reactions.</p>
-          <div class="proj-chips"><span class="pchip">M&amp;A Strategy</span><span class="pchip">Pharma
-              Finance</span><span class="pchip">Deal Analysis</span></div>
+          <div class="proj-chips"><span class="pchip outcome">$11.75B deal</span><span class="pchip outcome">15 sections</span><span class="pchip">M&amp;A Strategy</span></div>
           <div class="proj-arrow">View Details <i class="fas fa-arrow-right"></i></div>
         </div>
       </div>
@@ -4387,16 +5089,16 @@
   </section>
 
   <!-- PROJECT MODALS -->
-  <div class="m-overlay" id="m-cv" onclick="closeOnBg(event,'cv')">
+  <div class="m-overlay" id="m-cv">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cv')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cv"><i class="fas fa-times"></i></button>
       <div class="m-icon">📄</div>
       <h2>Curriculum Vitae</h2>
       <div class="m-sub">Animesh Mishra · MBA Pharmaceutical Management</div>
       <div class="m-cert-viewer">
         <iframe src="Animesh_CV.pdf#toolbar=0&navpanes=0" title="Animesh Mishra CV" loading="lazy"></iframe>
       </div>
-      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="Animesh_CV.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i
             class="fas fa-up-right-from-square"></i> Open in new tab</a>
         <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf" class="m-action"><i
@@ -4405,16 +5107,13 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p1" onclick="closeOnBg(event,'p1')">
+  <div class="m-overlay" id="m-p1">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p1')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p1"><i class="fas fa-times"></i></button>
       <div class="m-icon">📈</div>
       <h2>Semaglutide Patent Cliff Analysis</h2>
       <div class="m-sub">Strategic Intelligence · IQVIA Market Reflection · 2025</div>
-      <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
-          alt="Data Chart" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
-      </div>
+      <div class="m-img-wrap"><img src="case-studies/thumbs/p1-semaglutide.png" alt="Semaglutide Patent Cliff cover" loading="lazy"></div>
       <p>An executive-level analysis of the GLP-1 patent expiry landscape for semaglutide, examining the commercial
         implications of Novo Nordisk's Ozempic and Wegovy patents approaching expiration and the anticipated biosimilar
         entry wave.</p>
@@ -4431,7 +5130,7 @@
         <div class="m-ref-item"><strong>AstraZeneca Nexium Case (DocMode, 2015)</strong> — Purple Pill lifecycle management: brand repositioning via premium pricing &amp; patient education to protect revenue post-patent expiry. Validated LCM strategies applied in this analysis.</div>
         <div class="m-ref-item"><strong>Novartis Gilenya Launch (DocMode, 2015)</strong> — Disease-education-led launch at $48,000/year (20× over generic), targeting neurologists with unbranded awareness campaigns. Informs premium biosimilar defence frameworks used in this study.</div>
       </div>
-      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="case-studies/semaglutide-patent-cliff.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
@@ -4439,16 +5138,13 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p2" onclick="closeOnBg(event,'p2')">
+  <div class="m-overlay" id="m-p2">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p2')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p2"><i class="fas fa-times"></i></button>
       <div class="m-icon">📱</div>
       <h2>PharmaIntel India App</h2>
       <div class="m-sub">Full-Stack PWA · React · Firebase · Vite · SQLite</div>
-      <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80"
-          alt="App Interface" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
-      </div>
+      <div class="m-img-wrap"><img src="case-studies/thumbs/p2-pharmaintel.png" alt="PharmaIntel India cover" loading="lazy"></div>
       <p>A comprehensive multilingual pharmaceutical intelligence platform for Indian healthcare professionals. Supports
         13 regional languages and is built offline-first, ensuring accessibility in low-connectivity areas across Tier 2
         and 3 cities.</p>
@@ -4465,7 +5161,7 @@
         <div class="m-ref-item"><strong>Smilax Labs Marketing Study (IOSR-JBM, 2013)</strong> — Field force effectiveness and detailing strategies in Indian pharma markets reveal the critical gap in real-time drug intelligence tools accessible to HCPs — the core problem PharmaIntel India solves.</div>
         <div class="m-ref-item"><strong>Novo Nordisk India Diabetes Awareness (DocMode, 2015)</strong> — Digital patient education through vernacular content in 9 languages demonstrated the viability of multilingual health communication in India, directly informing the app's 13-language architecture.</div>
       </div>
-      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="case-studies/pharmaintel-india-app.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
@@ -4473,16 +5169,13 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p3" onclick="closeOnBg(event,'p3')">
+  <div class="m-overlay" id="m-p3">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p3')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p3"><i class="fas fa-times"></i></button>
       <div class="m-icon">🧠</div>
       <h2>AMR-Genius Intelligence Hub</h2>
       <div class="m-sub">AI Platform Concept · Research Methods · IIHMR 2025</div>
-      <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80"
-          alt="Lab Research" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
-      </div>
+      <div class="m-img-wrap"><img src="case-studies/thumbs/p3-amr.png" alt="AMR-Genius cover" loading="lazy"></div>
       <p>An AI-powered antimicrobial resistance (AMR) surveillance platform concept addressing the growing global AMR
         crisis — projected to cause 10 million deaths annually by 2050 — by aggregating hospital antibiogram data and
         predicting resistance patterns in real time.</p>
@@ -4499,7 +5192,7 @@
         <div class="m-ref-item"><strong>IIM Ahmedabad — Optimization-Based DSS for Pharma (2016)</strong> — Demonstrates how multi-objective optimisation and scenario modelling can guide strategic decisions in pharmaceutical companies. AMR-Genius applies this DSS framework to antibiogram surveillance and resistance prediction.</div>
         <div class="m-ref-item"><strong>Vertex Pharmaceuticals Incivek Launch (DocMode, 2015)</strong> — Risk-share contracting and outcomes-based pricing in speciality pharma validated the health-economics monetisation model used in AMR-Genius's institutional tier pricing strategy.</div>
       </div>
-      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="case-studies/amr-genius-intelligence-hub.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
@@ -4507,16 +5200,13 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p4" onclick="closeOnBg(event,'p4')">
+  <div class="m-overlay" id="m-p4">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p4')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p4"><i class="fas fa-times"></i></button>
       <div class="m-icon">🔬</div>
       <h2>Ethosomal Curcumin — Narrative Review</h2>
       <div class="m-sub">Peer-Reviewed Publication · Drug Delivery · DOI: 10.13140/RG.2.2.36647.10405</div>
-      <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80"
-          alt="Molecular Science" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
-      </div>
+      <div class="m-img-wrap"><img src="case-studies/thumbs/p4-curcumin.png" alt="Ethosomal Curcumin cover" loading="lazy"></div>
       <p>A publication-ready narrative review comparing ethosomal and liposomal drug delivery systems for curcumin — a
         compound with well-established anti-inflammatory and anti-cancer properties but notoriously poor oral
         bioavailability (~1%).</p>
@@ -4529,7 +5219,7 @@
       <div class="m-chips"><span class="mchip">Scientific Writing</span><span class="mchip">Drug Delivery</span><span
           class="mchip">Nanotechnology</span><span class="mchip">Curcumin</span><span class="mchip">Published</span>
       </div>
-      <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="https://doi.org/10.13140/RG.2.2.36647.10405" target="_blank" rel="noopener noreferrer" class="m-action"><i
             class="fas fa-external-link-alt"></i> View on ResearchGate (DOI)</a>
         <a href="case-studies/ethosomal-curcumin-review.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
@@ -4537,16 +5227,13 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p5" onclick="closeOnBg(event,'p5')">
+  <div class="m-overlay" id="m-p5">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p5')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p5"><i class="fas fa-times"></i></button>
       <div class="m-icon">🤖</div>
       <h2>PharmAdhere-AI</h2>
       <div class="m-sub">AI Conceptual Framework · Patient Adherence · 2025</div>
-      <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80"
-          alt="Medicine Technology" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
-      </div>
+      <div class="m-img-wrap"><img src="case-studies/thumbs/p5-pharmadhere.png" alt="PharmAdhere-AI cover" loading="lazy"></div>
       <p>A predictive AI framework for pharmaceutical patient adherence modelling — addressing one of the industry's
         most persistent and costly challenges, estimated to cost the global pharma sector $500B+ annually in lost
         revenue and suboptimal treatment outcomes.</p>
@@ -4564,7 +5251,7 @@
         <div class="m-ref-item"><strong>IIM Ahmedabad — Strategic DSS for Pharma (2016)</strong> — Multi-scenario optimisation under real-world constraints directly informs PharmAdhere-AI's risk stratification engine, which predicts adherence dropout across patient cohorts using federated learning.</div>
         <div class="m-ref-item"><strong>Cornerstone4Care — Novo Nordisk (DocMode, 2015)</strong> — Integrated digital adherence platform for insulin patients demonstrated measurable compliance improvement at scale, providing precedent for the CRM-integrated reminder ecosystem in PharmAdhere-AI.</div>
       </div>
-      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="case-studies/pharmadhere-ai.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View on LinkedIn</a>
@@ -4572,16 +5259,13 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-p6" onclick="closeOnBg(event,'p6')">
+  <div class="m-overlay" id="m-p6">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('p6')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p6"><i class="fas fa-times"></i></button>
       <div class="m-icon">🏢</div>
       <h2>Sun Pharma × Organon — Comprehensive M&amp;A Analysis</h2>
       <div class="m-sub">Strategic &amp; Financial Analysis · Cross-Border Pharma M&amp;A · April 2026</div>
-      <div style="margin:16px 0; border-radius:12px; overflow:hidden; border:1px solid var(--c-border); height:220px;">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
-          alt="Corporate Buildings" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
-      </div>
+      <div class="m-img-wrap"><img src="case-studies/thumbs/p6-sun-organon.png" alt="Sun Pharma × Organon cover" loading="lazy"></div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
         <div style="padding:15px; background:var(--c-off); border-radius:12px; border:1px solid var(--c-border);">
           <strong
@@ -4609,7 +5293,7 @@
         <div class="m-ref-item"><strong>TBM Consulting — Pharma Strategy Execution (2015)</strong> — Documents how a pharma manufacturer achieved 33% cost reduction through rigorous management systems. Post-acquisition integration analysis in this M&amp;A study benchmarks Sun Pharma's operational synergy targets against this execution framework.</div>
         <div class="m-ref-item"><strong>Smilax Labs — Pharma Marketing Strategies (IOSR-JBM, 2013)</strong> — Segmentation analysis of Indian pharma field force and brand positioning frameworks inform the commercial synergy assessment for Organon's Women's Health &amp; biosimilar portfolio post-acquisition.</div>
       </div>
-      <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="m-actions">
         <a href="case-studies/sun-pharma-organon-ma.pdf" target="_blank" rel="noopener noreferrer" class="m-action secondary"><i class="fas fa-file-pdf"></i> Case Study PDF</a>
         <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer"
           class="m-action"><i class="fab fa-linkedin"></i> View Full Case Study</a>
@@ -4617,9 +5301,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-ins1" onclick="closeOnBg(event,'ins1')">
+  <div class="m-overlay" id="m-ins1">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('ins1')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="ins1"><i class="fas fa-times"></i></button>
       <div class="gl-keyword-bar"><i class="fas fa-chart-line"></i> &nbsp;Patent Strategy</div>
       <h2>GLP-1 Patent Cliff: Semaglutide &amp; the Biosimilar Wave</h2>
       <div class="m-sub">IQVIA Market Reflection · 2025</div>
@@ -4649,18 +5333,13 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-ins2" onclick="closeOnBg(event,'ins2')">
+  <div class="m-overlay" id="m-ins2">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('ins2')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="ins2"><i class="fas fa-times"></i></button>
       <div class="gl-keyword-bar"><i class="fas fa-handshake"></i> &nbsp;M&amp;A Strategy</div>
       <h2>Sun Pharma × Organon: India's $11.75B Deal Decoded</h2>
       <div class="m-sub">Strategic &amp; Financial Analysis · April 2026</div>
-      <div
-        style="margin:16px 0;border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--c-border);height:200px;">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80"
-          alt="Corporate M&A" loading="lazy" style="width:100%;height:100%;object-fit:cover;"
-          onerror="this.parentElement.style.display='none'">
-      </div>
+      <div class="ins-img-wrap"><img src="case-studies/thumbs/p6-sun-organon.png" alt="Corporate M&A" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
       <div class="ins-metrics">
         <span class="ins-metric">$11.75B Deal</span>
         <span class="ins-metric">103% Premium</span>
@@ -4688,18 +5367,13 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-ins3" onclick="closeOnBg(event,'ins3')">
+  <div class="m-overlay" id="m-ins3">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('ins3')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="ins3"><i class="fas fa-times"></i></button>
       <div class="gl-keyword-bar"><i class="fas fa-robot"></i> &nbsp;Digital Health</div>
       <h2>AI in Pharma PMT: Reshaping Brand Planning &amp; HCP Targeting</h2>
       <div class="m-sub">Opinion · MBA Research · IIHMR 2026</div>
-      <div
-        style="margin:16px 0;border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--c-border);height:200px;">
-        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
-          alt="AI in Healthcare" loading="lazy" style="width:100%;height:100%;object-fit:cover;"
-          onerror="this.parentElement.style.display='none'">
-      </div>
+      <div class="ins-img-wrap"><img src="case-studies/thumbs/p3-amr.png" alt="AI in Healthcare" loading="lazy" onerror="this.parentElement.style.display='none'"></div>
       <div class="ins-metrics">
         <span class="ins-metric">GenAI Impact</span>
         <span class="ins-metric">HCP Targeting</span>
@@ -4727,9 +5401,9 @@
   </div>
 
   <!-- CERT MODALS -->
-  <div class="m-overlay" id="m-cert1" onclick="closeOnBg(event,'cert1')">
+  <div class="m-overlay" id="m-cert1">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert1')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert1"><i class="fas fa-times"></i></button>
       <div class="m-icon">🎓</div>
       <h2>Product Management: An Introduction</h2>
       <div class="m-sub">IBM / Coursera Professional Certificate · May 2026</div>
@@ -4753,9 +5427,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert2" onclick="closeOnBg(event,'cert2')">
+  <div class="m-overlay" id="m-cert2">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert2')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert2"><i class="fas fa-times"></i></button>
       <div class="m-icon">🤖</div>
       <h2>Generative AI Foundations Certificate</h2>
       <div class="m-sub">Microsoft × upGrad · UID: Br3hxZNKPVECfd81</div>
@@ -4779,9 +5453,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert3" onclick="closeOnBg(event,'cert3')">
+  <div class="m-overlay" id="m-cert3">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert3')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert3"><i class="fas fa-times"></i></button>
       <div class="m-icon">🏥</div>
       <h2>Medical Coding Specialist — ICD-10-CM</h2>
       <div class="m-sub">E-Cell, IIT Hyderabad · Certificate ID: SDCERTI1031</div>
@@ -4806,9 +5480,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert4" onclick="closeOnBg(event,'cert4')">
+  <div class="m-overlay" id="m-cert4">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert4')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert4"><i class="fas fa-times"></i></button>
       <div class="m-icon">🌐</div>
       <h2>Global Health Management Research Award</h2>
       <div class="m-sub">Pradanya 2026 — IIHMR University · February 2026</div>
@@ -4832,9 +5506,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert5" onclick="closeOnBg(event,'cert5')">
+  <div class="m-overlay" id="m-cert5">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert5')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert5"><i class="fas fa-times"></i></button>
       <div class="m-icon">🧪</div>
       <h2>Pharma Industry Training Workshop</h2>
       <div class="m-sub">SIRTSP / CARE, The SAGE Group — Bhopal · June 2023</div>
@@ -4858,9 +5532,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert6" onclick="closeOnBg(event,'cert6')">
+  <div class="m-overlay" id="m-cert6">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert6')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert6"><i class="fas fa-times"></i></button>
       <div class="m-icon">🏭</div>
       <h2>QC &amp; Production Department Training</h2>
       <div class="m-sub">Unidrug Innovative Pharma Technologies Ltd. — Indore · July 2023</div>
@@ -4884,9 +5558,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert7" onclick="closeOnBg(event,'cert7')">
+  <div class="m-overlay" id="m-cert7">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert7')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert7"><i class="fas fa-times"></i></button>
       <div class="m-icon">🏆</div>
       <h2>AI Product Manager Specialisation</h2>
       <div class="m-sub">IBM — Coursera · 2026</div>
@@ -4909,9 +5583,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert8" onclick="closeOnBg(event,'cert8')">
+  <div class="m-overlay" id="m-cert8">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert8')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert8"><i class="fas fa-times"></i></button>
       <div class="m-icon">🥇</div>
       <h2>NIPER JEE — Nationally Qualified</h2>
       <div class="m-sub">National Institute of Pharmaceutical Education &amp; Research · 2024</div>
@@ -4933,9 +5607,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert9" onclick="closeOnBg(event,'cert9')">
+  <div class="m-overlay" id="m-cert9">
     <div class="m-box">
-      <button class="m-close" onclick="closeM('cert9')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert9"><i class="fas fa-times"></i></button>
       <div class="m-icon">📊</div>
       <h2>Advanced Excel Workshop</h2>
       <div class="m-sub">IIHMR Analytica Club, IIHMR University · March 2026</div>
@@ -4960,9 +5634,9 @@
   </div>
 
   <!-- GLOSSARY MODAL -->
-  <div class="m-overlay" id="m-glossary" onclick="closeOnBg(event,'glossary')">
+  <div class="m-overlay" id="m-glossary">
     <div class="m-box" style="max-width:500px">
-      <button class="m-close" onclick="closeM('glossary')"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="glossary"><i class="fas fa-times"></i></button>
       <div class="m-icon" id="gl-icon">📚</div>
       <h2 id="gl-title" style="margin-bottom:8px;"></h2>
       <div class="gl-keyword-bar" style="margin-bottom:20px;"><i class="fas fa-book-open"></i> &nbsp;Pharma Glossary
@@ -4980,9 +5654,9 @@
       </div>
       <div class="ins-grid">
 
-        <article class="ins-card sr up" style="transition-delay:.04s" onclick="openM('ins1')">
+        <article class="ins-card sr up" style="transition-delay:.04s" data-modal="ins1">
           <img class="ins-img"
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=70"
+            src="case-studies/thumbs/p1-semaglutide.png"
             alt="Pharma Market Analytics" loading="lazy" onerror="this.style.display='none'">
           <span class="ins-cat">Patent Strategy</span>
           <h3>GLP-1 Patent Cliff: Semaglutide &amp; the Biosimilar Wave</h3>
@@ -4992,9 +5666,9 @@
           <span class="ins-link">Read Analysis <i class="fas fa-arrow-right"></i></span>
         </article>
 
-        <article class="ins-card sr up" style="transition-delay:.1s" onclick="openM('ins2')">
+        <article class="ins-card sr up" style="transition-delay:.1s" data-modal="ins2">
           <img class="ins-img"
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=70"
+            src="case-studies/thumbs/p6-sun-organon.png"
             alt="Pharma M&A Strategy" loading="lazy" onerror="this.style.display='none'">
           <span class="ins-cat">M&amp;A Strategy</span>
           <h3>Sun Pharma × Organon: India's $11.75B Deal Decoded</h3>
@@ -5004,9 +5678,9 @@
           <span class="ins-link">Read Analysis <i class="fas fa-arrow-right"></i></span>
         </article>
 
-        <article class="ins-card sr up" style="transition-delay:.16s" onclick="openM('ins3')">
+        <article class="ins-card sr up" style="transition-delay:.16s" data-modal="ins3">
           <img class="ins-img"
-            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=70"
+            src="case-studies/thumbs/p3-amr.png"
             alt="AI in Pharma" loading="lazy" onerror="this.style.display='none'">
           <span class="ins-cat">Digital Health</span>
           <h3>AI in Pharma PMT: Reshaping Brand Planning &amp; HCP Targeting</h3>
@@ -5043,7 +5717,7 @@
         </select>
       </div>
       <div class="cert-grid">
-        <div class="cert-card featured sr up" style="transition-delay:.04s" onclick="openM('cert1')">
+        <div class="cert-card featured sr up" style="transition-delay:.04s" data-modal="cert1">
           <div class="cert-ico">🎓</div>
           <span class="feature-badge">Featured</span>
           <span class="cert-status done">Completed</span>
@@ -5052,7 +5726,7 @@
           <div class="cert-date">Issued: May 2026</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card featured sr up" style="transition-delay:.1s" onclick="openM('cert2')">
+        <div class="cert-card featured sr up" style="transition-delay:.1s" data-modal="cert2">
           <div class="cert-ico">🤖</div>
           <span class="feature-badge">Featured</span>
           <span class="cert-status done">Completed</span>
@@ -5061,7 +5735,7 @@
           <div class="cert-date">UID: Br3hxZNKPVECfd81</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.16s" onclick="openM('cert3')">
+        <div class="cert-card sr up" style="transition-delay:.16s" data-modal="cert3">
           <div class="cert-ico">🏥</div>
           <span class="cert-status done">Completed</span>
           <div class="cert-name">Medical Coding Internship (ICD-10-CM)</div>
@@ -5069,7 +5743,7 @@
           <div class="cert-date">ID: SDCERTI1031 · 200+ Codes Mastered</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.22s" onclick="openM('cert4')">
+        <div class="cert-card sr up" style="transition-delay:.22s" data-modal="cert4">
           <div class="cert-ico">🌐</div>
           <span class="cert-status done">Awarded</span>
           <div class="cert-name">Global Health Management Research Award</div>
@@ -5077,7 +5751,7 @@
           <div class="cert-date">February 2026 · Strategic Analysis</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.28s" onclick="openM('cert5')">
+        <div class="cert-card sr up" style="transition-delay:.28s" data-modal="cert5">
           <div class="cert-ico">🧪</div>
           <span class="cert-status done">Completed</span>
           <div class="cert-name">Pharma Industry Training Workshop</div>
@@ -5085,7 +5759,7 @@
           <div class="cert-date">June 1–22, 2023 · Formulation &amp; Evaluation</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.34s" onclick="openM('cert6')">
+        <div class="cert-card sr up" style="transition-delay:.34s" data-modal="cert6">
           <div class="cert-ico">🏭</div>
           <span class="cert-status done">Completed</span>
           <div class="cert-name">QC &amp; Production Department Training</div>
@@ -5093,7 +5767,7 @@
           <div class="cert-date">July 1–15, 2023</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.4s" onclick="openM('cert7')">
+        <div class="cert-card sr up" style="transition-delay:.4s" data-modal="cert7">
           <div class="cert-ico">🏆</div>
           <span class="cert-status done">Certified</span>
           <div class="cert-name">AI Product Manager Specialisation</div>
@@ -5101,7 +5775,7 @@
           <div class="cert-date">2026 · AI-Driven Product Strategy</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.46s" onclick="openM('cert8')">
+        <div class="cert-card sr up" style="transition-delay:.46s" data-modal="cert8">
           <div class="cert-ico">🥇</div>
           <span class="cert-status done">Qualified</span>
           <div class="cert-name">NIPER JEE — Nationally Qualified</div>
@@ -5109,7 +5783,7 @@
           <div class="cert-date">2024 · India's Premier Pharma Entrance</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
-        <div class="cert-card sr up" style="transition-delay:.52s" onclick="openM('cert9')">
+        <div class="cert-card sr up" style="transition-delay:.52s" data-modal="cert9">
           <div class="cert-ico">📊</div>
           <span class="cert-status done">Completed</span>
           <div class="cert-name">Advanced Excel Workshop</div>
@@ -5177,6 +5851,12 @@
         <form class="cf sr right" id="cForm" action="mailto:animesh.pm17@iihmr.in" method="POST"
           data-formspree-action="">
           <div id="cFormFields">
+            <div class="cf-templates" aria-label="Quick message templates">
+              <span class="cf-templates-lbl">Quick start:</span>
+              <button type="button" class="cf-template-btn" data-subject="Coffee chat — pharma PM" data-msg="Hi Animesh, I came across your portfolio and would love a 15-min coffee chat about your work in pharma product management. Are you free this week?">☕ Coffee chat</button>
+              <button type="button" class="cf-template-btn" data-subject="PMT role — opportunity to discuss" data-msg="Hi Animesh, I represent [company] and we have a Product Management Trainee opening that may interest you. Could we schedule a call to discuss?">💼 I have a PMT role</button>
+              <button type="button" class="cf-template-btn" data-subject="Question on a case study" data-msg="Hi Animesh, I read your case study on [project name] and have a quick question about the [insight / methodology]. Do you have a minute?">💬 Quick question</button>
+            </div>
             <div class="cf-row">
               <div class="cf-g"><label for="contactName">Name</label><input id="contactName" type="text" name="name"
                   placeholder="Your Name" autocomplete="name" required>
@@ -5196,8 +5876,8 @@
           <div id="cFormSuccess" role="status" aria-live="polite"
             style="display:none;padding:32px 0;text-align:center;">
             <div style="font-size:2.5rem;margin-bottom:12px;">✓</div>
-            <div style="color:#fff;font-size:1.1rem;font-weight:700;margin-bottom:8px;">Message ready!</div>
-            <div style="color:rgba(255,255,255,.6);font-size:.88rem;">Your email client should open with the message.</div>
+            <div style="color:#fff;font-size:1.1rem;font-weight:700;margin-bottom:8px;" id="cFormSuccessTitle">Message sent!</div>
+            <div style="color:rgba(255,255,255,.6);font-size:.88rem;" id="cFormSuccessBody">I'll reply within 24 hours.</div>
           </div>
           <div id="cFormError" role="alert" aria-live="assertive"
             style="display:none;padding:16px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);border-radius:10px;margin-top:12px;">
@@ -5226,10 +5906,24 @@
         <a class="footer-link" href="https://wa.me/918989468728" target="_blank" rel="noopener noreferrer"
           title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
-      <p class="footer-copy">Designed &amp; built by <em>Animesh Mishra</em> &nbsp;·&nbsp; Molecule to Market
-        &nbsp;·&nbsp; MBA Pharmaceutical Management, IIHMR University &nbsp;·&nbsp; 2026
-        <span class="footer-updated" id="footerUpdated" data-updated="2026-05-15">Last updated: May 15, 2026</span>
-      </p>
+      <p class="footer-copy">© 2026 <em>Animesh Mishra</em> &nbsp;·&nbsp; Molecule to Market &nbsp;·&nbsp;
+        MBA Pharmaceutical Management, IIHMR University</p>
+      <div class="footer-now" aria-label="Currently">
+        <span class="footer-now-pip"><span class="footer-now-dot"></span>Now</span>
+        <span class="footer-now-item"><i class="fas fa-flask"></i> Live PMT internship at Micro Labs Ltd.</span>
+        <span class="footer-now-item"><i class="fas fa-book-open"></i> Reading: <em>The Pharma Letter</em> daily brief</span>
+        <span class="footer-now-item"><i class="fas fa-graduation-cap"></i> Studying: HEOR &amp; Market Access (MBA Term II)</span>
+      </div>
+      <span class="footer-updated" id="footerUpdated" data-updated="2026-05-15">
+        <i class="fas fa-clock-rotate-left" style="margin-right:5px;"></i>Last updated: May 15, 2026
+      </span>
+      <div class="footer-meta">
+        <a href="sitemap.xml">Sitemap</a>
+        <span class="dot">·</span>
+        <a href="https://github.com/Animesh1324/animesh-portfolio" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+        <span class="dot">·</span>
+        <a href="Animesh_CV.pdf" download="Animesh_Mishra_CV.pdf">Download CV</a>
+      </div>
     </div>
   </footer>
 
@@ -5376,13 +6070,33 @@
       }
     }
 
-    function closeOnBg(e, id) { if (e.target.classList.contains('m-overlay')) closeM(id); }
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
         document.querySelectorAll('.m-overlay.show').forEach(o => {
           const id = o.id.replace('m-', '');
           closeM(id);
         });
+      }
+    });
+
+    // ── Delegated handlers for [data-modal] / [data-close-modal] / .m-overlay backdrop
+    // Replaces the dozens of inline onclick="openM('X')" handlers
+    document.addEventListener('click', e => {
+      const overlay = e.target.closest('.m-overlay');
+      if (overlay && e.target === overlay) {
+        closeM(overlay.id.replace('m-', ''));
+        return;
+      }
+      const closer = e.target.closest('[data-close-modal]');
+      if (closer) {
+        e.preventDefault();
+        closeM(closer.dataset.closeModal);
+        return;
+      }
+      const opener = e.target.closest('[data-modal]');
+      if (opener) {
+        if (opener.tagName === 'A') e.preventDefault();
+        openM(opener.dataset.modal);
       }
     });
 
@@ -5409,18 +6123,83 @@
     if (certSearch) certSearch.addEventListener('input', filterCerts);
     if (certFilter) certFilter.addEventListener('change', filterCerts);
 
+    // ── "Fit For Role" hero switch — swap bio prose + emphasise matching projects
+    (function () {
+      const switcher = document.querySelector('.role-switch');
+      const bio = document.getElementById('heroBio');
+      if (!switcher || !bio) return;
+
+      // Which project IDs are most relevant to each role
+      const roleProjects = {
+        all:        ['p6', 'p2', 'p1', 'p3', 'p5', 'p4'],
+        pmt:        ['p1', 'p2', 'p6', 'p3', 'p5', 'p4'],
+        brand:      ['p1', 'p6', 'p2', 'p3', 'p5', 'p4'],
+        consulting: ['p6', 'p1', 'p3', 'p2', 'p5', 'p4'],
+        coding:     ['p4', 'p2', 'p3', 'p5', 'p1', 'p6'],
+      };
+
+      function reorderProjects(role) {
+        const grid = document.querySelector('.proj-grid');
+        if (!grid) return;
+        const order = roleProjects[role] || roleProjects.all;
+        order.forEach((id, idx) => {
+          const card = grid.querySelector(`[data-modal="${id}"]`);
+          if (card) card.style.order = String(idx);
+        });
+        grid.style.display = 'grid'; // ensure order is honoured
+      }
+
+      switcher.addEventListener('click', e => {
+        const btn = e.target.closest('.role-btn');
+        if (!btn) return;
+        const role = btn.dataset.role;
+        switcher.querySelectorAll('.role-btn').forEach(b => {
+          const active = b === btn;
+          b.classList.toggle('active', active);
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        const newBio = bio.dataset['bio' + role.charAt(0).toUpperCase() + role.slice(1)];
+        if (newBio) {
+          bio.classList.add('swapping');
+          setTimeout(() => {
+            bio.textContent = newBio;
+            bio.classList.remove('swapping');
+          }, 180);
+        }
+        reorderProjects(role);
+      });
+    })();
+
+    // ── Contact form quick templates: pre-fill subject + message on click
+    document.querySelectorAll('.cf-template-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const subj = btn.dataset.subject || '';
+        const msg = btn.dataset.msg || '';
+        const subjEl = document.getElementById('contactSubject');
+        const msgEl = document.getElementById('contactMessage');
+        if (subjEl) subjEl.value = subj;
+        if (msgEl) { msgEl.value = msg; msgEl.focus(); msgEl.setSelectionRange(0, 0); }
+      });
+    });
+
     // ── Contact form
+    // To enable real submissions: set data-formspree-action="https://formspree.io/f/YOUR_ID"
+    // on the <form id="cForm"> element. Until then, the form opens the user's email client
+    // pre-filled with their message — guaranteed to reach the inbox even without a backend.
     document.getElementById('cForm').addEventListener('submit', async e => {
       e.preventDefault();
       const btn = document.getElementById('cSubmitBtn');
       const form = e.target;
       const fields = new FormData(form);
       const endpoint = form.dataset.formspreeAction || form.action;
+      const isFormspree = /^https:\/\/formspree\.io\/f\/[\w-]+$/i.test(endpoint);
       btn.textContent = 'Sending...'; btn.disabled = true;
       try {
-        if (/^https:\/\/formspree\.io\/f\/[\w-]+$/i.test(endpoint)) {
+        if (isFormspree) {
           const res = await fetch(endpoint, { method: 'POST', body: fields, headers: { Accept: 'application/json' } });
           if (!res.ok) throw new Error('Form endpoint rejected the submission');
+          document.getElementById('cFormSuccessTitle').textContent = 'Message sent!';
+          document.getElementById('cFormSuccessBody').textContent = "I'll reply within 24 hours.";
         } else {
           const subject = fields.get('subject') || 'Portfolio enquiry';
           const body = [
@@ -5430,6 +6209,8 @@
             fields.get('message') || ''
           ].join('\n');
           window.location.href = `mailto:animesh.pm17@iihmr.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          document.getElementById('cFormSuccessTitle').textContent = 'Almost there!';
+          document.getElementById('cFormSuccessBody').textContent = "Your email client should have opened — just hit Send. Or email me at animesh.pm17@iihmr.in.";
         }
         document.getElementById('cFormFields').style.display = 'none';
         document.getElementById('cFormSuccess').style.display = 'block';
@@ -5464,20 +6245,16 @@
     themeSwitch.addEventListener('click', () => { isDark = !isDark; applyTheme(isDark); });
     if (mobThemeSwitch) mobThemeSwitch.addEventListener('click', () => { isDark = !isDark; applyTheme(isDark); });
 
-    // ── Card keyboard access
-    document.querySelectorAll('.proj-card, .ins-card, .cert-card').forEach(card => {
-      const onclick = card.getAttribute('onclick') || '';
-      const match = onclick.match(/openM\('([^']+)'\)/);
-      if (match) {
-        card.setAttribute('role', 'button');
-        card.setAttribute('tabindex', '0');
-        card.addEventListener('keydown', e => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openM(match[1]);
-          }
-        });
-      }
+    // ── Card keyboard access (now reads data-modal instead of onclick)
+    document.querySelectorAll('[data-modal].proj-card, [data-modal].ins-card, [data-modal].cert-card').forEach(card => {
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openM(card.dataset.modal);
+        }
+      });
     });
 
     // ── 3D Tilt Effect on Photo (rAF throttled)
@@ -5500,10 +6277,13 @@
       tiltEl.style.transition = 'transform 0.18s ease-out';
     }
 
-    // ── Custom Cursor (rAF + transform for zero layout cost)
+    // ── Custom Cursor (opt-out for accessibility — disabled if reduced motion / coarse pointer)
     const cd = document.getElementById('cursor-dot');
     const cr = document.getElementById('cursor-ring');
-    if (window.matchMedia("(pointer: fine)").matches && cd && cr) {
+    const wantsCursor = window.matchMedia("(pointer: fine)").matches
+                     && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (wantsCursor && cd && cr) {
+      document.body.classList.add('custom-cursor');
       let cx = 0, cy = 0, curRaf;
       cd.style.cssText += ';left:0;top:0;transform-origin:center';
       cr.style.cssText += ';left:0;top:0;transform-origin:center';
@@ -5649,8 +6429,15 @@
       for (const k in glossary) {
         if (txt.toLowerCase().includes(k.toLowerCase())) {
           el.style.cursor = 'help';
+          el.classList.add('has-glossary');
           el.title = 'Click to learn: ' + k;
+          el.setAttribute('role', 'button');
+          el.setAttribute('tabindex', '0');
+          el.setAttribute('aria-label', `Glossary: ${k}`);
           el.addEventListener('click', (e) => { e.stopPropagation(); openGlossary(k); });
+          el.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openGlossary(k); }
+          });
           break;
         }
       }
