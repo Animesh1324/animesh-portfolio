@@ -10,7 +10,8 @@
       "Bash(pip3 install Pillow)",
       "Bash(ls -lh \"/Users/animeshmishra/digital portfolio/*\")",
       "Bash(ls -lh certificates/)",
-      "Bash(find /Library/Fonts /System/Library/Fonts ~/Library/Fonts *)"
+      "Bash(find /Library/Fonts /System/Library/Fonts ~/Library/Fonts *)",
+      "Bash(python3 -c ' *)"
     ],
     "additionalDirectories": [
       "/Users/animeshmishra/animesh-portfolio/certificates",
