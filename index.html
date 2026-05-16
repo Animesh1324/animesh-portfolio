@@ -3662,7 +3662,8 @@
       }
     }
 
-    .marquee-wrap:hover .marquee {
+    .marquee-wrap:hover .marquee,
+    .marquee-wrap:focus-within .marquee {
       animation-play-state: paused
     }
 
@@ -3902,7 +3903,41 @@
       background: var(--c-light);
       display: flex;
       align-items: center;
-      justify-content: center
+      justify-content: center;
+      position: relative
+    }
+
+    .m-cert-viewer::before {
+      content: '';
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--c-border);
+      border-top-color: var(--c-gold);
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+      z-index: 0
+    }
+
+    .m-cert-viewer.loaded::before { display: none }
+
+    @keyframes spin { to { transform: rotate(360deg) } }
+
+    .nav-cert-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--c-gold);
+      color: #fff;
+      font-size: .6rem;
+      font-weight: 700;
+      line-height: 1;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      margin-left: 5px;
+      vertical-align: middle;
+      letter-spacing: 0
     }
 
     .m-cert-viewer iframe {
@@ -4312,10 +4347,10 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#insights">Insights</a></li>
-      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#certifications">Certifications <span class="nav-cert-badge" aria-label="9 certifications">9</span></a></li>
       <li><a href="#contact">Contact</a></li>
       <li class="mob-nav-ft">
-        <div class="mob-ft-badge"><span class="mob-ft-dot"></span>Available Immediately</div>
+        <div class="mob-ft-badge"><span class="mob-ft-dot"></span>Open to Full-time Roles</div>
         <div class="mob-ft-socials">
           <a href="https://www.linkedin.com/in/animesh-mishra-69a382378" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="mailto:animesh.pm17@iihmr.in" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -4400,7 +4435,7 @@
               rel="noopener noreferrer" title="Research Paper" aria-label="Research Paper"><i class="fas fa-file-alt"></i></a>
           </div>
           <div class="hero-actions">
-            <a href="#contact" class="btn-cta"><i class="fas fa-handshake"></i> Hire Me for PMT</a>
+            <a href="#contact" class="btn-cta" id="heroCta"><i class="fas fa-handshake"></i> Hire Me for PMT</a>
             <a href="Animesh_CV.pdf" class="btn-ghost" data-modal="cv"><i
               class="fas fa-file"></i> Preview 1-page Resume</a>
             <a href="#projects" class="btn-ghost"><i class="fas fa-briefcase"></i> View My Work</a>
@@ -4414,8 +4449,8 @@
                 <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra" width="280" height="330" loading="eager" onerror="this.style.opacity='0'">
               </picture>
             </div>
-            <div class="avail-pip" title="Open to pharma PM opportunities">
-              <span class="avail-dot"></span>Available
+            <div class="avail-pip" title="Interning at Micro Labs · Open to full-time roles post-MBA">
+              <span class="avail-dot"></span>Open to Roles
             </div>
           </div>
         </div>
@@ -4434,8 +4469,8 @@
           <div class="hstat-l">ICD Codes Mastered</div>
         </div>
         <div class="hstat">
-          <div class="hstat-n" data-t="4">0</div>
-          <div class="hstat-l">Industry Engagements</div>
+          <div class="hstat-n" data-t="9">0</div>
+          <div class="hstat-l">Credentials Earned</div>
         </div>
       </div>
     </div>
@@ -4501,7 +4536,7 @@
           <p>Then I went deeper into healthcare data — completing a certified ICD-10-CM medical coding programme with
             E-Cell, IIT Hyderabad, understanding how clinical documentation shapes revenue cycles and ultimately drives
             the commercial decisions pharma companies make.</p>
-          <p>Now at IIHMR University (MBA Pharmaceutical Management, 2025–27), I'm building frameworks for GTM Strategy,
+          <p>Now at IIHMR University (MBA Pharmaceutical Management, Aug 2025 – 2027), I'm building frameworks for GTM Strategy,
             Market Access, KOL Engagement, Health Economics, and Lifecycle Management — targeting roles in PMT and
             pharma consulting at firms that demand both scientific rigour and business acumen.</p>
           <div class="pull-quote">"Molecule to Market — I understand the molecule and the market. Not as a metaphor.
@@ -5680,7 +5715,7 @@
           <span class="cl-kicker">Get in Touch</span>
           <h2 class="cl-h">Let's <em>Connect</em></h2>
           <div class="cl-rule"></div>
-          <div class="cl-badge">Fresher &nbsp;·&nbsp; Available Immediately</div>
+          <div class="cl-badge">Fresher &nbsp;·&nbsp; Open to Full-time Roles · Post-MBA</div>
           <p class="cl-desc">B.Pharm (Hons.) + MBA Pharmaceutical Management fresher seeking entry-level roles in
             Product Management Trainee, Pharma Consulting, and Business Analyst. Lab-trained, clinically aware, and
             strategy-ready. I reply within 24 hours.</p>
@@ -5790,8 +5825,8 @@
         <span class="footer-now-item"><i class="fas fa-book-open"></i> Reading: <em>The Pharma Letter</em> daily brief</span>
         <span class="footer-now-item"><i class="fas fa-graduation-cap"></i> Studying: HEOR &amp; Market Access (MBA Term II)</span>
       </div>
-      <span class="footer-updated" id="footerUpdated" data-updated="2026-05-15">
-        <i class="fas fa-clock-rotate-left" style="margin-right:5px;"></i>Last updated: May 15, 2026
+      <span class="footer-updated" id="footerUpdated" data-updated="2026-05-16">
+        <i class="fas fa-clock-rotate-left" style="margin-right:5px;"></i>Last updated: May 16, 2026
       </span>
       <div class="footer-meta">
         <a href="sitemap.xml">Sitemap</a>
@@ -5804,11 +5839,11 @@
   </footer>
 
   <!-- BACK TO TOP -->
-  <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+  <button id="btt"><i class="fas fa-arrow-up"></i></button>
 
   <script>
     // ── Typing effect
-    const roles = ['PMT Aspirant', 'Brand Strategist', 'Pharma Analyst', 'Medical Coder', 'AI-Driven Strategist', 'MBA @ IIHMR'];
+    const roles = ['PMT Candidate', 'Brand Strategist', 'Pharma Analyst', 'Medical Coder', 'AI-Driven Strategist', 'MBA @ IIHMR'];
     let ri = 0, ci = 0, del = false;
     const tEl = document.getElementById('typingEl');
     function type() {
@@ -5845,6 +5880,16 @@
     mnEl.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
     const mobCloseEl = document.getElementById('mobClose');
     if (mobCloseEl) mobCloseEl.addEventListener('click', closeNav);
+
+    // ── Cert viewer iframe loading state
+    document.querySelectorAll('.m-cert-viewer iframe, .m-cert-viewer img').forEach(el => {
+      const viewer = el.closest('.m-cert-viewer');
+      el.addEventListener('load', () => { if (viewer) viewer.classList.add('loaded'); });
+      if (el.complete || el.readyState === 'complete') { if (viewer) viewer.classList.add('loaded'); }
+    });
+
+    // ── Back to top
+    document.getElementById('btt').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
     // ── Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -6025,6 +6070,9 @@
         grid.style.display = 'grid'; // ensure order is honoured
       }
 
+      const ctaLabels = { all: 'Let\'s Connect', pmt: 'Hire Me for PMT', brand: 'Hire Me for Brand', consulting: 'Hire Me for Consulting', coding: 'Hire Me for Med Coding' };
+      const heroCta = document.getElementById('heroCta');
+
       switcher.addEventListener('click', e => {
         const btn = e.target.closest('.role-btn');
         if (!btn) return;
@@ -6042,6 +6090,7 @@
             bio.classList.remove('swapping');
           }, 180);
         }
+        if (heroCta && ctaLabels[role]) heroCta.innerHTML = '<i class="fas fa-handshake"></i> ' + ctaLabels[role];
         reorderProjects(role);
       });
     })();
