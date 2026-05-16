@@ -4371,17 +4371,17 @@
           <h1 class="hero-name">Animesh<br>Mishra</h1>
           <div class="hero-typing"><span id="typingEl"></span><span class="cur">|</span></div>
 
-          <div class="role-switch" role="tablist" aria-label="Pick a role lens">
-            <button type="button" class="role-btn active" role="tab" data-role="all"
-              aria-selected="true">Overview</button>
-            <button type="button" class="role-btn" role="tab" data-role="pmt"
-              aria-selected="false">PMT</button>
-            <button type="button" class="role-btn" role="tab" data-role="brand"
-              aria-selected="false">Brand</button>
-            <button type="button" class="role-btn" role="tab" data-role="consulting"
-              aria-selected="false">Consulting</button>
-            <button type="button" class="role-btn" role="tab" data-role="coding"
-              aria-selected="false">Med Coding</button>
+          <div class="role-switch" role="group" aria-label="Pick a role lens">
+            <button type="button" class="role-btn active" data-role="all"
+              aria-pressed="true">Overview</button>
+            <button type="button" class="role-btn" data-role="pmt"
+              aria-pressed="false">PMT</button>
+            <button type="button" class="role-btn" data-role="brand"
+              aria-pressed="false">Brand</button>
+            <button type="button" class="role-btn" data-role="consulting"
+              aria-pressed="false">Consulting</button>
+            <button type="button" class="role-btn" data-role="coding"
+              aria-pressed="false">Med Coding</button>
           </div>
 
           <p class="hero-bio" id="heroBio" data-bio-all="B.Pharm (Honours) graduate and MBA Pharmaceutical Management candidate at IIHMR University, Jaipur — currently interning as a Product Management Trainee at Micro Labs Ltd. across CNS and cardiology therapy areas. My edge: a laboratory-trained mind applied to commercial problems. I've operated an HPLC, analysed IQVIA market data, modelled M&amp;A financials, and coded ICD-10-CM diagnoses. Most candidates bring one lens. I bring four." data-bio-pmt="A PMT-focused MBA fresher with live exposure at Micro Labs Ltd. — running market research on Rasagiline and Apixaban, applying SWOT/PESTEL to therapy-area strategy in CNS and cardiology, and learning brand planning from experienced managers." data-bio-brand="A brand-strategy candidate fluent in IQVIA Market Reflection, RCPA analysis, KOL engagement, and lifecycle management. I read the CMO deck and the field-force daily report with equal focus — and ask what would actually move share." data-bio-consulting="A pharma-consulting candidate with NPV/WACC/EV-EBITDA modelling chops, a $11.75B M&amp;A deep-dive in my portfolio, and a clinically-trained mind. I structure messy problems and ship executive-grade briefs." data-bio-coding="A certified ICD-10-CM medical coder (200+ codes, IIT Hyderabad) who understands how clinical documentation drives revenue cycles, payer reimbursement, and ultimately the pharma commercial decisions downstream.">B.Pharm (Honours) graduate and MBA Pharmaceutical Management candidate at IIHMR University, Jaipur — currently interning as a Product Management Trainee at Micro Labs Ltd. across CNS and cardiology therapy areas. My edge: a laboratory-trained mind applied to commercial problems. I've operated an HPLC, analysed IQVIA market data, modelled M&amp;A financials, and coded ICD-10-CM diagnoses. Most candidates bring one lens. I bring four.</p>
@@ -6032,7 +6032,7 @@
         switcher.querySelectorAll('.role-btn').forEach(b => {
           const active = b === btn;
           b.classList.toggle('active', active);
-          b.setAttribute('aria-selected', active ? 'true' : 'false');
+          b.setAttribute('aria-pressed', active ? 'true' : 'false');
         });
         const newBio = bio.dataset['bio' + role.charAt(0).toUpperCase() + role.slice(1)];
         if (newBio) {
