@@ -1029,15 +1029,15 @@
     .avail-dot {
       width: 7px;
       height: 7px;
-      background: #22c55e;
+      background: #f59e0b;
       border-radius: 50%;
       flex-shrink: 0;
       animation: availPulse 2.4s ease-in-out infinite;
     }
 
     @keyframes availPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
-      55% { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(245,158,11,0.55); }
+      55% { box-shadow: 0 0 0 5px rgba(245,158,11,0); }
     }
 
     /* Hero stats */
@@ -4494,8 +4494,8 @@
                 <img class="photo-img" src="PIC.jpg" alt="Animesh Mishra" width="280" height="330" loading="eager" onerror="this.style.opacity='0'">
               </picture>
             </div>
-            <div class="avail-pip" title="Interning at Micro Labs · Open to full-time roles post-MBA">
-              <span class="avail-dot"></span>Open to Roles
+            <div class="avail-pip" title="PMT Intern at Micro Labs Ltd. · Open to full-time roles post-MBA">
+              <span class="avail-dot"></span>Interning · Open post-MBA
             </div>
           </div>
         </div>
@@ -5910,20 +5910,22 @@
     const links    = [...document.querySelectorAll('.nav-menu a')];
     const dots     = [...document.querySelectorAll('.sec-dot')];
 
-    // pre-cache section offsets so scrolling never triggers layout reads
-    let secTops = [];
-    function cacheSectionOffsets() {
+    // Cache offsets after full load (images/fonts affect layout)
+    let secTops = [], scrollH = 1;
+    function cacheLayoutValues() {
       secTops = secs.map(s => s.offsetTop);
+      scrollH = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     }
-    cacheSectionOffsets();
-    window.addEventListener('resize', cacheSectionOffsets, { passive: true });
+    // Run immediately for first paint, then again after everything loads
+    cacheLayoutValues();
+    window.addEventListener('load',   cacheLayoutValues);
+    window.addEventListener('resize', cacheLayoutValues, { passive: true });
 
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       navEl.classList.toggle('stuck', y > 60);
       bttEl.classList.toggle('show', y > 400);
-      const h = document.documentElement.scrollHeight - window.innerHeight;
-      progEl.style.width = (y / h * 100) + '%';
+      progEl.style.width = (y / scrollH * 100) + '%';
       let cur = 'home';
       for (let i = 0; i < secTops.length; i++) {
         if (y >= secTops[i] - 180) cur = secs[i].id;
