@@ -2,19 +2,20 @@
   "permissions": {
     "allow": [
       "Bash(git commit -m ' *)",
-      "Bash(find /Users/animeshmishra -name \"*genai*\" -o -name \"*upgrad*\" -o -name \"*upGrad*\" -o -name \"*generative*\" 2>/dev/null | head -10)",
-      "Read(//Users/animeshmishra/**)",
-      "Bash(cp \"/Users/animeshmishra/animesh-portfolio/certificates/generative ai-microsoft.png\" \"/Users/animeshmishra/digital portfolio/certificates/genai-foundations-certificate.png\")",
-      "Bash(sips --getProperty pixelWidth \"/Users/animeshmishra/digital portfolio/PIC.jpg\")",
-      "Bash(sips -g pixelWidth -g pixelHeight -g fileSize \"/Users/animeshmishra/digital portfolio/PIC.jpg\")",
-      "Bash(sips -s format jpeg -s formatOptions 72 \"/Users/animeshmishra/digital portfolio/PIC.jpg\" --out \"/Users/animeshmishra/digital portfolio/PIC_opt.jpg\")",
-      "Bash(ls -lh *.jpg *.png *.pdf)",
+      "Bash(git -C \"/Users/animeshmishra/digital portfolio\" *)",
+      "Bash(git -C '/Users/animeshmishra/digital portfolio' commit -m ' *)",
+      "Bash(python3 gen_og.py)",
+      "Bash(python3 -c \"from PIL import Image*)",
+      "Bash(pip3 show Pillow)",
+      "Bash(pip3 install Pillow)",
+      "Bash(ls -lh \"/Users/animeshmishra/digital portfolio/*\")",
       "Bash(ls -lh certificates/)",
-      "Bash(sips -s format jpeg -s formatOptions 78 \"/Users/animeshmishra/digital portfolio/certificates/ibm-ai-product-manager.png\" --out \"/Users/animeshmishra/digital portfolio/certificates/ibm-ai-product-manager.jpg\")",
-      "Bash(sips -s format jpeg -s formatOptions 85 \"/Users/animeshmishra/digital portfolio/certificates/ibm-ai-product-manager.png\" --out \"/Users/animeshmishra/digital portfolio/certificates/ibm-ai-product-manager.jpg\")"
+      "Bash(find /Library/Fonts /System/Library/Fonts ~/Library/Fonts *)"
     ],
     "additionalDirectories": [
-      "/Users/animeshmishra/animesh-portfolio/certificates"
+      "/Users/animeshmishra/animesh-portfolio/certificates",
+      "/Users/animeshmishra/Documents/01_Personal/CV_and_Resumes",
+      "/tmp"
     ]
   }
 }
