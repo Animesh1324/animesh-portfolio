@@ -2244,29 +2244,71 @@
     /* ─── CERTIFICATIONS ─── */
     .cert-tools {
       display: flex;
-      gap: 12px;
+      gap: 16px;
       align-items: center;
       margin: 18px 0 26px;
       flex-wrap: wrap
     }
 
-    .cert-tools input,
-    .cert-tools select {
-      border: 1px solid var(--c-border);
+    .cert-search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 220px;
+      max-width: 340px
+    }
+
+    .cert-search-ico {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--c-muted);
+      font-size: .82rem;
+      pointer-events: none
+    }
+
+    .cert-tools input {
+      border: 1.5px solid var(--c-border);
       background: var(--c-white);
       color: var(--c-text);
-      padding: 10px 14px;
-      border-radius: var(--r-sm);
+      padding: 9px 14px 9px 36px;
+      border-radius: 100px;
       font-size: .85rem;
-      min-width: 200px;
+      font-family: 'Inter', sans-serif;
+      width: 100%;
       outline: none;
       transition: border-color .3s, box-shadow .3s
     }
 
-    .cert-tools input:focus,
-    .cert-tools select:focus {
+    .cert-tools input:focus {
       border-color: var(--c-gold);
       box-shadow: 0 0 0 3px rgba(184, 150, 46, 0.15)
+    }
+
+    .cert-filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center
+    }
+
+    .cert-fpill {
+      padding: 7px 16px;
+      background: var(--c-light);
+      border-radius: 100px;
+      font-size: .78rem;
+      color: var(--c-mid);
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background .22s, color .22s
+    }
+
+    .cert-fpill:hover,
+    .cert-fpill.active {
+      background: var(--c-navy);
+      color: #fff
     }
 
     .cert-empty {
@@ -2973,11 +3015,21 @@
       color: #000;
     }
 
-    [data-theme="dark"] .cert-tools input,
-    [data-theme="dark"] .cert-tools select {
+    [data-theme="dark"] .cert-tools input {
       background: var(--c-off);
       color: var(--c-text);
       border-color: var(--c-border);
+    }
+
+    [data-theme="dark"] .cert-fpill {
+      background: var(--c-light);
+      color: var(--c-mid);
+    }
+
+    [data-theme="dark"] .cert-fpill:hover,
+    [data-theme="dark"] .cert-fpill.active {
+      background: var(--c-navy-2);
+      color: #fff;
     }
 
     [data-theme="dark"] .quick-bar {
@@ -5620,14 +5672,17 @@
         <div class="s-rule"></div>
       </div>
       <div class="cert-tools">
-        <input id="certSearch" type="search" placeholder="Search certificates or issuers" aria-label="Search certificates">
-        <select id="certFilter" aria-label="Filter certificates">
-          <option value="all">All statuses</option>
-          <option value="completed">Completed</option>
-          <option value="awarded">Awarded</option>
-          <option value="certified">Certified</option>
-          <option value="qualified">Qualified</option>
-        </select>
+        <div class="cert-search-wrap">
+          <i class="fas fa-search cert-search-ico" aria-hidden="true"></i>
+          <input id="certSearch" type="search" placeholder="Search certificates or issuers" aria-label="Search certificates">
+        </div>
+        <div class="cert-filter-pills" role="group" aria-label="Filter by status">
+          <button class="cert-fpill active" data-filter="all" type="button">All</button>
+          <button class="cert-fpill" data-filter="completed" type="button">Completed</button>
+          <button class="cert-fpill" data-filter="awarded" type="button">Awarded</button>
+          <button class="cert-fpill" data-filter="certified" type="button">Certified</button>
+          <button class="cert-fpill" data-filter="qualified" type="button">Qualified</button>
+        </div>
       </div>
       <div class="cert-grid">
         <div class="cert-card featured sr up" style="transition-delay:.04s" data-modal="cert1">
@@ -6045,18 +6100,17 @@
 
     // ── Certificates filter/search
     const certSearch = document.getElementById('certSearch');
-    const certFilter = document.getElementById('certFilter');
     const certCards = [...document.querySelectorAll('.cert-card')];
     const certEmpty = document.getElementById('certEmpty');
+    let certActiveFilter = 'all';
     function filterCerts() {
       const q = (certSearch?.value || '').toLowerCase().trim();
-      const status = (certFilter?.value || 'all').toLowerCase();
       let visible = 0;
       certCards.forEach(card => {
         const text = card.textContent.toLowerCase();
         const statusText = (card.querySelector('.cert-status')?.textContent || '').toLowerCase();
         const matchesQuery = !q || text.includes(q);
-        const matchesStatus = status === 'all' || statusText.includes(status);
+        const matchesStatus = certActiveFilter === 'all' || statusText.includes(certActiveFilter);
         const show = matchesQuery && matchesStatus;
         card.style.display = show ? 'flex' : 'none';
         if (show) visible++;
@@ -6064,7 +6118,14 @@
       if (certEmpty) certEmpty.style.display = visible ? 'none' : 'block';
     }
     if (certSearch) certSearch.addEventListener('input', filterCerts);
-    if (certFilter) certFilter.addEventListener('change', filterCerts);
+    document.querySelectorAll('.cert-fpill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.cert-fpill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        certActiveFilter = pill.dataset.filter;
+        filterCerts();
+      });
+    });
 
     // ── "Fit For Role" hero switch — swap bio prose + emphasise matching projects
     (function () {
