@@ -515,8 +515,8 @@
     }
 
     .nav.stuck {
-      background: rgba(255, 255, 255, .97);
-      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, .98);
+      backdrop-filter: blur(8px);
       padding: 13px 5%;
       box-shadow: var(--s2);
       border-bottom: 1px solid var(--c-border)
@@ -959,15 +959,8 @@
     }
 
     @keyframes pulseGlow {
-      0% {
-        opacity: 0.45;
-        filter: blur(18px);
-      }
-
-      100% {
-        opacity: 0.72;
-        filter: blur(26px);
-      }
+      0%   { opacity: 0.45; }
+      100% { opacity: 0.72; }
     }
 
     .photo-img-wrap {
@@ -5910,20 +5903,31 @@
     } type();
 
     // ── Navbar scroll & active link
-    const navEl = document.getElementById('nav');
-    const secs = [...document.querySelectorAll('section[id]')];
-    const links = [...document.querySelectorAll('.nav-menu a')];
-    const dots = [...document.querySelectorAll('.sec-dot')];
+    const navEl    = document.getElementById('nav');
+    const bttEl    = document.getElementById('btt');
+    const progEl   = document.getElementById('progress-bar');
+    const secs     = [...document.querySelectorAll('section[id]')];
+    const links    = [...document.querySelectorAll('.nav-menu a')];
+    const dots     = [...document.querySelectorAll('.sec-dot')];
+
+    // pre-cache section offsets so scrolling never triggers layout reads
+    let secTops = [];
+    function cacheSectionOffsets() {
+      secTops = secs.map(s => s.offsetTop);
+    }
+    cacheSectionOffsets();
+    window.addEventListener('resize', cacheSectionOffsets, { passive: true });
+
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       navEl.classList.toggle('stuck', y > 60);
-      document.getElementById('btt').classList.toggle('show', y > 400);
-      // Progress bar
+      bttEl.classList.toggle('show', y > 400);
       const h = document.documentElement.scrollHeight - window.innerHeight;
-      document.getElementById('progress-bar').style.width = (y / h * 100) + '%';
-      // Active link
+      progEl.style.width = (y / h * 100) + '%';
       let cur = 'home';
-      secs.forEach(s => { if (y >= s.offsetTop - 180) cur = s.id; });
+      for (let i = 0; i < secTops.length; i++) {
+        if (y >= secTops[i] - 180) cur = secs[i].id;
+      }
       links.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
       dots.forEach(d => { d.classList.toggle('active', d.dataset.target === cur); });
     }, { passive: true });
@@ -6302,10 +6306,9 @@
           cr.style.transform = `translate(calc(${cx}px - 50%), calc(${cy}px - 50%))`;
         });
       });
-      document.querySelectorAll('a, button, .proj-card, .theme-switch, .hero-social-btn, .pill, .m-close, .m-action, .sk-tag, .pchip').forEach(el => {
-        el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-        el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-      });
+      const hoverSel = 'a, button, .proj-card, .theme-switch, .hero-social-btn, .pill, .m-close, .m-action, .sk-tag, .pchip';
+      document.addEventListener('mouseover', e => { if (e.target.closest(hoverSel)) document.body.classList.add('hovering'); });
+      document.addEventListener('mouseout',  e => { if (e.target.closest(hoverSel)) document.body.classList.remove('hovering'); });
     }
 
     // ── Molecule Canvas (hero background)
