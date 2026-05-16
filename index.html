@@ -1752,93 +1752,6 @@
       .proc-grid { grid-template-columns: 1fr }
     }
 
-    /* ─── RECOMMENDATIONS ─── */
-    .rec-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 26px
-    }
-
-    .rec-card {
-      background: #fff;
-      border-radius: var(--r);
-      padding: 36px 32px 28px;
-      border: 1px solid var(--c-border);
-      border-left: 4px solid var(--c-gold);
-      box-shadow: var(--s1);
-      position: relative;
-      transition: all .35s var(--ease);
-      margin: 0
-    }
-
-    .rec-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--s2)
-    }
-
-    .rec-quote-mark {
-      color: var(--c-gold);
-      font-size: 1.6rem;
-      opacity: .35;
-      position: absolute;
-      top: 22px;
-      right: 26px
-    }
-
-    .rec-text {
-      font-style: italic;
-      font-size: .95rem;
-      color: var(--c-text);
-      line-height: 1.85;
-      margin: 0 0 22px;
-      font-family: 'Playfair Display', serif
-    }
-
-    .rec-attrib {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      padding-top: 16px;
-      border-top: 1px solid var(--c-border)
-    }
-
-    .rec-name {
-      font-size: .88rem;
-      font-weight: 700;
-      color: var(--c-navy)
-    }
-
-    .rec-role {
-      font-size: .76rem;
-      color: var(--c-muted)
-    }
-
-    .rec-note {
-      margin-top: 24px;
-      text-align: center;
-      font-size: .76rem;
-      color: var(--c-muted);
-      font-style: italic
-    }
-
-    .rec-note i {
-      color: var(--c-gold);
-      margin-right: 5px
-    }
-
-    [data-theme="dark"] .rec-card {
-      background: var(--c-off);
-      border-color: var(--c-border);
-      border-left-color: var(--c-gold)
-    }
-
-    [data-theme="dark"] .rec-text { color: var(--c-text) }
-    [data-theme="dark"] .rec-name { color: #fff }
-
-    @media(max-width:768px) {
-      .rec-grid { grid-template-columns: 1fr }
-    }
-
     /* ─── EDUCATION ─── */
     .edu-grid {
       display: grid;
@@ -4904,43 +4817,6 @@
     </div>
   </section>
 
-  <!-- RECOMMENDATIONS -->
-  <section id="recommendations" class="bg-off">
-    <div class="s-inner">
-      <div class="s-head sr up">
-        <span class="s-kicker">What People Say</span>
-        <h2 class="s-title">Recommendations &amp; <em>Endorsements</em></h2>
-        <div class="s-rule"></div>
-      </div>
-      <div class="rec-grid">
-        <figure class="rec-card sr up" style="transition-delay:.04s">
-          <i class="fas fa-quote-left rec-quote-mark" aria-hidden="true"></i>
-          <blockquote class="rec-text">
-            Animesh combines lab discipline with commercial curiosity in a way that's rare at entry level. He reads
-            an HPLC chromatogram and an IQVIA dashboard with the same focus — and asks the right "so what?"
-          </blockquote>
-          <figcaption class="rec-attrib">
-            <span class="rec-name">[Mentor / Faculty Name]</span>
-            <span class="rec-role">[Role · Organisation]</span>
-          </figcaption>
-        </figure>
-        <figure class="rec-card sr up" style="transition-delay:.12s">
-          <i class="fas fa-quote-left rec-quote-mark" aria-hidden="true"></i>
-          <blockquote class="rec-text">
-            Among the few MBA candidates I've worked with who can actually translate molecule-level science into
-            a brand strategy conversation. Detail-oriented, structured, and reliable.
-          </blockquote>
-          <figcaption class="rec-attrib">
-            <span class="rec-name">[Industry Manager Name]</span>
-            <span class="rec-role">[Role · Organisation]</span>
-          </figcaption>
-        </figure>
-      </div>
-      <p class="rec-note sr up" style="transition-delay:.2s">
-        <i class="fas fa-circle-info"></i> Replace bracketed placeholders with real attributions before publishing.
-      </p>
-    </div>
-  </section>
 
   <!-- EDUCATION -->
   <section id="education">
@@ -5849,7 +5725,7 @@
           </div>
         </div>
         <form class="cf sr right" id="cForm" action="mailto:animesh.pm17@iihmr.in" method="POST"
-          data-formspree-action="">
+          data-formspree-action="https://formspree.io/f/xrejnygp">
           <div id="cFormFields">
             <div class="cf-templates" aria-label="Quick message templates">
               <span class="cf-templates-lbl">Quick start:</span>
@@ -6183,8 +6059,7 @@
     });
 
     // ── Contact form
-    // To enable real submissions: set data-formspree-action="https://formspree.io/f/YOUR_ID"
-    // on the <form id="cForm"> element. Until then, the form opens the user's email client
+    // Contact form — Formspree endpoint set; falls back to mailto if endpoint is absent
     // pre-filled with their message — guaranteed to reach the inbox even without a backend.
     document.getElementById('cForm').addEventListener('submit', async e => {
       e.preventDefault();
