@@ -106,9 +106,9 @@
       --c-mid: #4a5568;
       --c-muted: #8898aa;
       --font-display: "DM Serif Display", "Playfair Display", serif;
-      --r: 16px;
-      --r-sm: 10px;
-      --r-lg: 24px;
+      --r: 20px;
+      --r-sm: 12px;
+      --r-lg: 32px;
       --ease: cubic-bezier(.16, 1, .3, 1);
       --s1: 0 1px 3px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .04);
       --s2: 0 4px 24px rgba(27, 47, 78, .08);
@@ -616,13 +616,13 @@
       gap: 6px;
       padding: 6px 12px;
       border-radius: 999px;
-      background: rgba(34, 197, 94, 0.12);
-      color: #166534;
+      background: rgba(184, 150, 46, 0.12);
+      color: var(--c-navy);
       font-size: .65rem;
       font-weight: 800;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      border: 1px solid rgba(34, 197, 94, 0.25)
+      border: 1px solid rgba(184, 150, 46, 0.3)
     }
 
     .nav-badge::before {
@@ -630,8 +630,8 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.18)
+      background: var(--c-gold);
+      box-shadow: 0 0 0 6px rgba(184, 150, 46, 0.18)
     }
 
     .nav-cta:hover {
@@ -967,18 +967,18 @@
       width: 100%;
       height: 430px;
       position: relative;
-      border-radius: 18px;
+      border-radius: var(--r);
       overflow: hidden;
       border: 1.5px solid rgba(184,150,46,0.4);
       box-shadow: 0 0 0 4px rgba(184,150,46,0.08), var(--s4);
       z-index: 2;
-      background: #f0ede8;
+      background: var(--c-off);
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     [data-theme="dark"] .photo-img-wrap {
       border-color: rgba(184,150,46,0.25);
-      background: #1a2d4a;
+      background: var(--c-off);
     }
 
     .photo-img {
@@ -1014,13 +1014,13 @@
       align-items: center;
       gap: 6px;
       margin: 14px auto 0;
-      background: rgba(34,197,94,0.10);
-      border: 1px solid rgba(34,197,94,0.35);
+      background: rgba(184,150,46,0.10);
+      border: 1px solid rgba(184,150,46,0.35);
       border-radius: 20px;
       padding: 5px 13px 5px 9px;
       font-size: 0.65rem;
       font-weight: 700;
-      color: #22c55e;
+      color: var(--c-gold);
       text-transform: uppercase;
       letter-spacing: 0.6px;
       white-space: nowrap;
@@ -1029,15 +1029,15 @@
     .avail-dot {
       width: 7px;
       height: 7px;
-      background: #f59e0b;
+      background: var(--c-gold);
       border-radius: 50%;
       flex-shrink: 0;
       animation: availPulse 2.4s ease-in-out infinite;
     }
 
     @keyframes availPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(245,158,11,0.55); }
-      55% { box-shadow: 0 0 0 5px rgba(245,158,11,0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(184,150,46,0.55); }
+      55% { box-shadow: 0 0 0 5px rgba(184,150,46,0); }
     }
 
     /* Hero stats */
@@ -2453,8 +2453,8 @@
     }
 
     .done {
-      background: rgba(34, 197, 94, .1);
-      color: #15803d
+      background: rgba(184, 150, 46, .1);
+      color: var(--c-gold)
     }
 
     .done::before {
@@ -2462,8 +2462,8 @@
     }
 
     .inprog {
-      background: rgba(245, 158, 11, .1);
-      color: #b45309
+      background: rgba(27, 47, 78, .08);
+      color: var(--c-navy-2)
     }
 
     .inprog::before {
@@ -2637,7 +2637,7 @@
     }
 
     .cl-item-ico i.fa-whatsapp {
-      color: #25D366
+      color: var(--c-gold-2)
     }
 
     .cl-item-body {
@@ -2901,9 +2901,9 @@
     }
 
     [data-theme="dark"] .nav-badge {
-      background: rgba(34, 197, 94, 0.16);
-      color: #86efac;
-      border-color: rgba(34, 197, 94, 0.35)
+      background: rgba(184, 150, 46, 0.14);
+      color: var(--c-gold-2);
+      border-color: rgba(184, 150, 46, 0.35)
     }
 
     [data-theme="dark"] .hamburger span {
@@ -3500,15 +3500,15 @@
         font-weight: 600;
         letter-spacing: .6px;
         text-transform: uppercase;
-        color: #166534;
+        color: var(--c-navy);
       }
 
       .mob-ft-dot {
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        background: #22c55e;
-        box-shadow: 0 0 0 4px rgba(34,197,94,.2);
+        background: var(--c-gold);
+        box-shadow: 0 0 0 4px rgba(184,150,46,.2);
         flex-shrink: 0;
       }
 
@@ -3568,7 +3568,7 @@
       }
 
       [data-theme="dark"] .mob-ft-badge {
-        color: #4ade80;
+        color: var(--c-gold-2);
       }
 
       .nav-menu.open {
@@ -4057,10 +4057,111 @@
       flex-wrap: wrap
     }
 
+    .cv-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0 4px;
+      flex-wrap: wrap
+    }
+
+    .cv-tab {
+      flex: 1;
+      padding: 8px 12px;
+      border-radius: var(--r-sm);
+      border: 1px solid var(--c-border);
+      background: var(--c-light);
+      color: var(--c-navy);
+      font-size: .8rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all .25s var(--ease)
+    }
+
+    .cv-tab.active {
+      border-color: var(--c-gold);
+      background: var(--c-navy);
+      color: #fff
+    }
+
+    .m-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px
+    }
+
+    .m-split-card {
+      padding: 15px;
+      background: var(--c-off);
+      border-radius: var(--r-sm);
+      border: 1px solid var(--c-border)
+    }
+
+    .m-split-label {
+      color: var(--c-gold);
+      display: block;
+      font-size: .7rem;
+      text-transform: uppercase;
+      margin-bottom: 5px
+    }
+
+    .m-split-copy {
+      font-size: .85rem;
+      margin: 0
+    }
+
+    .cf-success {
+      display: none;
+      padding: 32px 0;
+      text-align: center
+    }
+
+    .cf-success-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px
+    }
+
+    .cf-success-title {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px
+    }
+
+    .cf-success-body {
+      color: rgba(255,255,255,.6);
+      font-size: .88rem
+    }
+
+    .cf-error {
+      display: none;
+      padding: 16px;
+      background: rgba(184, 150, 46, .12);
+      border: 1px solid rgba(184, 150, 46, .3);
+      border-radius: var(--r-sm);
+      margin-top: 12px
+    }
+
+    .cf-error-text {
+      color: rgba(255,255,255,.82);
+      font-size: .88rem
+    }
+
+    .cf-error-link {
+      color: var(--c-gold-2);
+      text-decoration: underline
+    }
+
     /* iOS Safari + many mobile browsers can't render <iframe src="*.pdf">.
        On small screens, hide the iframe viewer and promote the fallback
        link into a prominent button so the user can still open the PDF. */
     @media (max-width: 768px) {
+      .m-split {
+        grid-template-columns: 1fr;
+        gap: 12px
+      }
+
       .m-cert-viewer {
         display: none;
       }
@@ -4163,10 +4264,10 @@
       align-items: center;
       gap: 6px;
       padding: 3px 10px;
-      background: rgba(34, 197, 94, .14);
-      border: 1px solid rgba(34, 197, 94, .35);
+      background: rgba(184, 150, 46, .14);
+      border: 1px solid rgba(184, 150, 46, .35);
       border-radius: 100px;
-      color: #86efac;
+      color: var(--c-gold-2);
       font-size: .7rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -4176,14 +4277,14 @@
     .footer-now-dot {
       width: 6px;
       height: 6px;
-      background: #22c55e;
+      background: var(--c-gold);
       border-radius: 50%;
       animation: pulse 2s infinite
     }
 
     @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, .55) }
-      50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0) }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(184, 150, 46, .55) }
+      50% { box-shadow: 0 0 0 6px rgba(184, 150, 46, 0) }
     }
 
     .footer-now-item {
@@ -4325,7 +4426,14 @@
     }
 
     .cl-item-ico i.fa-whatsapp {
-      color: #25D366
+      color: var(--c-gold-2)
+    }
+
+    .wa-inline {
+      margin-left: 8px;
+      color: var(--c-gold-2);
+      font-size: 1.1rem;
+      cursor: pointer
     }
 
     /* ─── GLOSSARY MODAL ─── */
@@ -4557,7 +4665,7 @@
             <div class="inf"><i class="fas fa-university"></i><span>IIHMR University</span></div>
             <div class="inf"><i class="fas fa-envelope"></i><span>animesh.pm17@iihmr.in</span></div>
             <div class="inf"><i class="fas fa-phone"></i><span>+91 8989468728</span><a href="https://wa.me/918989468728"
-              target="_blank" rel="noopener noreferrer" style="margin-left:8px; color:#25D366; font-size:1.1rem; cursor:pointer;"
+              target="_blank" rel="noopener noreferrer" class="wa-inline"
               title="Available on WhatsApp" aria-label="Available on WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
           </div>
           <div class="pill-wrap">
@@ -5069,9 +5177,9 @@
       <div class="m-icon">📄</div>
       <h2>Curriculum Vitae</h2>
       <div class="m-sub">Animesh Mishra · MBA Pharmaceutical Management</div>
-      <div style="display:flex;gap:8px;margin:12px 0 4px;flex-wrap:wrap;">
-        <button class="cv-tab active" data-cv="Animesh_CV.pdf" type="button" style="flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--c-gold);background:var(--c-navy);color:#fff;font-size:.8rem;font-weight:600;cursor:pointer;">Portfolio CV</button>
-        <button class="cv-tab" data-cv="Animesh_CV_IIHMR.pdf" type="button" style="flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--c-border);background:var(--c-light);color:var(--c-navy);font-size:.8rem;font-weight:600;cursor:pointer;">IIHMR Template CV</button>
+      <div class="cv-tabs">
+        <button class="cv-tab active" data-cv="Animesh_CV.pdf" type="button">Portfolio CV</button>
+        <button class="cv-tab" data-cv="Animesh_CV_IIHMR.pdf" type="button">IIHMR Template CV</button>
       </div>
       <div class="m-cert-viewer" id="cvViewer">
         <iframe id="cvFrame" src="Animesh_CV.pdf#toolbar=0&navpanes=0" title="Animesh Mishra CV" loading="lazy"></iframe>
@@ -5242,17 +5350,15 @@
       <h2>Sun Pharma × Organon — Comprehensive M&amp;A Analysis</h2>
       <div class="m-sub">Strategic &amp; Financial Analysis · Cross-Border Pharma M&amp;A · April 2026</div>
       <div class="m-img-wrap"><picture><source type="image/webp" srcset="case-studies/thumbs/p6-sun-organon.webp"><img src="case-studies/thumbs/p6-sun-organon.png" alt="Sun Pharma × Organon cover" loading="lazy"></picture></div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
-        <div style="padding:15px; background:var(--c-off); border-radius:12px; border:1px solid var(--c-border);">
-          <strong
-            style="color:var(--c-gold); display:block; font-size:0.7rem; text-transform:uppercase; margin-bottom:5px;">Challenge</strong>
-          <p style="font-size:0.85rem; margin:0;">Evaluating the strategic fit of India's largest $11.75B pharma
+      <div class="m-split">
+        <div class="m-split-card">
+          <strong class="m-split-label">Challenge</strong>
+          <p class="m-split-copy">Evaluating the strategic fit of India's largest $11.75B pharma
             acquisition amid a governance crisis at the target firm.</p>
         </div>
-        <div style="padding:15px; background:var(--c-off); border-radius:12px; border:1px solid var(--c-border);">
-          <strong
-            style="color:var(--c-gold); display:block; font-size:0.7rem; text-transform:uppercase; margin-bottom:5px;">Result</strong>
-          <p style="font-size:0.85rem; margin:0;">Proved 27% PAT accretion and identified immediate post-close
+        <div class="m-split-card">
+          <strong class="m-split-label">Result</strong>
+          <p class="m-split-copy">Proved 27% PAT accretion and identified immediate post-close
             deleveraging path to 1.0x by FY30.</p>
         </div>
       </div>
@@ -5861,17 +5967,15 @@
             <button type="submit" class="cf-submit" id="cSubmitBtn">Send Message <i
                 class="fas fa-paper-plane"></i></button>
           </div>
-          <div id="cFormSuccess" role="status" aria-live="polite"
-            style="display:none;padding:32px 0;text-align:center;">
-            <div style="font-size:2.5rem;margin-bottom:12px;">✓</div>
-            <div style="color:#fff;font-size:1.1rem;font-weight:700;margin-bottom:8px;" id="cFormSuccessTitle">Message sent!</div>
-            <div style="color:rgba(255,255,255,.6);font-size:.88rem;" id="cFormSuccessBody">I'll reply within 24 hours.</div>
+          <div id="cFormSuccess" class="cf-success" role="status" aria-live="polite">
+            <div class="cf-success-icon">✓</div>
+            <div class="cf-success-title" id="cFormSuccessTitle">Message sent!</div>
+            <div class="cf-success-body" id="cFormSuccessBody">I'll reply within 24 hours.</div>
           </div>
-          <div id="cFormError" role="alert" aria-live="assertive"
-            style="display:none;padding:16px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);border-radius:10px;margin-top:12px;">
-            <div style="color:#fca5a5;font-size:.88rem;">Something went wrong. Please email me directly at <a
+          <div id="cFormError" class="cf-error" role="alert" aria-live="assertive">
+            <div class="cf-error-text">Something went wrong. Please email me directly at <a
                 href="mailto:animesh.pm17@iihmr.in"
-                style="color:var(--c-gold-2);text-decoration:underline;">animesh.pm17@iihmr.in</a></div>
+                class="cf-error-link">animesh.pm17@iihmr.in</a></div>
           </div>
         </form>
       </div>
@@ -5975,10 +6079,8 @@
     document.querySelectorAll('.cv-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('.cv-tab').forEach(t => {
-          t.style.background = 'var(--c-light)'; t.style.color = 'var(--c-navy)'; t.style.borderColor = 'var(--c-border)';
           t.classList.remove('active');
         });
-        tab.style.background = 'var(--c-navy)'; tab.style.color = '#fff'; tab.style.borderColor = 'var(--c-gold)';
         tab.classList.add('active');
         const cv = tab.dataset.cv;
         const frame = document.getElementById('cvFrame');
