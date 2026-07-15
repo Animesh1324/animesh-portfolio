@@ -206,7 +206,7 @@ draw.ellipse([DOT_X-R, DOT_CY-R, DOT_X+R, DOT_CY+R], fill=AMBER)
 
 draw.text(
     (DOT_X + 22, BAR_Y + (BAR_H - 20) // 2),
-    "PMT Intern · Micro Labs Ltd.  ·  Open to post-graduation roles  ·  Jaipur, IN",
+    "MBA Pharma (IIHMR)  ·  Ex-Marketing Intern, Micro Labs Ltd.  ·  Jaipur, IN",
     font=sf, fill=OFF_W
 )
 
