@@ -4380,7 +4380,7 @@
           </div>
         </a>
         <div class="mob-hd-actions">
-          <button class="mob-theme-btn" id="mobThemeSwitch" type="button" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+          <button class="mob-theme-btn" id="mobThemeSwitch" type="button" aria-label="Toggle dark mode"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
           <button class="mob-close-btn" id="mobClose" type="button" aria-label="Close menu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg></button>
         </div>
       </li>
@@ -4408,7 +4408,7 @@
     </ul>
     <div class="nav-right">
       <button class="theme-switch" id="themeSwitch" type="button" aria-label="Toggle dark mode" aria-pressed="false"
-        title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+        title="Toggle Dark Mode"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
       <a href="Animesh_CV.pdf" class="nav-cta" data-modal="cv"><i class="fas fa-eye"></i> Preview
         CV</a>
       <button class="hamburger" id="hb" type="button" aria-label="Open menu" aria-controls="navMenu"
@@ -6489,25 +6489,26 @@
     // ── Dark Mode Toggle
     const themeSwitch = document.getElementById('themeSwitch');
     const mobThemeSwitch = document.getElementById('mobThemeSwitch');
-    const icon = themeSwitch.querySelector('i');
-    const mobIcon = mobThemeSwitch ? mobThemeSwitch.querySelector('i') : null;
+    // Inline SVGs (no Font Awesome dependency) so the toggle never flashes as a
+    // broken box while the icon webfont loads.
+    const MOON_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+    const SUN_SVG = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>';
     let isDark = localStorage.getItem('theme') === 'dark';
     function applyTheme(dark) {
+      const svg = dark ? SUN_SVG : MOON_SVG;
+      themeSwitch.innerHTML = svg;
+      if (mobThemeSwitch) mobThemeSwitch.innerHTML = svg;
       if (dark) {
         document.body.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
-        icon.className = 'fas fa-sun';
-        if (mobIcon) mobIcon.className = 'fas fa-sun';
         themeSwitch.setAttribute('aria-pressed', 'true');
       } else {
         document.body.removeAttribute('data-theme');
         localStorage.setItem('theme', 'light');
-        icon.className = 'fas fa-moon';
-        if (mobIcon) mobIcon.className = 'fas fa-moon';
         themeSwitch.setAttribute('aria-pressed', 'false');
       }
     }
-    if (isDark) applyTheme(true);
+    applyTheme(isDark);
     themeSwitch.addEventListener('click', () => { isDark = !isDark; applyTheme(isDark); });
     if (mobThemeSwitch) mobThemeSwitch.addEventListener('click', () => { isDark = !isDark; applyTheme(isDark); });
 
