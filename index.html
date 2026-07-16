@@ -91,6 +91,23 @@
       box-sizing: border-box
     }
 
+    /* Strip native control chrome so every button renders purely from its own
+       styles (prevents iOS Safari from painting grey/white native boxes) and
+       kill the mobile tap-highlight flash on all interactive elements. */
+    button {
+      font-family: inherit;
+      -webkit-appearance: none;
+      appearance: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a,
+    label,
+    summary,
+    [role="button"] {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     :root {
       --c-navy: #1B2F4E;
       --c-navy-2: #243d63;
@@ -4409,7 +4426,7 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#insights">Insights</a></li>
-      <li><a href="#certifications">Certifications <span class="nav-cert-badge" aria-label="14 certifications">14</span></a></li>
+      <li><a href="#certifications">Certifications <span class="nav-cert-badge" aria-label="13 certifications">13</span></a></li>
       <li><a href="#contact">Contact</a></li>
       <li class="mob-nav-ft">
         <div class="mob-ft-badge"><span class="mob-ft-dot"></span>Open to Full-time Roles</div>
@@ -4531,7 +4548,7 @@
           <div class="hstat-l">ICD Codes Mastered</div>
         </div>
         <div class="hstat">
-          <div class="hstat-n" data-t="14">0</div>
+          <div class="hstat-n" data-t="13">0</div>
           <div class="hstat-l">Credentials Earned</div>
         </div>
       </div>
@@ -5100,7 +5117,7 @@
   <!-- PROJECT MODALS -->
   <div class="m-overlay" id="m-cv">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cv"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cv"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">📄</div>
       <h2>Curriculum Vitae</h2>
       <div class="m-sub">Animesh Mishra · MBA Pharmaceutical Management</div>
@@ -5120,7 +5137,7 @@
 
   <div class="m-overlay" id="m-p7">
     <div class="m-box">
-      <button class="m-close" data-close-modal="p7"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p7"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">💉</div>
       <h2>GLUMIC® — Semaglutide (GLP-1) Brand Plan</h2>
       <div class="m-sub">Brand Plan · Micro Labs Ltd. · FY2026–27</div>
@@ -5158,7 +5175,7 @@
 
   <div class="m-overlay" id="m-p1">
     <div class="m-box">
-      <button class="m-close" data-close-modal="p1"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">📈</div>
       <h2>Semaglutide Patent Cliff Analysis</h2>
       <div class="m-sub">Strategic Intelligence · IQVIA Market Reflection · 2025</div>
@@ -5189,7 +5206,7 @@
 
   <div class="m-overlay" id="m-p2">
     <div class="m-box">
-      <button class="m-close" data-close-modal="p2"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">📱</div>
       <h2>PharmaIntel India App</h2>
       <div class="m-sub">Full-Stack PWA · React · Firebase · Vite · SQLite</div>
@@ -5220,7 +5237,7 @@
 
   <div class="m-overlay" id="m-p3">
     <div class="m-box">
-      <button class="m-close" data-close-modal="p3"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🧠</div>
       <h2>AMR-Genius Intelligence Hub</h2>
       <div class="m-sub">AI Platform Concept · Research Methods · IIHMR 2025</div>
@@ -5251,7 +5268,7 @@
 
   <div class="m-overlay" id="m-p4">
     <div class="m-box">
-      <button class="m-close" data-close-modal="p4"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🔬</div>
       <h2>Ethosomal Curcumin — Narrative Review</h2>
       <div class="m-sub">Peer-Reviewed Publication · Drug Delivery · DOI: 10.13140/RG.2.2.36647.10405</div>
@@ -5278,7 +5295,7 @@
 
   <div class="m-overlay" id="m-p5">
     <div class="m-box">
-      <button class="m-close" data-close-modal="p5"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🤖</div>
       <h2>PharmAdhere-AI</h2>
       <div class="m-sub">AI Conceptual Framework · Patient Adherence · 2025</div>
@@ -5310,7 +5327,7 @@
 
   <div class="m-overlay" id="m-p6">
     <div class="m-box">
-      <button class="m-close" data-close-modal="p6"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="p6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🏢</div>
       <h2>Sun Pharma × Organon — Comprehensive M&amp;A Analysis</h2>
       <div class="m-sub">Strategic &amp; Financial Analysis · Cross-Border Pharma M&amp;A · April 2026</div>
@@ -5352,7 +5369,7 @@
 
   <div class="m-overlay" id="m-ins1">
     <div class="m-box">
-      <button class="m-close" data-close-modal="ins1"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="ins1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="gl-keyword-bar"><i class="fas fa-chart-line"></i> &nbsp;Patent Strategy</div>
       <h2>GLP-1 Patent Cliff: Semaglutide &amp; the Biosimilar Wave</h2>
       <div class="m-sub">IQVIA Market Reflection · 2025</div>
@@ -5384,7 +5401,7 @@
 
   <div class="m-overlay" id="m-ins2">
     <div class="m-box">
-      <button class="m-close" data-close-modal="ins2"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="ins2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="gl-keyword-bar"><i class="fas fa-handshake"></i> &nbsp;M&amp;A Strategy</div>
       <h2>Sun Pharma × Organon: India's $11.75B Deal Decoded</h2>
       <div class="m-sub">Strategic &amp; Financial Analysis · April 2026</div>
@@ -5418,7 +5435,7 @@
 
   <div class="m-overlay" id="m-ins3">
     <div class="m-box">
-      <button class="m-close" data-close-modal="ins3"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="ins3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="gl-keyword-bar"><i class="fas fa-robot"></i> &nbsp;Digital Health</div>
       <h2>AI in Pharma PMT: Reshaping Brand Planning &amp; HCP Targeting</h2>
       <div class="m-sub">Opinion · MBA Research · IIHMR 2026</div>
@@ -5452,7 +5469,7 @@
   <!-- CERT MODALS -->
   <div class="m-overlay" id="m-cert10">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert10"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert10"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">💊</div>
       <h2>Molecule to Market Job Simulation</h2>
       <div class="m-sub">Pfizer × Forage · July 2026</div>
@@ -5478,7 +5495,7 @@
 
   <div class="m-overlay" id="m-cert11">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert11"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert11"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🔬</div>
       <h2>Drug Development Product Management</h2>
       <div class="m-sub">UC San Diego — Coursera · Specialisation · July 2026</div>
@@ -5503,7 +5520,7 @@
 
   <div class="m-overlay" id="m-cert12">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert12"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert12"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🤝</div>
       <h2>Product Management: Foundations &amp; Stakeholder Collaboration</h2>
       <div class="m-sub">SkillUp — Coursera · July 2026</div>
@@ -5528,7 +5545,7 @@
 
   <div class="m-overlay" id="m-cert13">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert13"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert13"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">📊</div>
       <h2>Data Science Job Simulation</h2>
       <div class="m-sub">BCG X × Forage · July 2026</div>
@@ -5556,7 +5573,7 @@
 
   <div class="m-overlay" id="m-cert14">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert14"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert14"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🧭</div>
       <h2>McKinsey Forward Programme</h2>
       <div class="m-sub">McKinsey.org · June 2026</div>
@@ -5584,7 +5601,7 @@
 
   <div class="m-overlay" id="m-cert1">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert1"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🎓</div>
       <h2>Product Management: An Introduction</h2>
       <div class="m-sub">IBM / Coursera Professional Certificate · May 2026</div>
@@ -5610,7 +5627,7 @@
 
   <div class="m-overlay" id="m-cert2">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert2"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🤖</div>
       <h2>Generative AI Foundations Certificate</h2>
       <div class="m-sub">Microsoft × upGrad · UID: Br3hxZNKPVECfd81</div>
@@ -5636,7 +5653,7 @@
 
   <div class="m-overlay" id="m-cert3">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert3"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🏥</div>
       <h2>Medical Coding Specialist — ICD-10-CM</h2>
       <div class="m-sub">E-Cell, IIT Hyderabad · Certificate ID: SDCERTI1031</div>
@@ -5663,7 +5680,7 @@
 
   <div class="m-overlay" id="m-cert4">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert4"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🌐</div>
       <h2>Global Health Management Research Award</h2>
       <div class="m-sub">Pradanya 2026 — IIHMR University · February 2026</div>
@@ -5688,7 +5705,7 @@
 
   <div class="m-overlay" id="m-cert5">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert5"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🧪</div>
       <h2>Pharma Industry Training Workshop</h2>
       <div class="m-sub">SIRTSP / CARE, The SAGE Group — Bhopal · June 2023</div>
@@ -5713,7 +5730,7 @@
 
   <div class="m-overlay" id="m-cert6">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert6"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🏭</div>
       <h2>QC &amp; Production Department Training</h2>
       <div class="m-sub">Unidrug Innovative Pharma Technologies Ltd. — Indore · July – August 2023</div>
@@ -5736,34 +5753,9 @@
     </div>
   </div>
 
-  <div class="m-overlay" id="m-cert7">
-    <div class="m-box">
-      <button class="m-close" data-close-modal="cert7"><i class="fas fa-times"></i></button>
-      <div class="m-icon">🏆</div>
-      <h2>AI Product Manager Specialisation</h2>
-      <div class="m-sub">IBM — Coursera · 2026</div>
-      <div class="m-learnings">
-        <h4>What I Learned</h4>
-        <ul>
-          <li>Integrating AI/ML capabilities into product strategy and roadmapping</li>
-          <li>Defining AI-powered feature sets with measurable business outcomes</li>
-          <li>Evaluating AI model performance metrics relevant to product decisions</li>
-          <li>Building cross-functional workflows around AI-driven product development</li>
-          <li>Applied AI ethics — responsible AI frameworks for product managers</li>
-        </ul>
-      </div>
-      <div class="m-cert-viewer">
-        <img src="certificates/ibm-ai-product-manager.jpg" alt="IBM AI Product Manager Certificate" loading="lazy">
-      </div>
-      <a class="cert-fallback" href="certificates/ibm-ai-product-manager.jpg" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-external-link-alt"></i> Open certificate
-      </a>
-    </div>
-  </div>
-
   <div class="m-overlay" id="m-cert8">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert8"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">🥇</div>
       <h2>NIPER JEE — Nationally Qualified</h2>
       <div class="m-sub">National Institute of Pharmaceutical Education &amp; Research · 2024</div>
@@ -5787,7 +5779,7 @@
 
   <div class="m-overlay" id="m-cert9">
     <div class="m-box">
-      <button class="m-close" data-close-modal="cert9"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="cert9"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon">📊</div>
       <h2>Advanced Excel Workshop</h2>
       <div class="m-sub">IIHMR Analytica Club, IIHMR University · March 2026</div>
@@ -5813,7 +5805,7 @@
   <!-- GLOSSARY MODAL -->
   <div class="m-overlay" id="m-glossary">
     <div class="m-box" style="max-width:500px">
-      <button class="m-close" data-close-modal="glossary"><i class="fas fa-times"></i></button>
+      <button class="m-close" data-close-modal="glossary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="7" y1="7" x2="17" y2="17"></line><line x1="17" y1="7" x2="7" y2="17"></line></svg></button>
       <div class="m-icon" id="gl-icon">📚</div>
       <h2 id="gl-title" style="margin-bottom:8px;"></h2>
       <div class="gl-keyword-bar" style="margin-bottom:20px;"><i class="fas fa-book-open"></i> &nbsp;Pharma Glossary
@@ -5996,14 +5988,6 @@
           <div class="cert-name">QC &amp; Production Department Training</div>
           <div class="cert-iss">Unidrug Innovative Pharma Technologies Ltd. — Indore</div>
           <div class="cert-date">July – August 2023</div>
-          <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
-        </div>
-        <div class="cert-card sr up" style="transition-delay:.7s" data-modal="cert7">
-          <div class="cert-ico">🏆</div>
-          <span class="cert-status done">Certified</span>
-          <div class="cert-name">AI Product Manager Specialisation</div>
-          <div class="cert-iss">IBM — Coursera</div>
-          <div class="cert-date">2026 · AI-Driven Product Strategy</div>
           <span class="cert-open"><i class="fas fa-eye"></i> View Details</span>
         </div>
         <div class="cert-card sr up" style="transition-delay:.76s" data-modal="cert8">
