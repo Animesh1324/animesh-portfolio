@@ -4052,12 +4052,12 @@
       flex-wrap: wrap
     }
 
-    /* iOS Safari + many mobile browsers can't render <iframe src="*.pdf">.
-       On small screens, hide the iframe viewer and promote the fallback
-       link into a prominent button so the user can still open the PDF. */
+    /* Certificate previews are images (reliable on every browser incl. iOS),
+       so the viewer stays visible on mobile; the fallback link is still
+       promoted into a prominent button to open the full PDF/source. */
     @media (max-width: 768px) {
       .m-cert-viewer {
-        display: none;
+        height: 240px;
       }
       .cert-fallback {
         display: flex;
@@ -5446,8 +5446,7 @@
         </ul>
       </div>
       <div class="m-cert-viewer">
-        <iframe src="certificates/pfizer-molecule-to-market.pdf#toolbar=0&navpanes=0" title="Pfizer Molecule to Market Certificate"
-          loading="lazy"></iframe>
+        <img src="certificates/previews/pfizer-molecule-to-market.jpg" alt="Pfizer Molecule to Market Certificate" loading="lazy">
       </div>
       <a class="cert-fallback" href="certificates/pfizer-molecule-to-market.pdf" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-external-link-alt"></i> Open certificate
@@ -5472,8 +5471,7 @@
         </ul>
       </div>
       <div class="m-cert-viewer">
-        <iframe src="certificates/ucsd-drug-development-product-management.pdf#toolbar=0&navpanes=0" title="UC San Diego Drug Development Product Management Specialisation"
-          loading="lazy"></iframe>
+        <img src="certificates/previews/ucsd-drug-development-product-management.jpg" alt="UC San Diego Drug Development Product Management Specialisation" loading="lazy">
       </div>
       <a class="cert-fallback" href="https://coursera.org/verify/specialization/TM91YOZMAZT5" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-external-link-alt"></i> Verify on Coursera
@@ -5498,8 +5496,7 @@
         </ul>
       </div>
       <div class="m-cert-viewer">
-        <iframe src="certificates/skillup-product-management.pdf#toolbar=0&navpanes=0" title="SkillUp Product Management Certificate"
-          loading="lazy"></iframe>
+        <img src="certificates/previews/skillup-product-management.jpg" alt="SkillUp Product Management Certificate" loading="lazy">
       </div>
       <a class="cert-fallback" href="https://coursera.org/verify/C2DWX7UXJHKK" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-external-link-alt"></i> Verify on Coursera
@@ -5526,8 +5523,7 @@
         </ul>
       </div>
       <div class="m-cert-viewer">
-        <iframe src="certificates/bcgx-data-science.pdf#toolbar=0&navpanes=0" title="BCG X Data Science Certificate"
-          loading="lazy"></iframe>
+        <img src="certificates/previews/bcgx-data-science.jpg" alt="BCG X Data Science Certificate" loading="lazy">
       </div>
       <a class="cert-fallback" href="certificates/bcgx-data-science.pdf" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-external-link-alt"></i> Open certificate
@@ -5556,8 +5552,7 @@
       <p><strong>Note:</strong> McKinsey states it is not an accredited education body — Forward is a completed
         learning programme, not an accredited qualification or credential.</p>
       <div class="m-cert-viewer">
-        <iframe src="certificates/mckinsey-forward.pdf#toolbar=0&navpanes=0" title="McKinsey Forward Certificate"
-          loading="lazy"></iframe>
+        <img src="certificates/previews/mckinsey-forward.jpg" alt="McKinsey Forward Certificate" loading="lazy">
       </div>
       <a class="cert-fallback" href="certificates/mckinsey-forward.pdf" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-external-link-alt"></i> Open certificate
@@ -5661,8 +5656,7 @@
         </ul>
       </div>
       <div class="m-cert-viewer">
-        <iframe src="certificates/pradanya-conference-2026.pdf#toolbar=0&navpanes=0" title="GHMRC Award Certificate"
-          loading="lazy"></iframe>
+        <img src="certificates/previews/pradanya-conference-2026.jpg" alt="GHMRC Award Certificate" loading="lazy">
       </div>
       <a class="cert-fallback" href="certificates/pradanya-conference-2026.pdf" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-external-link-alt"></i> Open certificate
@@ -5687,8 +5681,7 @@
         </ul>
       </div>
       <div class="m-cert-viewer">
-        <iframe src="certificates/sage-Certificate.pdf#toolbar=0&navpanes=0" title="SAGE Training Certificate"
-          loading="lazy"></iframe>
+        <img src="certificates/previews/sage-Certificate.jpg" alt="SAGE Training Certificate" loading="lazy">
       </div>
       <a class="cert-fallback" href="certificates/sage-Certificate.pdf" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-external-link-alt"></i> Open certificate
@@ -5713,8 +5706,7 @@
         </ul>
       </div>
       <div class="m-cert-viewer">
-        <iframe src="certificates/unidrug-certificate.pdf#toolbar=0&navpanes=0" title="Unidrug QC Certificate"
-          loading="lazy"></iframe>
+        <img src="certificates/previews/unidrug-certificate.jpg" alt="Unidrug QC Certificate" loading="lazy">
       </div>
       <a class="cert-fallback" href="certificates/unidrug-certificate.pdf" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-external-link-alt"></i> Open certificate
@@ -5788,8 +5780,7 @@
         </ul>
       </div>
       <div class="m-cert-viewer">
-        <iframe src="certificates/advanced-excel-certificate.pdf#toolbar=0&navpanes=0"
-          title="Advanced Excel Workshop Certificate" loading="lazy"></iframe>
+        <img src="certificates/previews/advanced-excel-certificate.jpg" alt="Advanced Excel Workshop Certificate" loading="lazy">
       </div>
       <a class="cert-fallback" href="certificates/advanced-excel-certificate.pdf" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-external-link-alt"></i> Open certificate
