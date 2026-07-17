@@ -17,9 +17,10 @@ Static personal portfolio for Animesh Mishra, focused on pharmaceutical manageme
 | Item | Where to edit |
 | --- | --- |
 | Name / headline | Search `Animesh Mishra` in `index.html` |
-| Profile photo | Replace `PIC.jpg` or update `src="PIC.jpg"` |
-| Logo | Replace `logo.png` |
-| CV | Replace `Animesh_CV.pdf` |
+| Profile photo | Replace `PIC.jpg` / `PIC.webp` or update `src="PIC.jpg"` |
+| Logo | Replace `logo-light.png` (light theme) and `logo-dark.png` (dark theme) |
+| Favicon / app icons | Replace `favicon.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` |
+| CV | Replace `Animesh_CV.pdf` (modern) and `Animesh_CV_IIHMR.pdf` (college template) |
 | Primary email | Search `animesh.pm17@iihmr.in` |
 | Phone / WhatsApp | Search `8989468728` |
 | Projects | Search `Featured Projects` and the matching `m-p` modal |
@@ -39,7 +40,7 @@ The JavaScript only posts to valid `/f/...` Formspree endpoints; otherwise it ke
 
 ## Notes
 
-`style.css` and `dark.css` are reference mirror files only. The active styling is the inline `<style>` block in `index.html`.
+All styling lives in the inline `<style>` block in `index.html`. Certificate modals show a page-1 image preview from `certificates/previews/` (generated from the PDFs at 150 dpi), with the full PDF and/or an issuer verification link as the fallback.
 
 ## Deploy
 
