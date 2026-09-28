@@ -1,6 +1,7 @@
 /* Animesh Mishra — portfolio behaviour.
    Progressive enhancement: every piece of content is in the HTML and readable
-   without this file. No continuous animation loops; observers only. */
+   without this file. The only animation loop is the decorative hero field,
+   which runs only with motion allowed and pauses when off screen or hidden. */
 (function () {
   'use strict';
 
@@ -269,6 +270,133 @@
         })
         .catch(function () { mailto(); })
         .then(function () { btn.disabled = false; });
+    });
+  }
+
+  /* ---------- Hero molecule field (decorative canvas) ---------- */
+  var field = $('.hero-field');
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if (field && motionOK && !saveData && field.getContext) (function () {
+    var ctx = field.getContext('2d');
+    var hero = field.parentNode;
+    var W = 0, H = 0, dpr = 1, nodes = [], pulses = [], raf = 0, last = 0, visible = true;
+    var px = 0, py = 0, tx = 0, ty = 0;
+    var LINK = 150, STEP = 1000 / 30;
+    var colors = {};
+
+    function readColors() {
+      var cs = getComputedStyle(doc);
+      colors.gold = cs.getPropertyValue('--gold-ui').trim() || '#B8962E';
+      colors.teal = cs.getPropertyValue('--teal').trim() || '#16665F';
+      colors.line = cs.getPropertyValue('--rule-strong').trim() || '#BDB6A4';
+      colors.dark = doc.getAttribute('data-theme') === 'dark';
+    }
+    function build() {
+      var r = hero.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = r.width; H = r.height;
+      field.width = Math.round(W * dpr); field.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var count = Math.max(18, Math.min(64, Math.round(W * H / 12000)));
+      nodes = [];
+      for (var i = 0; i < count; i++) {
+        var kind = Math.random();
+        nodes.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - .5) * .22, vy: (Math.random() - .5) * .22,
+          z: .4 + Math.random() * .9,
+          r: kind > .86 ? 3.6 : kind > .6 ? 2.6 : 1.8,
+          c: kind > .86 ? 'gold' : kind > .6 ? 'teal' : 'line'
+        });
+      }
+      pulses = [];
+    }
+    function spawnPulse() {
+      var a = nodes[(Math.random() * nodes.length) | 0], best = null, bd = LINK;
+      nodes.forEach(function (b) {
+        if (b === a) return;
+        var d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < bd && d > 40) { bd = d; best = b; }
+      });
+      if (best) pulses.push({ a: a, b: best, t: 0 });
+    }
+    function draw(now) {
+      raf = requestAnimationFrame(draw);
+      if (now - last < STEP) return;
+      last = now;
+      px += (tx - px) * .05; py += (ty - py) * .05;
+      ctx.clearRect(0, 0, W, H);
+      var i, j, n, m, d, o;
+      for (i = 0; i < nodes.length; i++) {
+        n = nodes[i];
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < -20) n.x = W + 20; else if (n.x > W + 20) n.x = -20;
+        if (n.y < -20) n.y = H + 20; else if (n.y > H + 20) n.y = -20;
+        n.sx = n.x + px * 18 * n.z; n.sy = n.y + py * 12 * n.z;
+      }
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = colors.line;
+      for (i = 0; i < nodes.length; i++) {
+        n = nodes[i];
+        for (j = i + 1; j < nodes.length; j++) {
+          m = nodes[j];
+          d = Math.hypot(n.sx - m.sx, n.sy - m.sy);
+          if (d < LINK) {
+            o = (1 - d / LINK) * (colors.dark ? .7 : .85);
+            ctx.globalAlpha = o;
+            ctx.beginPath(); ctx.moveTo(n.sx, n.sy); ctx.lineTo(m.sx, m.sy); ctx.stroke();
+          }
+        }
+      }
+      for (i = 0; i < nodes.length; i++) {
+        n = nodes[i];
+        ctx.globalAlpha = n.c === 'line' ? .8 : .9;
+        ctx.fillStyle = colors[n.c];
+        ctx.beginPath(); ctx.arc(n.sx, n.sy, n.r, 0, 6.2832); ctx.fill();
+        if (n.c === 'gold') {
+          ctx.globalAlpha = .18; ctx.beginPath(); ctx.arc(n.sx, n.sy, n.r * 3.2, 0, 6.2832); ctx.fill();
+        }
+      }
+      if (pulses.length < 3 && Math.random() < .03) spawnPulse();
+      ctx.fillStyle = colors.gold;
+      pulses = pulses.filter(function (p) {
+        p.t += .018;
+        var x = p.a.sx + (p.b.sx - p.a.sx) * p.t, y = p.a.sy + (p.b.sy - p.a.sy) * p.t;
+        ctx.globalAlpha = Math.sin(Math.PI * p.t);
+        ctx.beginPath(); ctx.arc(x, y, 2, 0, 6.2832); ctx.fill();
+        return p.t < 1;
+      });
+      ctx.globalAlpha = 1;
+    }
+    function run() {
+      cancelAnimationFrame(raf);
+      if (visible && !document.hidden) raf = requestAnimationFrame(draw);
+    }
+
+    readColors(); build();
+    field.classList.add('is-live');
+    new IntersectionObserver(function (en) { visible = en[0].isIntersecting; run(); }).observe(hero);
+    document.addEventListener('visibilitychange', run);
+    new MutationObserver(readColors).observe(doc, { attributes: true, attributeFilter: ['data-theme'] });
+    var rt;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(build, 200); });
+    if (window.matchMedia('(pointer: fine)').matches) {
+      hero.addEventListener('pointermove', function (e) {
+        var r = hero.getBoundingClientRect();
+        tx = (e.clientX - r.left) / r.width - .5; ty = (e.clientY - r.top) / r.height - .5;
+      });
+      hero.addEventListener('pointerleave', function () { tx = 0; ty = 0; });
+    }
+  })();
+
+  /* ---------- Case cover sheen follows the pointer ---------- */
+  if (motionOK && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    $$('.case-media').forEach(function (el) {
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
     });
   }
 })();

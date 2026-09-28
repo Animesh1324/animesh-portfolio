@@ -618,13 +618,62 @@ main:focus { outline: none; }
 .motion .dlg[open]::backdrop { animation: fade var(--dur-2) var(--ease-out) both; }
 @keyframes dlg-in { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
 
+/* Ambient layer: hero molecule field, portrait halo, case sheen, contact aurora, reading progress.
+   Decorative only; the canvas is drawn by main.js and stays empty without motion. */
+.hero-field {
+  position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0;
+  -webkit-mask-image: radial-gradient(ellipse 70% 85% at 78% 40%, #000 30%, transparent 78%);
+          mask-image: radial-gradient(ellipse 70% 85% at 78% 40%, #000 30%, transparent 78%);
+  transition: opacity 1200ms var(--ease-out);
+}
+.hero-field.is-live { opacity: 1; }
+.hero > .wrap { position: relative; z-index: 1; }
+
+.hero-portrait { position: relative; isolation: isolate; }
+.motion .hero-portrait::before {
+  content: ""; position: absolute; z-index: -1; inset: 8% -14% 18% -14%; border-radius: 50%;
+  background: radial-gradient(closest-side, var(--gold-soft), transparent), radial-gradient(closest-side at 30% 70%, var(--teal-soft), transparent);
+  filter: blur(28px); animation: halo 9s var(--ease-in-out) 1.4s infinite alternate both;
+}
+@keyframes halo { from { opacity: .55; transform: scale(.94); } to { opacity: 1; transform: scale(1.06); } }
+
+.case-media { position: relative; }
+.case-media::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 30%), rgba(255, 255, 255, .38), transparent 60%);
+  transition: opacity var(--dur-3) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .motion .case:hover .case-media::after { opacity: 1; }
+}
+
+#contact { position: relative; overflow: hidden; isolation: isolate; }
+.motion #contact::before {
+  content: ""; position: absolute; z-index: -1; inset: -30% -10%;
+  background:
+    radial-gradient(40% 55% at 20% 30%, rgba(184, 150, 46, .16), transparent 70%),
+    radial-gradient(45% 60% at 85% 70%, rgba(22, 140, 128, .16), transparent 70%);
+  animation: aurora 26s var(--ease-in-out) infinite alternate;
+}
+@keyframes aurora { from { transform: translate3d(-4%, -2%, 0) rotate(0deg); } to { transform: translate3d(4%, 3%, 0) rotate(6deg); } }
+
+@supports (animation-timeline: scroll()) {
+  .motion .site-header::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
+    background: linear-gradient(90deg, var(--gold-ui), var(--teal));
+    transform-origin: left; transform: scaleX(0);
+    animation: read-progress linear both; animation-timeline: scroll(root);
+  }
+  @keyframes read-progress { to { transform: scaleX(1); } }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
 }
 
 /* ---------- Print ---------- */
 @media print {
-  .site-header, .skip-link, .signal-rail, .hero-actions, .case-actions, .cv-options, .cform, dialog, .theme-toggle, .menu-toggle { display: none !important; }
+  .site-header, .skip-link, .signal-rail, .hero-field, .hero-actions, .case-actions, .cv-options, .cform, dialog, .theme-toggle, .menu-toggle { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .section, .hero { padding-block: 1.25rem; }
   .section--tint, .section--ink { background: #fff; color: #000; border: 0; }
