@@ -562,6 +562,11 @@ main:focus { outline: none; }
 .dossier p { font-size: 1rem; }
 .dossier-note { margin-top: 1.25rem; padding: 1rem 1.1rem; font-size: .92rem; background: var(--teal-soft); border-left: 3px solid var(--teal); border-radius: 0 8px 8px 0; }
 .dlg-actions { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: .75rem; }
+.shots { margin-top: 1.5rem; display: grid; gap: 1.25rem; }
+.shots figure { margin: 0; }
+.shots img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--rule); box-shadow: var(--shadow-1); background: var(--surface); }
+.shots figcaption { margin-top: .5rem; font-size: .85rem; color: var(--muted); }
+.hero-lede a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold-ui); text-underline-offset: 3px; }
 @media (max-width: 640px) {
   .dlg { width: 100vw; max-width: 100vw; max-height: 100dvh; height: 100dvh; border-radius: 0; margin: 0; }
   .dossier li { grid-template-columns: 1fr; gap: .35rem; }

@@ -389,6 +389,29 @@
     }
   })();
 
+  /* ---------- Privacy-friendly visit counts (GoatCounter, no cookies) ----------
+     Off until <meta name="goatcounter" content="CODE"> is filled in. Also counts
+     CV downloads, case openings and clicks through to the live app as events. */
+  var gcCode = ($('meta[name="goatcounter"]') || {}).content;
+  if (gcCode && /^[a-z0-9-]+$/.test(gcCode)) {
+    var gc = document.createElement('script');
+    gc.async = true; gc.src = 'https://gc.zgo.at/count.js';
+    gc.setAttribute('data-goatcounter', 'https://' + gcCode + '.goatcounter.com/count');
+    document.head.appendChild(gc);
+    var track = function (name) {
+      if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true });
+    };
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('a, button');
+      if (!el) return;
+      var href = el.getAttribute('href') || '';
+      if (/Animesh_CV(_IIHMR)?\.pdf$/.test(href)) track('cv-' + (href.indexOf('IIHMR') > -1 ? 'iihmr' : 'ats'));
+      else if (el.hasAttribute('data-dialog')) track('open-' + el.getAttribute('data-dialog'));
+      else if (href.indexOf('moleculetomarket.app') > -1) track('out-m2m-app');
+      else if (/case-studies\/.+\.pdf$/.test(href)) track('pdf-' + href.split('/').pop().replace('.pdf', ''));
+    });
+  }
+
   /* ---------- Case cover sheen follows the pointer ---------- */
   if (motionOK && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     $$('.case-media').forEach(function (el) {
