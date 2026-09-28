@@ -1,49 +1,58 @@
-# Animesh Mishra Portfolio
+# Animesh Mishra — Portfolio
 
-Static personal portfolio for Animesh Mishra, focused on pharmaceutical management, PMT, brand strategy, market access, medical coding, and molecule-to-market work.
+Static portfolio for an early-career pharmaceutical product and commercial-strategy candidate. It is served by GitHub Pages at <https://animesh1324.github.io/animesh-portfolio/>.
 
-## What Is Live
+There is no framework and no build step for the site itself. Push to `main` and GitHub Pages publishes it.
 
-- Single-page portfolio in `index.html`
-- Inline CSS and JavaScript inside `index.html`
-- CV preview and download from `Animesh_CV.pdf`
-- Project case-study PDFs in `case-studies/`
-- Certificate previews in `certificates/`
-- Contact form with a mailto fallback
-- SEO basics: canonical URL, Open Graph tags, JSON-LD, `robots.txt`, and `sitemap.xml`
+## Structure
 
-## Editing
-
-| Item | Where to edit |
+| Path | What it is |
 | --- | --- |
-| Name / headline | Search `Animesh Mishra` in `index.html` |
-| Profile photo | Replace `PIC.jpg` / `PIC.webp` or update `src="PIC.jpg"` |
-| Logo | Replace `logo-light.png` (light theme) and `logo-dark.png` (dark theme) |
-| Favicon / app icons | Replace `favicon.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` |
-| CV | Replace `Animesh_CV.pdf` (modern) and `Animesh_CV_IIHMR.pdf` (college template) |
-| Primary email | Search `animesh.pm17@iihmr.in` |
-| Phone / WhatsApp | Search `8989468728` |
-| Projects | Search `Featured Projects` and the matching `m-p` modal |
-| Insights | Search `Featured Insights` and the matching `m-ins` modal |
-| Certificates | Search `Certifications` and the matching `m-cert` modal |
-| Last updated text | Search `footerUpdated` |
+| `index.html` | All page content. Every fact a recruiter reads is in the HTML, so it works without JavaScript. |
+| `assets/css/styles.css` | Design tokens (light and dark), layout, components, motion and print styles |
+| `assets/js/main.js` | Progressive enhancement: theme, mobile menu, section reveals, dialogs, CV switcher, credential filter, contact form |
+| `assets/fonts/` | Self-hosted Newsreader and Inter (variable, latin subset; SIL OFL — licences included) |
+| `assets/img/` | Optimised portrait, logo marks, case covers, CV preview images |
+| `data/resume.json` | **Canonical fact source for both CVs.** Edit facts here, never in the PDFs. |
+| `tools/cv/` | CV generator: templates, fonts, the IIHMR header logo and CV photograph |
+| `tools/og/` | Open Graph card source (`og-card.html`) and renderer |
+| `Animesh_CV.pdf` | ATS résumé (generated; the filename is linked from the site) |
+| `Animesh_CV_IIHMR.pdf` | IIHMR placement CV (generated; the filename is linked from the site) |
+| `case-studies/`, `certificates/` | Source documents. URLs are unchanged. |
+| `gen_og.py` | Legacy OG-card script (macOS fonts). Superseded by `tools/og/build_og.py`. |
 
-## Contact Form
+## Updating the CVs
 
-The form currently opens a prefilled email to `animesh.pm17@iihmr.in`. To use Formspree later:
+1. Edit `data/resume.json`. Any entry with `"show": false` (or `show_ats` / `show_iihmr` set to false) is kept for reference but not printed.
+2. Run:
 
-1. Create a form in the Formspree dashboard.
-2. Copy the endpoint that looks like `https://formspree.io/f/your-form-id`.
-3. Put that URL in `data-formspree-action` on the `#cForm` form.
+   ```bash
+   pip install jinja2 playwright pypdf pillow   # once
+   python3 -m playwright install chromium       # once, if Chromium is not already available
+   python3 tools/cv/build_cv.py
+   ```
 
-The JavaScript only posts to valid `/f/...` Formspree endpoints; otherwise it keeps the email fallback.
+   The script writes both PDFs and the preview images used on the site. It then checks that each PDF is one page, has a selectable text layer and embedded non-Type-3 fonts, and contains no banned phrases (for example "peer-reviewed" or "QC Analyst"). It also lists every link in the PDF.
+3. If a fact also appears on the website (dates, titles, numbers), update `index.html` to match.
 
-## Notes
+`poppler-utils` (`pdftotext`, `pdftoppm`, `pdffonts`, `pdfinfo`) is required for the checks.
 
-All styling lives in the inline `<style>` block in `index.html`. Certificate modals show a page-1 image preview from `certificates/previews/` (generated from the PDFs at 150 dpi), with the full PDF and/or an issuer verification link as the fallback.
+## Other maintenance
+
+- **Last updated:** change the `<time>` in the footer, `dateModified` in the JSON-LD, and `lastmod` in `sitemap.xml`.
+- **Social card:** edit `tools/og/og-card.html`, run `python3 tools/og/build_og.py`, then bump `?v=` on the `og:image` URLs in `index.html`.
+- **Contact form:** posts to the Formspree endpoint in `data-formspree-action` on `#cForm`. If that fails, it falls back to a pre-filled email.
+- **Theme:** the saved choice (`localStorage.theme`) wins; otherwise the page follows the system setting.
+
+## Local preview
+
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000/
+```
+
+`404.html` uses absolute `/animesh-portfolio/...` paths, so it only looks right when deployed.
 
 ## Deploy
 
-Publish the repository with GitHub Pages from the main branch. The expected URL is:
-
-`https://animesh1324.github.io/animesh-portfolio/`
+Settings → Pages → Deploy from branch → `main` / root. GitHub Pages runs its default Jekyll step. `tools/` is published too, which is harmless.

@@ -1,12 +1,12 @@
 {
-  "name": "Animesh Mishra — Pharma MBA Portfolio",
+  "name": "Animesh Mishra — Pharmaceutical Product & Commercial Strategy",
   "short_name": "Animesh Mishra",
-  "description": "B.Pharm + MBA Pharmaceutical Management · PMT, Brand Strategy, Medical Coding, Molecule to Market",
+  "description": "Early-career pharmaceutical product and commercial-strategy portfolio: semaglutide brand planning, RCPA and physician research, market analysis.",
+  "lang": "en-GB",
   "start_url": "/animesh-portfolio/",
   "scope": "/animesh-portfolio/",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#0D1117",
+  "background_color": "#F6F4EE",
   "theme_color": "#1B2F4E",
   "icons": [
     {
@@ -19,13 +19,13 @@
       "src": "icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }

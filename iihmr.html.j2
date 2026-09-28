@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>{{ p.name }} — IIHMR Placement CV</title>
+<meta name="author" content="{{ p.name }}">
+<style>
+/* IIHMR University, School of Pharmaceutical Management — placement CV layout.
+   Colours are sampled from the official template (Resume 7): gold #CC9900, pale sidebar #FFFFCD. */
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{width:210mm;height:297mm;overflow:hidden;font-family:"Liberation Sans",Arial,Helvetica,sans-serif;font-size:8.2pt;line-height:1.3;color:#333}
+a{color:inherit}
+.serif{font-family:"Liberation Serif","Times New Roman",Times,serif}
+.page{position:relative;width:210mm;height:297mm}
+/* Header bar */
+.hdr{position:absolute;left:4mm;right:4mm;top:3.5mm;height:15.5mm;border-radius:4.2mm;background:#ffffcd;overflow:hidden}
+.hdr .band{position:absolute;top:0;bottom:0;left:66mm;right:0;background:#cc9900;clip-path:polygon(24mm 0,100% 0,100% 100%,0 100%);border-radius:0 4.2mm 4.2mm 0}
+.hdr img{position:absolute;left:4.5mm;top:2.6mm;height:10.4mm}
+.hdr .school{position:absolute;right:4mm;top:0;bottom:0;display:flex;align-items:center;color:#f3dfe9;font-size:12.4pt;letter-spacing:.05em}
+/* Sidebar */
+.side{position:absolute;left:0;top:22mm;bottom:0;width:59mm;background:#ffffcd;padding:6mm 5mm 5mm 5.5mm}
+.photo{display:block;width:37mm;height:38mm;object-fit:cover;border-radius:3mm;margin:0 auto 6mm}
+.side h3{font-family:"Liberation Serif","Times New Roman",serif;font-weight:700;color:#cc9900;font-size:11.6pt;text-transform:uppercase;letter-spacing:.01em;margin:0 0 2.2mm;line-height:1.1}
+.side ul{list-style:none;margin:0 0 5.2mm}
+.side li{position:relative;padding-left:4.6mm;margin-bottom:1.55mm;font-size:8.3pt;line-height:1.28}
+.side li::before{content:"";position:absolute;left:.4mm;top:1.25mm;width:1.5mm;height:1.5mm;background:#333}
+/* Main */
+.main{position:absolute;left:66mm;right:8mm;top:24mm;bottom:5mm}
+.name{font-family:"Liberation Serif","Times New Roman",serif;font-weight:700;font-size:21pt;letter-spacing:.07em;color:#595959;line-height:1}
+.addr{margin-top:2.2mm;font-size:8.8pt;color:#444;letter-spacing:.01em}
+.phone{margin-top:1.2mm;font-size:8.8pt;color:#444}
+.links{margin-top:2mm;display:flex;flex-wrap:wrap;align-items:center;gap:1.2mm 1.8mm;font-size:8.1pt;color:#cc9900;white-space:nowrap}
+.links a{color:#b88a00;text-decoration:underline;text-underline-offset:1.5pt}
+.links .sep{color:#555}
+.links svg{width:3.4mm;height:3.4mm;vertical-align:-0.8mm;margin-right:1mm;fill:#cc9900}
+.rule{height:.5mm;background:#cc9900;margin:2.6mm 0 2.6mm}
+.summary{text-align:justify;font-size:8.5pt;line-height:1.36;color:#333}
+.main h2{font-family:"Liberation Serif","Times New Roman",serif;font-weight:700;font-size:12pt;color:#222;letter-spacing:.01em;text-transform:uppercase;border-bottom:.25mm solid #d9d9d9;padding-bottom:.9mm;margin:3.4mm 0 1.7mm}
+.date{font-weight:700;font-size:7.6pt;color:#555;letter-spacing:.02em;margin-top:1.7mm}
+.role{font-size:9.4pt;color:#333;margin:.6mm 0 .8mm}
+.role b{color:#cc9900}
+.main ul{list-style:none}
+.main li{position:relative;padding-left:3mm;margin-bottom:.55mm;line-height:1.27}
+.main li::before{content:"•";position:absolute;left:.3mm;top:0;color:#444}
+table{width:100%;border-collapse:collapse;font-size:8.4pt}
+td{padding:.9mm 1.2mm;vertical-align:middle}
+tr:nth-child(odd) td{background:#faf7ee}
+td.l{font-weight:700;width:9mm;color:#333}
+td.d{font-weight:700;width:20mm}
+td.i{color:#cc9900}
+td.y{width:15mm;text-align:center;color:#cc9900}
+td.s{width:17mm;text-align:center;color:#cc9900}
+.certs li b,.projs li b{font-weight:700;color:#333}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hdr">
+    <div class="band"></div>
+    <img src="{{ assets }}/iihmr-logo.png" alt="IIHMR University">
+    <div class="school">SCHOOL OF PHARMACEUTICAL MANAGEMENT</div>
+  </div>
+
+  <aside class="side">
+    <img class="photo" src="{{ assets }}/cv-photo.jpg" alt="Photograph of {{ p.name }}">
+    <h3>Technical Skills</h3>
+    <ul>{% for s in sk.technical %}<li>{{ s }}</li>{% endfor %}</ul>
+    <h3>Interpersonal Skills</h3>
+    <ul>{% for s in sk.interpersonal %}<li>{{ s }}</li>{% endfor %}</ul>
+    <h3>Strength</h3>
+    <ul>{% for s in sk.strengths %}<li>{{ s }}</li>{% endfor %}</ul>
+    <h3>Achievements</h3>
+    <ul>{% for a in achievements if a.show %}<li>{{ a.text }}</li>{% endfor %}</ul>
+    <h3>Other Details</h3>
+    <ul>
+      <li>Date of Birth: {{ p.dob }}</li>
+      <li>Language: {{ p.languages|join(", ") }}</li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <div class="name">{{ p.name|upper }}</div>
+    <div class="addr">{{ p.location_iihmr|upper }}</div>
+    <div class="phone"><a href="{{ p.phone_href }}" style="text-decoration:none">{{ p.phone }}</a></div>
+    <div class="links">
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2z" fill="none"/><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.2V17h16V7.2l-8 5.3-8-5.3zM5.6 7l6.4 4.2L18.4 7H5.6z"/></svg><a href="mailto:{{ p.email_primary }}">{{ p.email_primary }}</a></span>
+      <span class="sep">|</span>
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm2.3 7.3V18h2.5v-7.7H6.3zm1.3-3.9a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9zM10.6 10.3V18h2.5v-4c0-1.1.2-2.1 1.5-2.1s1.4 1.2 1.4 2.2V18h2.5v-4.4c0-2.2-.5-3.9-3-3.9-1.2 0-2 .7-2.4 1.3v-1.1h-2.5z"/></svg><a href="{{ p.linkedin }}">Animesh Mishra</a></span>
+      <span class="sep">|</span>
+      <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2h6v2h3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2zm0 4H7v14h10V6h-2v2H9V6zm2-2v2h2V4h-2z"/></svg><a href="{{ p.portfolio }}">Portfolio</a></span>
+      <span class="sep">|</span>
+      <span><a href="{{ p.preprint_url }}">Preprint (DOI)</a></span>
+    </div>
+    <div class="rule"></div>
+    <p class="summary">{{ summary }}</p>
+
+    <h2>Internships</h2>
+    {% for j in experience if j.bullets_iihmr %}
+    <div class="date">{{ j.dates_iihmr }}</div>
+    <div class="role">{{ j.role_short }}, <b>{{ j.org }}</b></div>
+    {% if j.bullets_iihmr %}<ul>{% for b in j.bullets_iihmr %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+    {% endfor %}
+
+    <h2>Education</h2>
+    <table>
+      {% for e in education %}
+      <tr><td class="l">{{ e.level }}</td><td class="d">{{ e.degree_short }}</td><td class="i">{{ e.get('institution_iihmr') or e.institution }}</td><td class="y">{{ e.years_short }}</td><td class="s">{{ e.score }}</td></tr>
+      {% endfor %}
+    </table>
+
+    <h2>Participation / Certification</h2>
+    <ul class="certs">
+      {% for c in certifications if c.show_iihmr %}<li><b>{{ c.name }}</b> — {{ c.issuer }}{% if c.date %} ({{ c.date }}){% endif %}</li>
+      {% endfor %}
+      {% for j in experience if not j.bullets_iihmr %}<li><b>{{ j.role_short }}</b> — {{ j.org }} ({{ j.dates }})</li>
+      {% endfor %}
+    </ul>
+
+    <h2>Projects</h2>
+    <ul class="projs">
+      {% for pr in projects if pr.show_iihmr %}<li>{{ pr.iihmr }}</li>
+      {% endfor %}
+    </ul>
+  </main>
+</div>
+</body>
+</html>

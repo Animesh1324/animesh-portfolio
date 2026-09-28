@@ -1,0 +1,359 @@
+{
+  "_about": "Canonical fact source for Animesh Mishra's two CVs (Animesh_CV.pdf and Animesh_CV_IIHMR.pdf). Edit facts here only, then run: python3 tools/cv/build_cv.py. Entries with \"show\": false are kept for reference but not printed. Switch one to true once the supporting certificate or document is in the repository.",
+  "meta": {
+    "updated": "2026-09-28",
+    "spelling": "Indian/British English"
+  },
+  "person": {
+    "name": "Animesh Mishra",
+    "location": "Rewa, Madhya Pradesh",
+    "location_iihmr": "Rewa, Madhya Pradesh, 486001",
+    "phone": "+91 8989468728",
+    "phone_href": "tel:+918989468728",
+    "email_primary": "animesh.pm17@iihmr.in",
+    "email_secondary": "mishra.animesh1324@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/animeshmishra-pm17",
+    "linkedin_label": "linkedin.com/in/animeshmishra-pm17",
+    "portfolio": "https://animesh1324.github.io/animesh-portfolio/",
+    "portfolio_label": "animesh1324.github.io/animesh-portfolio",
+    "preprint_url": "https://doi.org/10.13140/RG.2.2.36647.10405",
+    "dob": "12/02/2002",
+    "languages": [
+      "English",
+      "Hindi"
+    ]
+  },
+  "headline": "Pharmaceutical Product Management · Brand & Commercial Strategy · Market Research",
+  "summary": {
+    "ats": "MBA Pharmaceutical Management candidate at IIHMR University (2025–27) with a B.Pharm (Hons.) foundation. During a Micro Labs summer internship, built a semaglutide launch brand plan on primary field research (40-pharmacy RCPA, 10-physician survey) that shifted the strategy from share capture to category building. Pairs formulation, QC and GMP exposure with market analysis for product management and commercial-strategy roles.",
+    "iihmr": "MBA Pharmaceutical Management candidate with a B.Pharm (Hons.) foundation. Built a semaglutide launch brand plan during a Micro Labs summer internship, using a 40-pharmacy RCPA and a 10-physician survey to reposition the brand. Seeking product management and commercial-strategy roles that use both scientific and market evidence."
+  },
+  "experience": [
+    {
+      "id": "microlabs",
+      "role": "Marketing Intern, Summer Internship Programme (Brand Management)",
+      "role_short": "Marketing Intern",
+      "org": "Micro Labs Ltd.",
+      "start": "2026-05",
+      "end": "2026-07",
+      "dates": "May 2026 – Jul 2026",
+      "dates_iihmr": "MAY 2026 - JUL 2026",
+      "evidence": "case-studies/glumic-brand-plan.pdf",
+      "bullets_ats": [
+        "Built GLUMIC (working brand name), an FY2026–27 launch plan for once-weekly semaglutide: a 37-slide deck covering market sizing, STP, 7P mix, pricing, KOL mapping and a three-year Excel model.",
+        "Designed and ran primary research in three Jaipur micro-markets: an RCPA of 40 pharmacies and a signed survey of 10 specialists. Found GLP-1 dispensed at only 2 of 40 outlets, and 7 of 10 physicians named cost as the main adherence barrier.",
+        "Used the findings to reposition the brand from share capture to category building. The plan targets T2DM patients with high cardiovascular risk and leads with patient support, adherence tracking and cold-chain assurance.",
+        "Sized the ₹1,906 Cr GLP-1 class (PharmaTrac, MAT May 2026) and compared tirzepatide with semaglutide. Applied CDSCO, DPCO, Schedule H and UCPMP 2024 constraints, and anchored detailing claims to SUSTAIN-6 and SELECT."
+      ],
+      "bullets_iihmr": [
+        "Built a semaglutide (GLP-1) launch brand plan, GLUMIC: market sizing, STP, 7P mix, KOL mapping and a three-year Excel model.",
+        "Conducted an RCPA of 40 pharmacies and a 10-physician survey in Jaipur. Found GLP-1 dispensed at 2 of 40 outlets and cost named as the main adherence barrier by 7 of 10 physicians.",
+        "Repositioned the plan around patient support and adherence for T2DM patients with high cardiovascular risk.",
+        "Analysed IQVIA and PharmaTrac GLP-1 class data (tirzepatide vs semaglutide) within CDSCO, DPCO, Schedule H and UCPMP 2024 constraints."
+      ]
+    },
+    {
+      "id": "coding",
+      "role": "Medical Coding Intern (ICD-10-CM)",
+      "role_short": "Medical Coding Intern",
+      "org": "Skill Dunia, in association with ODCET Technologies",
+      "start": "2024-01",
+      "end": "2024-02",
+      "dates": "Jan 2024 – Feb 2024",
+      "dates_iihmr": "JAN 2024 - FEB 2024",
+      "evidence": "certificates/medical-coding-certificate-odcet.jpg",
+      "bullets_ats": [
+        "Completed a medical coding internship, assigning ICD-10-CM diagnosis codes from clinical documentation. Gained working knowledge of how coding accuracy feeds claims, reimbursement and real-world health data."
+      ],
+      "bullets_iihmr": [
+        "Completed a medical coding internship applying ICD-10-CM conventions to clinical documentation."
+      ]
+    },
+    {
+      "id": "unidrug",
+      "role": "QC & Production Trainee",
+      "role_short": "QC & Production Trainee",
+      "org": "Unidrug Innovative Pharma Technologies Ltd., Indore",
+      "start": "2023-07-01",
+      "end": "2023-07-15",
+      "dates": "Jul 2023 (15 days)",
+      "dates_iihmr": "JUL 2023 (15 DAYS)",
+      "evidence": "certificates/unidrug-certificate.pdf",
+      "bullets_ats": [
+        "Trained in the QC (general instruments) and production departments of a GMP manufacturing site. Covered routine analytical testing, including HPLC, GC and UV-Vis, plus batch documentation and GMP practice."
+      ],
+      "bullets_iihmr": [
+        "Industrial training in QC (general instruments) and production, with exposure to HPLC, GC and UV-Vis testing and GMP documentation."
+      ]
+    },
+    {
+      "id": "sage",
+      "role": "Hands-on Training cum Workshop: Formulation & Evaluation of Pharmaceutical Products",
+      "role_short": "Formulation & Evaluation Workshop",
+      "org": "CARE, with SIRTS-P (SAGE Group), Bhopal",
+      "start": "2023-06-01",
+      "end": "2023-06-22",
+      "dates": "Jun 2023 (4 weeks)",
+      "dates_iihmr": "JUN 2023 (4 WEEKS)",
+      "evidence": "certificates/sage-Certificate.pdf",
+      "bullets_ats": [],
+      "bullets_iihmr": []
+    }
+  ],
+  "projects": [
+    {
+      "id": "sun-organon",
+      "title": "Sun Pharma × Organon acquisition analysis",
+      "nature": "MBA analysis",
+      "date": "Apr 2026",
+      "show_ats": true,
+      "show_iihmr": true,
+      "ats": "Analysed Sun Pharma's announced $11.75B acquisition of Organon: deal structure, ~6.2x EV/EBITDA, debt-funded leverage path, portfolio rationale (women's health, biosimilars, established brands, China) and governance risk.",
+      "iihmr": "Sun Pharma × Organon — analysis of the $11.75B acquisition: valuation, leverage and portfolio rationale."
+    },
+    {
+      "id": "semaglutide-loe",
+      "title": "Semaglutide patent-expiry assessment",
+      "nature": "MBA assessment",
+      "date": "Apr 2026",
+      "show_ats": true,
+      "show_iihmr": true,
+      "ats": "Mapped the March 2026 expiry by market (India, China, Canada, Brazil open; US/EU protected) and built branding and loyalty-counter strategies for generic entrants.",
+      "iihmr": "Semaglutide patent expiry — market dynamics, generic branding and innovator-loyalty counter-strategies."
+    },
+    {
+      "id": "curcumin",
+      "title": "Ethosomal vs liposomal curcumin — narrative review",
+      "nature": "independent research",
+      "date": "2026",
+      "show_ats": true,
+      "show_iihmr": true,
+      "ats": "Sole-author review of topical vesicular curcumin delivery: permeation evidence, Franz-cell method errors, stability analytics and FDA/EMA/ICH context. ResearchGate preprint, DOI 10.13140/RG.2.2.36647.10405.",
+      "iihmr": "Ethosomal vs liposomal curcumin delivery — sole-author narrative review (ResearchGate preprint, DOI)."
+    },
+    {
+      "id": "pharmaintel",
+      "title": "PharmaIntel India — product strategy",
+      "nature": "Independent concept",
+      "date": "Mar 2026",
+      "show_ats": false,
+      "show_iihmr": true,
+      "ats": "Product strategy for an offline-first, 13-language drug-information app for Tier-2/3 pharmacists and field teams.",
+      "iihmr": "PharmaIntel India — product strategy for an offline-first, 13-language drug-information app."
+    }
+  ],
+  "education": [
+    {
+      "level": "PG",
+      "degree": "MBA, Pharmaceutical Management",
+      "degree_short": "MBA-PM",
+      "institution": "IIHMR University, Jaipur",
+      "years": "2025–2027",
+      "years_short": "2025-27",
+      "score": "Pursuing"
+    },
+    {
+      "level": "UG",
+      "degree": "B.Pharm (Honours)",
+      "degree_short": "B. Pharm",
+      "institution": "NRI Institute of Pharmacy, Bhopal (RGPV)",
+      "institution_iihmr": "NRI Institute of Pharmacy, Bhopal",
+      "years": "2020–2024",
+      "years_short": "2020-24",
+      "score": "78%"
+    },
+    {
+      "level": "XII",
+      "degree": "Class XII (CBSE)",
+      "degree_short": "CBSE",
+      "institution": "Sacred Heart Convent School, Rewa",
+      "years": "2019",
+      "years_short": "2019",
+      "score": "64%"
+    },
+    {
+      "level": "X",
+      "degree": "Class X (CBSE)",
+      "degree_short": "CBSE",
+      "institution": "Sacred Heart Convent School, Rewa",
+      "years": "2017",
+      "years_short": "2017",
+      "score": "68.4%"
+    }
+  ],
+  "competencies": [
+    "Brand planning & launch strategy",
+    "Segmentation, targeting & positioning",
+    "RCPA & primary market research",
+    "Competitive & therapy-area analysis",
+    "IQVIA / PharmaTrac data",
+    "KOL mapping",
+    "Pricing & regulatory context (DPCO, UCPMP)",
+    "Excel commercial modelling",
+    "Patient-support & adherence design",
+    "Strategic presentations",
+    "GMP & QC fundamentals",
+    "ICD-10-CM coding"
+  ],
+  "tools": [
+    "MS Excel",
+    "MS PowerPoint",
+    "MS Word",
+    "Power BI",
+    "Canva"
+  ],
+  "skills_iihmr": {
+    "technical": [
+      "MS Excel",
+      "MS PowerPoint",
+      "MS Word",
+      "Power BI",
+      "Canva",
+      "IQVIA / PharmaTrac data",
+      "ICD-10-CM Coding"
+    ],
+    "interpersonal": [
+      "Stakeholder Communication",
+      "Cross-functional Collaboration",
+      "Presentation",
+      "Problem Solving",
+      "Leadership"
+    ],
+    "strengths": [
+      "Analytical Mindset",
+      "Quick Learner",
+      "Decision Making",
+      "Adaptability"
+    ]
+  },
+  "achievements": [
+    {
+      "text": "NIPER JEE Qualified (2024)",
+      "show": true
+    },
+    {
+      "text": "Honours in B.Pharm",
+      "show": true
+    },
+    {
+      "text": "Class Representative, B.Pharm (third year)",
+      "show": true
+    },
+    {
+      "text": "Lead Researcher, herbal hand-sanitiser project (B.Pharm final year)",
+      "show": true
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Drug Development Product Management Specialisation",
+      "issuer": "UC San Diego (Coursera)",
+      "date": "Jul 2026",
+      "evidence": "certificates/ucsd-drug-development-product-management.pdf",
+      "verify": "https://coursera.org/verify/specialization/TM91YOZMAZT5",
+      "show_ats": true,
+      "show_iihmr": true
+    },
+    {
+      "name": "Molecule to Market Job Simulation",
+      "issuer": "Pfizer (Forage)",
+      "date": "Jul 2026",
+      "evidence": "certificates/pfizer-molecule-to-market.pdf",
+      "show_ats": true,
+      "show_iihmr": true
+    },
+    {
+      "name": "Product Management: An Introduction",
+      "issuer": "IBM (Coursera)",
+      "date": "May 2026",
+      "evidence": "certificates/ibm-ai-product-manager.jpg",
+      "verify": "https://coursera.org/verify/SQQJ2MC26BZC",
+      "show_ats": true,
+      "show_iihmr": true
+    },
+    {
+      "name": "Product Management: Foundations & Stakeholder Collaboration",
+      "issuer": "SkillUp (Coursera)",
+      "date": "Jul 2026",
+      "evidence": "certificates/skillup-product-management.pdf",
+      "verify": "https://coursera.org/verify/C2DWX7UXJHKK",
+      "show_ats": false,
+      "show_iihmr": true
+    },
+    {
+      "name": "Data Science Job Simulation",
+      "issuer": "BCG X (Forage)",
+      "date": "Jul 2026",
+      "evidence": "certificates/bcgx-data-science.pdf",
+      "show_ats": true,
+      "show_iihmr": true
+    },
+    {
+      "name": "Generative AI Foundations",
+      "issuer": "upGrad × Microsoft",
+      "date": "Jan 2026",
+      "evidence": "certificates/genai-foundations-certificate.png",
+      "show_ats": true,
+      "show_iihmr": true
+    },
+    {
+      "name": "McKinsey.org Forward Program",
+      "issuer": "McKinsey.org",
+      "date": "Jun 2026",
+      "evidence": "certificates/mckinsey-forward.pdf",
+      "show_ats": false,
+      "show_iihmr": true
+    },
+    {
+      "name": "Medical Coding Internship (ICD-10-CM)",
+      "issuer": "Skill Dunia × ODCET Technologies",
+      "date": "2024",
+      "evidence": "certificates/medical-coding-certificate-odcet.jpg",
+      "show_ats": false,
+      "show_iihmr": false,
+      "note": "Shown under Internships on the IIHMR CV; avoid duplication."
+    },
+    {
+      "name": "Advanced Excel Workshop",
+      "issuer": "Analytica Club, IIHMR University",
+      "date": "Mar 2026",
+      "evidence": "certificates/advanced-excel-certificate.pdf",
+      "show_ats": false,
+      "show_iihmr": true
+    },
+    {
+      "name": "Pradanya GHMRC 2026 (participant)",
+      "issuer": "IIHMR University",
+      "date": "Feb 2026",
+      "evidence": "certificates/pradanya-conference-2026.pdf",
+      "show_ats": false,
+      "show_iihmr": true
+    },
+    {
+      "name": "Business Communication",
+      "issuer": "SWAYAM / NTA",
+      "date": "2026",
+      "evidence": null,
+      "show_ats": false,
+      "show_iihmr": true
+    },
+    {
+      "name": "Marketing Analytics",
+      "issuer": "University of Virginia (Coursera)",
+      "date": null,
+      "evidence": null,
+      "show_ats": false,
+      "show_iihmr": false,
+      "held_back": "Add the certificate to /certificates, then set show_iihmr to true."
+    },
+    {
+      "name": "AI Product Manager Professional Certificate",
+      "issuer": "IBM (Coursera)",
+      "date": "in progress",
+      "evidence": null,
+      "show_ats": false,
+      "show_iihmr": false,
+      "held_back": "Only the single course above is complete. List the full certificate once it is earned."
+    }
+  ]
+}

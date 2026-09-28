@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>{{ p.name }} — Résumé</title>
+<meta name="author" content="{{ p.name }}">
+<meta name="description" content="{{ headline }}">
+<style>
+/* Static (non-variable) fonts so Chromium embeds TrueType, not Type 3 — safer for ATS parsers. */
+@font-face{font-family:"Inter";src:url("{{ fonts }}/inter-latin-400-normal.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"Inter";src:url("{{ fonts }}/inter-latin-600-normal.woff2") format("woff2");font-weight:600}
+@font-face{font-family:"Inter";src:url("{{ fonts }}/inter-latin-700-normal.woff2") format("woff2");font-weight:700}
+@font-face{font-family:"Newsreader";src:url("{{ fonts }}/newsreader-latin-600-normal.woff2") format("woff2");font-weight:600}
+@page{size:A4;margin:11mm 14mm 9mm}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:"Inter","Liberation Sans",Arial,sans-serif;font-size:8.8pt;line-height:1.35;color:#1a2230;font-feature-settings:"tnum" 0,"kern" 1}
+a{color:inherit;text-decoration:none}
+h1{font-family:"Newsreader","Liberation Serif",Georgia,serif;font-weight:600;font-size:21pt;color:#13233d;line-height:1.05}
+.headline{margin-top:2.5pt;font-size:9.4pt;font-weight:600;color:#7a5f14}
+.contact{margin-top:4pt;font-size:8.4pt;color:#3a4556}
+.contact span+span::before{content:"  |  ";color:#9aa3b0;white-space:pre}
+h2{font-size:8.6pt;font-weight:700;text-transform:uppercase;color:#13233d;border-bottom:.6pt solid #b9c1cc;padding-bottom:1.6pt;margin:9pt 0 4pt}
+.summary{color:#253041}
+.job{margin-top:5pt;break-inside:avoid}
+.job:first-of-type{margin-top:1pt}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:10pt}
+.role{font-weight:600;color:#13233d}
+.org{font-weight:400;color:#253041}
+.dates{flex:none;font-size:8.3pt;color:#4a5566;font-variant-numeric:tabular-nums}
+ul{margin:1.8pt 0 0 11pt}
+li{margin:0 0 1.6pt;padding-left:1pt}
+li::marker{color:#8a6d1a}
+.edu .row{margin-top:1.5pt}
+.compline{color:#253041}
+.tools{margin-top:2.5pt;color:#3a4556}
+.small{font-size:8.3pt;color:#4a5566}
+.proj b{font-weight:600;color:#13233d}
+</style>
+</head>
+<body>
+<header>
+  <h1>{{ p.name }}</h1>
+  <p class="headline">{{ headline }}</p>
+  <p class="contact">
+    <span>{{ p.location }}</span><span><a href="{{ p.phone_href }}">{{ p.phone }}</a></span><span><a href="mailto:{{ p.email_primary }}">{{ p.email_primary }}</a></span><span><a href="mailto:{{ p.email_secondary }}">{{ p.email_secondary }}</a></span>
+  </p>
+  <p class="contact">
+    <span>LinkedIn: <a href="{{ p.linkedin }}">{{ p.linkedin_label }}</a></span><span>Portfolio: <a href="{{ p.portfolio }}">{{ p.portfolio_label }}</a></span>
+  </p>
+</header>
+
+<h2>Summary</h2>
+<p class="summary">{{ summary }}</p>
+
+<h2>Experience</h2>
+{% for j in experience if j.bullets_ats %}
+<div class="job">
+  <div class="row"><p><span class="role">{{ j.role }}</span> <span class="org">| {{ j.org }}</span></p><p class="dates">{{ j.dates }}</p></div>
+  <ul>{% for b in j.bullets_ats %}<li>{{ b }}</li>{% endfor %}</ul>
+</div>
+{% endfor %}
+{% for j in experience if not j.bullets_ats %}
+<div class="job">
+  <div class="row"><p><span class="role">{{ j.role_short }}</span> <span class="org">| {{ j.org }}</span></p><p class="dates">{{ j.dates }}</p></div>
+</div>
+{% endfor %}
+
+<h2>Selected Projects</h2>
+<ul class="proj">
+{% for pr in projects if pr.show_ats %}<li><b>{{ pr.title }}</b> — {{ pr.nature }}, {{ pr.date }}. {{ pr.ats }}</li>
+{% endfor %}
+</ul>
+
+<h2>Education</h2>
+<div class="edu">
+{% for e in education[:2] %}
+  <div class="row"><p><span class="role">{{ e.degree }}</span> <span class="org">| {{ e.institution }}</span></p><p class="dates">{{ e.years }} · {{ e.score }}</p></div>
+{% endfor %}
+  <p class="small" style="margin-top:1.5pt">{{ education[2].degree }}, {{ education[2].years }}: {{ education[2].score }} · {{ education[3].degree }}, {{ education[3].years }}: {{ education[3].score }} · {{ education[3].institution }}</p>
+</div>
+
+<h2>Core Competencies</h2>
+<p class="compline">{{ competencies|join(" · ") }}</p>
+<p class="tools"><b style="font-weight:600;color:#13233d">Tools:</b> {{ tools|join(", ") }}</p>
+
+<h2>Certifications &amp; Achievements</h2>
+<ul>
+{% for c in certifications if c.show_ats %}<li>{{ c.name }} — {{ c.issuer }}, {{ c.date }}</li>
+{% endfor %}
+<li>{{ achievements_ats }}</li>
+</ul>
+</body>
+</html>

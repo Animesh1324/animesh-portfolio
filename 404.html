@@ -1,158 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>404 — Page Not Found | Animesh Mishra</title>
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --c-navy:#1b2f4e;
-    --c-gold:#b8962e;
-    --c-gold-2:#d4af37;
-    --c-bg:#f8f6f1;
-    --c-text:#2d3748;
-    --c-muted:#718096;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{
-    font-family:'Inter',sans-serif;
-    background:var(--c-bg);
-    color:var(--c-text);
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    padding:40px 24px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-  }
-  .bg-orb{
-    position:absolute;
-    border-radius:50%;
-    pointer-events:none;
-    z-index:0;
-  }
-  .orb-1{
-    width:500px;height:500px;
-    background:radial-gradient(circle,rgba(184,150,46,.12) 0%,transparent 70%);
-    top:-100px;right:-100px;
-  }
-  .orb-2{
-    width:400px;height:400px;
-    background:radial-gradient(circle,rgba(27,47,78,.08) 0%,transparent 70%);
-    bottom:-80px;left:-80px;
-  }
-  .card{
-    position:relative;
-    z-index:1;
-    background:#fff;
-    border:1px solid rgba(27,47,78,.1);
-    border-radius:24px;
-    padding:56px 48px 48px;
-    max-width:480px;
-    width:100%;
-    box-shadow:0 4px 6px rgba(0,0,0,.04),0 20px 40px rgba(0,0,0,.08);
-  }
-  .logo-link{
-    display:inline-block;
-    margin-bottom:32px;
-  }
-  .logo-link img{
-    height:56px;
-    width:56px;
-    object-fit:contain;
-  }
-  .logo-link .logo-dark{display:none}
-  @media(prefers-color-scheme:dark){
-    body{background:#0D1117;color:#CDD5DE}
-    .card{background:#161B22;border-color:rgba(255,255,255,.08);box-shadow:0 4px 6px rgba(0,0,0,.2),0 20px 40px rgba(0,0,0,.4)}
-    h1{color:#fff}
-    .logo-link .logo-light{display:none}
-    .logo-link .logo-dark{display:inline-block}
-    .btn{background:var(--c-gold);color:#0D1117}
-    .btn:hover{background:var(--c-gold-2)}
-  }
-  .num{
-    font-family:'Playfair Display',serif;
-    font-size:clamp(5rem,20vw,7rem);
-    font-weight:700;
-    line-height:1;
-    background:linear-gradient(135deg,var(--c-navy) 0%,var(--c-gold) 100%);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    background-clip:text;
-    letter-spacing:-2px;
-    margin-bottom:16px;
-  }
-  .rule{
-    width:48px;height:3px;
-    background:linear-gradient(90deg,var(--c-navy),var(--c-gold));
-    border-radius:2px;
-    margin:0 auto 20px;
-  }
-  h1{
-    font-family:'Playfair Display',serif;
-    font-size:1.5rem;
-    color:var(--c-navy);
-    margin-bottom:12px;
-    font-weight:700;
-  }
-  p{
-    font-size:.95rem;
-    color:var(--c-muted);
-    line-height:1.7;
-    margin-bottom:32px;
-  }
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:var(--c-navy);
-    color:#fff;
-    text-decoration:none;
-    font-family:'Inter',sans-serif;
-    font-size:.88rem;
-    font-weight:600;
-    padding:13px 28px;
-    border-radius:50px;
-    transition:background .25s,transform .2s;
-    letter-spacing:.3px;
-  }
-  .btn:hover{
-    background:var(--c-gold);
-    transform:translateY(-2px);
-  }
-  .btn svg{
-    width:15px;height:15px;
-    stroke:currentColor;stroke-width:2;fill:none;
-    stroke-linecap:round;stroke-linejoin:round;
-  }
-  @media(max-width:480px){
-    .card{padding:40px 28px 36px}
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — Animesh Mishra</title>
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/png" href="/animesh-portfolio/favicon.png?v=2">
+  <style>
+    /* Absolute paths: GitHub Pages serves this file for any missing URL, at any depth. */
+    @font-face { font-family: "Newsreader"; src: url("/animesh-portfolio/assets/fonts/newsreader-var-latin.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
+    @font-face { font-family: "Inter"; src: url("/animesh-portfolio/assets/fonts/inter-var-latin.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+    :root { --paper: #F6F4EE; --ink: #0F1B30; --muted: #5A6577; --rule: #D9D4C7; --gold: #7A5E12; --btn: #1B2F4E; --btn-ink: #fff; }
+    @media (prefers-color-scheme: dark) { :root { --paper: #0B1322; --ink: #ECEFF5; --muted: #9AA5B8; --rule: #24324D; --gold: #DDBB5E; --btn: #C9A646; --btn-ink: #0B1322; } }
+    * { box-sizing: border-box; margin: 0; }
+    body { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; background: var(--paper); color: var(--ink); font-family: Inter, system-ui, Arial, sans-serif; }
+    main { max-width: 520px; width: 100%; border-top: 1px solid var(--ink); padding-top: 28px; }
+    .k { font: 500 .78rem/1 ui-monospace, Menlo, monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+    h1 { font-family: Newsreader, Georgia, serif; font-weight: 520; font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1.1; margin-top: 14px; }
+    p { margin-top: 14px; color: var(--muted); line-height: 1.6; }
+    .links { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+    a.btn { display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; border-radius: 999px; background: var(--btn); color: var(--btn-ink); font-weight: 600; text-decoration: none; }
+    a.txt { color: var(--ink); font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
+    :focus-visible { outline: 2.5px solid #1D5FD1; outline-offset: 3px; }
+  </style>
 </head>
 <body>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="card">
-    <a href="index.html" class="logo-link">
-      <img class="logo-light" src="logo-light.png" alt="Animesh Mishra">
-      <img class="logo-dark"  src="logo-dark.png"  alt="Animesh Mishra">
-    </a>
-    <div class="num">404</div>
-    <div class="rule"></div>
-    <h1>Page Not Found</h1>
-    <p>This page seems to have gone off-label. Let's get you back to the portfolio.</p>
-    <a href="index.html" class="btn">
-      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      Back to Portfolio
-    </a>
-  </div>
+  <main>
+    <p class="k">Error 404</p>
+    <h1>This page isn't part of the portfolio.</h1>
+    <p>The link may be old or mistyped. The portfolio, case studies and both CVs are still available from the home page.</p>
+    <div class="links">
+      <a class="btn" href="/animesh-portfolio/">Go to the portfolio</a>
+      <a class="txt" href="/animesh-portfolio/Animesh_CV.pdf">ATS résumé (PDF)</a>
+      <a class="txt" href="/animesh-portfolio/Animesh_CV_IIHMR.pdf">IIHMR CV (PDF)</a>
+    </div>
+  </main>
 </body>
 </html>
