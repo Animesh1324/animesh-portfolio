@@ -102,6 +102,16 @@
   ],
   "projects": [
     {
+      "id": "m2m",
+      "title": "Molecule to Market AI — pharma commercialisation workspace",
+      "nature": "Independent build (live)",
+      "date": "Aug–Sep 2026",
+      "show_ats": true,
+      "show_iihmr": true,
+      "ats": "Product owner of a live web app (moleculetomarket.app) turning public evidence (ChEMBL, ClinicalTrials.gov, openFDA, PubMed) into a reviewable brand plan across 22 modules; set the review rules and directed an AI-assisted build and deployment.",
+      "iihmr": "Molecule to Market AI — live pharma commercialisation workspace (moleculetomarket.app): 22 modules from molecule evidence to brand plan; product owner, AI-assisted build."
+    },
+    {
       "id": "sun-organon",
       "title": "Sun Pharma × Organon acquisition analysis",
       "nature": "MBA analysis",
@@ -116,8 +126,8 @@
       "title": "Semaglutide patent-expiry assessment",
       "nature": "MBA assessment",
       "date": "Apr 2026",
-      "show_ats": true,
-      "show_iihmr": true,
+      "show_ats": false,
+      "show_iihmr": false,
       "ats": "Mapped the March 2026 expiry by market (India, China, Canada, Brazil open; US/EU protected) and built branding and loyalty-counter strategies for generic entrants.",
       "iihmr": "Semaglutide patent expiry — market dynamics, generic branding and innovator-loyalty counter-strategies."
     },
@@ -293,7 +303,7 @@
       "issuer": "upGrad × Microsoft",
       "date": "Jan 2026",
       "evidence": "certificates/genai-foundations-certificate.png",
-      "show_ats": true,
+      "show_ats": false,
       "show_iihmr": true
     },
     {
