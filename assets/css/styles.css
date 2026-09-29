@@ -277,6 +277,12 @@ main:focus { outline: none; }
 .hero-actions { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.1rem; }
 
 .hero-portrait { margin: 0; justify-self: end; width: 100%; max-width: 340px; }
+/* Desktop: pin the photo to the headline instead of the bottom of the copy, and keep
+   photo + caption inside the first screen on short laptop displays. */
+@media (min-width: 961px) {
+  .hero-grid { align-items: start; }
+  .hero-portrait { margin-top: 2.2rem; max-width: min(340px, calc((100svh - 300px) * .8)); min-width: 260px; }
+}
 .portrait-frame {
   position: relative; border-radius: var(--radius-lg); overflow: hidden; background: var(--paper-2);
   aspect-ratio: 4 / 5; box-shadow: var(--shadow-2);
