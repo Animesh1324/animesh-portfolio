@@ -643,6 +643,8 @@ main:focus { outline: none; }
 }
 .hero-field.is-live { opacity: 1; }
 @media (max-width: 960px) {
+  .eyebrow { flex-direction: column; align-items: flex-start; gap: .3rem; }
+  .eyebrow .dot { display: none; }
   .hero-field {
     -webkit-mask-image: radial-gradient(ellipse 42% 12% at 94% 2%, #000 15%, transparent 85%);
             mask-image: radial-gradient(ellipse 42% 12% at 94% 2%, #000 15%, transparent 85%);
